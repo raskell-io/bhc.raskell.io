@@ -35,19 +35,20 @@ jobs:
       - name: Build the site
         run: mise run build
 
-      - name: Clone docs repo
-        run: git clone --depth 1 --recurse-submodules https://github.com/raskell-io/bhc.raskell.io-docs.git /tmp/docs
-
-      - name: Build docs
-        run: |
-          cd /tmp/docs
-          mise install
-          mise run build
-
-      - name: Copy docs to public
-        run: |
-          mkdir -p ./public/docs
-          cp -r /tmp/docs/public/* ./public/docs/
+      # TODO: Uncomment when bhc.raskell.io-docs repo exists
+      # - name: Clone docs repo
+      #   run: git clone --depth 1 --recurse-submodules https://github.com/raskell-io/bhc.raskell.io-docs.git /tmp/docs
+      #
+      # - name: Build docs
+      #   run: |
+      #     cd /tmp/docs
+      #     mise install
+      #     mise run build
+      #
+      # - name: Copy docs to public
+      #   run: |
+      #     mkdir -p ./public/docs
+      #     cp -r /tmp/docs/public/* ./public/docs/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
