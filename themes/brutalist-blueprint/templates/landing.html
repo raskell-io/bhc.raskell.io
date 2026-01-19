@@ -257,9 +257,17 @@
     function generateSectionDividers() {
         const container = document.getElementById('section-dividers');
         const sections = document.querySelectorAll('[data-section]');
+        const railsContainer = document.querySelector('.landing-rails');
 
         // Clear existing dividers
         container.innerHTML = '';
+
+        // Get rail positions (aligned with content container)
+        const railsRect = railsContainer.getBoundingClientRect();
+        const leftRail = document.querySelector('.landing-rail--left');
+        const rightRail = document.querySelector('.landing-rail--right');
+        const leftRailX = leftRail.getBoundingClientRect().left;
+        const rightRailX = rightRail.getBoundingClientRect().left;
 
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
@@ -272,8 +280,8 @@
             startDivider.className = 'section-divider';
             startDivider.style.top = topPos + 'px';
             startDivider.innerHTML = `
-                <div class="section-divider__diamond section-divider__diamond--left"></div>
-                <div class="section-divider__diamond section-divider__diamond--right"></div>
+                <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
+                <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
             `;
             container.appendChild(startDivider);
 
@@ -282,8 +290,8 @@
             endDivider.className = 'section-divider';
             endDivider.style.top = bottomPos + 'px';
             endDivider.innerHTML = `
-                <div class="section-divider__diamond section-divider__diamond--left"></div>
-                <div class="section-divider__diamond section-divider__diamond--right"></div>
+                <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
+                <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
             `;
             container.appendChild(endDivider);
         });

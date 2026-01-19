@@ -7,7 +7,8 @@
 // Layout Grid - Background grid pattern with side rails
 // -----------------------------------------------------------------------------
 $grid-size: 10px;
-$rail-offset: 40px; // distance from viewport edge
+$content-max-width: 1200px;
+$content-padding: 2rem;
 
 .landing {
   min-height: 100vh;
@@ -16,16 +17,19 @@ $rail-offset: 40px; // distance from viewport edge
   overflow-x: hidden;
 }
 
-// Side rails - vertical lines on left and right
+// Side rails - vertical lines aligned with content edges
 .landing-rails {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: $content-max-width;
+  padding: 0 $content-padding;
   pointer-events: none;
   z-index: 1;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .landing-rail {
@@ -36,11 +40,11 @@ $rail-offset: 40px; // distance from viewport edge
   background: var(--color-grid);
 
   &--left {
-    left: $rail-offset;
+    left: $content-padding;
   }
 
   &--right {
-    right: $rail-offset;
+    right: $content-padding;
   }
 }
 
@@ -55,7 +59,7 @@ $rail-offset: 40px; // distance from viewport edge
   z-index: 2;
 }
 
-// Diamond markers at section boundaries
+// Diamond markers at section boundaries (positioned via JS)
 .section-divider__diamond {
   position: absolute;
   width: 10px;
@@ -64,14 +68,6 @@ $rail-offset: 40px; // distance from viewport edge
   border: 1px solid var(--color-grid);
   transform: translateY(-50%) rotate(45deg);
   top: 0;
-
-  &--left {
-    left: calc(#{$rail-offset} - 5px);
-  }
-
-  &--right {
-    right: calc(#{$rail-offset} - 5px);
-  }
 }
 
 .landing__container {
