@@ -1,0 +1,173 @@
+// =============================================================================
+// Navigation Component
+// Brutalist style with grid lines and monospace
+// =============================================================================
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-grid);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 60px;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--color-heading);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+.header__brand-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: var(--color-text);
+    border-color: var(--color-grid);
+    background: var(--color-bg-surface);
+  }
+
+  &--active {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-grid-subtle);
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: var(--color-text);
+    border-color: var(--color-grid);
+    background: var(--color-bg-surface);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// Theme toggle - brutalist square button
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-grid-subtle);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: var(--color-text);
+    border-color: var(--color-grid);
+    background: var(--color-bg-surface);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// Light theme adjustments
+[data-theme="light"] {
+  .header {
+    background: var(--color-bg);
+  }
+
+  .header__link {
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+
+  .header__icon-link,
+  .theme-toggle {
+    color: var(--color-text-muted);
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+  .header__inner {
+    padding: 0 1rem;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__link {
+    padding: 0.5rem 0.75rem;
+    font-size: var(--text-xs);
+  }
+}

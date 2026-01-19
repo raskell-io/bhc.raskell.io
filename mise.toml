@@ -1,0 +1,18 @@
+[tools]
+zola = "0.22"
+
+[tasks.serve]
+description = "Start local development server"
+run = "zola serve --open"
+
+[tasks.build]
+description = "Build the site for production"
+run = "zola build"
+
+[tasks.check]
+description = "Check site without rendering"
+run = "zola check"
+
+[tasks.clean]
+description = "Remove build artifacts"
+run = "rm -rf public"

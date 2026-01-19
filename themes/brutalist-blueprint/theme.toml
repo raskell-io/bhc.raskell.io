@@ -1,0 +1,16 @@
+# Brutalist Blueprint Theme
+# A technical, monospace-heavy aesthetic with grid lines and borders
+
+name = "brutalist-blueprint"
+description = "A brutalist tech blueprint theme with monospace fonts and grid aesthetics"
+license = "MIT"
+homepage = "https://github.com/raskell-io/bhc.raskell.io"
+min_version = "0.19.0"
+demo = "https://bhc.raskell.io"
+
+[author]
+name = "raskell.io"
+homepage = "https://raskell.io"
+
+[extra]
+# Theme supports both light and dark modes
