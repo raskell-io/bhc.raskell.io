@@ -4,14 +4,18 @@
 // =============================================================================
 
 // -----------------------------------------------------------------------------
-// Layout Grid - Background grid pattern
+// Layout Grid - Background grid pattern with side rails
 // -----------------------------------------------------------------------------
+$grid-size: 20px;
+$rail-offset: 40px; // distance from viewport edge
+
 .landing {
   min-height: 100vh;
   padding-top: 60px; // header height
   position: relative;
+  overflow-x: hidden;
 
-  // Grid background pattern
+  // Grid background pattern (smaller squares)
   &::before {
     content: "";
     position: fixed;
@@ -22,11 +26,50 @@
     background-image:
       linear-gradient(var(--color-grid-subtle) 1px, transparent 1px),
       linear-gradient(90deg, var(--color-grid-subtle) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-size: $grid-size $grid-size;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.4;
     z-index: -1;
   }
+}
+
+// Side rails with diamonds at intersections
+.landing-rails {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.landing-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-grid);
+
+  &--left {
+    left: $rail-offset;
+  }
+
+  &--right {
+    right: $rail-offset;
+  }
+}
+
+// Diamond markers at grid intersections (positioned via JS)
+.landing-rail__diamond {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-grid);
+  transform: translateX(-50%) rotate(45deg);
+  left: 0;
 }
 
 .landing__container {

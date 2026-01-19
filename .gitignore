@@ -3,3 +3,4 @@ public/
 *.swp
 *.swo
 .claude/
+.mise.toml

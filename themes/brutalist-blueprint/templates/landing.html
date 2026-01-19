@@ -3,6 +3,12 @@
 {% block title %}{{ config.title }} - {{ config.extra.product.tagline }}{% endblock %}
 
 {% block content %}
+<!-- Side rails with diamond markers -->
+<div class="landing-rails" id="landing-rails">
+    <div class="landing-rail landing-rail--left" id="rail-left"></div>
+    <div class="landing-rail landing-rail--right" id="rail-right"></div>
+</div>
+
 <div class="landing">
     <div class="landing__container">
 
@@ -243,5 +249,38 @@
     document.querySelectorAll('.benchmark-bar').forEach(bar => {
         observer.observe(bar);
     });
+
+    // Generate diamond markers on rails
+    function generateDiamonds() {
+        const gridSize = 20; // Must match SCSS $grid-size
+        const railLeft = document.getElementById('rail-left');
+        const railRight = document.getElementById('rail-right');
+        const pageHeight = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight
+        );
+        const numDiamonds = Math.ceil(pageHeight / gridSize) + 1;
+
+        // Clear existing diamonds
+        railLeft.innerHTML = '';
+        railRight.innerHTML = '';
+
+        // Create diamonds for both rails
+        for (let i = 0; i <= numDiamonds; i++) {
+            const diamondLeft = document.createElement('div');
+            diamondLeft.className = 'landing-rail__diamond';
+            diamondLeft.style.top = (i * gridSize - 4) + 'px';
+            railLeft.appendChild(diamondLeft);
+
+            const diamondRight = document.createElement('div');
+            diamondRight.className = 'landing-rail__diamond';
+            diamondRight.style.top = (i * gridSize - 4) + 'px';
+            railRight.appendChild(diamondRight);
+        }
+    }
+
+    // Generate on load and resize
+    generateDiamonds();
+    window.addEventListener('resize', generateDiamonds);
 </script>
 {% endblock %}

@@ -2,8 +2,8 @@
 # https://www.getzola.org/documentation/getting-started/configuration/
 
 base_url = "https://bhc.raskell.io"
-title = "bhc"
-description = "A modern Haskell compiler with first-class tooling, written in Rust."
+title = "BHC - Basel Haskell Compiler"
+description = "An alternative compiler for Haskell: compatibility-first, with a modern runtime, multiple targets, and opt-in extensions."
 default_language = "en"
 theme = "brutalist-blueprint"
 
@@ -42,29 +42,29 @@ github_repo = "https://github.com/raskell-io/bhc"
 docs_url = "https://bhc.raskell.io/docs/"
 
 # SEO metadata
-keywords = "haskell, compiler, rust, ghc, fast, bhc, modern"
+keywords = "haskell, compiler, alternative, ghc compatible, runtime profiles, wasm, numeric, tensor, structured concurrency"
 
 # Social links
 github = "https://github.com/raskell-io/bhc"
 
 # Product configuration
 [extra.product]
-tagline = "Compile Haskell. Fast."
-tagline_sub = "Modern. Modular. Minimal."
-subtitle = "A fresh take on Haskell compilation. Incremental builds, clear errors, zero legacy baggage."
+tagline = "Basel Haskell Compiler"
+tagline_sub = "Compatibility-first. Profiles for performance."
+subtitle = "An alternative compiler for Haskell with a modern runtime, multiple targets, and opt-in extensions."
 gradient_title = true
 badge = "alpha"
 badge_url = "https://github.com/raskell-io/bhc"
 features_title = "[CAPABILITIES]"
-features_subtitle = "What bhc brings to the table"
-footer_tagline = "The next-gen Haskell compiler."
-footer_note = "Built with love by <a href='https://raskell.io'>raskell.io</a>"
+features_subtitle = "What BHC brings to the table"
+footer_tagline = "An alternative compiler for Haskell."
+footer_note = "BHC is an independent compiler implementation. Haskell is a community language; BHC does not define the Haskell standard."
 
 # Install methods for dropdown
 [[extra.product.install_methods]]
 id = "script"
 label = "Script"
-command = "curl -fsSL https://raw.githubusercontent.com/raskell-io/bhc/main/install.sh | sh"
+command = "curl -fsSL https://bhc.raskell.io/install.sh | sh"
 icon = """<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m10 8 4 4-4 4"/></svg>"""
 default = true
 
@@ -75,60 +75,38 @@ command = "cargo install bhc"
 icon = """<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linejoin="round" stroke-width="1"><path stroke-linecap="round" d="M1.5 7L8 10.5L14.5 7m-10-2.5l3.503 2L14.498 3M4.5 5.5v7m3.5-6V14"/><path stroke-linecap="round" d="M8.003 3L11.5 4.5v8"/><path stroke-linecap="square" d="M1.5 6.984V11l6.503 3.5L14.5 11V3L11 1.5l-6.5 3v1z"/></g></svg>"""
 
 [[extra.product.features]]
-title = "Incremental compilation"
-description = "Only recompile what changed. Module-level dependency tracking means sub-second rebuilds on large codebases."
-icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>"""
-
-[[extra.product.features]]
-title = "Parallel by default"
-description = "Saturate all cores automatically. No flags to remember. Compilation scales with your hardware."
-icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>"""
-
-[[extra.product.features]]
-title = "Readable errors"
-description = "Errors that explain what went wrong and suggest fixes. No more deciphering GHC's cryptic messages."
-icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>"""
-
-[[extra.product.features]]
-title = "Native codegen"
-description = "Direct compilation to machine code via LLVM or Cranelift. No intermediate C. Faster builds, smaller binaries."
-icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>"""
-
-[[extra.product.features]]
-title = "GHC compatible"
-description = "Use existing .cabal files and Hackage packages. Migrate incrementally. Your code works unchanged."
+title = "Compatibility-first"
+description = "Targets Haskell 2010 and selected GHC editions. Use existing .cabal files and Hackage packages. Your code works unchanged."
 icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg>"""
 
 [[extra.product.features]]
-title = "Language server"
-description = "Built-in LSP with instant feedback. Hover, go-to-definition, completions. IDE experience out of the box."
+title = "Runtime profiles"
+description = "Same source language, different runtime contracts. Choose default, server, numeric, or edge profiles per package."
+icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>"""
+
+[[extra.product.features]]
+title = "Numeric performance"
+description = "Tensor-native pipeline, guaranteed fusion patterns, SIMD lowering. Predictable performance for numeric workloads."
+icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>"""
+
+[[extra.product.features]]
+title = "Multiple targets"
+description = "Native compilation for servers, WASI/WASM for sandboxed compute and edge. Haskell doesn't mean one runtime on one OS."
+icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>"""
+
+[[extra.product.features]]
+title = "Structured concurrency"
+description = "Server profile brings cancellation, deadlines, and scoping. Observability hooks for tracing and debugging."
+icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>"""
+
+[[extra.product.features]]
+title = "Opt-in extensions"
+description = "BHC innovations are explicit. Enable BHC2026 bundle or individual BHC.* extensions. Stay portable or specialize."
 icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>"""
 
 # Benchmark highlights
 [extra.product.benchmarks]
-enabled = true
-title = "[BENCHMARKS]"
-subtitle = "Compilation speed on real-world projects"
-cta_text = "Full methodology"
-cta_url = "/benchmarks/"
-
-[[extra.product.benchmarks.stats]]
-label = "Clean build"
-native_label = "bhc"
-native = "12.4s"
-baseline_label = "ghc"
-cabal = "47.2s"
-speedup = "3.8x"
-hx_percent = "26"
-
-[[extra.product.benchmarks.stats]]
-label = "Incremental"
-native_label = "bhc"
-native = "0.3s"
-baseline_label = "ghc"
-cabal = "4.1s"
-speedup = "13.7x"
-hx_percent = "7"
+enabled = false
 
 # Social links
 [extra.social]
@@ -140,17 +118,17 @@ discord = "https://discord.gg/raskell"
 [[extra.product.footer_links]]
 title = "Documentation"
 [[extra.product.footer_links.links]]
-text = "Getting Started"
-url = "/docs/getting-started/"
+text = "Get Started"
+url = "/get-started/"
 [[extra.product.footer_links.links]]
-text = "Installation"
-url = "/docs/installation/"
+text = "Compatibility"
+url = "/compatibility/"
 [[extra.product.footer_links.links]]
-text = "CLI Reference"
-url = "/docs/cli/"
+text = "Profiles"
+url = "/profiles/"
 [[extra.product.footer_links.links]]
-text = "Configuration"
-url = "/docs/configuration/"
+text = "Numeric"
+url = "/numeric/"
 
 [[extra.product.footer_links]]
 title = "Resources"
@@ -159,12 +137,11 @@ text = "GitHub"
 url = "https://github.com/raskell-io/bhc"
 external = true
 [[extra.product.footer_links.links]]
+text = "Roadmap"
+url = "/roadmap/"
+[[extra.product.footer_links.links]]
 text = "Changelog"
 url = "https://github.com/raskell-io/bhc/blob/main/CHANGELOG.md"
-external = true
-[[extra.product.footer_links.links]]
-text = "Contributing"
-url = "https://github.com/raskell-io/bhc/blob/main/CONTRIBUTING.md"
 external = true
 
 [[extra.product.footer_links]]
@@ -188,22 +165,28 @@ title = "Legal"
 text = "License (MIT)"
 url = "https://github.com/raskell-io/bhc/blob/main/LICENSE"
 external = true
-[[extra.product.footer_links.links]]
-text = "Privacy Policy"
-url = "/privacy/"
-[[extra.product.footer_links.links]]
-text = "Terms of Service"
-url = "/terms/"
 
 # Navigation
 [[extra.nav_links]]
-name = "Features"
-url = "/features/"
+name = "Get Started"
+url = "/get-started/"
 
 [[extra.nav_links]]
-name = "Docs"
-url = "/docs/"
+name = "Compatibility"
+url = "/compatibility/"
 
 [[extra.nav_links]]
-name = "Benchmarks"
-url = "/benchmarks/"
+name = "Profiles"
+url = "/profiles/"
+
+[[extra.nav_links]]
+name = "Numeric"
+url = "/numeric/"
+
+[[extra.nav_links]]
+name = "Targets"
+url = "/targets/"
+
+[[extra.nav_links]]
+name = "About"
+url = "/about/"

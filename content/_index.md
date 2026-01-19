@@ -1,22 +1,48 @@
 +++
-title = "bhc"
+title = "BHC - Basel Haskell Compiler"
 template = "landing.html"
 +++
 
-## Get Started
+## Quick Start
 
-Install bhc and compile your first Haskell project.
+Install BHC and compile your existing Haskell project.
 
 ```bash
-# Install bhc
-curl -fsSL https://raw.githubusercontent.com/raskell-io/bhc/main/install.sh | sh
+# Install BHC
+curl -fsSL https://bhc.raskell.io/install.sh | sh
 
-# Compile a project
-cd my-haskell-project
-bhc build
+# Compile in Haskell 2010 mode
+bhc --edition=Haskell2010 Main.hs
 
-# Run it
-bhc run
+# Or use GHC2024 compatibility
+bhc --edition=GHC2024 Main.hs
+
+# Use numeric profile for performance-critical code
+bhc --profile=numeric Main.hs
 ```
 
-That's it. Fast, incremental compilation with zero configuration.
+BHC aims to compile existing Haskell code with minimal friction. Innovations are opt-in.
+
+---
+
+## FAQ
+
+**Is BHC a new language?**
+
+No. BHC is a compiler for Haskell. It targets Haskell compatibility by default, and offers opt-in BHC extensions and runtime profiles.
+
+**Will this split the community?**
+
+The goal is the opposite. BHC tries to broaden deployment options and improve performance while staying compatible and upstreaming mature ideas.
+
+**What is BHC2026?**
+
+An opt-in bundle of BHC-specific extensions and profiles. It's not an official Haskell standard; it's an implementation-defined bundle, like a curated mode.
+
+**Can I write portable code?**
+
+Yes. Avoid `BHC*` extensions and stick to supported compatibility modes.
+
+**Why a new runtime?**
+
+Runtime systems can differ between implementations even when the surface language is the same. BHC RTS focuses on predictability, observability, and profile-driven performance.
