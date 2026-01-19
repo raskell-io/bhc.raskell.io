@@ -36,6 +36,9 @@ anchors = "on"
 # Theme mode
 mode = "product"
 
+# Brand
+brand_short = "BHC"
+
 # Site metadata
 author = "raskell.io"
 github_repo = "https://github.com/raskell-io/bhc"
