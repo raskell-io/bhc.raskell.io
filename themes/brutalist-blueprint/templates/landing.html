@@ -25,6 +25,16 @@
                     {% endif %}
                 </div>
                 <div class="hero__content">
+                    <!-- Haskell Logo -->
+                    <div class="hero__logo" aria-hidden="true">
+                        <svg viewBox="0 0 481 340" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 340L113.333 170L0 0H56.667L170 170L56.667 340H0Z" fill="currentColor"/>
+                            <path d="M113.333 340L226.667 170L113.333 0H170L340 226.667V340H283.333V256.667L198.333 340H113.333Z" fill="currentColor"/>
+                            <path d="M340 170L283.333 85H396.667L453.333 170L396.667 255H283.333L340 170Z" fill="currentColor"/>
+                            <path d="M340 0H396.667L481 113.333V0H424.333H340Z" fill="currentColor"/>
+                            <path d="M340 340H396.667L481 226.667V340H424.333H340Z" fill="currentColor"/>
+                        </svg>
+                    </div>
                     <h1 class="hero__title hero__title--gradient">
                         {{ config.extra.product.tagline }}
                     </h1>
@@ -96,8 +106,8 @@
                     {% endfor %}
                 </div>
                 <div class="features__cta">
-                    <a href="/features/" class="btn btn--secondary">
-                        All Features
+                    <a href="/compatibility/" class="btn btn--secondary">
+                        Compatibility Charter
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"/>
                             <polyline points="12 5 19 12 12 19"/>

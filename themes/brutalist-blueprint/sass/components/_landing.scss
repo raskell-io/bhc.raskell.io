@@ -165,6 +165,24 @@ $content-padding: 2rem;
 
 .hero__content {
   padding: 4rem 3rem;
+  position: relative;
+}
+
+// Haskell logo in hero
+.hero__logo {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 120px;
+  height: auto;
+  color: var(--color-grid);
+  opacity: 0.15;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .hero__title {
@@ -620,6 +638,144 @@ $content-padding: 2rem;
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
   margin-bottom: 1.5rem;
+}
+
+// Page content (markdown rendered)
+.content-section__body--page {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    color: var(--color-heading);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+    margin-top: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-grid);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    margin-top: 3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-grid-subtle);
+  }
+
+  h3 {
+    font-size: var(--text-xl);
+  }
+
+  h4 {
+    font-size: var(--text-lg);
+  }
+
+  p {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: 1rem;
+  }
+
+  ul, ol {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+
+    &:hover {
+      border-bottom-color: var(--color-accent);
+    }
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    background: var(--color-bg-alt);
+    padding: 0.2rem 0.4rem;
+    border: 1px solid var(--color-grid);
+  }
+
+  pre {
+    margin: 1.5rem 0;
+    border: 1px solid var(--color-grid);
+    overflow-x: auto;
+
+    code {
+      display: block;
+      padding: 1rem;
+      background: var(--color-bg-alt);
+      border: none;
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+    }
+  }
+
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-bg-alt);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+  }
+
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: 1px solid var(--color-grid);
+  }
+
+  th {
+    background: var(--color-bg-alt);
+    font-weight: var(--weight-semibold);
+    color: var(--color-heading);
+  }
+
+  td {
+    color: var(--color-text-secondary);
+  }
+
+  hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid var(--color-grid);
+  }
+
+  strong {
+    font-weight: var(--weight-semibold);
+    color: var(--color-text);
+  }
+
+  em {
+    font-style: italic;
+  }
 }
 
 // Code block in content

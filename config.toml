@@ -39,7 +39,7 @@ mode = "product"
 # Site metadata
 author = "raskell.io"
 github_repo = "https://github.com/raskell-io/bhc"
-docs_url = "https://bhc.raskell.io/docs/"
+docs_url = "/get-started/"
 
 # SEO metadata
 keywords = "haskell, compiler, alternative, ghc compatible, runtime profiles, wasm, numeric, tensor, structured concurrency"
