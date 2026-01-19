@@ -3,17 +3,20 @@
 {% block title %}{{ config.title }} - {{ config.extra.product.tagline }}{% endblock %}
 
 {% block content %}
-<!-- Side rails with diamond markers -->
-<div class="landing-rails" id="landing-rails">
-    <div class="landing-rail landing-rail--left" id="rail-left"></div>
-    <div class="landing-rail landing-rail--right" id="rail-right"></div>
+<!-- Side rails -->
+<div class="landing-rails">
+    <div class="landing-rail landing-rail--left"></div>
+    <div class="landing-rail landing-rail--right"></div>
 </div>
+
+<!-- Section dividers container (populated by JS) -->
+<div id="section-dividers"></div>
 
 <div class="landing">
     <div class="landing__container">
 
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" data-section="hero">
             <div class="hero__frame">
                 <div class="hero__header">
                     <span class="hero__label">[PRODUCT]</span>
@@ -72,7 +75,7 @@
 
         <!-- Features Section -->
         {% if config.extra.product.features %}
-        <section class="features">
+        <section class="features" data-section="features">
             <div class="features__frame">
                 <div class="features__header">
                     <span class="features__label">{{ config.extra.product.features_title | default(value="[CAPABILITIES]") }}</span>
@@ -107,7 +110,7 @@
 
         <!-- Benchmarks Section -->
         {% if config.extra.product.benchmarks.enabled %}
-        <section class="benchmarks">
+        <section class="benchmarks" data-section="benchmarks">
             <div class="benchmarks__frame">
                 <div class="benchmarks__header">
                     <span class="benchmarks__label">{{ config.extra.product.benchmarks.title | default(value="[BENCHMARKS]") }}</span>
@@ -159,7 +162,7 @@
 
         <!-- Content Section (from markdown) -->
         {% if section.content %}
-        <section class="content-section">
+        <section class="content-section" data-section="content">
             <div class="content-section__frame">
                 <div class="content-section__header">
                     <span class="content-section__label">[QUICKSTART]</span>
@@ -172,7 +175,7 @@
         {% endif %}
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer" data-section="footer">
             <div class="footer__container">
                 <div class="footer__grid">
                     <div class="footer__brand">
@@ -250,37 +253,46 @@
         observer.observe(bar);
     });
 
-    // Generate diamond markers on rails
-    function generateDiamonds() {
-        const gridSize = 20; // Must match SCSS $grid-size
-        const railLeft = document.getElementById('rail-left');
-        const railRight = document.getElementById('rail-right');
-        const pageHeight = Math.max(
-            document.body.scrollHeight,
-            document.documentElement.scrollHeight
-        );
-        const numDiamonds = Math.ceil(pageHeight / gridSize) + 1;
+    // Generate section dividers with diamonds at section boundaries
+    function generateSectionDividers() {
+        const container = document.getElementById('section-dividers');
+        const sections = document.querySelectorAll('[data-section]');
 
-        // Clear existing diamonds
-        railLeft.innerHTML = '';
-        railRight.innerHTML = '';
+        // Clear existing dividers
+        container.innerHTML = '';
 
-        // Create diamonds for both rails
-        for (let i = 0; i <= numDiamonds; i++) {
-            const diamondLeft = document.createElement('div');
-            diamondLeft.className = 'landing-rail__diamond';
-            diamondLeft.style.top = (i * gridSize - 4) + 'px';
-            railLeft.appendChild(diamondLeft);
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const topPos = rect.top + scrollTop;
+            const bottomPos = rect.bottom + scrollTop;
 
-            const diamondRight = document.createElement('div');
-            diamondRight.className = 'landing-rail__diamond';
-            diamondRight.style.top = (i * gridSize - 4) + 'px';
-            railRight.appendChild(diamondRight);
-        }
+            // Create divider at section start
+            const startDivider = document.createElement('div');
+            startDivider.className = 'section-divider';
+            startDivider.style.top = topPos + 'px';
+            startDivider.innerHTML = `
+                <div class="section-divider__diamond section-divider__diamond--left"></div>
+                <div class="section-divider__diamond section-divider__diamond--right"></div>
+            `;
+            container.appendChild(startDivider);
+
+            // Create divider at section end
+            const endDivider = document.createElement('div');
+            endDivider.className = 'section-divider';
+            endDivider.style.top = bottomPos + 'px';
+            endDivider.innerHTML = `
+                <div class="section-divider__diamond section-divider__diamond--left"></div>
+                <div class="section-divider__diamond section-divider__diamond--right"></div>
+            `;
+            container.appendChild(endDivider);
+        });
     }
 
     // Generate on load and resize
-    generateDiamonds();
-    window.addEventListener('resize', generateDiamonds);
+    generateSectionDividers();
+    window.addEventListener('resize', generateSectionDividers);
+    // Also regenerate after fonts load (can affect section heights)
+    document.fonts.ready.then(generateSectionDividers);
 </script>
 {% endblock %}
