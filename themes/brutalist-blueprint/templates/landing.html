@@ -17,6 +17,11 @@
 
         <!-- Hero Section -->
         <section class="hero" data-section="hero">
+            <!-- Wireframe animation canvas -->
+            <canvas id="wireframe-canvas" class="hero__canvas"></canvas>
+            <!-- Film grain overlay -->
+            <div class="hero__grain"></div>
+
             <div class="hero__frame">
                 <div class="hero__header">
                     <span class="hero__label">[PRODUCT]</span>
@@ -304,5 +309,167 @@
     window.addEventListener('resize', generateSectionDividers);
     // Also regenerate after fonts load (can affect section heights)
     document.fonts.ready.then(generateSectionDividers);
+
+    // ==========================================================================
+    // Wireframe Torus Animation (Demoscene style)
+    // ==========================================================================
+    (function() {
+        const canvas = document.getElementById('wireframe-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let animationId;
+        let time = 0;
+
+        // Torus parameters
+        const R = 150; // Major radius
+        const r = 60;  // Minor radius
+        const uSegments = 24;
+        const vSegments = 12;
+
+        // Rotation angles
+        let rotX = 0;
+        let rotY = 0;
+        let rotZ = 0;
+
+        function resize() {
+            const hero = canvas.parentElement;
+            width = hero.offsetWidth;
+            height = hero.offsetHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        // 3D rotation matrices
+        function rotateX(p, angle) {
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            return [
+                p[0],
+                p[1] * cos - p[2] * sin,
+                p[1] * sin + p[2] * cos
+            ];
+        }
+
+        function rotateY(p, angle) {
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            return [
+                p[0] * cos + p[2] * sin,
+                p[1],
+                -p[0] * sin + p[2] * cos
+            ];
+        }
+
+        function rotateZ(p, angle) {
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            return [
+                p[0] * cos - p[1] * sin,
+                p[0] * sin + p[1] * cos,
+                p[2]
+            ];
+        }
+
+        // Project 3D to 2D with perspective
+        function project(p) {
+            const fov = 400;
+            const z = p[2] + 400;
+            const scale = fov / z;
+            return [
+                p[0] * scale + width / 2,
+                p[1] * scale + height / 2,
+                z
+            ];
+        }
+
+        // Generate torus point
+        function torusPoint(u, v) {
+            const x = (R + r * Math.cos(v)) * Math.cos(u);
+            const y = (R + r * Math.cos(v)) * Math.sin(u);
+            const z = r * Math.sin(v);
+            return [x, y, z];
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Get line color from CSS
+            const style = getComputedStyle(document.documentElement);
+            const lineColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+
+            ctx.strokeStyle = lineColor;
+            ctx.lineWidth = 1;
+            ctx.globalAlpha = 0.4;
+
+            const points = [];
+
+            // Generate all points
+            for (let i = 0; i <= uSegments; i++) {
+                points[i] = [];
+                const u = (i / uSegments) * Math.PI * 2;
+                for (let j = 0; j <= vSegments; j++) {
+                    const v = (j / vSegments) * Math.PI * 2;
+                    let p = torusPoint(u, v);
+
+                    // Apply rotations
+                    p = rotateX(p, rotX);
+                    p = rotateY(p, rotY);
+                    p = rotateZ(p, rotZ);
+
+                    // Project to 2D
+                    points[i][j] = project(p);
+                }
+            }
+
+            // Draw wireframe
+            ctx.beginPath();
+
+            // Draw u-lines (rings)
+            for (let i = 0; i < uSegments; i++) {
+                for (let j = 0; j < vSegments; j++) {
+                    const p1 = points[i][j];
+                    const p2 = points[i][j + 1];
+                    ctx.moveTo(p1[0], p1[1]);
+                    ctx.lineTo(p2[0], p2[1]);
+                }
+            }
+
+            // Draw v-lines (tubes)
+            for (let j = 0; j <= vSegments; j++) {
+                for (let i = 0; i < uSegments; i++) {
+                    const p1 = points[i][j];
+                    const p2 = points[i + 1][j];
+                    ctx.moveTo(p1[0], p1[1]);
+                    ctx.lineTo(p2[0], p2[1]);
+                }
+            }
+
+            ctx.stroke();
+
+            // Update rotation with varying speeds for organic feel
+            time += 0.016;
+            rotX = Math.sin(time * 0.3) * 0.5 + time * 0.2;
+            rotY = time * 0.4;
+            rotZ = Math.cos(time * 0.2) * 0.3;
+
+            animationId = requestAnimationFrame(draw);
+        }
+
+        // Start animation
+        resize();
+        window.addEventListener('resize', resize);
+        draw();
+
+        // Pause when not visible
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                cancelAnimationFrame(animationId);
+            } else {
+                draw();
+            }
+        });
+    })();
 </script>
 {% endblock %}
