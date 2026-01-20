@@ -73,7 +73,7 @@ badge = "alpha"
 badge_url = "https://github.com/raskell-io/bhc"
 features_title = "[ CAPABILITIES ]"
 features_subtitle = "What BHC brings to the table"
-footer_tagline = "An alternative compiler for Haskell."
+footer_tagline = "Functional. Portable. Fast. Haskell that ships."
 footer_note = "© 2025 raskell.io. Released under the MIT License."
 
 # Install methods for dropdown
