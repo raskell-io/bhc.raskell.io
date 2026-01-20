@@ -1,12 +1,101 @@
 <!DOCTYPE html>
-<html lang="{{ config.default_language | default(value='en') }}" data-theme="dark">
+<html lang="{{ config.default_language | default(value='en') }}" prefix="og: https://ogp.me/ns#" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    <meta name="color-scheme" content="dark light">
+
+    <!-- Primary Meta Tags -->
+    <title>{% block title %}{{ page.title | default(value=section.title) | default(value=config.title) }}{% endblock %} | {{ config.title }}</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% elif section.description is defined and section.description %}
+    <meta name="description" content="{{ section.description }}">
+    {% else %}
     <meta name="description" content="{{ config.description }}">
-    {% if config.extra.keywords %}
+    {% endif %}
+    {% if page.taxonomies.tags is defined and page.taxonomies.tags %}
+    <meta name="keywords" content="{{ page.taxonomies.tags | join(sep=', ') }}">
+    {% elif config.extra.keywords is defined %}
     <meta name="keywords" content="{{ config.extra.keywords }}">
+    {% endif %}
+    {% if config.extra.author is defined %}
+    <meta name="author" content="{{ config.extra.author }}">
+    {% endif %}
+
+    <!-- Search Engine Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- Canonical URL -->
+    {% if current_url is defined %}
+    <link rel="canonical" href="{{ current_url | safe }}">
+    {% else %}
+    <link rel="canonical" href="{{ config.base_url | safe }}">
+    {% endif %}
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="{% if page %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ current_url | default(value=config.base_url) | safe }}">
+    {% if page.title is defined %}
+    <meta property="og:title" content="{{ page.title }}">
+    {% elif section.title is defined %}
+    <meta property="og:title" content="{{ section.title }}">
+    {% else %}
+    <meta property="og:title" content="{{ config.title }}">
+    {% endif %}
+    {% if page.description is defined %}
+    <meta property="og:description" content="{{ page.description }}">
+    {% elif section.description is defined %}
+    <meta property="og:description" content="{{ section.description }}">
+    {% else %}
+    <meta property="og:description" content="{{ config.description }}">
+    {% endif %}
+    {% if config.extra.og_image is defined %}
+    <meta property="og:image" content="{{ get_url(path=config.extra.og_image) | safe }}">
+    <meta property="og:image:width" content="{{ config.extra.og_image_width | default(value=1200) }}">
+    <meta property="og:image:height" content="{{ config.extra.og_image_height | default(value=630) }}">
+    <meta property="og:image:alt" content="{{ config.extra.og_image_alt | default(value=config.title) }}">
+    {% endif %}
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:locale" content="{{ config.default_language | default(value='en') | replace(from='-', to='_') }}">
+    {% if page %}
+    {% if page.date is defined and page.date %}
+    <meta property="article:published_time" content="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S') }}+00:00">
+    {% endif %}
+    {% if page.updated is defined and page.updated %}
+    <meta property="article:modified_time" content="{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S') }}+00:00">
+    {% endif %}
+    {% if page.taxonomies.tags is defined %}
+    {% for tag in page.taxonomies.tags %}
+    <meta property="article:tag" content="{{ tag }}">
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ current_url | default(value=config.base_url) | safe }}">
+    {% if page.title is defined %}
+    <meta name="twitter:title" content="{{ page.title }}">
+    {% elif section.title is defined %}
+    <meta name="twitter:title" content="{{ section.title }}">
+    {% else %}
+    <meta name="twitter:title" content="{{ config.title }}">
+    {% endif %}
+    {% if page.description is defined %}
+    <meta name="twitter:description" content="{{ page.description }}">
+    {% elif section.description is defined %}
+    <meta name="twitter:description" content="{{ section.description }}">
+    {% else %}
+    <meta name="twitter:description" content="{{ config.description }}">
+    {% endif %}
+    {% if config.extra.og_image is defined %}
+    <meta name="twitter:image" content="{{ get_url(path=config.extra.og_image) | safe }}">
+    <meta name="twitter:image:alt" content="{{ config.extra.og_image_alt | default(value=config.title) }}">
+    {% endif %}
+    {% if config.extra.twitter_handle is defined %}
+    <meta name="twitter:site" content="{{ config.extra.twitter_handle }}">
     {% endif %}
 
     <!-- Fonts: Inter for display, JetBrains Mono for body -->
@@ -16,6 +105,154 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ get_url(path='main.css') | safe }}">
+
+    <!-- Favicon -->
+    {% if config.extra.favicon is defined %}
+    <link rel="icon" href="{{ get_url(path=config.extra.favicon) | safe }}" sizes="48x48">
+    {% endif %}
+    {% if config.extra.favicon_png is defined %}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path=config.extra.favicon_png) | safe }}">
+    {% endif %}
+    {% if config.extra.icon_192 is defined %}
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path=config.extra.icon_192) | safe }}">
+    {% endif %}
+    {% if config.extra.apple_touch_icon is defined %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path=config.extra.apple_touch_icon) | safe }}">
+    {% endif %}
+    {% if config.extra.webmanifest is defined %}
+    <link rel="manifest" href="{{ get_url(path=config.extra.webmanifest) | safe }}">
+    {% endif %}
+
+    <!-- Feed -->
+    {% if config.generate_feeds %}
+    <link rel="alternate" type="application/atom+xml" title="{{ config.title }} Feed" href="{{ get_url(path='atom.xml') | safe }}">
+    {% endif %}
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "{{ config.base_url | safe }}/#website",
+                "url": "{{ config.base_url | safe }}",
+                "name": "{{ config.title }}",
+                "description": "{{ config.description }}",
+                "publisher": {
+                    "@id": "{{ config.base_url | safe }}/#organization"
+                },
+                "inLanguage": "{{ config.default_language | default(value='en') }}",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "{{ config.base_url | safe }}/?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "{{ config.base_url | safe }}/#software",
+                "name": "{{ config.extra.brand_short | default(value=config.title) }}",
+                "description": "{{ config.description }}",
+                "url": "{{ config.base_url | safe }}",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Linux, macOS, Windows, WASM",
+                {% if config.extra.product.badge is defined %}
+                "softwareVersion": "{{ config.extra.product.badge }}",
+                {% endif %}
+                "downloadUrl": "{{ config.extra.github | default(value='') }}/releases",
+                "installUrl": "{{ config.base_url | safe }}/get-started/",
+                {% if config.extra.og_image is defined %}
+                "screenshot": "{{ get_url(path=config.extra.og_image) | safe }}",
+                {% endif %}
+                "author": {
+                    "@id": "{{ config.base_url | safe }}/#organization"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "license": "https://opensource.org/licenses/MIT",
+                {% if config.extra.programming_language is defined %}
+                "programmingLanguage": "{{ config.extra.programming_language }}",
+                {% else %}
+                "programmingLanguage": "Haskell",
+                {% endif %}
+                "codeRepository": "{{ config.extra.github | default(value='') }}"
+            },
+            {
+                "@type": "Organization",
+                "@id": "{{ config.base_url | safe }}/#organization",
+                "name": "{{ config.extra.author | default(value=config.title) }}",
+                "url": "{{ config.base_url | safe }}"
+                {% if config.extra.og_image is defined %},
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ get_url(path=config.extra.og_image) | safe }}",
+                    "width": {{ config.extra.og_image_width | default(value=1200) }},
+                    "height": {{ config.extra.og_image_height | default(value=630) }}
+                }
+                {% endif %}
+            },
+            {
+                "@type": "WebPage",
+                "@id": "{{ current_url | default(value=config.base_url) | safe }}/#webpage",
+                "url": "{{ current_url | default(value=config.base_url) | safe }}",
+                "name": "{% if page.title is defined %}{{ page.title }}{% elif section.title is defined %}{{ section.title }}{% else %}{{ config.title }}{% endif %}",
+                "description": "{% if page.description is defined %}{{ page.description }}{% elif section.description is defined %}{{ section.description }}{% else %}{{ config.description }}{% endif %}",
+                "isPartOf": {
+                    "@id": "{{ config.base_url | safe }}/#website"
+                },
+                "inLanguage": "{{ config.default_language | default(value='en') }}"
+                {% if page.date is defined and page.date %},
+                "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S') }}+00:00"
+                {% endif %}
+                {% if page.updated is defined and page.updated %},
+                "dateModified": "{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S') }}+00:00"
+                {% endif %}
+            }
+            {% if page %},
+            {
+                "@type": "Article",
+                "@id": "{{ current_url | safe }}/#article",
+                "headline": "{{ page.title }}",
+                "description": "{{ page.description | default(value=config.description) }}",
+                "url": "{{ current_url | safe }}",
+                "isPartOf": {
+                    "@id": "{{ current_url | safe }}/#webpage"
+                },
+                "mainEntityOfPage": {
+                    "@id": "{{ current_url | safe }}/#webpage"
+                },
+                "inLanguage": "{{ config.default_language | default(value='en') }}",
+                "author": {
+                    "@type": "Organization",
+                    "@id": "{{ config.base_url | safe }}/#organization"
+                },
+                "publisher": {
+                    "@id": "{{ config.base_url | safe }}/#organization"
+                }
+                {% if page.date is defined and page.date %},
+                "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S') }}+00:00"
+                {% endif %}
+                {% if page.updated is defined and page.updated %},
+                "dateModified": "{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S') }}+00:00"
+                {% endif %}
+                {% if page.taxonomies.tags is defined and page.taxonomies.tags %},
+                "keywords": "{{ page.taxonomies.tags | join(sep=', ') }}"
+                {% endif %}
+                {% if page.word_count is defined %},
+                "wordCount": {{ page.word_count }}
+                {% endif %}
+            }
+            {% endif %}
+        ]
+    }
+    </script>
 
     <!-- Theme initialization (prevent flash) -->
     <script>

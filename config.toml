@@ -41,11 +41,24 @@ brand_short = "BHC"
 
 # Site metadata
 author = "raskell.io"
+author_type = "Organization"
 github_repo = "https://github.com/raskell-io/bhc"
 docs_url = "/get-started/"
 
 # SEO metadata
 keywords = "haskell, compiler, alternative, ghc compatible, runtime profiles, wasm, numeric, tensor, structured concurrency"
+og_image = "img/og-image.png"
+og_image_width = 1200
+og_image_height = 630
+og_image_alt = "BHC - Basel Haskell Compiler: An alternative compiler for Haskell"
+twitter_handle = "@raskell_io"
+
+# Favicon
+favicon = "favicon.ico"
+favicon_png = "favicon.png"
+icon_192 = "icon-192.png"
+apple_touch_icon = "apple-touch-icon.png"
+webmanifest = "site.webmanifest"
 
 # Social links
 github = "https://github.com/raskell-io/bhc"
@@ -110,6 +123,27 @@ icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox
 # Benchmark highlights
 [extra.product.benchmarks]
 enabled = false
+
+# FAQ
+[[extra.product.faq]]
+question = "Is BHC a fork of GHC?"
+answer = "No. BHC is an independent implementation of the Haskell language, built from scratch. It aims for compatibility with GHC-compiled code but does not share a codebase."
+
+[[extra.product.faq]]
+question = "Can I use my existing Haskell packages?"
+answer = "Yes. BHC targets Haskell 2010 and selected GHC editions. Most packages on Hackage should work without modification. Check the compatibility page for details on supported extensions."
+
+[[extra.product.faq]]
+question = "What are runtime profiles?"
+answer = "Profiles are compile-time configurations that change how the runtime behaves. The <strong>default</strong> profile focuses on correctness, <strong>server</strong> adds structured concurrency and observability, <strong>numeric</strong> optimizes for computational workloads, and <strong>edge</strong> minimizes runtime size for WASM targets."
+
+[[extra.product.faq]]
+question = "Is BHC production-ready?"
+answer = "BHC is currently in alpha. It's suitable for experimentation and feedback, but not yet recommended for production workloads. Follow our roadmap for stability milestones."
+
+[[extra.product.faq]]
+question = "How do I report bugs or contribute?"
+answer = "Open an issue or discussion on <a href=\"https://github.com/raskell-io/bhc\" target=\"_blank\" rel=\"noopener\">GitHub</a>. We welcome bug reports, feature requests, and contributions."
 
 # Social links
 [extra.social]

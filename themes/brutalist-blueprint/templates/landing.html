@@ -181,6 +181,26 @@
         </section>
         {% endif %}
 
+        <!-- FAQ Section -->
+        {% if config.extra.product.faq %}
+        <section class="faq" data-section="faq">
+            <div class="faq__frame">
+                <div class="faq__header">
+                    <span class="faq__label">[ FAQ ]</span>
+                </div>
+                <h2 class="faq__title">Frequently Asked Questions</h2>
+                <div class="faq__content">
+                    {% for item in config.extra.product.faq %}
+                    <details class="faq__item">
+                        <summary class="faq__question">{{ item.question }}</summary>
+                        <div class="faq__answer">{{ item.answer | safe }}</div>
+                    </details>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
         <!-- Footer -->
         <footer class="footer" data-section="footer">
             <div class="footer__container">
