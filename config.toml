@@ -124,6 +124,61 @@ icon = """<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox
 [extra.product.benchmarks]
 enabled = false
 
+# Runtime profiles with examples
+[[extra.product.profiles]]
+id = "default"
+name = "Default"
+description = "General-purpose compilation. Focuses on correctness and GHC compatibility. Suitable for most applications."
+example_file = "Main.hs"
+example_code = """module Main where
+
+main :: IO ()
+main = putStrLn "Hello, Haskell!\""""
+usage = "bhc Main.hs"
+
+[[extra.product.profiles]]
+id = "server"
+name = "Server"
+description = "Structured concurrency, cancellation, deadlines. Built-in observability hooks for production services."
+example_file = "Server.hs"
+example_code = """{-# LANGUAGE BHC.StructuredConcurrency #-}
+module Server where
+
+import Control.Concurrent.Scoped
+
+handler :: Request -> Scoped Response
+handler req = withTimeout 5000 $ do
+  result <- async $ queryDatabase req
+  await result"""
+usage = "bhc --profile=server Server.hs"
+
+[[extra.product.profiles]]
+id = "numeric"
+name = "Numeric"
+description = "Strict-by-default in hot paths, unboxed numerics, tensor lowering, SIMD. For computational workloads."
+example_file = "Compute.hs"
+example_code = """{-# LANGUAGE BHC.TensorIR #-}
+module Compute where
+
+import Data.Tensor
+
+matmul :: Tensor Float -> Tensor Float -> Tensor Float
+matmul a b = contract a b [1] [0]  -- Fused, vectorized"""
+usage = "bhc --profile=numeric Compute.hs"
+
+[[extra.product.profiles]]
+id = "edge"
+name = "Edge"
+description = "Minimal runtime footprint for WASM and embedded targets. Reduced GC, smaller binaries."
+example_file = "Lambda.hs"
+example_code = """module Lambda where
+
+foreign export ccall handler :: Int -> Int
+
+handler :: Int -> Int
+handler x = x * 2 + 1"""
+usage = "bhc --profile=edge --target=wasm32-wasi Lambda.hs"
+
 # FAQ
 [[extra.product.faq]]
 question = "Is BHC a fork of GHC?"
