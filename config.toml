@@ -74,7 +74,7 @@ badge_url = "https://github.com/raskell-io/bhc"
 features_title = "[ CAPABILITIES ]"
 features_subtitle = "What BHC brings to the table"
 footer_tagline = "An alternative compiler for Haskell."
-footer_note = "BHC is an independent compiler implementation. Haskell is a community language; BHC does not define the Haskell standard."
+footer_note = "© 2025 raskell.io. Released under the MIT License."
 
 # Install methods for dropdown
 [[extra.product.install_methods]]
@@ -225,23 +225,35 @@ usage = "bhc --profile=edge --target=wasm32-wasi Lambda.hs"
 # FAQ
 [[extra.product.faq]]
 question = "Is BHC a fork of GHC?"
-answer = "No. BHC is an independent implementation of the Haskell language, built from scratch. It aims for compatibility with GHC-compiled code but does not share a codebase."
+answer = "No. BHC is a clean-slate compiler written in Rust. It targets the Haskell 2026 Platform specification and prioritizes predictable performance, structured concurrency, and a tensor-native numeric pipeline. It does not share code with GHC."
 
 [[extra.product.faq]]
 question = "Can I use my existing Haskell packages?"
-answer = "Yes. BHC targets Haskell 2010 and selected GHC editions. Most packages on Hackage should work without modification. Check the compatibility page for details on supported extensions."
+answer = "BHC is actively working on real-world Haskell compatibility (M11). It supports LANGUAGE pragmas, the Haskell 2010 layout rule, the full module system, type classes, and many common extensions. Check the compatibility page for current status."
 
 [[extra.product.faq]]
 question = "What are runtime profiles?"
-answer = "Profiles are compile-time configurations that change how the runtime behaves. The <strong>default</strong> profile focuses on correctness, <strong>server</strong> adds structured concurrency and observability, <strong>numeric</strong> optimizes for computational workloads, and <strong>edge</strong> minimizes runtime size for WASM targets."
+answer = "Profiles are compile-time configurations with different performance contracts. <strong>Default</strong>: lazy evaluation, GC-managed. <strong>Server</strong>: structured concurrency, bounded latency, observability. <strong>Numeric</strong>: strict-by-default, unboxed, guaranteed fusion. <strong>Edge</strong>: minimal runtime for WASM."
+
+[[extra.product.faq]]
+question = "What makes the Numeric profile special?"
+answer = "The Numeric profile guarantees fusion for standard patterns like <code>map f (map g x)</code> and <code>sum (map f x)</code>. No hidden allocations, SIMD auto-vectorization, and a Tensor IR that tracks shapes and strides. Fusion failure is a compiler bug."
+
+[[extra.product.faq]]
+question = "Does BHC support GPUs?"
+answer = "Yes. The GPU backend generates CUDA and ROCm code for tensor operations. Write standard Haskell with tensor syntax; the compiler handles GPU code generation and memory transfers automatically."
+
+[[extra.product.faq]]
+question = "What about WebAssembly?"
+answer = "BHC can target WASM for browser and edge deployment. Use <code>--target wasm32-wasi</code> with the Edge profile for minimal runtime footprint. SIMD128 is supported for numeric workloads."
 
 [[extra.product.faq]]
 question = "Is BHC production-ready?"
-answer = "BHC is currently in alpha. It's suitable for experimentation and feedback, but not yet recommended for production workloads. Follow our roadmap for stability milestones."
+answer = "BHC has completed milestones M0–M10 (core compiler, profiles, GPU, WASM, diagnostics). M11 focusing on real-world Haskell compatibility is in progress. Suitable for new projects; existing codebases increasingly supported."
 
 [[extra.product.faq]]
 question = "How do I report bugs or contribute?"
-answer = "Open an issue or discussion on <a href=\"https://github.com/raskell-io/bhc\" target=\"_blank\" rel=\"noopener\">GitHub</a>. We welcome bug reports, feature requests, and contributions."
+answer = "Open an issue or discussion on <a href=\"https://github.com/raskell-io/bhc\" target=\"_blank\" rel=\"noopener\">GitHub</a>. We follow conventional commits and welcome contributions. See CLAUDE.md for development guidelines."
 
 # Social links
 [extra.social]

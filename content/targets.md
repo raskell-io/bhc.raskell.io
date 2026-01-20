@@ -45,9 +45,39 @@ Limitations:
 - Some runtime features restricted by WASI
 - Edge profile recommended for size
 
+### GPU (CUDA/ROCm)
+
+Accelerated compute for numeric workloads.
+
+```bash
+bhc --target=cuda Main.hs
+bhc --target=rocm Main.hs
+```
+
+Status: **Supported**
+
+- NVIDIA CUDA (PTX code generation)
+- AMD ROCm (AMDGCN code generation)
+- Automatic kernel fusion from Tensor IR
+- Device memory management
+- Works with numeric profile
+
+### RISC-V
+
+Emerging architecture support.
+
+```bash
+bhc --target=riscv64 Main.hs
+```
+
+Status: **Supported**
+
+- 32-bit and 64-bit RISC-V
+- Native LLVM backend
+
 ### Experimental
 
-Additional backends under development. Check the [roadmap](/roadmap/) for status.
+Additional backends under consideration.
 
 | Target | Status | Notes |
 |--------|--------|-------|
@@ -104,6 +134,20 @@ Recommended setup:
 bhc --target=wasi --profile=edge Main.hs
 ```
 
+### GPU Target
+
+For numeric workloads with large data parallelism:
+
+- Tensor IR operations automatically lowered to GPU kernels
+- Device memory managed by runtime
+- Host/device transfers optimized
+- Kernel fusion reduces memory bandwidth
+
+Recommended setup:
+```bash
+bhc --target=cuda --profile=numeric Main.hs
+```
+
 ### FFI Considerations
 
 Foreign function calls differ by target:
@@ -112,6 +156,7 @@ Foreign function calls differ by target:
 |--------|-------------|
 | Native | Full C FFI |
 | WASI | WASI imports only |
+| GPU | Device-side functions only |
 
 For portable code, abstract FFI behind a platform layer.
 
@@ -125,16 +170,17 @@ Different targets have different runtime sizes:
 | Native | server | ~2.5 MB |
 | Native | numeric | ~2.2 MB |
 | WASI | edge | ~500 KB |
+| GPU | numeric | ~3 MB + driver |
 
-Sizes are approximate and depend on what features your code uses.
+Sizes are approximate and depend on what features your code uses. GPU targets require platform-specific drivers (CUDA toolkit or ROCm).
 
 ## Combining Targets and Profiles
 
-| Profile | Native | WASI |
-|---------|--------|------|
-| default | ✅ | ✅ |
-| server | ✅ | 🟡 (limited) |
-| numeric | ✅ | ✅ |
-| edge | ✅ | ✅ (recommended) |
+| Profile | Native | WASI | GPU |
+|---------|--------|------|-----|
+| default | ✅ | ✅ | ❌ |
+| server | ✅ | 🟡 (limited) | ❌ |
+| numeric | ✅ | ✅ | ✅ (recommended) |
+| edge | ✅ | ✅ (recommended) | ❌ |
 
-The edge profile is designed for WASI and other constrained targets.
+The edge profile is designed for WASI and other constrained targets. GPU targets require the numeric profile for Tensor IR integration.

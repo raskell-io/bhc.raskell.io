@@ -8,41 +8,69 @@ template = "page.html"
 
 BHC is under active development. This roadmap outlines our priorities and milestones.
 
-## Current Status: Alpha
+## Current Status: v0.1.0 (Alpha)
 
-Core language compilation works. Edge cases and advanced features are under development.
+Core compiler infrastructure is complete. Currently focused on real-world Haskell compatibility.
 
-## Milestones
+## Completed Milestones
 
-### v0.1 — Foundation (Current)
+### M0 — Proof of Life ✅
 
-- ✅ Haskell 2010 core language support
-- ✅ Basic GHC2021 extension subset
-- ✅ Native target backend
-- ✅ Default and numeric profiles
-- 🔄 WASI/WASM target
-- 🔄 Server profile
+Tree-walking interpreter foundation.
 
-### v0.2 — Compatibility
+### M1 — Numeric Profile Skeleton ✅
 
-- GHC2024 extension subset
-- Improved Hackage package compatibility
-- Conformance test suite expansion
-- FFI improvements
+Profile system with numeric-specific compilation paths.
 
-### v0.3 — Profiles
+### M2 — Tensor IR ✅
 
-- Server profile completion
-- Edge profile optimization
-- Profile-specific runtime tuning
-- Observability hooks
+Tensor intermediate representation with guaranteed fusion patterns.
 
-### v0.4 — Numeric
+### M3 — Vectorization ✅
 
-- Tensor IR stabilization
-- SIMD lowering improvements
-- Fusion guarantees formalization
-- Benchmark suite
+Loop IR with SIMD auto-vectorization and parallel loops.
+
+### M4 — Pinned Arrays + FFI ✅
+
+Foreign function interface with pinned memory for zero-copy interop.
+
+### M5 — Server Runtime ✅
+
+Structured concurrency with work-stealing scheduler, cancellation, and deadlines.
+
+### M6 — Platform Standardization ✅
+
+Cross-platform standard library foundation.
+
+### M7 — GPU Backend ✅
+
+CUDA and ROCm code generation from Tensor IR.
+
+### M8 — WASM Target ✅
+
+WebAssembly backend with WASI support.
+
+### M9 — Dependent Types Preview ✅
+
+Experimental dependent types support.
+
+### M10 — Cargo-Quality Diagnostics ✅
+
+Structured error messages with suggestions and context.
+
+## Current Focus
+
+### M11 — Real-World Haskell Compatibility 🔄
+
+- LANGUAGE pragma support
+- Full Haskell 2010 layout rule
+- Module system with qualified imports
+- Type classes and instances
+- Pattern guards and view patterns
+- Type families and advanced type features
+- Improved Prelude coverage
+
+## Future Milestones
 
 ### v1.0 — Stable
 
@@ -50,6 +78,7 @@ Core language compilation works. Edge cases and advanced features are under deve
 - Documented compatibility guarantees
 - Production-ready runtime
 - Comprehensive documentation
+- Full Hackage package compatibility testing
 
 ## Not Planned (v1)
 
