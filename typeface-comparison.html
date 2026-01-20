@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHC Typeface Comparison</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Outfit:wght@500;700&family=Instrument+Sans:wght@500;700&family=Archivo:wght@500;700&family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@500;700&family=Albert+Sans:wght@500;700&family=Inter:wght@500;700&family=Syne:wght@500;700;800&family=Chakra+Petch:wght@500;700&family=Orbitron:wght@500;700;900&family=Unbounded:wght@500;700;900&family=Darker+Grotesque:wght@500;700;900&family=Righteous&family=Audiowide&family=Exo+2:wght@500;700;900&family=Michroma&family=Rajdhani:wght@500;700&family=Tomorrow:wght@500;700;900&family=Oxanium:wght@500;700&family=Big+Shoulders+Display:wght@500;700;900&family=Russo+One&family=Bungee&family=Major+Mono+Display&family=Share+Tech+Mono&family=Silkscreen&family=DotGothic16&display=swap" rel="stylesheet">
+
+    <!-- Fontshare -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&f[]=general-sans@500,700&f[]=cabinet-grotesk@500,700,800&f[]=clash-display@500,700&f[]=supreme@500,700&display=swap" rel="stylesheet">
+
+    <!-- Geist (Vercel) -->
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/style.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bhc-accent: #60a5fa;
+            --bhc-accent-dim: #3b82f6;
+            --bhc-bg-dark: #0a0f1a;
+            --bhc-bg-surface: #0f172a;
+            --bhc-border: #1e3a5f;
+            --bhc-text: #e2e8f0;
+            --bhc-text-dim: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bhc-bg-dark);
+            color: var(--bhc-text);
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .header {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--bhc-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: var(--bhc-text-dim);
+            font-size: 0.9rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--bhc-bg-surface);
+            border: 1px solid var(--bhc-border);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .card::before,
+        .card::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 1px solid var(--bhc-accent);
+        }
+
+        .card::before {
+            top: -1px;
+            left: -1px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .card::after {
+            bottom: -1px;
+            right: -1px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .card__label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            color: var(--bhc-accent);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--bhc-border);
+        }
+
+        .card__category {
+            color: var(--bhc-text-dim);
+            font-size: 0.65rem;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        .brandmark {
+            margin-bottom: 1rem;
+        }
+
+        .brandmark__bhc {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--bhc-accent) 0%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .brandmark__full {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--bhc-text-dim);
+            margin-top: 0.25rem;
+        }
+
+        .card__meta {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--bhc-border);
+            font-size: 0.75rem;
+            color: var(--bhc-text-dim);
+        }
+
+        .card__meta span {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .card__meta a {
+            color: var(--bhc-accent);
+            text-decoration: none;
+        }
+
+        .card__meta a:hover {
+            text-decoration: underline;
+        }
+
+        /* Recommended badge */
+        .card--recommended {
+            border-color: var(--bhc-accent);
+        }
+
+        .card--recommended .card__label::after {
+            content: ' — RECOMMENDED';
+            color: #4ade80;
+        }
+
+        /* Font families */
+        .font-space-grotesk .brandmark__bhc,
+        .font-space-grotesk .brandmark__full {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .font-outfit .brandmark__bhc,
+        .font-outfit .brandmark__full {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .font-satoshi .brandmark__bhc,
+        .font-satoshi .brandmark__full {
+            font-family: 'Satoshi', sans-serif;
+        }
+
+        .font-instrument-sans .brandmark__bhc,
+        .font-instrument-sans .brandmark__full {
+            font-family: 'Instrument Sans', sans-serif;
+        }
+
+        .font-archivo .brandmark__bhc,
+        .font-archivo .brandmark__full {
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .font-bricolage .brandmark__bhc,
+        .font-bricolage .brandmark__full {
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        .font-ibm-plex .brandmark__bhc,
+        .font-ibm-plex .brandmark__full {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        .font-geist .brandmark__bhc,
+        .font-geist .brandmark__full {
+            font-family: 'Geist', sans-serif;
+        }
+
+        .font-albert-sans .brandmark__bhc,
+        .font-albert-sans .brandmark__full {
+            font-family: 'Albert Sans', sans-serif;
+        }
+
+        .font-general-sans .brandmark__bhc,
+        .font-general-sans .brandmark__full {
+            font-family: 'General Sans', sans-serif;
+        }
+
+        /* Current font for reference */
+        .font-inter .brandmark__bhc,
+        .font-inter .brandmark__full {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* === NEW DISTINCTIVE FONTS === */
+
+        /* Futuristic / Tech */
+        .font-syne .brandmark__bhc,
+        .font-syne .brandmark__full {
+            font-family: 'Syne', sans-serif;
+        }
+
+        .font-chakra-petch .brandmark__bhc,
+        .font-chakra-petch .brandmark__full {
+            font-family: 'Chakra Petch', sans-serif;
+        }
+
+        .font-orbitron .brandmark__bhc,
+        .font-orbitron .brandmark__full {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .font-unbounded .brandmark__bhc,
+        .font-unbounded .brandmark__full {
+            font-family: 'Unbounded', sans-serif;
+        }
+
+        .font-tomorrow .brandmark__bhc,
+        .font-tomorrow .brandmark__full {
+            font-family: 'Tomorrow', sans-serif;
+        }
+
+        .font-exo-2 .brandmark__bhc,
+        .font-exo-2 .brandmark__full {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .font-oxanium .brandmark__bhc,
+        .font-oxanium .brandmark__full {
+            font-family: 'Oxanium', sans-serif;
+        }
+
+        .font-michroma .brandmark__bhc,
+        .font-michroma .brandmark__full {
+            font-family: 'Michroma', sans-serif;
+        }
+
+        .font-rajdhani .brandmark__bhc,
+        .font-rajdhani .brandmark__full {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        /* Bold / Display */
+        .font-darker-grotesque .brandmark__bhc,
+        .font-darker-grotesque .brandmark__full {
+            font-family: 'Darker Grotesque', sans-serif;
+        }
+
+        .font-big-shoulders .brandmark__bhc,
+        .font-big-shoulders .brandmark__full {
+            font-family: 'Big Shoulders Display', sans-serif;
+        }
+
+        .font-russo-one .brandmark__bhc,
+        .font-russo-one .brandmark__full {
+            font-family: 'Russo One', sans-serif;
+        }
+
+        .font-righteous .brandmark__bhc,
+        .font-righteous .brandmark__full {
+            font-family: 'Righteous', sans-serif;
+        }
+
+        .font-audiowide .brandmark__bhc,
+        .font-audiowide .brandmark__full {
+            font-family: 'Audiowide', sans-serif;
+        }
+
+        .font-bungee .brandmark__bhc,
+        .font-bungee .brandmark__full {
+            font-family: 'Bungee', sans-serif;
+        }
+
+        /* Fontshare Premium */
+        .font-cabinet-grotesk .brandmark__bhc,
+        .font-cabinet-grotesk .brandmark__full {
+            font-family: 'Cabinet Grotesk', sans-serif;
+        }
+
+        .font-clash-display .brandmark__bhc,
+        .font-clash-display .brandmark__full {
+            font-family: 'Clash Display', sans-serif;
+        }
+
+        .font-supreme .brandmark__bhc,
+        .font-supreme .brandmark__full {
+            font-family: 'Supreme', sans-serif;
+        }
+
+        /* Mono / Pixel */
+        .font-major-mono .brandmark__bhc,
+        .font-major-mono .brandmark__full {
+            font-family: 'Major Mono Display', monospace;
+        }
+
+        .font-share-tech-mono .brandmark__bhc,
+        .font-share-tech-mono .brandmark__full {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .font-silkscreen .brandmark__bhc,
+        .font-silkscreen .brandmark__full {
+            font-family: 'Silkscreen', monospace;
+        }
+
+        .font-dotgothic .brandmark__bhc,
+        .font-dotgothic .brandmark__full {
+            font-family: 'DotGothic16', sans-serif;
+        }
+
+        /* Section headers */
+        .section-header {
+            grid-column: 1 / -1;
+            padding: 2rem 0 1rem;
+            border-bottom: 1px solid var(--bhc-border);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            color: var(--bhc-accent);
+            text-transform: uppercase;
+        }
+
+        .section-header p {
+            color: var(--bhc-text-dim);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--bhc-border);
+            text-align: center;
+            color: var(--bhc-text-dim);
+            font-size: 0.8rem;
+        }
+
+        .footer code {
+            background: var(--bhc-bg-surface);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>[ BHC TYPEFACE COMPARISON ]</h1>
+        <p>Evaluating display typefaces for the Basel Haskell Compiler brandmark</p>
+    </div>
+
+    <div class="grid">
+        <!-- Current (Inter) -->
+        <div class="card font-inter">
+            <div class="card__label">
+                Inter
+                <span class="card__category">Current / Reference</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Inter" target="_blank">fonts.google.com/specimen/Inter</a></span>
+            </div>
+        </div>
+
+        <!-- Space Grotesk - Recommended -->
+        <div class="card card--recommended font-space-grotesk">
+            <div class="card__label">
+                Space Grotesk
+                <span class="card__category">Geometric / Industrial</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Space+Grotesk" target="_blank">fonts.google.com/specimen/Space+Grotesk</a></span>
+            </div>
+        </div>
+
+        <!-- Outfit -->
+        <div class="card font-outfit">
+            <div class="card__label">
+                Outfit
+                <span class="card__category">Geometric / Industrial</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Outfit" target="_blank">fonts.google.com/specimen/Outfit</a></span>
+            </div>
+        </div>
+
+        <!-- Satoshi -->
+        <div class="card font-satoshi">
+            <div class="card__label">
+                Satoshi
+                <span class="card__category">Geometric / Industrial</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Fontshare (free)</span>
+                <span><a href="https://www.fontshare.com/fonts/satoshi" target="_blank">fontshare.com/fonts/satoshi</a></span>
+            </div>
+        </div>
+
+        <!-- Instrument Sans - Recommended -->
+        <div class="card card--recommended font-instrument-sans">
+            <div class="card__label">
+                Instrument Sans
+                <span class="card__category">Brutalist / Raw</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Instrument+Sans" target="_blank">fonts.google.com/specimen/Instrument+Sans</a></span>
+            </div>
+        </div>
+
+        <!-- Archivo -->
+        <div class="card font-archivo">
+            <div class="card__label">
+                Archivo
+                <span class="card__category">Brutalist / Raw</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Archivo" target="_blank">fonts.google.com/specimen/Archivo</a></span>
+            </div>
+        </div>
+
+        <!-- Bricolage Grotesque -->
+        <div class="card font-bricolage">
+            <div class="card__label">
+                Bricolage Grotesque
+                <span class="card__category">Brutalist / Raw</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Bricolage+Grotesque" target="_blank">fonts.google.com/specimen/Bricolage+Grotesque</a></span>
+            </div>
+        </div>
+
+        <!-- IBM Plex Sans -->
+        <div class="card font-ibm-plex">
+            <div class="card__label">
+                IBM Plex Sans
+                <span class="card__category">Monospace-Inspired Display</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/IBM+Plex+Sans" target="_blank">fonts.google.com/specimen/IBM+Plex+Sans</a></span>
+            </div>
+        </div>
+
+        <!-- Geist -->
+        <div class="card font-geist">
+            <div class="card__label">
+                Geist
+                <span class="card__category">Monospace-Inspired Display</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Vercel (free)</span>
+                <span><a href="https://vercel.com/font" target="_blank">vercel.com/font</a></span>
+            </div>
+        </div>
+
+        <!-- Albert Sans -->
+        <div class="card font-albert-sans">
+            <div class="card__label">
+                Albert Sans
+                <span class="card__category">Swiss / Precision</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Albert+Sans" target="_blank">fonts.google.com/specimen/Albert+Sans</a></span>
+            </div>
+        </div>
+
+        <!-- General Sans -->
+        <div class="card font-general-sans">
+            <div class="card__label">
+                General Sans
+                <span class="card__category">Swiss / Precision</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Fontshare (free)</span>
+                <span><a href="https://www.fontshare.com/fonts/general-sans" target="_blank">fontshare.com/fonts/general-sans</a></span>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FUTURISTIC / TECH SECTION -->
+        <!-- ============================================ -->
+        <div class="section-header">
+            <h2>Futuristic / Tech</h2>
+            <p>Sci-fi inspired, technical aesthetics</p>
+        </div>
+
+        <!-- Syne -->
+        <div class="card font-syne">
+            <div class="card__label">
+                Syne
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Syne" target="_blank">fonts.google.com/specimen/Syne</a></span>
+            </div>
+        </div>
+
+        <!-- Chakra Petch -->
+        <div class="card font-chakra-petch">
+            <div class="card__label">
+                Chakra Petch
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Chakra+Petch" target="_blank">fonts.google.com/specimen/Chakra+Petch</a></span>
+            </div>
+        </div>
+
+        <!-- Orbitron -->
+        <div class="card font-orbitron">
+            <div class="card__label">
+                Orbitron
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Orbitron" target="_blank">fonts.google.com/specimen/Orbitron</a></span>
+            </div>
+        </div>
+
+        <!-- Unbounded -->
+        <div class="card font-unbounded">
+            <div class="card__label">
+                Unbounded
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Unbounded" target="_blank">fonts.google.com/specimen/Unbounded</a></span>
+            </div>
+        </div>
+
+        <!-- Tomorrow -->
+        <div class="card font-tomorrow">
+            <div class="card__label">
+                Tomorrow
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Tomorrow" target="_blank">fonts.google.com/specimen/Tomorrow</a></span>
+            </div>
+        </div>
+
+        <!-- Exo 2 -->
+        <div class="card font-exo-2">
+            <div class="card__label">
+                Exo 2
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Exo+2" target="_blank">fonts.google.com/specimen/Exo+2</a></span>
+            </div>
+        </div>
+
+        <!-- Oxanium -->
+        <div class="card font-oxanium">
+            <div class="card__label">
+                Oxanium
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Oxanium" target="_blank">fonts.google.com/specimen/Oxanium</a></span>
+            </div>
+        </div>
+
+        <!-- Michroma -->
+        <div class="card font-michroma">
+            <div class="card__label">
+                Michroma
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Michroma" target="_blank">fonts.google.com/specimen/Michroma</a></span>
+            </div>
+        </div>
+
+        <!-- Rajdhani -->
+        <div class="card font-rajdhani">
+            <div class="card__label">
+                Rajdhani
+                <span class="card__category">Futuristic / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Rajdhani" target="_blank">fonts.google.com/specimen/Rajdhani</a></span>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- BOLD / DISPLAY SECTION -->
+        <!-- ============================================ -->
+        <div class="section-header">
+            <h2>Bold / Display</h2>
+            <p>High impact, strong presence</p>
+        </div>
+
+        <!-- Darker Grotesque -->
+        <div class="card font-darker-grotesque">
+            <div class="card__label">
+                Darker Grotesque
+                <span class="card__category">Bold / Display</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Darker+Grotesque" target="_blank">fonts.google.com/specimen/Darker+Grotesque</a></span>
+            </div>
+        </div>
+
+        <!-- Big Shoulders Display -->
+        <div class="card font-big-shoulders">
+            <div class="card__label">
+                Big Shoulders Display
+                <span class="card__category">Bold / Display</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Big+Shoulders+Display" target="_blank">fonts.google.com/specimen/Big+Shoulders+Display</a></span>
+            </div>
+        </div>
+
+        <!-- Russo One -->
+        <div class="card font-russo-one">
+            <div class="card__label">
+                Russo One
+                <span class="card__category">Bold / Display</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Russo+One" target="_blank">fonts.google.com/specimen/Russo+One</a></span>
+            </div>
+        </div>
+
+        <!-- Righteous -->
+        <div class="card font-righteous">
+            <div class="card__label">
+                Righteous
+                <span class="card__category">Bold / Display</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Righteous" target="_blank">fonts.google.com/specimen/Righteous</a></span>
+            </div>
+        </div>
+
+        <!-- Audiowide -->
+        <div class="card font-audiowide">
+            <div class="card__label">
+                Audiowide
+                <span class="card__category">Bold / Display</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Audiowide" target="_blank">fonts.google.com/specimen/Audiowide</a></span>
+            </div>
+        </div>
+
+        <!-- Bungee -->
+        <div class="card font-bungee">
+            <div class="card__label">
+                Bungee
+                <span class="card__category">Bold / Display</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Bungee" target="_blank">fonts.google.com/specimen/Bungee</a></span>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FONTSHARE PREMIUM SECTION -->
+        <!-- ============================================ -->
+        <div class="section-header">
+            <h2>Fontshare Premium</h2>
+            <p>High-quality free fonts from Indian Type Foundry</p>
+        </div>
+
+        <!-- Cabinet Grotesk -->
+        <div class="card font-cabinet-grotesk">
+            <div class="card__label">
+                Cabinet Grotesk
+                <span class="card__category">Fontshare Premium</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Fontshare (free)</span>
+                <span><a href="https://www.fontshare.com/fonts/cabinet-grotesk" target="_blank">fontshare.com/fonts/cabinet-grotesk</a></span>
+            </div>
+        </div>
+
+        <!-- Clash Display -->
+        <div class="card card--recommended font-clash-display">
+            <div class="card__label">
+                Clash Display
+                <span class="card__category">Fontshare Premium</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Fontshare (free)</span>
+                <span><a href="https://www.fontshare.com/fonts/clash-display" target="_blank">fontshare.com/fonts/clash-display</a></span>
+            </div>
+        </div>
+
+        <!-- Supreme -->
+        <div class="card font-supreme">
+            <div class="card__label">
+                Supreme
+                <span class="card__category">Fontshare Premium</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Fontshare (free)</span>
+                <span><a href="https://www.fontshare.com/fonts/supreme" target="_blank">fontshare.com/fonts/supreme</a></span>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- MONO / PIXEL SECTION -->
+        <!-- ============================================ -->
+        <div class="section-header">
+            <h2>Mono / Pixel / Experimental</h2>
+            <p>Code-inspired and retro aesthetics</p>
+        </div>
+
+        <!-- Major Mono Display -->
+        <div class="card font-major-mono">
+            <div class="card__label">
+                Major Mono Display
+                <span class="card__category">Mono / Experimental</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Major+Mono+Display" target="_blank">fonts.google.com/specimen/Major+Mono+Display</a></span>
+            </div>
+        </div>
+
+        <!-- Share Tech Mono -->
+        <div class="card font-share-tech-mono">
+            <div class="card__label">
+                Share Tech Mono
+                <span class="card__category">Mono / Tech</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Share+Tech+Mono" target="_blank">fonts.google.com/specimen/Share+Tech+Mono</a></span>
+            </div>
+        </div>
+
+        <!-- Silkscreen -->
+        <div class="card font-silkscreen">
+            <div class="card__label">
+                Silkscreen
+                <span class="card__category">Pixel / Retro</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/Silkscreen" target="_blank">fonts.google.com/specimen/Silkscreen</a></span>
+            </div>
+        </div>
+
+        <!-- DotGothic16 -->
+        <div class="card font-dotgothic">
+            <div class="card__label">
+                DotGothic16
+                <span class="card__category">Pixel / Retro</span>
+            </div>
+            <div class="brandmark">
+                <div class="brandmark__bhc">BHC</div>
+                <div class="brandmark__full">Basel Haskell Compiler</div>
+            </div>
+            <div class="card__meta">
+                <span>Source: Google Fonts (free)</span>
+                <span><a href="https://fonts.google.com/specimen/DotGothic16" target="_blank">fonts.google.com/specimen/DotGothic16</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Preview page for bhc.raskell.io typeface selection</p>
+        <p style="margin-top: 0.5rem;">Run <code>zola serve</code> and visit <code>/typeface-comparison.html</code></p>
+    </div>
+</body>
+</html>

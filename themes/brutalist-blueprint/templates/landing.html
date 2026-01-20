@@ -176,27 +176,50 @@
                 </div>
                 <h2 class="profiles__title">Runtime Profiles</h2>
                 <p class="profiles__subtitle">Same language, different runtime behavior. Choose a profile per package.</p>
-                <div class="profiles__grid">
-                    {% for profile in config.extra.product.profiles %}
-                    <div class="profile-card">
-                        <div class="profile-card__header">
-                            <span class="profile-card__name">{{ profile.name }}</span>
-                            <code class="profile-card__flag">--profile={{ profile.id }}</code>
-                        </div>
-                        <p class="profile-card__description">{{ profile.description }}</p>
-                        <div class="profile-card__example">
-                            <div class="profile-card__example-header">
-                                <span>{{ profile.example_file }}</span>
-                            </div>
-                            <pre><code>{{ profile.example_code }}</code></pre>
-                        </div>
-                        <div class="profile-card__usage">
-                            <span class="profile-card__usage-label">Compile:</span>
-                            <code>{{ profile.usage }}</code>
-                        </div>
+
+                <!-- Profile Tabs -->
+                <div class="profiles__tabs">
+                    <div class="profiles__tab-list" role="tablist">
+                        {% for profile in config.extra.product.profiles %}
+                        <button class="profiles__tab {% if loop.first %}profiles__tab--active{% endif %}"
+                                role="tab"
+                                aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+                                aria-controls="profile-{{ profile.id }}"
+                                data-profile="{{ profile.id }}">
+                            {{ profile.name }}
+                        </button>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
+
+                    <div class="profiles__tab-panels">
+                        {% for profile in config.extra.product.profiles %}
+                        <div class="profiles__tab-panel {% if loop.first %}profiles__tab-panel--active{% endif %}"
+                             role="tabpanel"
+                             id="profile-{{ profile.id }}"
+                             aria-hidden="{% if loop.first %}false{% else %}true{% endif %}">
+                            <div class="profile-content">
+                                <div class="profile-content__info">
+                                    <div class="profile-content__header">
+                                        <code class="profile-content__flag">--profile={{ profile.id }}</code>
+                                    </div>
+                                    <p class="profile-content__description">{{ profile.description }}</p>
+                                    <div class="profile-content__usage">
+                                        <span class="profile-content__usage-label">Compile:</span>
+                                        <code>{{ profile.usage }}</code>
+                                    </div>
+                                </div>
+                                <div class="profile-content__example">
+                                    <div class="profile-content__example-header">
+                                        <span>{{ profile.example_file }}</span>
+                                    </div>
+                                    <pre><code class="language-haskell">{{ profile.example_code }}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
+
                 <div class="profiles__cta">
                     <a href="/profiles/" class="btn btn--secondary">
                         Profile Documentation
@@ -532,6 +555,174 @@
             } else {
                 draw();
             }
+        });
+    })();
+
+    // ==========================================================================
+    // Profile Tabs
+    // ==========================================================================
+    (function() {
+        const tabList = document.querySelector('.profiles__tab-list');
+        if (!tabList) return;
+
+        const tabs = tabList.querySelectorAll('.profiles__tab');
+        const panels = document.querySelectorAll('.profiles__tab-panel');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Deactivate all tabs
+                tabs.forEach(t => {
+                    t.classList.remove('profiles__tab--active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+
+                // Hide all panels
+                panels.forEach(p => {
+                    p.classList.remove('profiles__tab-panel--active');
+                    p.setAttribute('aria-hidden', 'true');
+                });
+
+                // Activate clicked tab
+                tab.classList.add('profiles__tab--active');
+                tab.setAttribute('aria-selected', 'true');
+
+                // Show corresponding panel
+                const profileId = tab.dataset.profile;
+                const panel = document.getElementById('profile-' + profileId);
+                if (panel) {
+                    panel.classList.add('profiles__tab-panel--active');
+                    panel.setAttribute('aria-hidden', 'false');
+                }
+            });
+        });
+    })();
+
+    // ==========================================================================
+    // Terminal-style bash code blocks
+    // ==========================================================================
+    (function() {
+        // Find bash/shellscript code blocks in content section
+        // Zola uses data-lang="shellscript" for bash
+        const bashBlocks = document.querySelectorAll('.content-section__body pre code[data-lang="shellscript"], .content-section__body pre code[data-lang="bash"]');
+
+        bashBlocks.forEach(codeEl => {
+            const pre = codeEl.parentElement;
+
+            // Create terminal block structure
+            const terminal = document.createElement('div');
+            terminal.className = 'terminal-block';
+
+            // Header with dots
+            const header = document.createElement('div');
+            header.className = 'terminal-block__header';
+            header.innerHTML = `
+                <span class="terminal-block__dot"></span>
+                <span class="terminal-block__dot"></span>
+                <span class="terminal-block__dot"></span>
+                <span class="terminal-block__title">terminal</span>
+            `;
+
+            // Body with original code (keep Zola's syntax highlighting)
+            const body = document.createElement('div');
+            body.className = 'terminal-block__body';
+
+            // Clone the pre element to preserve Zola's highlighting
+            const clonedPre = pre.cloneNode(true);
+            clonedPre.style = ''; // Remove inline styles
+            clonedPre.className = '';
+            body.appendChild(clonedPre);
+
+            terminal.appendChild(header);
+            terminal.appendChild(body);
+
+            // Replace the pre element
+            pre.parentElement.replaceChild(terminal, pre);
+        });
+    })();
+
+    // ==========================================================================
+    // Syntax Highlighting (minimal Haskell highlighter)
+    // ==========================================================================
+    (function() {
+        const codeBlocks = document.querySelectorAll('code.language-haskell');
+
+        codeBlocks.forEach(block => {
+            let code = block.textContent;
+            const tokens = [];
+            let i = 0;
+
+            while (i < code.length) {
+                // Pragmas {-# ... #-}
+                if (code.slice(i, i + 3) === '{-#') {
+                    const end = code.indexOf('#-}', i);
+                    if (end !== -1) {
+                        tokens.push({ type: 'pragma', text: code.slice(i, end + 3) });
+                        i = end + 3;
+                        continue;
+                    }
+                }
+
+                // Line comments --
+                if (code.slice(i, i + 2) === '--') {
+                    let end = code.indexOf('\n', i);
+                    if (end === -1) end = code.length;
+                    tokens.push({ type: 'comment', text: code.slice(i, end) });
+                    i = end;
+                    continue;
+                }
+
+                // Strings
+                if (code[i] === '"') {
+                    let j = i + 1;
+                    while (j < code.length && code[j] !== '"') {
+                        if (code[j] === '\\') j++;
+                        j++;
+                    }
+                    tokens.push({ type: 'string', text: code.slice(i, j + 1) });
+                    i = j + 1;
+                    continue;
+                }
+
+                // Words (keywords, types, identifiers)
+                if (/[a-zA-Z_]/.test(code[i])) {
+                    let j = i;
+                    while (j < code.length && /[a-zA-Z0-9_']/.test(code[j])) j++;
+                    const word = code.slice(i, j);
+                    const keywords = ['module', 'where', 'import', 'data', 'type', 'newtype', 'class', 'instance', 'deriving', 'let', 'in', 'case', 'of', 'if', 'then', 'else', 'do', 'return', 'foreign', 'export', 'ccall', 'otherwise'];
+                    if (keywords.includes(word)) {
+                        tokens.push({ type: 'keyword', text: word });
+                    } else if (/^[A-Z]/.test(word)) {
+                        tokens.push({ type: 'type', text: word });
+                    } else {
+                        tokens.push({ type: 'ident', text: word });
+                    }
+                    i = j;
+                    continue;
+                }
+
+                // Numbers
+                if (/[0-9]/.test(code[i])) {
+                    let j = i;
+                    while (j < code.length && /[0-9.]/.test(code[j])) j++;
+                    tokens.push({ type: 'number', text: code.slice(i, j) });
+                    i = j;
+                    continue;
+                }
+
+                // Other characters
+                tokens.push({ type: 'plain', text: code[i] });
+                i++;
+            }
+
+            // Build HTML
+            const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            let html = tokens.map(t => {
+                const escaped = escapeHtml(t.text);
+                if (t.type === 'plain' || t.type === 'ident') return escaped;
+                return `<span class="hl-${t.type}">${escaped}</span>`;
+            }).join('');
+
+            block.innerHTML = html;
         });
     })();
 </script>

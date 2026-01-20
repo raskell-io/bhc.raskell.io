@@ -284,7 +284,7 @@ $content-padding: 2rem;
   padding: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .install-widget__prompt {
@@ -301,6 +301,9 @@ $content-padding: 2rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .install-widget__copy {
@@ -370,11 +373,12 @@ $content-padding: 2rem;
 // Features Section
 // -----------------------------------------------------------------------------
 .features {
-  padding: 4rem 0;
+  padding: 0 0 4rem;
 }
 
 .features__frame {
   border: 1px solid var(--color-grid);
+  border-top: none;
   background: var(--color-bg);
 }
 
@@ -384,6 +388,7 @@ $content-padding: 2rem;
   padding: 0.75rem 1.5rem;
   border-bottom: 1px solid var(--color-grid);
   background: var(--color-bg-alt);
+  margin-top: -1px;
 }
 
 .features__label {
@@ -481,11 +486,12 @@ $content-padding: 2rem;
 // Benchmarks Section
 // -----------------------------------------------------------------------------
 .benchmarks {
-  padding: 4rem 0;
+  padding: 0 0 4rem;
 }
 
 .benchmarks__frame {
   border: 1px solid var(--color-grid);
+  border-top: none;
   background: var(--color-bg);
 }
 
@@ -495,6 +501,7 @@ $content-padding: 2rem;
   padding: 0.75rem 1.5rem;
   border-bottom: 1px solid var(--color-grid);
   background: var(--color-bg-alt);
+  margin-top: -1px;
 }
 
 .benchmarks__label {
@@ -627,11 +634,12 @@ $content-padding: 2rem;
 // Profiles Section
 // -----------------------------------------------------------------------------
 .profiles {
-  padding: 4rem 0;
+  padding: 0 0 4rem;
 }
 
 .profiles__frame {
   border: 1px solid var(--color-grid);
+  border-top: none;
   background: var(--color-bg);
 }
 
@@ -641,6 +649,7 @@ $content-padding: 2rem;
   padding: 0.75rem 1.5rem;
   border-bottom: 1px solid var(--color-grid);
   background: var(--color-bg-alt);
+  margin-top: -1px;
 }
 
 .profiles__label {
@@ -670,44 +679,80 @@ $content-padding: 2rem;
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   padding: 0 1.5rem 1.5rem;
+}
+
+// Profile Tabs
+.profiles__tabs {
+  border-top: 1px solid var(--color-grid);
+}
+
+.profiles__tab-list {
+  display: flex;
   border-bottom: 1px solid var(--color-grid);
+  background: var(--color-bg-alt);
 }
 
-.profiles__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.profile-card {
-  padding: 1.5rem;
+.profiles__tab {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
   border-right: 1px solid var(--color-grid);
-  border-bottom: 1px solid var(--color-grid);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
 
-  &:nth-child(2n) {
+  &:last-child {
     border-right: none;
   }
 
-  &:nth-last-child(-n+2) {
-    border-bottom: none;
+  &:hover {
+    color: var(--color-text);
+    background: var(--color-bg);
+  }
+
+  &--active {
+    color: var(--color-accent);
+    background: var(--color-bg);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-accent);
+    }
   }
 }
 
-.profile-card__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-  gap: 1rem;
+.profiles__tab-panel {
+  display: none;
+
+  &--active {
+    display: block;
+  }
 }
 
-.profile-card__name {
-  font-family: var(--font-mono);
-  font-size: var(--text-lg);
-  font-weight: var(--weight-semibold);
-  color: var(--color-heading);
+.profile-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
 }
 
-.profile-card__flag {
+.profile-content__info {
+  padding: 1.5rem;
+  border-right: 1px solid var(--color-grid);
+}
+
+.profile-content__header {
+  margin-bottom: 1rem;
+}
+
+.profile-content__flag {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--color-accent);
@@ -716,39 +761,60 @@ $content-padding: 2rem;
   border: 1px solid var(--color-grid);
 }
 
-.profile-card__description {
+.profile-content__description {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.profile-card__example {
+.profile-content__usage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  flex-wrap: wrap;
+}
+
+.profile-content__usage-label {
+  color: var(--color-text-muted);
+}
+
+.profile-content__usage code {
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+  padding: 0.25rem 0.5rem;
   border: 1px solid var(--color-grid);
-  margin-bottom: 1rem;
 }
 
-.profile-card__example-header {
+.profile-content__example {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-content__example-header {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--color-text-muted);
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1rem;
   background: var(--color-bg-alt);
   border-bottom: 1px solid var(--color-grid);
 }
 
-.profile-card__example pre {
+.profile-content__example pre {
   margin: 0;
   padding: 1rem;
   background: var(--color-bg);
   overflow-x: auto;
   border: none;
+  flex: 1;
 
   code {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    line-height: var(--leading-relaxed);
+    line-height: 1.7;
     color: var(--color-text);
     background: none;
     padding: 0;
@@ -756,23 +822,30 @@ $content-padding: 2rem;
   }
 }
 
-.profile-card__usage {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
+// Syntax highlighting colors
+.hl-keyword {
+  color: #cba6f7; // purple
 }
 
-.profile-card__usage-label {
-  color: var(--color-text-muted);
+.hl-type {
+  color: #89b4fa; // blue
 }
 
-.profile-card__usage code {
-  color: var(--color-text);
-  background: var(--color-bg-alt);
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--color-grid);
+.hl-string {
+  color: #a6e3a1; // green
+}
+
+.hl-number {
+  color: #fab387; // orange
+}
+
+.hl-comment {
+  color: #6c7086; // muted
+  font-style: italic;
+}
+
+.hl-pragma {
+  color: #f9e2af; // yellow
 }
 
 .profiles__cta {
@@ -787,11 +860,12 @@ $content-padding: 2rem;
 // Content Section
 // -----------------------------------------------------------------------------
 .content-section {
-  padding: 4rem 0;
+  padding: 0 0 4rem;
 }
 
 .content-section__frame {
   border: 1px solid var(--color-grid);
+  border-top: none;
   background: var(--color-bg);
 }
 
@@ -801,6 +875,7 @@ $content-padding: 2rem;
   padding: 0.75rem 1.5rem;
   border-bottom: 1px solid var(--color-grid);
   background: var(--color-bg-alt);
+  margin-top: -1px;
 }
 
 .content-section__label {
@@ -813,6 +888,64 @@ $content-padding: 2rem;
 
 .content-section__body {
   padding: 2rem;
+
+  // Paragraphs after terminal blocks need spacing
+  .terminal-block + p {
+    margin-top: 1.5rem;
+  }
+
+  // Terminal-style code blocks (bash)
+  .terminal-block {
+    margin: 1.5rem 0;
+    border: 1px solid var(--color-grid);
+    background: var(--color-bg);
+  }
+
+  .terminal-block__header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--color-grid);
+    background: var(--color-bg-alt);
+    gap: 0.5rem;
+  }
+
+  .terminal-block__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-grid-strong);
+  }
+
+  .terminal-block__title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-left: 0.5rem;
+  }
+
+  .terminal-block__body {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .terminal-block__body pre {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    color: inherit !important;
+  }
+
+  .terminal-block__body code {
+    display: block;
+    font-family: var(--font-mono) !important;
+    font-size: var(--text-sm) !important;
+    line-height: 1.7 !important;
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+  }
 }
 
 .content-section__title {
@@ -907,7 +1040,7 @@ $content-padding: 2rem;
     margin: 1.5rem 0;
     padding: 0;
     border: 1px solid var(--color-grid);
-    background: var(--color-bg-alt);
+    background: var(--color-bg);
     overflow-x: auto;
 
     code {
@@ -918,6 +1051,59 @@ $content-padding: 2rem;
       font-size: var(--text-sm);
       line-height: var(--leading-relaxed);
     }
+  }
+
+  // Terminal-style code blocks (bash)
+  .terminal-block {
+    margin: 1.5rem 0 2rem;
+    border: 1px solid var(--color-grid);
+    background: var(--color-bg);
+  }
+
+  .terminal-block__header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--color-grid);
+    background: var(--color-bg-alt);
+    gap: 0.5rem;
+  }
+
+  .terminal-block__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-grid-strong);
+  }
+
+  .terminal-block__title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-left: 0.5rem;
+  }
+
+  .terminal-block__body {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .terminal-block__body pre {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    color: inherit !important;
+  }
+
+  .terminal-block__body code {
+    display: block;
+    font-family: var(--font-mono) !important;
+    font-size: var(--text-sm) !important;
+    line-height: 1.7 !important;
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
   }
 
   blockquote {
@@ -975,11 +1161,12 @@ $content-padding: 2rem;
 // FAQ Section
 // -----------------------------------------------------------------------------
 .faq {
-  padding: 4rem 0;
+  padding: 0 0 4rem;
 }
 
 .faq__frame {
   border: 1px solid var(--color-grid);
+  border-top: none;
   background: var(--color-bg);
 }
 
@@ -989,6 +1176,7 @@ $content-padding: 2rem;
   padding: 0.75rem 1.5rem;
   border-bottom: 1px solid var(--color-grid);
   background: var(--color-bg-alt);
+  margin-top: -1px;
 }
 
 .faq__label {
@@ -1280,17 +1468,23 @@ $content-padding: 2rem;
     text-align: left;
   }
 
-  .profiles__grid {
+  .profiles__tab-list {
+    flex-wrap: wrap;
+  }
+
+  .profiles__tab {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: var(--text-xs);
+  }
+
+  .profile-content {
     grid-template-columns: 1fr;
   }
 
-  .profile-card {
+  .profile-content__info {
     border-right: none;
     border-bottom: 1px solid var(--color-grid);
-
-    &:last-child {
-      border-bottom: none;
-    }
   }
 
   .footer__grid {
