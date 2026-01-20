@@ -322,11 +322,11 @@
         let animationId;
         let time = 0;
 
-        // Torus parameters
-        const R = 150; // Major radius
-        const r = 60;  // Minor radius
-        const uSegments = 24;
-        const vSegments = 12;
+        // Torus parameters - sized to be visible around the hero frame
+        const R = 280; // Major radius
+        const r = 100;  // Minor radius
+        const uSegments = 28;
+        const vSegments = 14;
 
         // Rotation angles
         let rotX = 0;
@@ -335,7 +335,7 @@
 
         function resize() {
             const hero = canvas.parentElement;
-            width = hero.offsetWidth;
+            width = window.innerWidth;
             height = hero.offsetHeight;
             canvas.width = width;
             canvas.height = height;
@@ -374,8 +374,8 @@
 
         // Project 3D to 2D with perspective
         function project(p) {
-            const fov = 400;
-            const z = p[2] + 400;
+            const fov = 500;
+            const z = p[2] + 500;
             const scale = fov / z;
             return [
                 p[0] * scale + width / 2,
@@ -401,7 +401,7 @@
 
             ctx.strokeStyle = lineColor;
             ctx.lineWidth = 1;
-            ctx.globalAlpha = 0.4;
+            ctx.globalAlpha = 0.5;
 
             const points = [];
 
@@ -448,11 +448,11 @@
 
             ctx.stroke();
 
-            // Update rotation with varying speeds for organic feel
-            time += 0.016;
-            rotX = Math.sin(time * 0.3) * 0.5 + time * 0.2;
-            rotY = time * 0.4;
-            rotZ = Math.cos(time * 0.2) * 0.3;
+            // Update rotation with slow, organic feel
+            time += 0.006;
+            rotX = Math.sin(time * 0.2) * 0.4 + time * 0.08;
+            rotY = time * 0.15;
+            rotZ = Math.cos(time * 0.15) * 0.2;
 
             animationId = requestAnimationFrame(draw);
         }
