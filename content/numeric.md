@@ -48,6 +48,15 @@ When legal and profitable:
 - Parallel execution of independent loop iterations
 - Automatic tiling for cache efficiency
 
+### GPU acceleration
+For large-scale parallelism:
+- CUDA (NVIDIA) and ROCm (AMD) backends
+- Tensor IR operations lower to GPU kernels
+- Automatic host/device memory management
+- Kernel fusion across operations
+
+See [Target Backends](/targets/) for GPU target details.
+
 ### Pinned buffers
 Large arrays and FFI buffers use pinned, non-moving memory:
 - No GC relocation during computation

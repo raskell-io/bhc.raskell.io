@@ -111,7 +111,15 @@ The following are not yet supported or have significant differences:
 
 BHC maintains a conformance test suite tracking compatibility with Haskell 2010 and GHC editions.
 
-Current status: **Alpha** — core language works, edge cases under development.
+Current status: **Alpha** — core language works, real-world compatibility testing underway.
+
+Recent progress:
+- Full Haskell 2010 layout rule implementation
+- LANGUAGE pragma parsing
+- Module system with qualified imports and export lists
+- Type class and instance declarations
+- Pattern guards, view patterns, as-patterns
+- Type families and advanced type features
 
 ## Not a Fork
 
