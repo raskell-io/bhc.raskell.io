@@ -905,9 +905,9 @@
             const leftCubeX = leftRail / 2;
             drawCube(leftCubeX, centerY, time * 0.5, time * 0.3, time * 0.2);
 
-            // Right cube - centered between right rail and right edge
+            // Right cube - different speeds and phase offset for asymmetry
             const rightCubeX = rightRail + (canvasWidth - rightRail) / 2;
-            drawCube(rightCubeX, centerY, -time * 0.5, -time * 0.3, time * 0.2);
+            drawCube(rightCubeX, centerY, time * 0.35 + 1.5, time * 0.45 + 0.8, time * 0.25 + 2.1);
 
             ctx.globalAlpha = 1;
             animationId = requestAnimationFrame(draw);
