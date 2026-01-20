@@ -6,14 +6,14 @@
 // -----------------------------------------------------------------------------
 // Font Families
 // Primary: Monospace (technical, code-like)
-// Display: Sans-serif for major headings
+// Display: Clash Display for brand/headings
 // -----------------------------------------------------------------------------
 :root {
   // Monospace - primary font for most text (brutalist style)
   --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", "Monaco", monospace;
 
-  // Display - for hero titles and major headings
-  --font-display: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  // Display - Clash Display for hero titles and brand (distinctive, memorable)
+  --font-display: "Clash Display", "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
 
   // Sans - for readable body text when needed
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
