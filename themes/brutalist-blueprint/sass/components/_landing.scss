@@ -27,7 +27,7 @@ $content-padding: 2rem;
   max-width: $content-max-width;
   padding: 0 $content-padding;
   pointer-events: none;
-  z-index: 100;
+  z-index: 1;
   box-sizing: border-box;
 }
 
@@ -1451,7 +1451,6 @@ pre:hover > .code-copy-btn {
 
 .footer__container {
   position: relative;
-  z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
