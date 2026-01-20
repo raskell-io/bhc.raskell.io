@@ -8,7 +8,10 @@
             {% if config.extra.nav_links %}
             <nav class="header__nav" role="navigation">
                 {% for link in config.extra.nav_links %}
-                <a href="{{ link.url | safe }}" class="header__link">{{ link.name }}</a>
+                <a href="{{ link.url | safe }}" class="header__link">
+                    {% if link.icon %}{{ link.icon | safe }}{% endif %}
+                    <span>{{ link.name }}</span>
+                </a>
                 {% endfor %}
             </nav>
             {% endif %}
