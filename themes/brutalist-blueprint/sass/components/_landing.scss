@@ -206,7 +206,7 @@ $content-padding: 2rem;
   width: 120px;
   height: auto;
   color: var(--color-grid);
-  opacity: 0.15;
+  opacity: 0.3;
   pointer-events: none;
 
   svg {
@@ -923,6 +923,10 @@ $content-padding: 2rem;
 // Light Theme Adjustments
 // -----------------------------------------------------------------------------
 [data-theme="light"] {
+  .hero__logo {
+    opacity: 0.15;
+  }
+
   .hero__title {
     color: var(--color-heading);
   }
