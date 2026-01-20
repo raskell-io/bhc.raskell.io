@@ -167,6 +167,49 @@
         </section>
         {% endif %}
 
+        <!-- Profiles Section -->
+        {% if config.extra.product.profiles %}
+        <section class="profiles" data-section="profiles">
+            <div class="profiles__frame">
+                <div class="profiles__header">
+                    <span class="profiles__label">[ PROFILES ]</span>
+                </div>
+                <h2 class="profiles__title">Runtime Profiles</h2>
+                <p class="profiles__subtitle">Same language, different runtime behavior. Choose a profile per package.</p>
+                <div class="profiles__grid">
+                    {% for profile in config.extra.product.profiles %}
+                    <div class="profile-card">
+                        <div class="profile-card__header">
+                            <span class="profile-card__name">{{ profile.name }}</span>
+                            <code class="profile-card__flag">--profile={{ profile.id }}</code>
+                        </div>
+                        <p class="profile-card__description">{{ profile.description }}</p>
+                        <div class="profile-card__example">
+                            <div class="profile-card__example-header">
+                                <span>{{ profile.example_file }}</span>
+                            </div>
+                            <pre><code>{{ profile.example_code }}</code></pre>
+                        </div>
+                        <div class="profile-card__usage">
+                            <span class="profile-card__usage-label">Compile:</span>
+                            <code>{{ profile.usage }}</code>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="profiles__cta">
+                    <a href="/profiles/" class="btn btn--secondary">
+                        Profile Documentation
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
         <!-- Content Section (from markdown) -->
         {% if section.content %}
         <section class="content-section" data-section="content">
