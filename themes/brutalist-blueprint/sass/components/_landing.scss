@@ -848,6 +848,78 @@ $content-padding: 2rem;
   color: #f9e2af; // yellow
 }
 
+// Copy button for code blocks
+.code-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-grid);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+  z-index: 10;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease, opacity 0.15s ease;
+  }
+
+  .icon-copy {
+    position: absolute;
+  }
+
+  .icon-check {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.5);
+    color: #a6e3a1; // green
+  }
+
+  &:hover {
+    color: var(--color-text);
+    background: var(--color-bg);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.copied {
+    opacity: 1; // Stay visible while showing checkmark
+
+    .icon-copy {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    .icon-check {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+// Show copy button on hover for code block containers
+.profile-content__example:hover .code-copy-btn,
+.terminal-block:hover .code-copy-btn,
+pre:hover > .code-copy-btn {
+  opacity: 1;
+}
+
+// Position for profile examples
+.profile-content__example {
+  position: relative;
+}
+
 .profiles__cta {
   padding: 1.5rem;
   border-top: 1px solid var(--color-grid);
@@ -867,6 +939,19 @@ $content-padding: 2rem;
   border: 1px solid var(--color-grid);
   border-top: none;
   background: var(--color-bg);
+}
+
+// When content-section is the first/only section (on sub-pages), restore top border
+.content-section--page .content-section__frame {
+  border-top: 1px solid var(--color-grid);
+}
+
+.content-section--page .content-section__header {
+  margin-top: 0;
+}
+
+.content-section--page {
+  padding-top: 4rem; // Space from header since there's no hero section
 }
 
 .content-section__header {
@@ -896,6 +981,7 @@ $content-padding: 2rem;
 
   // Terminal-style code blocks (bash)
   .terminal-block {
+    position: relative;
     margin: 1.5rem 0;
     border: 1px solid var(--color-grid);
     background: var(--color-bg);
@@ -1037,6 +1123,7 @@ $content-padding: 2rem;
   }
 
   pre {
+    position: relative;
     margin: 1.5rem 0;
     padding: 0;
     border: 1px solid var(--color-grid);
@@ -1046,6 +1133,7 @@ $content-padding: 2rem;
     code {
       display: block;
       padding: 1rem;
+      padding-right: 3rem; // Space for copy button
       background: none;
       border: none;
       font-size: var(--text-sm);
@@ -1055,6 +1143,7 @@ $content-padding: 2rem;
 
   // Terminal-style code blocks (bash)
   .terminal-block {
+    position: relative;
     margin: 1.5rem 0 2rem;
     border: 1px solid var(--color-grid);
     background: var(--color-bg);
@@ -1301,9 +1390,10 @@ $content-padding: 2rem;
 }
 
 .footer__brand-name {
-  font-family: var(--font-mono);
-  font-size: var(--text-lg);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
   font-weight: var(--weight-semibold);
+  letter-spacing: -0.01em;
   color: var(--color-heading);
 }
 
