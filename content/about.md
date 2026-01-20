@@ -57,8 +57,8 @@ BHC is open source under the MIT license.
 
 Join the conversation:
 
-- [Discord](https://discord.gg/raskell)
 - [Twitter / X](https://x.com/raskell_io)
+- [GitHub Discussions](https://github.com/raskell-io/bhc/discussions)
 
 ## Acknowledgments
 

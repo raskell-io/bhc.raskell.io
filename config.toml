@@ -132,8 +132,19 @@ description = "General-purpose compilation. Focuses on correctness and GHC compa
 example_file = "Main.hs"
 example_code = """module Main where
 
+import Data.List (sort)
+
+-- Entry point: standard Haskell 2010
 main :: IO ()
-main = putStrLn "Hello, Haskell!\""""
+main = do
+    let numbers = [3, 1, 4, 1, 5, 9, 2, 6]
+    putStrLn "Sorted list:"
+    print (sort numbers)
+
+-- Pure function, fully compatible with GHC
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n - 1)"""
 usage = "bhc Main.hs"
 
 [[extra.product.profiles]]
@@ -145,11 +156,21 @@ example_code = """{-# LANGUAGE BHC.StructuredConcurrency #-}
 module Server where
 
 import Control.Concurrent.Scoped
+import Control.Concurrent.Deadline
 
+-- Handler with automatic cancellation propagation
 handler :: Request -> Scoped Response
 handler req = withTimeout 5000 $ do
-  result <- async $ queryDatabase req
-  await result"""
+    -- Spawn concurrent tasks within scope
+    userData  <- async $ fetchUser req.userId
+    orderData <- async $ fetchOrders req.userId
+
+    -- Both cancelled if either fails or times out
+    user   <- await userData
+    orders <- await orderData
+
+    -- Build response (observability hooks auto-attached)
+    return $ Response user orders"""
 usage = "bhc --profile=server Server.hs"
 
 [[extra.product.profiles]]
@@ -158,12 +179,22 @@ name = "Numeric"
 description = "Strict-by-default in hot paths, unboxed numerics, tensor lowering, SIMD. For computational workloads."
 example_file = "Compute.hs"
 example_code = """{-# LANGUAGE BHC.TensorIR #-}
+{-# LANGUAGE BHC.StrictDefault #-}
 module Compute where
 
 import Data.Tensor
 
+-- Matrix multiply: fused and vectorized automatically
 matmul :: Tensor Float -> Tensor Float -> Tensor Float
-matmul a b = contract a b [1] [0]  -- Fused, vectorized"""
+matmul a b = contract a b [1] [0]
+
+-- Element-wise ops get SIMD lowering
+normalize :: Tensor Float -> Tensor Float
+normalize t = t / sqrt (sum (t * t))
+
+-- Guaranteed fusion: no intermediate allocations
+pipeline :: Tensor Float -> Tensor Float -> Float
+pipeline x w = sum (normalize (matmul x w))"""
 usage = "bhc --profile=numeric Compute.hs"
 
 [[extra.product.profiles]]
@@ -173,10 +204,22 @@ description = "Minimal runtime footprint for WASM and embedded targets. Reduced 
 example_file = "Lambda.hs"
 example_code = """module Lambda where
 
+-- Export for WASM host to call
 foreign export ccall handler :: Int -> Int
 
+-- Pure computation, no runtime dependencies
 handler :: Int -> Int
-handler x = x * 2 + 1"""
+handler x = fibonacci x
+
+-- Optimized for small binary size
+fibonacci :: Int -> Int
+fibonacci n
+    | n <= 1    = n
+    | otherwise = fibonacci (n-1) + fibonacci (n-2)
+
+-- Memory: single-pass, minimal allocation
+sumList :: [Int] -> Int
+sumList = foldl' (+) 0"""
 usage = "bhc --profile=edge --target=wasm32-wasi Lambda.hs"
 
 # FAQ
@@ -204,7 +247,6 @@ answer = "Open an issue or discussion on <a href=\"https://github.com/raskell-io
 [extra.social]
 github = "https://github.com/raskell-io/bhc"
 twitter = "https://x.com/raskell_io"
-discord = "https://discord.gg/raskell"
 
 # Footer link groups
 [[extra.product.footer_links]]
@@ -238,10 +280,6 @@ external = true
 
 [[extra.product.footer_links]]
 title = "Community"
-[[extra.product.footer_links.links]]
-text = "Discord"
-url = "https://discord.gg/raskell"
-external = true
 [[extra.product.footer_links.links]]
 text = "Twitter / X"
 url = "https://x.com/raskell_io"
