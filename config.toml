@@ -320,3 +320,7 @@ url = "/targets/"
 [[extra.nav_links]]
 name = "About"
 url = "/about/"
+
+[[extra.nav_links]]
+name = "Docs"
+url = "/docs/"
