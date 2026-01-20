@@ -53,10 +53,13 @@
                         <div class="install-widget__body">
                             <span class="install-widget__prompt">$</span>
                             <code class="install-widget__command" id="install-command">{{ default_method.command }}</code>
-                            <button class="install-widget__copy" onclick="copyCommand()" aria-label="Copy command">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <button class="install-widget__copy" id="install-copy-btn" aria-label="Copy command">
+                                <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
                                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                                <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"/>
                                 </svg>
                             </button>
                         </div>
@@ -326,12 +329,23 @@
 
 <script>
     // Copy command to clipboard
-    function copyCommand() {
-        const command = document.getElementById('install-command').textContent;
-        navigator.clipboard.writeText(command).then(() => {
-            // Could add visual feedback here
-        });
-    }
+    (function() {
+        const btn = document.getElementById('install-copy-btn');
+        if (btn) {
+            btn.addEventListener('click', async () => {
+                const command = document.getElementById('install-command').textContent;
+                try {
+                    await navigator.clipboard.writeText(command);
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                }
+            });
+        }
+    })();
 
     // Animate benchmark bars on scroll
     const observer = new IntersectionObserver((entries) => {
@@ -723,6 +737,66 @@
             }).join('');
 
             block.innerHTML = html;
+        });
+    })();
+
+    // ==========================================================================
+    // Copy buttons for code blocks
+    // ==========================================================================
+    (function() {
+        const copyIcon = `<svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+        const checkIcon = `<svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+        function createCopyButton(getText) {
+            const btn = document.createElement('button');
+            btn.className = 'code-copy-btn';
+            btn.setAttribute('aria-label', 'Copy code');
+            btn.innerHTML = copyIcon + checkIcon;
+
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const text = getText();
+                try {
+                    await navigator.clipboard.writeText(text);
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                }
+            });
+
+            return btn;
+        }
+
+        // Add copy buttons to profile examples
+        document.querySelectorAll('.profile-content__example').forEach(example => {
+            const code = example.querySelector('code');
+            if (code) {
+                const btn = createCopyButton(() => code.textContent);
+                example.appendChild(btn);
+            }
+        });
+
+        // Add copy buttons to terminal blocks
+        document.querySelectorAll('.terminal-block').forEach(terminal => {
+            const code = terminal.querySelector('code');
+            if (code) {
+                const btn = createCopyButton(() => code.textContent);
+                terminal.appendChild(btn);
+            }
+        });
+
+        // Add copy buttons to regular pre blocks (not inside terminal-block)
+        document.querySelectorAll('.content-section__body pre').forEach(pre => {
+            // Skip if already inside a terminal block
+            if (pre.closest('.terminal-block')) return;
+            const code = pre.querySelector('code');
+            if (code) {
+                const btn = createCopyButton(() => code.textContent);
+                pre.appendChild(btn);
+            }
         });
     })();
 </script>

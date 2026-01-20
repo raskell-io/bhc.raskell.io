@@ -307,6 +307,7 @@ $content-padding: 2rem;
 }
 
 .install-widget__copy {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -316,7 +317,7 @@ $content-padding: 2rem;
   background: transparent;
   color: var(--color-text-muted);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
 
   &:hover {
     color: var(--color-text);
@@ -324,9 +325,37 @@ $content-padding: 2rem;
     background: var(--color-bg-surface);
   }
 
+  &:active {
+    transform: scale(0.95);
+  }
+
   svg {
     width: 16px;
     height: 16px;
+    transition: transform 0.2s ease, opacity 0.15s ease;
+  }
+
+  .icon-copy {
+    position: absolute;
+  }
+
+  .icon-check {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.5);
+    color: #a6e3a1; // green
+  }
+
+  &.copied {
+    .icon-copy {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    .icon-check {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
 
@@ -918,6 +947,11 @@ pre:hover > .code-copy-btn {
 // Position for profile examples
 .profile-content__example {
   position: relative;
+}
+
+// Terminal block copy button - position below header
+.terminal-block > .code-copy-btn {
+  top: 2.75rem; // Below the terminal header
 }
 
 .profiles__cta {

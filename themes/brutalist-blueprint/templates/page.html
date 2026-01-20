@@ -9,11 +9,14 @@
     <div class="landing-rail landing-rail--right"></div>
 </div>
 
+<!-- Section dividers container (populated by JS) -->
+<div id="section-dividers"></div>
+
 <div class="landing">
     <div class="landing__container">
 
         <!-- Page Content Section -->
-        <section class="content-section" data-section="content">
+        <section class="content-section content-section--page" data-section="content">
             <div class="content-section__frame">
                 <div class="content-section__header">
                     <span class="content-section__label">[ {{ page.title | upper }} ]</span>
@@ -80,4 +83,239 @@
 
     </div>
 </div>
+
+<script>
+    // Generate section dividers with diamonds at section boundaries
+    function generateSectionDividers() {
+        const container = document.getElementById('section-dividers');
+        const sections = document.querySelectorAll('[data-section]');
+        const railsContainer = document.querySelector('.landing-rails');
+
+        if (!container || !railsContainer) return;
+
+        // Clear existing dividers
+        container.innerHTML = '';
+
+        // Get rail positions (aligned with content container)
+        const leftRail = document.querySelector('.landing-rail--left');
+        const rightRail = document.querySelector('.landing-rail--right');
+        if (!leftRail || !rightRail) return;
+
+        const leftRailX = leftRail.getBoundingClientRect().left;
+        const rightRailX = rightRail.getBoundingClientRect().left;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const topPos = rect.top + scrollTop;
+            const bottomPos = rect.bottom + scrollTop;
+
+            // Create divider at section start
+            const startDivider = document.createElement('div');
+            startDivider.className = 'section-divider';
+            startDivider.style.top = topPos + 'px';
+            startDivider.innerHTML = `
+                <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
+                <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
+            `;
+            container.appendChild(startDivider);
+
+            // Create divider at section end
+            const endDivider = document.createElement('div');
+            endDivider.className = 'section-divider';
+            endDivider.style.top = bottomPos + 'px';
+            endDivider.innerHTML = `
+                <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
+                <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
+            `;
+            container.appendChild(endDivider);
+        });
+    }
+
+    // Generate on load and resize
+    generateSectionDividers();
+    window.addEventListener('resize', generateSectionDividers);
+    // Also regenerate after fonts load (can affect section heights)
+    document.fonts.ready.then(generateSectionDividers);
+
+    // ==========================================================================
+    // Terminal-style bash code blocks
+    // ==========================================================================
+    (function() {
+        // Find bash/shellscript code blocks in content section
+        // Zola uses data-lang="shellscript" for bash
+        const bashBlocks = document.querySelectorAll('.content-section__body pre code[data-lang="shellscript"], .content-section__body pre code[data-lang="bash"]');
+
+        bashBlocks.forEach(codeEl => {
+            const pre = codeEl.parentElement;
+
+            // Create terminal block structure
+            const terminal = document.createElement('div');
+            terminal.className = 'terminal-block';
+
+            // Header with dots
+            const header = document.createElement('div');
+            header.className = 'terminal-block__header';
+            header.innerHTML = `
+                <span class="terminal-block__dot"></span>
+                <span class="terminal-block__dot"></span>
+                <span class="terminal-block__dot"></span>
+                <span class="terminal-block__title">terminal</span>
+            `;
+
+            // Body with original code (keep Zola's syntax highlighting)
+            const body = document.createElement('div');
+            body.className = 'terminal-block__body';
+
+            // Clone the pre element to preserve Zola's highlighting
+            const clonedPre = pre.cloneNode(true);
+            clonedPre.style = ''; // Remove inline styles
+            clonedPre.className = '';
+            body.appendChild(clonedPre);
+
+            terminal.appendChild(header);
+            terminal.appendChild(body);
+
+            // Replace the pre element
+            pre.parentElement.replaceChild(terminal, pre);
+        });
+    })();
+
+    // ==========================================================================
+    // Syntax Highlighting (minimal Haskell highlighter)
+    // ==========================================================================
+    (function() {
+        const codeBlocks = document.querySelectorAll('code.language-haskell');
+
+        codeBlocks.forEach(block => {
+            let code = block.textContent;
+            const tokens = [];
+            let i = 0;
+
+            while (i < code.length) {
+                // Pragmas {-# ... #-}
+                if (code.slice(i, i + 3) === '{-#') {
+                    const end = code.indexOf('#-}', i);
+                    if (end !== -1) {
+                        tokens.push({ type: 'pragma', text: code.slice(i, end + 3) });
+                        i = end + 3;
+                        continue;
+                    }
+                }
+
+                // Line comments --
+                if (code.slice(i, i + 2) === '--') {
+                    let end = code.indexOf('\n', i);
+                    if (end === -1) end = code.length;
+                    tokens.push({ type: 'comment', text: code.slice(i, end) });
+                    i = end;
+                    continue;
+                }
+
+                // Strings
+                if (code[i] === '"') {
+                    let j = i + 1;
+                    while (j < code.length && code[j] !== '"') {
+                        if (code[j] === '\\') j++;
+                        j++;
+                    }
+                    tokens.push({ type: 'string', text: code.slice(i, j + 1) });
+                    i = j + 1;
+                    continue;
+                }
+
+                // Words (keywords, types, identifiers)
+                if (/[a-zA-Z_]/.test(code[i])) {
+                    let j = i;
+                    while (j < code.length && /[a-zA-Z0-9_']/.test(code[j])) j++;
+                    const word = code.slice(i, j);
+                    const keywords = ['module', 'where', 'import', 'data', 'type', 'newtype', 'class', 'instance', 'deriving', 'let', 'in', 'case', 'of', 'if', 'then', 'else', 'do', 'return', 'foreign', 'export', 'ccall', 'otherwise'];
+                    if (keywords.includes(word)) {
+                        tokens.push({ type: 'keyword', text: word });
+                    } else if (/^[A-Z]/.test(word)) {
+                        tokens.push({ type: 'type', text: word });
+                    } else {
+                        tokens.push({ type: 'ident', text: word });
+                    }
+                    i = j;
+                    continue;
+                }
+
+                // Numbers
+                if (/[0-9]/.test(code[i])) {
+                    let j = i;
+                    while (j < code.length && /[0-9.]/.test(code[j])) j++;
+                    tokens.push({ type: 'number', text: code.slice(i, j) });
+                    i = j;
+                    continue;
+                }
+
+                // Other characters
+                tokens.push({ type: 'plain', text: code[i] });
+                i++;
+            }
+
+            // Build HTML
+            const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            let html = tokens.map(t => {
+                const escaped = escapeHtml(t.text);
+                if (t.type === 'plain' || t.type === 'ident') return escaped;
+                return `<span class="hl-${t.type}">${escaped}</span>`;
+            }).join('');
+
+            block.innerHTML = html;
+        });
+    })();
+
+    // ==========================================================================
+    // Copy buttons for code blocks
+    // ==========================================================================
+    (function() {
+        const copyIcon = `<svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+        const checkIcon = `<svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+        function createCopyButton(getText) {
+            const btn = document.createElement('button');
+            btn.className = 'code-copy-btn';
+            btn.setAttribute('aria-label', 'Copy code');
+            btn.innerHTML = copyIcon + checkIcon;
+
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const text = getText();
+                try {
+                    await navigator.clipboard.writeText(text);
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                }
+            });
+
+            return btn;
+        }
+
+        // Add copy buttons to terminal blocks
+        document.querySelectorAll('.terminal-block').forEach(terminal => {
+            const code = terminal.querySelector('code');
+            if (code) {
+                const btn = createCopyButton(() => code.textContent);
+                terminal.appendChild(btn);
+            }
+        });
+
+        // Add copy buttons to regular pre blocks (not inside terminal-block)
+        document.querySelectorAll('.content-section__body pre').forEach(pre => {
+            // Skip if already inside a terminal block
+            if (pre.closest('.terminal-block')) return;
+            const code = pre.querySelector('code');
+            if (code) {
+                const btn = createCopyButton(() => code.textContent);
+                pre.appendChild(btn);
+            }
+        });
+    })();
+</script>
 {% endblock %}
