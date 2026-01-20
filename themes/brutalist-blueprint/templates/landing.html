@@ -1002,14 +1002,14 @@
             ctx.globalAlpha = 0.15;
             drawLissajous(leftX, centerY, size * 0.7, size * 0.5, 5, 4, time * 1.3, 250, -time * 0.08);
 
-            // Right corner curves (between right rail and right edge)
+            // Right corner curves - different speeds/phases for asymmetry
             const rightX = rightRail + (canvasWidth - rightRail) / 2;
 
             ctx.globalAlpha = 0.25;
-            drawLissajous(rightX, centerY, size, size * 0.7, 3, 2, -time, 250, -time * 0.12);
+            drawLissajous(rightX, centerY, size, size * 0.7, 4, 3, time * 0.8 + 2.3, 250, time * 0.09 + 1.1);
 
             ctx.globalAlpha = 0.15;
-            drawLissajous(rightX, centerY, size * 0.7, size * 0.5, 5, 4, -time * 1.3, 250, time * 0.08);
+            drawLissajous(rightX, centerY, size * 0.7, size * 0.5, 3, 5, time * 1.1 + 1.7, 250, time * 0.11 + 0.5);
 
             ctx.globalAlpha = 1;
             animationId = requestAnimationFrame(draw);
