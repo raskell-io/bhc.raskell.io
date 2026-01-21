@@ -68,11 +68,13 @@
   text-decoration: none;
   border: 1px solid transparent;
   transition: all 0.15s ease;
+  background: transparent;
+  cursor: pointer;
 
   svg {
     flex-shrink: 0;
     opacity: 0.6;
-    transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease, transform 0.15s ease;
   }
 
   &:hover {
@@ -93,6 +95,109 @@
       opacity: 1;
     }
   }
+}
+
+// Dropdown styles
+.header__dropdown {
+  position: relative;
+}
+
+.header__dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.header__dropdown-arrow {
+  transition: transform 0.15s ease;
+}
+
+.header__dropdown--open {
+  .header__dropdown-toggle {
+    color: var(--color-text);
+    border-color: var(--color-grid);
+    background: var(--color-bg-surface);
+  }
+
+  .header__dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .header__dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.header__dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 200px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-grid);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.15s ease;
+  z-index: 200;
+}
+
+.header__dropdown-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.65rem 0.85rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-grid-subtle);
+  transition: all 0.15s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: var(--color-bg-surface);
+
+    .header__dropdown-item-name {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.header__dropdown-item-name {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  transition: color 0.15s ease;
+}
+
+.header__dropdown-item-desc {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+}
+
+// Mobile nav group styles
+.mobile-nav__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mobile-nav__group-title {
+  display: block;
+  padding: 0.5rem 1rem 0.25rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mobile-nav__link--nested {
+  padding-left: 1.5rem;
 }
 
 .header__right {
