@@ -1036,6 +1036,23 @@ pre:hover > .code-copy-btn {
 .content-section__body {
   padding: 2rem;
 
+  // Section title (h2) with gradient to match other sections
+  > h2:first-child {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-bold);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-grid);
+
+    // Gradient text
+    background: linear-gradient(135deg, #cba6f7 0%, #89b4fa 50%, #5e5086 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   // Paragraphs after terminal blocks need spacing
   .terminal-block + p {
     margin-top: 1.5rem;
