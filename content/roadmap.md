@@ -105,4 +105,4 @@ Follow development:
 
 - [GitHub Releases](https://github.com/raskell-io/bhc/releases)
 - [Changelog](https://github.com/raskell-io/bhc/blob/main/CHANGELOG.md)
-- [Twitter / X](https://x.com/raskell_io)
+- [Twitter / X](https://x.com/raskelll)
