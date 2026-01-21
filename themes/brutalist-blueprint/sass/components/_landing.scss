@@ -1163,12 +1163,6 @@ pre:hover > .code-copy-btn {
     margin-top: 3rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--color-grid-subtle);
-
-    // Gradient text
-    background: linear-gradient(135deg, #cba6f7 0%, #89b4fa 50%, #5e5086 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 
   h3 {
