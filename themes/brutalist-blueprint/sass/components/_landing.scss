@@ -379,6 +379,14 @@ $content-padding: 2rem;
   background: var(--color-grid);
 }
 
+.haskell-foundation__cta {
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-grid);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .haskell-foundation__bhc {
   padding: 1.5rem;
   background: var(--color-bg-alt);
@@ -1755,6 +1763,14 @@ pre:hover > .code-copy-btn {
     font-weight: var(--weight-semibold);
     color: var(--color-text);
   }
+}
+
+.faq__cta {
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-grid);
+  background: var(--color-bg-alt);
+  display: flex;
+  justify-content: center;
 }
 
 // -----------------------------------------------------------------------------
