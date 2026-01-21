@@ -1098,6 +1098,7 @@ pre:hover > .code-copy-btn {
   .terminal-block__icon {
     flex-shrink: 0;
     margin-right: 0.5rem;
+    color: var(--color-text-muted);
   }
 
   .terminal-block__file {
@@ -1288,6 +1289,7 @@ pre:hover > .code-copy-btn {
   .terminal-block__icon {
     flex-shrink: 0;
     margin-right: 0.5rem;
+    color: var(--color-text-muted);
   }
 
   .terminal-block__file {
