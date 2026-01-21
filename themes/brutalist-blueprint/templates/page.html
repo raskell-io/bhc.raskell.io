@@ -566,103 +566,91 @@
         }
 
         // ==========================================================================
-        // COMPILER: Data flow through compilation pipeline stages
+        // COMPILER: Recursive AST tree growing and pulsing
         // ==========================================================================
         function drawCompiler() {
             ctx.clearRect(0, 0, width, height);
-            time += 0.004;
+            time += 0.003;
 
-            const centerY = height / 2;
-            const stageCount = 5;
-            const stageWidth = 60;
-            const stageGap = 40;
-            const totalWidth = stageCount * stageWidth + (stageCount - 1) * stageGap;
-            const startX = (width - totalWidth) / 2;
+            const centerX = width / 2;
+            const rootY = 25;
 
             ctx.strokeStyle = accentColor;
             ctx.fillStyle = accentColor;
+            ctx.lineCap = 'round';
 
-            // Draw pipeline stages (boxes)
-            for (let i = 0; i < stageCount; i++) {
-                const x = startX + i * (stageWidth + stageGap);
-                const boxHeight = 30;
-                const y = centerY - boxHeight / 2;
+            // Recursive tree drawing function
+            function drawBranch(x, y, length, angle, depth, maxDepth, branchIndex) {
+                if (depth > maxDepth || length < 4) return;
 
-                // Stage box
-                ctx.globalAlpha = 0.2;
-                ctx.lineWidth = 1;
-                ctx.strokeRect(x, y, stageWidth, boxHeight);
+                // Animate growth based on depth and time
+                const depthDelay = depth * 0.15;
+                const growthPhase = Math.max(0, Math.min(1, (Math.sin(time * 0.8 - depthDelay) + 1) / 2));
+                const currentLength = length * (0.7 + growthPhase * 0.3);
 
-                // Connecting arrow to next stage
-                if (i < stageCount - 1) {
-                    ctx.globalAlpha = 0.15;
-                    ctx.beginPath();
-                    ctx.moveTo(x + stageWidth + 5, centerY);
-                    ctx.lineTo(x + stageWidth + stageGap - 5, centerY);
-                    ctx.stroke();
+                // Calculate end point
+                const endX = x + Math.sin(angle) * currentLength;
+                const endY = y + Math.cos(angle) * currentLength;
 
-                    // Arrow head
-                    ctx.beginPath();
-                    ctx.moveTo(x + stageWidth + stageGap - 10, centerY - 4);
-                    ctx.lineTo(x + stageWidth + stageGap - 5, centerY);
-                    ctx.lineTo(x + stageWidth + stageGap - 10, centerY + 4);
-                    ctx.stroke();
+                // Pulsing alpha based on depth
+                const pulse = Math.sin(time * 2 + depth * 0.5 + branchIndex) * 0.15;
+                const baseAlpha = 0.15 + (1 - depth / maxDepth) * 0.35;
+                ctx.globalAlpha = baseAlpha + pulse;
+
+                // Line width decreases with depth
+                ctx.lineWidth = Math.max(1, 3 - depth * 0.5);
+
+                // Draw branch
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(endX, endY);
+                ctx.stroke();
+
+                // Draw node at branch point
+                const nodeSize = Math.max(2, 4 - depth * 0.6);
+                const nodePulse = Math.sin(time * 3 + depth + branchIndex * 0.7) * 0.2;
+                ctx.globalAlpha = baseAlpha + 0.2 + nodePulse;
+                ctx.beginPath();
+                ctx.arc(endX, endY, nodeSize, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Recursively draw child branches
+                const childCount = depth === 0 ? 3 : 2;
+                const spreadAngle = Math.PI * (0.25 - depth * 0.03);
+                const lengthRatio = 0.72;
+
+                for (let i = 0; i < childCount; i++) {
+                    let childAngle;
+                    if (childCount === 3) {
+                        childAngle = angle + (i - 1) * spreadAngle;
+                    } else {
+                        childAngle = angle + (i === 0 ? -spreadAngle : spreadAngle);
+                    }
+
+                    // Add slight animation to angles
+                    const angleWobble = Math.sin(time * 1.5 + depth * 2 + i) * 0.05;
+                    childAngle += angleWobble;
+
+                    drawBranch(
+                        endX,
+                        endY,
+                        currentLength * lengthRatio,
+                        childAngle,
+                        depth + 1,
+                        maxDepth,
+                        branchIndex * childCount + i
+                    );
                 }
             }
 
-            // Animate data particles flowing through pipeline
-            const particleCount = 12;
-            for (let p = 0; p < particleCount; p++) {
-                // Each particle has different phase
-                const phase = (time * 0.5 + p / particleCount) % 1;
-                const totalPath = totalWidth + 40;
-                const particleX = startX - 20 + phase * (totalPath + 40);
+            // Draw root node
+            ctx.globalAlpha = 0.6;
+            ctx.beginPath();
+            ctx.arc(centerX, rootY, 5, 0, Math.PI * 2);
+            ctx.fill();
 
-                // Calculate which stage the particle is in
-                const relX = particleX - startX;
-                let inStage = false;
-                let stageIndex = -1;
-
-                for (let i = 0; i < stageCount; i++) {
-                    const stageStart = i * (stageWidth + stageGap);
-                    const stageEnd = stageStart + stageWidth;
-                    if (relX >= stageStart && relX <= stageEnd) {
-                        inStage = true;
-                        stageIndex = i;
-                        break;
-                    }
-                }
-
-                // Particle properties based on stage
-                let particleY = centerY;
-                let size = 3;
-                let alpha = 0.5;
-
-                if (inStage) {
-                    // Inside a stage: particle moves in a small arc
-                    const localX = relX - stageIndex * (stageWidth + stageGap);
-                    const progress = localX / stageWidth;
-                    particleY = centerY + Math.sin(progress * Math.PI) * -8;
-                    size = 3 + Math.sin(progress * Math.PI) * 2;
-                    alpha = 0.6 + Math.sin(progress * Math.PI) * 0.3;
-                }
-
-                // Draw particle
-                if (particleX > startX - 20 && particleX < startX + totalWidth + 20) {
-                    ctx.globalAlpha = alpha;
-                    ctx.beginPath();
-                    ctx.arc(particleX, particleY, size, 0, Math.PI * 2);
-                    ctx.fill();
-
-                    // Particle trail
-                    ctx.globalAlpha = alpha * 0.3;
-                    for (let t = 1; t <= 3; t++) {
-                        ctx.beginPath();
-                        ctx.arc(particleX - t * 6, particleY, size - t * 0.5, 0, Math.PI * 2);
-                        ctx.fill();
-                    }
-                }
-            }
+            // Draw the tree (root grows downward)
+            drawBranch(centerX, rootY, 45, 0, 0, 5, 0);
 
             ctx.globalAlpha = 1;
             animationId = requestAnimationFrame(drawCompiler);
