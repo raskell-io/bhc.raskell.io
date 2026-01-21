@@ -565,6 +565,109 @@
             animationId = requestAnimationFrame(drawAbout);
         }
 
+        // ==========================================================================
+        // COMPILER: Data flow through compilation pipeline stages
+        // ==========================================================================
+        function drawCompiler() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.004;
+
+            const centerY = height / 2;
+            const stageCount = 5;
+            const stageWidth = 60;
+            const stageGap = 40;
+            const totalWidth = stageCount * stageWidth + (stageCount - 1) * stageGap;
+            const startX = (width - totalWidth) / 2;
+
+            ctx.strokeStyle = accentColor;
+            ctx.fillStyle = accentColor;
+
+            // Draw pipeline stages (boxes)
+            for (let i = 0; i < stageCount; i++) {
+                const x = startX + i * (stageWidth + stageGap);
+                const boxHeight = 30;
+                const y = centerY - boxHeight / 2;
+
+                // Stage box
+                ctx.globalAlpha = 0.2;
+                ctx.lineWidth = 1;
+                ctx.strokeRect(x, y, stageWidth, boxHeight);
+
+                // Connecting arrow to next stage
+                if (i < stageCount - 1) {
+                    ctx.globalAlpha = 0.15;
+                    ctx.beginPath();
+                    ctx.moveTo(x + stageWidth + 5, centerY);
+                    ctx.lineTo(x + stageWidth + stageGap - 5, centerY);
+                    ctx.stroke();
+
+                    // Arrow head
+                    ctx.beginPath();
+                    ctx.moveTo(x + stageWidth + stageGap - 10, centerY - 4);
+                    ctx.lineTo(x + stageWidth + stageGap - 5, centerY);
+                    ctx.lineTo(x + stageWidth + stageGap - 10, centerY + 4);
+                    ctx.stroke();
+                }
+            }
+
+            // Animate data particles flowing through pipeline
+            const particleCount = 12;
+            for (let p = 0; p < particleCount; p++) {
+                // Each particle has different phase
+                const phase = (time * 0.5 + p / particleCount) % 1;
+                const totalPath = totalWidth + 40;
+                const particleX = startX - 20 + phase * (totalPath + 40);
+
+                // Calculate which stage the particle is in
+                const relX = particleX - startX;
+                let inStage = false;
+                let stageIndex = -1;
+
+                for (let i = 0; i < stageCount; i++) {
+                    const stageStart = i * (stageWidth + stageGap);
+                    const stageEnd = stageStart + stageWidth;
+                    if (relX >= stageStart && relX <= stageEnd) {
+                        inStage = true;
+                        stageIndex = i;
+                        break;
+                    }
+                }
+
+                // Particle properties based on stage
+                let particleY = centerY;
+                let size = 3;
+                let alpha = 0.5;
+
+                if (inStage) {
+                    // Inside a stage: particle moves in a small arc
+                    const localX = relX - stageIndex * (stageWidth + stageGap);
+                    const progress = localX / stageWidth;
+                    particleY = centerY + Math.sin(progress * Math.PI) * -8;
+                    size = 3 + Math.sin(progress * Math.PI) * 2;
+                    alpha = 0.6 + Math.sin(progress * Math.PI) * 0.3;
+                }
+
+                // Draw particle
+                if (particleX > startX - 20 && particleX < startX + totalWidth + 20) {
+                    ctx.globalAlpha = alpha;
+                    ctx.beginPath();
+                    ctx.arc(particleX, particleY, size, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Particle trail
+                    ctx.globalAlpha = alpha * 0.3;
+                    for (let t = 1; t <= 3; t++) {
+                        ctx.beginPath();
+                        ctx.arc(particleX - t * 6, particleY, size - t * 0.5, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+            }
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(drawCompiler);
+        }
+
         // Select animation based on page slug
         const animations = {
             'get-started': drawGetStarted,
@@ -573,6 +676,7 @@
             'numeric': drawNumeric,
             'targets': drawTargets,
             'roadmap': drawRoadmap,
+            'compiler': drawCompiler,
             'about': drawAbout
         };
 
