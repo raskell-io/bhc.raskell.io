@@ -15,12 +15,17 @@
 <div class="landing">
     <div class="landing__container">
 
+        <!-- Page Hero Section -->
+        <section class="page-hero" data-section="hero" data-page-slug="{{ page.slug }}">
+            <canvas id="page-hero-canvas" class="page-hero__canvas"></canvas>
+            <div class="page-hero__content">
+                <span class="page-hero__label">[ {{ page.title | upper }} ]</span>
+            </div>
+        </section>
+
         <!-- Page Content Section -->
         <section class="content-section content-section--page" data-section="content">
             <div class="content-section__frame">
-                <div class="content-section__header">
-                    <span class="content-section__label">[ {{ page.title | upper }} ]</span>
-                </div>
                 <div class="content-section__body content-section__body--page">
                     {{ page.content | safe }}
                 </div>
@@ -137,6 +142,358 @@
     // Generate on load and resize
     generateSectionDividers();
     window.addEventListener('resize', generateSectionDividers);
+
+    // ==========================================================================
+    // Page Hero Animations - Unique demoscene animation per page
+    // ==========================================================================
+    (function() {
+        const canvas = document.getElementById('page-hero-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        const heroSection = document.querySelector('.page-hero');
+        const pageSlug = heroSection?.dataset.pageSlug || '';
+        let width, height;
+        let animationId;
+        let time = 0;
+
+        function resize() {
+            width = canvas.parentElement.offsetWidth;
+            height = canvas.parentElement.offsetHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        const style = getComputedStyle(document.documentElement);
+        const accentColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+        const gridColor = style.getPropertyValue('--color-grid').trim() || '#45475a';
+
+        // ==========================================================================
+        // GET STARTED: Compilation progress / loading bars
+        // ==========================================================================
+        function drawGetStarted() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.02;
+
+            const barCount = 8;
+            const barHeight = 4;
+            const barSpacing = 18;
+            const startY = height / 2 - (barCount * barSpacing) / 2;
+
+            for (let i = 0; i < barCount; i++) {
+                const y = startY + i * barSpacing;
+                const phase = time + i * 0.3;
+                const progress = (Math.sin(phase) + 1) / 2;
+                const barWidth = 60 + progress * 180;
+
+                // Track
+                ctx.fillStyle = gridColor;
+                ctx.globalAlpha = 0.3;
+                ctx.fillRect(width / 2 - 130, y, 260, barHeight);
+
+                // Progress bar
+                ctx.fillStyle = accentColor;
+                ctx.globalAlpha = 0.4 + progress * 0.4;
+                ctx.fillRect(width / 2 - 130, y, barWidth, barHeight);
+            }
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(drawGetStarted);
+        }
+
+        // ==========================================================================
+        // COMPATIBILITY: Chain links / interlocking rings
+        // ==========================================================================
+        function drawCompatibility() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.008;
+
+            ctx.strokeStyle = accentColor;
+            ctx.lineWidth = 2;
+
+            const linkCount = 7;
+            const linkWidth = 50;
+            const linkHeight = 25;
+            const spacing = linkWidth * 0.7;
+            const startX = width / 2 - (linkCount * spacing) / 2;
+
+            for (let i = 0; i < linkCount; i++) {
+                const x = startX + i * spacing;
+                const y = height / 2 + Math.sin(time * 2 + i * 0.5) * 15;
+                const rotation = Math.sin(time + i * 0.3) * 0.1;
+
+                ctx.save();
+                ctx.translate(x + linkWidth / 2, y);
+                ctx.rotate(rotation);
+                ctx.globalAlpha = 0.3 + Math.abs(Math.sin(time + i)) * 0.4;
+
+                // Draw chain link (rounded rectangle)
+                ctx.beginPath();
+                const r = linkHeight / 2;
+                ctx.roundRect(-linkWidth / 2, -linkHeight / 2, linkWidth, linkHeight, r);
+                ctx.stroke();
+
+                ctx.restore();
+            }
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(drawCompatibility);
+        }
+
+        // ==========================================================================
+        // PROFILES: Multiple waveforms / oscilloscope
+        // ==========================================================================
+        function drawProfiles() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.015;
+
+            const waves = [
+                { freq: 0.02, amp: 25, speed: 1, offset: -30 },
+                { freq: 0.015, amp: 20, speed: 1.5, offset: 0 },
+                { freq: 0.025, amp: 30, speed: 0.8, offset: 30 },
+                { freq: 0.01, amp: 15, speed: 2, offset: 0 },
+            ];
+
+            waves.forEach((wave, idx) => {
+                ctx.beginPath();
+                ctx.strokeStyle = accentColor;
+                ctx.lineWidth = 1.5;
+                ctx.globalAlpha = 0.2 + idx * 0.1;
+
+                const centerY = height / 2 + wave.offset;
+                for (let x = 0; x < width; x += 2) {
+                    const y = centerY + Math.sin(x * wave.freq + time * wave.speed) * wave.amp
+                                      + Math.sin(x * wave.freq * 2 + time * wave.speed * 1.5) * wave.amp * 0.3;
+                    if (x === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            });
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(drawProfiles);
+        }
+
+        // ==========================================================================
+        // NUMERIC: Spirograph / mathematical curves
+        // ==========================================================================
+        function drawNumeric() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.003;
+
+            ctx.strokeStyle = accentColor;
+            ctx.lineWidth = 1;
+
+            // Spirograph parameters
+            const R = 60, r = 25, d = 45;
+            const centerX = width / 2, centerY = height / 2;
+
+            for (let curve = 0; curve < 3; curve++) {
+                ctx.beginPath();
+                ctx.globalAlpha = 0.25 - curve * 0.05;
+                const offset = curve * Math.PI * 2 / 3;
+                const scale = 1 - curve * 0.15;
+
+                for (let t = 0; t < Math.PI * 20; t += 0.02) {
+                    const x = (R - r) * Math.cos(t + time + offset) + d * Math.cos((R - r) / r * t + time * 2);
+                    const y = (R - r) * Math.sin(t + time + offset) - d * Math.sin((R - r) / r * t + time * 2);
+                    if (t === 0) ctx.moveTo(centerX + x * scale, centerY + y * scale);
+                    else ctx.lineTo(centerX + x * scale, centerY + y * scale);
+                }
+                ctx.stroke();
+            }
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(drawNumeric);
+        }
+
+        // ==========================================================================
+        // TARGETS: Crosshair / scanning animation
+        // ==========================================================================
+        function drawTargets() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.015;
+
+            const centerX = width / 2, centerY = height / 2;
+
+            ctx.strokeStyle = accentColor;
+            ctx.lineWidth = 1;
+
+            // Rotating crosshairs
+            for (let i = 0; i < 3; i++) {
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(time * (0.5 + i * 0.2) + i * Math.PI / 3);
+                ctx.globalAlpha = 0.2 + i * 0.1;
+
+                const size = 40 + i * 20;
+
+                // Draw crosshair
+                ctx.beginPath();
+                ctx.moveTo(-size, 0); ctx.lineTo(-size * 0.3, 0);
+                ctx.moveTo(size * 0.3, 0); ctx.lineTo(size, 0);
+                ctx.moveTo(0, -size); ctx.lineTo(0, -size * 0.3);
+                ctx.moveTo(0, size * 0.3); ctx.lineTo(0, size);
+                ctx.stroke();
+
+                // Corner brackets
+                ctx.beginPath();
+                ctx.moveTo(-size, -size + 10); ctx.lineTo(-size, -size); ctx.lineTo(-size + 10, -size);
+                ctx.moveTo(size - 10, -size); ctx.lineTo(size, -size); ctx.lineTo(size, -size + 10);
+                ctx.moveTo(size, size - 10); ctx.lineTo(size, size); ctx.lineTo(size - 10, size);
+                ctx.moveTo(-size + 10, size); ctx.lineTo(-size, size); ctx.lineTo(-size, size - 10);
+                ctx.stroke();
+
+                ctx.restore();
+            }
+
+            // Scanning line
+            ctx.globalAlpha = 0.4;
+            const scanY = centerY + Math.sin(time * 2) * 60;
+            ctx.beginPath();
+            ctx.moveTo(centerX - 100, scanY);
+            ctx.lineTo(centerX + 100, scanY);
+            ctx.stroke();
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(drawTargets);
+        }
+
+        // ==========================================================================
+        // ROADMAP: Timeline with moving dots
+        // ==========================================================================
+        function drawRoadmap() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.01;
+
+            const centerY = height / 2;
+            const lineStart = width * 0.15;
+            const lineEnd = width * 0.85;
+
+            // Main timeline
+            ctx.strokeStyle = gridColor;
+            ctx.lineWidth = 2;
+            ctx.globalAlpha = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(lineStart, centerY);
+            ctx.lineTo(lineEnd, centerY);
+            ctx.stroke();
+
+            // Milestone markers
+            const milestones = 6;
+            for (let i = 0; i < milestones; i++) {
+                const x = lineStart + (lineEnd - lineStart) * (i / (milestones - 1));
+                const pulse = Math.sin(time * 2 + i * 0.8);
+
+                ctx.fillStyle = accentColor;
+                ctx.globalAlpha = 0.4 + pulse * 0.2;
+                ctx.beginPath();
+                ctx.arc(x, centerY, 5 + pulse * 2, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Vertical tick
+                ctx.strokeStyle = gridColor;
+                ctx.globalAlpha = 0.3;
+                ctx.beginPath();
+                ctx.moveTo(x, centerY - 15);
+                ctx.lineTo(x, centerY + 15);
+                ctx.stroke();
+            }
+
+            // Moving progress dot
+            const progressX = lineStart + ((time * 30) % (lineEnd - lineStart));
+            ctx.fillStyle = accentColor;
+            ctx.globalAlpha = 0.8;
+            ctx.beginPath();
+            ctx.arc(progressX, centerY, 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Trail
+            for (let i = 1; i <= 5; i++) {
+                const trailX = progressX - i * 15;
+                if (trailX > lineStart) {
+                    ctx.globalAlpha = 0.5 - i * 0.1;
+                    ctx.beginPath();
+                    ctx.arc(trailX, centerY, 3 - i * 0.4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(drawRoadmap);
+        }
+
+        // ==========================================================================
+        // ABOUT: Rotating polyhedra / geometric shapes
+        // ==========================================================================
+        function drawAbout() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.008;
+
+            const centerX = width / 2, centerY = height / 2;
+
+            ctx.strokeStyle = accentColor;
+            ctx.lineWidth = 1;
+
+            // Draw multiple rotating polygons
+            for (let p = 0; p < 3; p++) {
+                const sides = 5 + p;
+                const radius = 30 + p * 25;
+                const rotation = time * (1 - p * 0.3) + p * Math.PI / 4;
+
+                ctx.beginPath();
+                ctx.globalAlpha = 0.3 - p * 0.05;
+
+                for (let i = 0; i <= sides; i++) {
+                    const angle = (i / sides) * Math.PI * 2 + rotation;
+                    const x = centerX + Math.cos(angle) * radius;
+                    const y = centerY + Math.sin(angle) * radius;
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+
+                // Inner connections
+                ctx.globalAlpha = 0.15;
+                for (let i = 0; i < sides; i++) {
+                    const angle1 = (i / sides) * Math.PI * 2 + rotation;
+                    const angle2 = ((i + 2) / sides) * Math.PI * 2 + rotation;
+                    ctx.beginPath();
+                    ctx.moveTo(centerX + Math.cos(angle1) * radius, centerY + Math.sin(angle1) * radius);
+                    ctx.lineTo(centerX + Math.cos(angle2) * radius, centerY + Math.sin(angle2) * radius);
+                    ctx.stroke();
+                }
+            }
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(drawAbout);
+        }
+
+        // Select animation based on page slug
+        const animations = {
+            'get-started': drawGetStarted,
+            'compatibility': drawCompatibility,
+            'profiles': drawProfiles,
+            'numeric': drawNumeric,
+            'targets': drawTargets,
+            'roadmap': drawRoadmap,
+            'about': drawAbout
+        };
+
+        resize();
+        window.addEventListener('resize', resize);
+
+        const drawFn = animations[pageSlug] || drawAbout;
+        drawFn();
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                cancelAnimationFrame(animationId);
+            } else {
+                drawFn();
+            }
+        });
+    })();
     // Also regenerate after fonts load (can affect section heights)
     document.fonts.ready.then(generateSectionDividers);
 
