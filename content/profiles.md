@@ -116,7 +116,37 @@ ghc-options: -profile=server
 ```haskell
 {-# OPTIONS_BHC -profile=numeric #-}
 module HotPath where
--- ...
+
+-- | This module handles the performance-critical inner loop of our application.
+-- By specifying the numeric profile at the module level, we get:
+--   - Strict evaluation by default (no thunk buildup)
+--   - Unboxed numeric types (no pointer indirection)
+--   - Guaranteed fusion for map/filter/fold chains
+--
+-- The rest of our application can use the default profile for flexibility,
+-- while this module gets the specialized numeric treatment.
+
+import qualified Data.Vector.Unboxed as V
+import Data.Vector.Unboxed (Vector)
+
+-- | Process sensor readings with guaranteed performance characteristics.
+-- In numeric profile, this entire pipeline fuses into a single loop.
+processSensorData :: Vector Double -> (Double, Double, Int)
+processSensorData readings = (avg, peak, outlierCount)
+  where
+    -- Remove invalid readings (negative values are sensor errors)
+    valid = V.filter (>= 0) readings
+
+    -- Compute statistics in a single pass
+    n    = V.length valid
+    avg  = V.sum valid / fromIntegral n
+    peak = V.maximum valid
+
+    -- Count outliers (values more than 3 standard deviations from mean)
+    sumSq    = V.foldl' (\acc x -> acc + x*x) 0 valid
+    variance = (sumSq / fromIntegral n) - avg * avg
+    stdDev   = sqrt variance
+    outlierCount = V.length $ V.filter (\x -> abs (x - avg) > 3 * stdDev) valid
 ```
 
 ## Profile Combinations
