@@ -10,6 +10,10 @@ BHC is a multi-stage optimizing compiler written in Rust. This page documents th
 
 ## High-Level Pipeline
 
+Compilation in BHC proceeds through a series of well-defined stages. Source code enters the frontend, which parses it and performs type checking. The result is lowered to Core IR—a small, explicitly-typed intermediate language that serves as the foundation for optimization. After extensive Core-to-Core transformations, the code branches into profile-specific intermediate representations before final code generation.
+
+The key insight is that BHC maintains a single frontend and optimization pipeline, then diverges based on the selected runtime profile. This ensures consistent semantics while allowing profile-specific code generation strategies.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         BHC COMPILATION PIPELINE                            │
@@ -56,11 +60,17 @@ BHC is a multi-stage optimizing compiler written in Rust. This page documents th
                       Executable
 ```
 
+The three profile-specific IRs serve different purposes: **Tensor IR** (numeric profile) understands array shapes and enables aggressive fusion and SIMD lowering. **STG IR** (default profile) implements lazy evaluation with the Spineless Tagless G-machine model. **Direct IR** (edge profile) produces compact code suitable for resource-constrained environments like WebAssembly.
+
 ## Frontend Architecture
 
-The frontend transforms source code into typed Core IR through several phases.
+The frontend transforms source code into typed Core IR through several phases. Each phase has a single responsibility and produces a well-defined output that feeds into the next stage.
 
 ### Lexer and Parser
+
+The lexer converts source text into a token stream. Haskell's layout rule (significant whitespace) is handled here—the layout engine inserts virtual braces and semicolons so the parser doesn't need to understand indentation. This separation keeps the parser simple and makes error recovery more predictable.
+
+The parser is a hand-written recursive descent parser rather than a generated one. This choice gives better error messages and makes it easier to handle Haskell's context-sensitive grammar (particularly around operators and layout). The parser produces a Concrete Syntax Tree (CST) that preserves all source structure, which is then simplified to an Abstract Syntax Tree (AST).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -107,6 +117,12 @@ The frontend transforms source code into typed Core IR through several phases.
 
 ### Name Resolution
 
+After parsing, names in the AST are just strings. Name resolution assigns each name a unique identifier and connects uses to definitions. This phase runs three sub-passes in parallel:
+
+The **Import Resolver** finds and loads interface files for imported modules, checking that requested names are actually exported. The **Scope Builder** constructs lexical scopes, tracking where each name is bound and detecting shadowing. The **Fixity Resolver** handles operator precedence and associativity, rewriting infix expressions into proper tree structure.
+
+The output is a Resolved AST where every name reference includes a unique ID pointing to its definition. This makes subsequent phases simpler since they never need to worry about scoping rules.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           NAME RESOLUTION                                   │
@@ -139,6 +155,14 @@ The frontend transforms source code into typed Core IR through several phases.
 ```
 
 ### Type Inference
+
+Type inference in BHC uses a constraint-based approach inspired by OutsideIn(X). Rather than inferring types directly, the algorithm generates typing constraints from the program structure, then solves those constraints to find a valid typing.
+
+**Constraint Generation** walks the AST and emits constraints. For a variable `x`, it looks up the known type. For a lambda `\x -> e`, it creates a fresh type variable for `x`, checks `e`, and produces a function type. For application `f x`, it requires `f` to have function type and `x` to match the argument type.
+
+**Constraint Solving** has two components. The **Unification Engine** handles equality constraints between types, using union-find for efficient variable merging and occurs-check to prevent infinite types. **Instance Resolution** handles type class constraints, finding matching instances and generating evidence (the dictionaries that get passed at runtime).
+
+The output is a Typed AST with explicit type annotations everywhere, plus evidence terms for all type class uses.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -199,9 +223,13 @@ The frontend transforms source code into typed Core IR through several phases.
 
 ## Core IR
 
-Core is BHC's primary intermediate representation: a small, explicitly-typed functional language.
+Core is BHC's primary intermediate representation: a small, explicitly-typed functional language. Its simplicity makes optimization tractable—there are only a handful of expression forms, and every sub-expression has a known type.
 
 ### Core Language
+
+Core is essentially System F (polymorphic lambda calculus) with a few extensions for practical compilation: let-bindings for sharing, case expressions for pattern matching, and type casts for newtypes and coercions.
+
+The grammar below shows all expression forms. Note that Core is fully explicit: lambdas annotate their parameters, let-bindings annotate their variables, and type applications are written out rather than inferred. This explicitness simplifies transformations since the type of any expression can be computed without re-running type inference.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -257,6 +285,10 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ### Desugaring Examples
 
+Haskell's surface syntax includes many conveniences that don't exist in Core. Desugaring translates these into the simpler Core constructs. This table shows some common transformations:
+
+**Do-notation** becomes explicit bind (`>>=`) calls. **List comprehensions** become combinations of `concatMap`, `filter`, and list construction. **Multiple-clause function definitions** become single lambdas with case expressions. **Type classes** become data types (dictionaries) with the class methods as fields, and instances become values of those dictionary types.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                          DESUGARING TO CORE                                 │
@@ -290,7 +322,19 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ## Optimization Pipeline
 
+BHC's optimizer runs multiple passes over Core IR, each making the program smaller, faster, or both. The passes are composable and the optimizer iterates until reaching a fixed point (no more improvements possible).
+
 ### Core-to-Core Transformations
+
+The optimization pipeline has four main phases, each building on the previous:
+
+**The Simplifier** is the workhorse. It runs repeatedly, applying local transformations: inlining small or once-used functions, beta-reducing applications, eliminating dead code, simplifying case expressions on known constructors, folding constants, and floating let-bindings to better positions. Each individual transformation is simple, but their combination is powerful.
+
+**Specialization** creates monomorphic copies of polymorphic functions at call sites where the type arguments are known. A call to `map @Int @Bool` generates a specialized `map_Int_Bool` that works only on those types. This enables further optimization since the specialized version can use unboxed representations.
+
+**Strictness Analysis** determines which function arguments are always evaluated. A function is "strict" in an argument if evaluating the function always evaluates that argument. Knowing strictness lets us evaluate arguments before the call (avoiding thunk allocation) and pass them unboxed.
+
+**Worker/Wrapper** transforms strict functions to separate the "wrapper" (which handles boxed arguments) from the "worker" (which operates on unboxed values). The wrapper unpacks arguments and repacks results; the worker does the real computation using efficient unboxed operations.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -384,6 +428,14 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ### Fusion System
 
+Fusion eliminates intermediate data structures in pipelines of operations. Without fusion, `map f (map g xs)` would build a complete intermediate list; with fusion, it becomes a single traversal applying `f . g` to each element.
+
+BHC implements **stream fusion**, which represents list operations as stream transformers. A `Stream` is a state machine that produces elements one at a time. The key rewrite rule is `fromStream (toStream xs) = xs`—converting a list to a stream and back is a no-op. When this rule fires between adjacent operations, intermediate lists vanish.
+
+The diagram shows how `map f (map g xs)` fuses: after desugaring through streams, the `stream/unstream` rule fires, then `mapS/mapS` fusion combines the two maps into one. The result is a single `map (f . g) xs` with no intermediate list.
+
+BHC **guarantees** fusion for common patterns. If you write `sum (map f xs)`, the compiler will produce a single loop—no intermediate list, no extra allocation. Failure to fuse these patterns is considered a compiler bug.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                             FUSION SYSTEM                                   │
@@ -445,7 +497,17 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ## Backend Architecture
 
+After optimization, the compiler lowers Core IR to profile-specific representations for code generation.
+
 ### STG Machine (Default Profile)
+
+The default profile uses the **Spineless Tagless G-machine (STG)**, an abstract machine designed for lazy functional languages. "Spineless" means there's no central evaluation stack (continuations are heap-allocated). "Tagless" means we don't store type tags in closures—instead, every closure has a pointer to an info table containing its entry code.
+
+**STG Syntax** is simpler than Core: all applications are saturated (no partial application as an expression), and only atoms (variables or literals) can be arguments. Functions are represented as closures with an "updateability" flag: updatable closures (`\u`) are thunks that get overwritten with their result; non-updatable closures (`\n`) are functions or already-evaluated values.
+
+**Heap Object Layout** is uniform: every object has an info pointer followed by payload fields. The info table (shared by all closures of the same shape) contains the entry code to execute when the closure is "entered," layout information for garbage collection, the closure type (THUNK, FUN, CONSTR, etc.), and a static reference table.
+
+**Evaluation** proceeds by "entering" closures. To evaluate a `case` expression, we push a continuation and jump to the scrutinee's entry code. If it's a thunk, the entry code evaluates it and updates the closure with the result. If it's a constructor, we pop the continuation and match against alternatives.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -527,6 +589,14 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ### Tensor IR (Numeric Profile)
 
+The numeric profile uses **Tensor IR** for array and matrix operations. Unlike Core's uniform representation, Tensor IR tracks array shapes and strides at the type level. This enables aggressive fusion across array operations and automatic SIMD vectorization.
+
+**Operations** in Tensor IR are higher-level than Core: `map`, `reduce`, `contract` (generalized matrix multiplication), `reshape`, and `slice` are primitives. The compiler understands their semantics and can fuse them.
+
+**Tensor Fusion** works similarly to list fusion but is more aggressive. The example shows `normalize`, which requires squaring each element, summing, taking a square root, then dividing each element by the norm. Naive execution needs three passes over the data. After fusion, BHC produces two passes: one to compute the sum of squares, one to normalize—the theoretical minimum since we need the complete sum before dividing.
+
+**SIMD Lowering** converts element-wise operations into vector instructions. A `map (+1)` over 1024 floats becomes a loop that processes 8 floats at a time using AVX2 vector instructions (or 4 with SSE, or 16 with AVX-512, depending on the target).
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                       TENSOR IR (NUMERIC PROFILE)                           │
@@ -598,6 +668,16 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ### Code Generation
 
+After profile-specific lowering, code generation produces executable code for the target platform. BHC supports multiple backends, each optimized for different deployment scenarios.
+
+The **LLVM Backend** produces LLVM IR, which then goes through LLVM's optimizer (dead code elimination, inlining, loop optimizations, auto-vectorization) and finally LLVM's code generators for native architectures (x86-64, ARM64, RISC-V). This path gives the best native performance.
+
+The **WASM Backend** produces WebAssembly binaries for browser and edge deployment. The edge profile specifically targets this backend with a minimal runtime. The `wasm-opt` tool provides additional size and speed optimizations.
+
+The **CUDA Backend** generates PTX code for NVIDIA GPUs. Tensor IR operations on large arrays can be offloaded to GPU execution, with the compiler handling memory transfers automatically.
+
+All backends eventually feed into the linker, which combines the generated code with the BHC runtime system (garbage collector, scheduler, standard library) to produce a final executable.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                          CODE GENERATION                                    │
@@ -661,7 +741,19 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ## Runtime System
 
+The BHC runtime system (RTS) provides memory management, threading, and I/O services to running programs.
+
 ### Memory Management
+
+BHC uses a **generational garbage collector**. The heap is divided into regions by object age:
+
+The **Nursery (Generation 0)** holds newly allocated objects. Allocation is extremely fast: just bump a pointer. When the nursery fills, a minor GC copies live objects to the old generation and resets the nursery. Most objects die young, so most minor GCs are fast.
+
+The **Old Generation (Generation 1+)** holds objects that survived nursery collection. It's collected less frequently since objects here tend to be long-lived. Major GC uses mark-compact: mark all reachable objects, then slide them together to eliminate fragmentation.
+
+The **Large Object Space** holds objects too big for the nursery (arrays, pinned buffers). These aren't copied during GC—they're allocated directly in a separate region and freed in place.
+
+Different profiles use different GC strategies: the server profile uses concurrent marking and incremental compaction to minimize pause times; the edge profile uses a simple two-space collector for smaller code size.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -727,6 +819,14 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 ```
 
 ### Thread Scheduler
+
+BHC uses **M:N threading**: many lightweight Haskell threads multiplexed onto a small number of OS threads (one per CPU core). This lets programs spawn millions of concurrent tasks without exhausting OS resources.
+
+The scheduler maintains a **run queue per CPU**. When a Haskell thread is ready to execute, it sits in a run queue. An OS thread (called a "capability") pulls threads from its queue and executes them. When a thread blocks (on an MVar, STM transaction, or I/O), it's removed from the run queue and added to a wait list; when the blocking condition resolves, it's moved back.
+
+**Work stealing** balances load across CPUs. If one CPU's queue is empty, it steals threads from busy CPUs. This keeps all cores utilized even with irregular workloads.
+
+The **thread state machine** shows the lifecycle: threads start RUNNABLE, transition to RUNNING when scheduled, and either block (waiting for a resource), finish (completed execution), or get killed (exception or cancellation).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -795,6 +895,12 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ## Module System
 
+BHC's module system enables separate compilation and supports the Haskell package ecosystem.
+
+Each source module compiles to two outputs: an **interface file (.bhi)** containing type information for importers, and an **object file (.o)** containing compiled code. The interface file has everything needed to type-check code that imports this module: exported types, values, classes, instances, and inlinings for cross-module optimization. The object file has the actual machine code.
+
+**Dependency resolution** uses a package database that maps module names to packages. When you write `import Data.Text`, the compiler searches the database, finds the `text` package, loads its interface file, and records the dependency. The linker later ensures all required packages are included.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                          MODULE SYSTEM                                      │
@@ -861,6 +967,14 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 
 ## Compilation Modes
 
+BHC supports several invocation modes for different workflows:
+
+**One-shot compilation** (`bhc Main.hs`) compiles a single file, loading dependencies from precompiled interface files. This is the simplest mode, useful for quick scripts.
+
+**Make mode** (`bhc --make Main.hs`) automatically discovers and compiles all modules that `Main.hs` depends on. It checks timestamps to only recompile changed modules and compiles independent modules in parallel.
+
+**Cabal integration** (`bhc build`) reads your `.cabal` file, resolves dependencies from Hackage, downloads and builds them, then compiles your project. This is the standard workflow for real projects.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         COMPILATION MODES                                   │
@@ -896,6 +1010,12 @@ Core is BHC's primary intermediate representation: a small, explicitly-typed fun
 ```
 
 ## Diagnostic System
+
+BHC provides rich error messages inspired by Rust's compiler diagnostics. Each error includes not just what went wrong, but context about why and suggestions for how to fix it.
+
+A **diagnostic** contains: severity (error, warning, note), a unique code for lookup, the error message, source locations (primary span plus related locations), inline labels pointing at specific code, additional notes explaining context, and fix-it suggestions showing concrete changes.
+
+The example shows a type mismatch error. The message explains the expected vs. found types, the source location points to the offending expression with an inline label, and a help suggestion shows how to fix it with `read`.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
