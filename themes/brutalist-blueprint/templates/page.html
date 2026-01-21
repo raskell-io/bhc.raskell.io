@@ -774,26 +774,32 @@
             const block = document.createElement('div');
             block.className = 'terminal-block';
 
-            const header = document.createElement('div');
-            header.className = 'terminal-block__header';
+            // Skip header for plain/empty language (ASCII diagrams)
+            const isPlain = !lang || lang === 'plain' || lang === 'text';
 
-            if (isTerminal) {
-                header.innerHTML = `
-                    <span class="terminal-block__dot"></span>
-                    <span class="terminal-block__dot"></span>
-                    <span class="terminal-block__dot"></span>
-                    <span class="terminal-block__title">terminal</span>
-                `;
-            } else if (filepath) {
-                header.innerHTML = `${icon}<span class="terminal-block__file" data-filename="${filepath.split('/').pop()}" data-code="${encodeURIComponent(code)}">${filepath}</span>`;
-                header.classList.add('terminal-block__header--file');
-            } else {
-                header.innerHTML = `
-                    <span class="terminal-block__dot"></span>
-                    <span class="terminal-block__dot"></span>
-                    <span class="terminal-block__dot"></span>
-                    <span class="terminal-block__title">${lang}</span>
-                `;
+            if (!isPlain) {
+                const header = document.createElement('div');
+                header.className = 'terminal-block__header';
+
+                if (isTerminal) {
+                    header.innerHTML = `
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__title">terminal</span>
+                    `;
+                } else if (filepath) {
+                    header.innerHTML = `${icon}<span class="terminal-block__file" data-filename="${filepath.split('/').pop()}" data-code="${encodeURIComponent(code)}">${filepath}</span>`;
+                    header.classList.add('terminal-block__header--file');
+                } else {
+                    header.innerHTML = `
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__title">${lang}</span>
+                    `;
+                }
+                block.appendChild(header);
             }
 
             const body = document.createElement('div');
@@ -804,7 +810,6 @@
             clonedPre.className = '';
             body.appendChild(clonedPre);
 
-            block.appendChild(header);
             block.appendChild(body);
 
             pre.parentElement.replaceChild(block, pre);
