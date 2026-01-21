@@ -191,6 +191,12 @@ $content-padding: 2rem;
   background: var(--color-accent);
   color: var(--color-primary-text);
   margin-left: auto;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .hero__content {
