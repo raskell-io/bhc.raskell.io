@@ -71,8 +71,8 @@ subtitle = "An alternative compiler for Haskell with a modern runtime, multiple 
 gradient_title = true
 badge = "alpha"
 badge_url = "https://github.com/raskell-io/bhc"
-features_title = "[ CAPABILITIES ]"
-features_subtitle = "What BHC brings to the table"
+features_title = "Capabilities"
+features_subtitle = "BHC extends standard Haskell with runtime profiles, a tensor-native numeric pipeline, and compilation targets beyond native binaries. Same language, more options."
 footer_tagline = "Functional. Portable. Fast. Haskell that ships."
 footer_note = "© 2025 raskell.io. Released under the MIT License."
 
