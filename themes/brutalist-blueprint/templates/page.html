@@ -144,39 +144,102 @@
     // Styled code blocks with language headers
     // ==========================================================================
     (function() {
-        // Find all code blocks in content section
+        const haskellIcon = `<svg class="terminal-block__icon" viewBox="0 0 24 24" width="14" height="14"><path fill="#8f5e99" d="M0 3.535L5.647 12 0 20.465h4.235L9.882 12l-5.647-8.465zm5.647 0L11.294 12l-5.647 8.465h4.235l3.882-5.822 3.882 5.822h4.235L15.529 12l6.353-8.465h-4.235l-3.882 5.822-3.882-5.822z"/></svg>`;
+        const cabalIcon = `<svg class="terminal-block__icon" viewBox="0 0 24 24" width="14" height="14"><path fill="#8f5e99" d="M3 3h18v18H3V3zm2 2v14h14V5H5z"/></svg>`;
+
+        // Helper to slugify text for paths
+        function slugify(text) {
+            return text.toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '');
+        }
+
+        // Find nearest heading before an element
+        function findContext(el) {
+            let h2 = null, h3 = null;
+            let current = el.previousElementSibling;
+
+            while (current) {
+                if (current.tagName === 'H2' && !h2) h2 = current.textContent.trim();
+                if (current.tagName === 'H3' && !h3) h3 = current.textContent.trim();
+                if (h2 && h3) break;
+                current = current.previousElementSibling;
+            }
+
+            // Also check parent siblings if in nested structure
+            if (!h2) {
+                let parent = el.parentElement;
+                while (parent && !h2) {
+                    current = parent.previousElementSibling;
+                    while (current) {
+                        if (current.tagName === 'H2') { h2 = current.textContent.trim(); break; }
+                        current = current.previousElementSibling;
+                    }
+                    parent = parent.parentElement;
+                }
+            }
+
+            return { h2, h3 };
+        }
+
+        // Generate contextual path based on headings
+        function generatePath(context, isExample) {
+            let path = '';
+            if (context.h2) {
+                const section = slugify(context.h2);
+                if (section.includes('example')) {
+                    path = 'examples/';
+                } else if (section.includes('usage')) {
+                    path = 'src/';
+                } else {
+                    path = 'src/' + section + '/';
+                }
+            } else {
+                path = isExample ? 'examples/' : 'src/';
+            }
+            return path;
+        }
+
         const codeBlocks = document.querySelectorAll('.content-section__body pre code[data-lang]');
-        let haskellCounter = 1;
+        let defaultCounter = 1;
 
         codeBlocks.forEach(codeEl => {
             const pre = codeEl.parentElement;
             const lang = codeEl.getAttribute('data-lang') || 'code';
             const code = codeEl.textContent;
 
-            // Determine if this is a terminal-style block
             const isTerminal = lang === 'shellscript' || lang === 'bash';
             const isHaskell = lang === 'haskell';
             const isCabal = lang === 'cabal';
 
-            // For Haskell, try to extract module name for filename
-            let filename = null;
+            let filepath = null;
+            let icon = '';
+
             if (isHaskell) {
+                icon = haskellIcon;
+                const context = findContext(pre);
                 const moduleMatch = code.match(/^module\s+([A-Z][a-zA-Z0-9_.]*)/m);
+
+                let filename;
                 if (moduleMatch) {
-                    filename = moduleMatch[1].replace(/\./g, '/') + '.hs';
+                    const moduleName = moduleMatch[1];
+                    filename = moduleName.split('.').pop() + '.hs';
                 } else {
-                    filename = `Example${haskellCounter++}.hs`;
+                    filename = `Example${defaultCounter++}.hs`;
                 }
+
+                const isExample = code.includes('example') || (context.h2 && context.h2.toLowerCase().includes('example'));
+                const path = generatePath(context, isExample);
+                filepath = path + filename;
             } else if (isCabal) {
+                icon = cabalIcon;
                 const nameMatch = code.match(/^name:\s*(\S+)/m);
-                filename = nameMatch ? `${nameMatch[1]}.cabal` : 'project.cabal';
+                filepath = nameMatch ? `${nameMatch[1]}.cabal` : 'myproject.cabal';
             }
 
-            // Create code block structure
             const block = document.createElement('div');
             block.className = 'terminal-block';
 
-            // Header - dots for terminal, filename for code files
             const header = document.createElement('div');
             header.className = 'terminal-block__header';
 
@@ -187,10 +250,8 @@
                     <span class="terminal-block__dot"></span>
                     <span class="terminal-block__title">terminal</span>
                 `;
-            } else if (filename) {
-                header.innerHTML = `
-                    <span class="terminal-block__file" data-filename="${filename}" data-code="${encodeURIComponent(code)}">${filename}</span>
-                `;
+            } else if (filepath) {
+                header.innerHTML = `${icon}<span class="terminal-block__file" data-filename="${filepath.split('/').pop()}" data-code="${encodeURIComponent(code)}">${filepath}</span>`;
                 header.classList.add('terminal-block__header--file');
             } else {
                 header.innerHTML = `
@@ -201,7 +262,6 @@
                 `;
             }
 
-            // Body with original code
             const body = document.createElement('div');
             body.className = 'terminal-block__body';
 
@@ -218,7 +278,6 @@
 
         // Add click handlers for file downloads
         document.querySelectorAll('.terminal-block__file').forEach(el => {
-            el.style.cursor = 'pointer';
             el.addEventListener('click', () => {
                 const filename = el.dataset.filename;
                 const code = decodeURIComponent(el.dataset.code);
