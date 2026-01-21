@@ -146,53 +146,90 @@
     (function() {
         // Find all code blocks in content section
         const codeBlocks = document.querySelectorAll('.content-section__body pre code[data-lang]');
+        let haskellCounter = 1;
 
         codeBlocks.forEach(codeEl => {
             const pre = codeEl.parentElement;
             const lang = codeEl.getAttribute('data-lang') || 'code';
+            const code = codeEl.textContent;
 
-            // Map language names to display names
-            const langNames = {
-                'shellscript': 'terminal',
-                'bash': 'terminal',
-                'haskell': 'haskell',
-                'cabal': 'cabal',
-                'toml': 'toml',
-                'yaml': 'yaml',
-                'json': 'json'
-            };
-            const displayName = langNames[lang] || lang;
-            const isTerminal = displayName === 'terminal';
+            // Determine if this is a terminal-style block
+            const isTerminal = lang === 'shellscript' || lang === 'bash';
+            const isHaskell = lang === 'haskell';
+            const isCabal = lang === 'cabal';
+
+            // For Haskell, try to extract module name for filename
+            let filename = null;
+            if (isHaskell) {
+                const moduleMatch = code.match(/^module\s+([A-Z][a-zA-Z0-9_.]*)/m);
+                if (moduleMatch) {
+                    filename = moduleMatch[1].replace(/\./g, '/') + '.hs';
+                } else {
+                    filename = `Example${haskellCounter++}.hs`;
+                }
+            } else if (isCabal) {
+                const nameMatch = code.match(/^name:\s*(\S+)/m);
+                filename = nameMatch ? `${nameMatch[1]}.cabal` : 'project.cabal';
+            }
 
             // Create code block structure
             const block = document.createElement('div');
             block.className = 'terminal-block';
 
-            // Header with dots
+            // Header - dots for terminal, filename for code files
             const header = document.createElement('div');
             header.className = 'terminal-block__header';
-            header.innerHTML = `
-                <span class="terminal-block__dot"></span>
-                <span class="terminal-block__dot"></span>
-                <span class="terminal-block__dot"></span>
-                <span class="terminal-block__title">${displayName}</span>
-            `;
 
-            // Body with original code (keep Zola's syntax highlighting)
+            if (isTerminal) {
+                header.innerHTML = `
+                    <span class="terminal-block__dot"></span>
+                    <span class="terminal-block__dot"></span>
+                    <span class="terminal-block__dot"></span>
+                    <span class="terminal-block__title">terminal</span>
+                `;
+            } else if (filename) {
+                header.innerHTML = `
+                    <span class="terminal-block__file" data-filename="${filename}" data-code="${encodeURIComponent(code)}">${filename}</span>
+                `;
+                header.classList.add('terminal-block__header--file');
+            } else {
+                header.innerHTML = `
+                    <span class="terminal-block__dot"></span>
+                    <span class="terminal-block__dot"></span>
+                    <span class="terminal-block__dot"></span>
+                    <span class="terminal-block__title">${lang}</span>
+                `;
+            }
+
+            // Body with original code
             const body = document.createElement('div');
             body.className = 'terminal-block__body';
 
-            // Clone the pre element to preserve Zola's highlighting
             const clonedPre = pre.cloneNode(true);
-            clonedPre.style = ''; // Remove inline styles
+            clonedPre.style = '';
             clonedPre.className = '';
             body.appendChild(clonedPre);
 
             block.appendChild(header);
             block.appendChild(body);
 
-            // Replace the pre element
             pre.parentElement.replaceChild(block, pre);
+        });
+
+        // Add click handlers for file downloads
+        document.querySelectorAll('.terminal-block__file').forEach(el => {
+            el.style.cursor = 'pointer';
+            el.addEventListener('click', () => {
+                const filename = el.dataset.filename;
+                const code = decodeURIComponent(el.dataset.code);
+                const blob = new Blob([code], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
         });
     })();
 
