@@ -132,19 +132,32 @@ description = "General-purpose compilation. Focuses on correctness and GHC compa
 example_file = "Main.hs"
 example_code = """module Main where
 
-import Data.List (sort)
+-- | Standard Haskell 2010 application compiled with the default profile.
+-- This code works identically with GHC and BHC, prioritizing correctness
+-- and compatibility over aggressive optimization.
 
--- Entry point: standard Haskell 2010
+import Data.List (sort, foldl')
+import Text.Printf (printf)
+
+-- | Entry point: idiomatic Haskell with lazy evaluation preserved.
+-- The default profile maintains GHC's evaluation semantics exactly.
 main :: IO ()
 main = do
-    let numbers = [3, 1, 4, 1, 5, 9, 2, 6]
-    putStrLn "Sorted list:"
-    print (sort numbers)
+    let numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+    putStrLn "Statistics for input list:"
+    printf "  Sorted:  %s\\n" (show $ sort numbers)
+    printf "  Sum:     %d\\n" (sumStrict numbers)
+    printf "  Mean:    %.2f\\n" (mean numbers)
 
--- Pure function, fully compatible with GHC
-factorial :: Integer -> Integer
-factorial 0 = 1
-factorial n = n * factorial (n - 1)"""
+-- | Strict left fold to avoid space leaks.
+-- Even in default profile, explicit strictness is respected.
+sumStrict :: [Int] -> Int
+sumStrict = foldl' (+) 0
+
+-- | Calculate arithmetic mean of a list.
+-- Uses standard Haskell idioms that work with any Haskell compiler.
+mean :: [Int] -> Double
+mean xs = fromIntegral (sumStrict xs) / fromIntegral (length xs)"""
 usage = "bhc Main.hs"
 
 [[extra.product.profiles]]
@@ -155,22 +168,35 @@ example_file = "Server.hs"
 example_code = """{-# LANGUAGE BHC.StructuredConcurrency #-}
 module Server where
 
+-- | Production-grade request handler using BHC's server profile.
+-- Structured concurrency ensures all spawned tasks are properly
+-- cancelled if the parent scope exits (timeout, error, or completion).
+
 import Control.Concurrent.Scoped
 import Control.Concurrent.Deadline
+import Control.Concurrent.Trace (withSpan)
 
--- Handler with automatic cancellation propagation
+-- | Handle an API request with automatic resource management.
+-- The Scoped monad tracks all async operations; nothing leaks.
 handler :: Request -> Scoped Response
-handler req = withTimeout 5000 $ do
-    -- Spawn concurrent tasks within scope
-    userData  <- async $ fetchUser req.userId
-    orderData <- async $ fetchOrders req.userId
+handler req = withSpan "handleRequest" $ do
+    -- 5 second timeout for the entire operation.
+    -- If exceeded, all child tasks are cancelled automatically.
+    withTimeout 5000 $ do
+        -- Spawn concurrent database queries within this scope.
+        -- These run in parallel, not sequentially.
+        userData  <- async $ fetchUser req.userId
+        orderData <- async $ fetchOrders req.userId
+        inventory <- async $ checkInventory req.items
 
-    -- Both cancelled if either fails or times out
-    user   <- await userData
-    orders <- await orderData
+        -- Await all results. If any task fails or times out,
+        -- the others are cancelled and resources are cleaned up.
+        user   <- await userData
+        orders <- await orderData
+        stock  <- await inventory
 
-    -- Build response (observability hooks auto-attached)
-    return $ Response user orders"""
+        -- Observability: spans are auto-nested, traces exported.
+        return $ Response user orders stock"""
 usage = "bhc --profile=server Server.hs"
 
 [[extra.product.profiles]]
@@ -182,19 +208,38 @@ example_code = """{-# LANGUAGE BHC.TensorIR #-}
 {-# LANGUAGE BHC.StrictDefault #-}
 module Compute where
 
-import Data.Tensor
+-- | High-performance matrix operations using BHC's tensor IR.
+-- BHC.StrictDefault eliminates thunk buildup in numeric code.
+-- BHC.TensorIR enables shape-aware fusion and SIMD lowering.
 
--- Matrix multiply: fused and vectorized automatically
-matmul :: Tensor Float -> Tensor Float -> Tensor Float
-matmul a b = contract a b [1] [0]
+import BHC.Tensor (Tensor, Matrix)
+import qualified BHC.Tensor as T
 
--- Element-wise ops get SIMD lowering
+-- | Matrix multiplication with automatic vectorization.
+-- The compiler tracks dimensions and selects optimal block sizes.
+matmul :: Matrix Float -> Matrix Float -> Matrix Float
+matmul a b = T.contract a b [1] [0]
+
+-- | L2 normalization with guaranteed single-pass fusion.
+-- This compiles to: sqrt(sum(x*x)), then x/norm in one loop.
+-- No intermediate tensor is allocated for (t * t).
 normalize :: Tensor Float -> Tensor Float
-normalize t = t / sqrt (sum (t * t))
+normalize t = t / T.sqrt (T.sum (t * t))
 
--- Guaranteed fusion: no intermediate allocations
-pipeline :: Tensor Float -> Tensor Float -> Float
-pipeline x w = sum (normalize (matmul x w))"""
+-- | Neural network forward pass fragment.
+-- The entire pipeline fuses: matmul -> normalize -> sum
+-- becomes a single cache-efficient traversal with SIMD.
+forward :: Matrix Float -> Matrix Float -> Float
+forward input weights = T.sum (normalize (matmul input weights))
+
+-- | Softmax with numeric stability (subtract max first).
+-- Three logical passes fuse into two actual traversals.
+softmax :: Tensor Float -> Tensor Float
+softmax v = T.map (/ total) exps
+  where
+    maxVal = T.maximum v
+    exps   = T.map (\\x -> exp (x - maxVal)) v
+    total  = T.sum exps"""
 usage = "bhc --profile=numeric Compute.hs"
 
 [[extra.product.profiles]]
@@ -204,22 +249,40 @@ description = "Minimal runtime footprint for WASM and embedded targets. Reduced 
 example_file = "Lambda.hs"
 example_code = """module Lambda where
 
--- Export for WASM host to call
-foreign export ccall handler :: Int -> Int
+-- | Serverless function compiled for WebAssembly deployment.
+-- The edge profile minimizes runtime size and memory usage,
+-- producing small binaries suitable for CDN edge workers.
 
--- Pure computation, no runtime dependencies
-handler :: Int -> Int
-handler x = fibonacci x
+import Data.List (foldl')
 
--- Optimized for small binary size
+-- | Export function for the WASM host environment to call.
+-- This is the entry point invoked by Cloudflare Workers,
+-- Fastly Compute, or any WASI-compatible runtime.
+foreign export ccall processRequest :: Int -> Int
+
+-- | Main request handler. Pure computation with no IO,
+-- allowing aggressive optimization and dead code elimination.
+processRequest :: Int -> Int
+processRequest n
+    | n <= 0    = 0
+    | otherwise = fibonacci n + sumRange n
+
+-- | Fibonacci sequence, optimized for small code size.
+-- The edge profile favors compact output over raw speed.
 fibonacci :: Int -> Int
 fibonacci n
     | n <= 1    = n
-    | otherwise = fibonacci (n-1) + fibonacci (n-2)
+    | otherwise = fibonacci (n - 1) + fibonacci (n - 2)
 
--- Memory: single-pass, minimal allocation
-sumList :: [Int] -> Int
-sumList = foldl' (+) 0"""
+-- | Sum integers from 1 to n using strict fold.
+-- Minimal allocation: runs in constant stack space.
+sumRange :: Int -> Int
+sumRange n = foldl' (+) 0 [1..n]
+
+-- | Helper for JSON-like output (no dependencies).
+-- Edge profile encourages zero-dependency code.
+encodeInt :: Int -> String
+encodeInt = show"""
 usage = "bhc --profile=edge --target=wasm32-wasi Lambda.hs"
 
 # FAQ
