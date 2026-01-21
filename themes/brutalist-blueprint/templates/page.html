@@ -169,71 +169,145 @@
         const gridColor = style.getPropertyValue('--color-grid').trim() || '#45475a';
 
         // ==========================================================================
-        // GET STARTED: Compilation progress / loading bars
+        // GET STARTED: Rotating 3D wireframe cube (classic demoscene)
         // ==========================================================================
         function drawGetStarted() {
             ctx.clearRect(0, 0, width, height);
-            time += 0.02;
+            time += 0.012;
 
-            const barCount = 8;
-            const barHeight = 4;
-            const barSpacing = 18;
-            const startY = height / 2 - (barCount * barSpacing) / 2;
+            // Define cube vertices (centered at origin)
+            const size = 55;
+            const vertices = [
+                [-1, -1, -1], [1, -1, -1], [1, 1, -1], [-1, 1, -1],
+                [-1, -1, 1], [1, -1, 1], [1, 1, 1], [-1, 1, 1]
+            ].map(v => [v[0] * size, v[1] * size, v[2] * size]);
 
-            for (let i = 0; i < barCount; i++) {
-                const y = startY + i * barSpacing;
-                const phase = time + i * 0.3;
-                const progress = (Math.sin(phase) + 1) / 2;
-                const barWidth = 60 + progress * 180;
+            // Cube edges (pairs of vertex indices)
+            const edges = [
+                [0, 1], [1, 2], [2, 3], [3, 0], // back face
+                [4, 5], [5, 6], [6, 7], [7, 4], // front face
+                [0, 4], [1, 5], [2, 6], [3, 7]  // connecting edges
+            ];
 
-                // Track
-                ctx.fillStyle = gridColor;
-                ctx.globalAlpha = 0.3;
-                ctx.fillRect(width / 2 - 130, y, 260, barHeight);
+            // Rotation angles
+            const angleX = time * 0.7;
+            const angleY = time * 1.1;
+            const angleZ = time * 0.4;
 
-                // Progress bar
-                ctx.fillStyle = accentColor;
-                ctx.globalAlpha = 0.4 + progress * 0.4;
-                ctx.fillRect(width / 2 - 130, y, barWidth, barHeight);
+            // Rotation matrices
+            function rotateX(p, a) {
+                const cos = Math.cos(a), sin = Math.sin(a);
+                return [p[0], p[1] * cos - p[2] * sin, p[1] * sin + p[2] * cos];
             }
+            function rotateY(p, a) {
+                const cos = Math.cos(a), sin = Math.sin(a);
+                return [p[0] * cos + p[2] * sin, p[1], -p[0] * sin + p[2] * cos];
+            }
+            function rotateZ(p, a) {
+                const cos = Math.cos(a), sin = Math.sin(a);
+                return [p[0] * cos - p[1] * sin, p[0] * sin + p[1] * cos, p[2]];
+            }
+
+            // Project 3D to 2D with perspective
+            function project(p) {
+                const fov = 250;
+                const z = p[2] + 200;
+                const scale = fov / z;
+                return [width / 2 + p[0] * scale, height / 2 + p[1] * scale, z];
+            }
+
+            // Transform all vertices
+            const transformed = vertices.map(v => {
+                let p = rotateX(v, angleX);
+                p = rotateY(p, angleY);
+                p = rotateZ(p, angleZ);
+                return project(p);
+            });
+
+            // Draw edges with depth-based opacity
+            ctx.strokeStyle = accentColor;
+            ctx.lineWidth = 2;
+
+            edges.forEach(([i, j]) => {
+                const p1 = transformed[i];
+                const p2 = transformed[j];
+                const avgZ = (p1[2] + p2[2]) / 2;
+                ctx.globalAlpha = 0.2 + (avgZ - 100) / 300 * 0.6;
+
+                ctx.beginPath();
+                ctx.moveTo(p1[0], p1[1]);
+                ctx.lineTo(p2[0], p2[1]);
+                ctx.stroke();
+            });
+
+            // Draw vertices as small dots
+            ctx.fillStyle = accentColor;
+            transformed.forEach(p => {
+                ctx.globalAlpha = 0.3 + (p[2] - 100) / 300 * 0.5;
+                ctx.beginPath();
+                ctx.arc(p[0], p[1], 2, 0, Math.PI * 2);
+                ctx.fill();
+            });
 
             ctx.globalAlpha = 1;
             animationId = requestAnimationFrame(drawGetStarted);
         }
 
         // ==========================================================================
-        // COMPATIBILITY: Chain links / interlocking rings
+        // COMPATIBILITY: Sierpinski triangle fractal
         // ==========================================================================
         function drawCompatibility() {
             ctx.clearRect(0, 0, width, height);
             time += 0.008;
 
+            const size = 140;
+            const centerX = width / 2;
+            const centerY = height / 2 + 15;
+
+            // Sierpinski triangle via chaos game with trailing points
+            ctx.fillStyle = accentColor;
+
+            // Triangle vertices
+            const v1 = [centerX, centerY - size * 0.85];
+            const v2 = [centerX - size, centerY + size * 0.5];
+            const v3 = [centerX + size, centerY + size * 0.5];
+            const vertices = [v1, v2, v3];
+
+            // Draw the outer triangle wireframe
             ctx.strokeStyle = accentColor;
-            ctx.lineWidth = 2;
+            ctx.lineWidth = 1;
+            ctx.globalAlpha = 0.15;
+            ctx.beginPath();
+            ctx.moveTo(v1[0], v1[1]);
+            ctx.lineTo(v2[0], v2[1]);
+            ctx.lineTo(v3[0], v3[1]);
+            ctx.closePath();
+            ctx.stroke();
 
-            const linkCount = 7;
-            const linkWidth = 50;
-            const linkHeight = 25;
-            const spacing = linkWidth * 0.7;
-            const startX = width / 2 - (linkCount * spacing) / 2;
+            // Chaos game - plot points
+            let x = centerX;
+            let y = centerY;
 
-            for (let i = 0; i < linkCount; i++) {
-                const x = startX + i * spacing;
-                const y = height / 2 + Math.sin(time * 2 + i * 0.5) * 15;
-                const rotation = Math.sin(time + i * 0.3) * 0.1;
+            // Use time to create flowing/cycling effect
+            const baseIterations = 800;
+            const timeOffset = Math.floor(time * 100) % 1000;
 
-                ctx.save();
-                ctx.translate(x + linkWidth / 2, y);
-                ctx.rotate(rotation);
-                ctx.globalAlpha = 0.3 + Math.abs(Math.sin(time + i)) * 0.4;
+            for (let i = 0; i < baseIterations; i++) {
+                // Deterministic "random" based on iteration for consistent pattern
+                const seed = (i + timeOffset) * 1.618033988749;
+                const vertexIndex = Math.floor((seed % 3 + 3) % 3);
+                const target = vertices[vertexIndex];
 
-                // Draw chain link (rounded rectangle)
-                ctx.beginPath();
-                const r = linkHeight / 2;
-                ctx.roundRect(-linkWidth / 2, -linkHeight / 2, linkWidth, linkHeight, r);
-                ctx.stroke();
+                x = (x + target[0]) / 2;
+                y = (y + target[1]) / 2;
 
-                ctx.restore();
+                // Skip initial iterations to let pattern settle
+                if (i > 20) {
+                    // Vary alpha based on position in iteration for depth effect
+                    const alpha = 0.15 + (Math.sin(i * 0.01 + time * 2) + 1) * 0.25;
+                    ctx.globalAlpha = alpha;
+                    ctx.fillRect(x, y, 1.5, 1.5);
+                }
             }
 
             ctx.globalAlpha = 1;
