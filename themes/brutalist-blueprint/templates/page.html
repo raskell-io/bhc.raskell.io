@@ -169,70 +169,100 @@
         const gridColor = style.getPropertyValue('--color-grid').trim() || '#45475a';
 
         // ==========================================================================
-        // GET STARTED: Rotating 3D wireframe cube (classic demoscene)
+        // GET STARTED: Tesseract (4D hypercube) rotating through 4D space
         // ==========================================================================
         function drawGetStarted() {
             ctx.clearRect(0, 0, width, height);
-            time += 0.012;
+            time += 0.008;
 
-            // Define cube vertices (centered at origin)
-            const size = 55;
-            const vertices = [
-                [-1, -1, -1], [1, -1, -1], [1, 1, -1], [-1, 1, -1],
-                [-1, -1, 1], [1, -1, 1], [1, 1, 1], [-1, 1, 1]
-            ].map(v => [v[0] * size, v[1] * size, v[2] * size]);
-
-            // Cube edges (pairs of vertex indices)
-            const edges = [
-                [0, 1], [1, 2], [2, 3], [3, 0], // back face
-                [4, 5], [5, 6], [6, 7], [7, 4], // front face
-                [0, 4], [1, 5], [2, 6], [3, 7]  // connecting edges
-            ];
-
-            // Rotation angles
-            const angleX = time * 0.7;
-            const angleY = time * 1.1;
-            const angleZ = time * 0.4;
-
-            // Rotation matrices
-            function rotateX(p, a) {
-                const cos = Math.cos(a), sin = Math.sin(a);
-                return [p[0], p[1] * cos - p[2] * sin, p[1] * sin + p[2] * cos];
-            }
-            function rotateY(p, a) {
-                const cos = Math.cos(a), sin = Math.sin(a);
-                return [p[0] * cos + p[2] * sin, p[1], -p[0] * sin + p[2] * cos];
-            }
-            function rotateZ(p, a) {
-                const cos = Math.cos(a), sin = Math.sin(a);
-                return [p[0] * cos - p[1] * sin, p[0] * sin + p[1] * cos, p[2]];
+            // 16 vertices of a tesseract (4D hypercube)
+            const size = 40;
+            const vertices4D = [];
+            for (let i = 0; i < 16; i++) {
+                vertices4D.push([
+                    ((i & 1) ? 1 : -1) * size,
+                    ((i & 2) ? 1 : -1) * size,
+                    ((i & 4) ? 1 : -1) * size,
+                    ((i & 8) ? 1 : -1) * size
+                ]);
             }
 
-            // Project 3D to 2D with perspective
-            function project(p) {
-                const fov = 250;
-                const z = p[2] + 200;
-                const scale = fov / z;
-                return [width / 2 + p[0] * scale, height / 2 + p[1] * scale, z];
+            // 32 edges of a tesseract (connect vertices differing by one bit)
+            const edges = [];
+            for (let i = 0; i < 16; i++) {
+                for (let b = 0; b < 4; b++) {
+                    const j = i ^ (1 << b);
+                    if (i < j) edges.push([i, j]);
+                }
+            }
+
+            // 4D rotation matrices (XW and YZ planes for interesting motion)
+            const angleXY = time * 0.5;
+            const angleXZ = time * 0.7;
+            const angleXW = time * 0.4;
+            const angleYW = time * 0.6;
+
+            function rotate4D(p) {
+                let [x, y, z, w] = p;
+
+                // XY rotation
+                let cos = Math.cos(angleXY), sin = Math.sin(angleXY);
+                [x, y] = [x * cos - y * sin, x * sin + y * cos];
+
+                // XZ rotation
+                cos = Math.cos(angleXZ); sin = Math.sin(angleXZ);
+                [x, z] = [x * cos - z * sin, x * sin + z * cos];
+
+                // XW rotation (4D!)
+                cos = Math.cos(angleXW); sin = Math.sin(angleXW);
+                [x, w] = [x * cos - w * sin, x * sin + w * cos];
+
+                // YW rotation (4D!)
+                cos = Math.cos(angleYW); sin = Math.sin(angleYW);
+                [y, w] = [y * cos - w * sin, y * sin + w * cos];
+
+                return [x, y, z, w];
+            }
+
+            // Project 4D -> 3D -> 2D
+            function project(p4) {
+                const [x, y, z, w] = p4;
+                // 4D to 3D perspective projection
+                const wDist = 120;
+                const scale4 = wDist / (wDist - w);
+                const x3 = x * scale4;
+                const y3 = y * scale4;
+                const z3 = z * scale4;
+
+                // 3D to 2D perspective projection
+                const fov = 200;
+                const zDist = z3 + 150;
+                const scale3 = fov / zDist;
+
+                return [
+                    width / 2 + x3 * scale3,
+                    height / 2 + y3 * scale3,
+                    zDist,
+                    w  // keep w for coloring
+                ];
             }
 
             // Transform all vertices
-            const transformed = vertices.map(v => {
-                let p = rotateX(v, angleX);
-                p = rotateY(p, angleY);
-                p = rotateZ(p, angleZ);
-                return project(p);
-            });
+            const transformed = vertices4D.map(v => project(rotate4D(v)));
 
-            // Draw edges with depth-based opacity
-            ctx.strokeStyle = accentColor;
-            ctx.lineWidth = 2;
+            // Draw edges with depth-based styling
+            ctx.lineCap = 'round';
 
             edges.forEach(([i, j]) => {
                 const p1 = transformed[i];
                 const p2 = transformed[j];
                 const avgZ = (p1[2] + p2[2]) / 2;
-                ctx.globalAlpha = 0.2 + (avgZ - 100) / 300 * 0.6;
+                const avgW = (p1[3] + p2[3]) / 2;
+
+                // Vary line width and alpha based on 4D depth
+                ctx.lineWidth = 1 + (avgW + size) / (size * 2) * 1.5;
+                ctx.globalAlpha = 0.15 + (avgZ - 50) / 200 * 0.5;
+                ctx.strokeStyle = accentColor;
 
                 ctx.beginPath();
                 ctx.moveTo(p1[0], p1[1]);
@@ -240,12 +270,14 @@
                 ctx.stroke();
             });
 
-            // Draw vertices as small dots
+            // Draw vertices
             ctx.fillStyle = accentColor;
             transformed.forEach(p => {
-                ctx.globalAlpha = 0.3 + (p[2] - 100) / 300 * 0.5;
+                const wFactor = (p[3] + size) / (size * 2);
+                ctx.globalAlpha = 0.2 + wFactor * 0.5;
+                const radius = 1.5 + wFactor * 2;
                 ctx.beginPath();
-                ctx.arc(p[0], p[1], 2, 0, Math.PI * 2);
+                ctx.arc(p[0], p[1], radius, 0, Math.PI * 2);
                 ctx.fill();
             });
 
@@ -254,60 +286,50 @@
         }
 
         // ==========================================================================
-        // COMPATIBILITY: Sierpinski triangle fractal
+        // COMPATIBILITY: Infinite tunnel with morphing polygon shapes
         // ==========================================================================
         function drawCompatibility() {
             ctx.clearRect(0, 0, width, height);
-            time += 0.008;
+            time += 0.015;
 
-            const size = 140;
             const centerX = width / 2;
-            const centerY = height / 2 + 15;
+            const centerY = height / 2;
+            const ringCount = 12;
 
-            // Sierpinski triangle via chaos game with trailing points
-            ctx.fillStyle = accentColor;
-
-            // Triangle vertices
-            const v1 = [centerX, centerY - size * 0.85];
-            const v2 = [centerX - size, centerY + size * 0.5];
-            const v3 = [centerX + size, centerY + size * 0.5];
-            const vertices = [v1, v2, v3];
-
-            // Draw the outer triangle wireframe
             ctx.strokeStyle = accentColor;
-            ctx.lineWidth = 1;
-            ctx.globalAlpha = 0.15;
-            ctx.beginPath();
-            ctx.moveTo(v1[0], v1[1]);
-            ctx.lineTo(v2[0], v2[1]);
-            ctx.lineTo(v3[0], v3[1]);
-            ctx.closePath();
-            ctx.stroke();
+            ctx.lineCap = 'round';
 
-            // Chaos game - plot points
-            let x = centerX;
-            let y = centerY;
+            for (let i = 0; i < ringCount; i++) {
+                // Each ring moves toward viewer over time
+                const phase = (time * 0.8 + i / ringCount) % 1;
+                const z = phase;  // 0 = far, 1 = near
 
-            // Use time to create flowing/cycling effect
-            const baseIterations = 800;
-            const timeOffset = Math.floor(time * 100) % 1000;
+                // Perspective scale
+                const scale = 0.1 + z * 0.9;
+                const baseSize = 180 * scale;
 
-            for (let i = 0; i < baseIterations; i++) {
-                // Deterministic "random" based on iteration for consistent pattern
-                const seed = (i + timeOffset) * 1.618033988749;
-                const vertexIndex = Math.floor((seed % 3 + 3) % 3);
-                const target = vertices[vertexIndex];
+                // Morph between polygon sides (3 to 8) based on depth
+                const sides = Math.floor(3 + z * 5 + Math.sin(time * 0.5) * 1.5);
 
-                x = (x + target[0]) / 2;
-                y = (y + target[1]) / 2;
+                // Rotation varies per ring
+                const rotation = time * 0.3 + i * 0.2 + z * Math.PI * 0.5;
 
-                // Skip initial iterations to let pattern settle
-                if (i > 20) {
-                    // Vary alpha based on position in iteration for depth effect
-                    const alpha = 0.15 + (Math.sin(i * 0.01 + time * 2) + 1) * 0.25;
-                    ctx.globalAlpha = alpha;
-                    ctx.fillRect(x, y, 1.5, 1.5);
+                // Alpha fades at far end and near end
+                const alpha = Math.sin(z * Math.PI) * 0.6;
+                ctx.globalAlpha = alpha;
+                ctx.lineWidth = 0.5 + z * 2;
+
+                // Draw polygon
+                ctx.beginPath();
+                for (let s = 0; s <= sides; s++) {
+                    const angle = (s / sides) * Math.PI * 2 + rotation;
+                    const x = centerX + Math.cos(angle) * baseSize;
+                    const y = centerY + Math.sin(angle) * baseSize * 0.6; // Squash for perspective
+                    if (s === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
                 }
+                ctx.closePath();
+                ctx.stroke();
             }
 
             ctx.globalAlpha = 1;
