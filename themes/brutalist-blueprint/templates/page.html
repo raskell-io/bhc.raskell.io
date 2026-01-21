@@ -141,19 +141,32 @@
     document.fonts.ready.then(generateSectionDividers);
 
     // ==========================================================================
-    // Terminal-style bash code blocks
+    // Styled code blocks with language headers
     // ==========================================================================
     (function() {
-        // Find bash/shellscript code blocks in content section
-        // Zola uses data-lang="shellscript" for bash
-        const bashBlocks = document.querySelectorAll('.content-section__body pre code[data-lang="shellscript"], .content-section__body pre code[data-lang="bash"]');
+        // Find all code blocks in content section
+        const codeBlocks = document.querySelectorAll('.content-section__body pre code[data-lang]');
 
-        bashBlocks.forEach(codeEl => {
+        codeBlocks.forEach(codeEl => {
             const pre = codeEl.parentElement;
+            const lang = codeEl.getAttribute('data-lang') || 'code';
 
-            // Create terminal block structure
-            const terminal = document.createElement('div');
-            terminal.className = 'terminal-block';
+            // Map language names to display names
+            const langNames = {
+                'shellscript': 'terminal',
+                'bash': 'terminal',
+                'haskell': 'haskell',
+                'cabal': 'cabal',
+                'toml': 'toml',
+                'yaml': 'yaml',
+                'json': 'json'
+            };
+            const displayName = langNames[lang] || lang;
+            const isTerminal = displayName === 'terminal';
+
+            // Create code block structure
+            const block = document.createElement('div');
+            block.className = 'terminal-block';
 
             // Header with dots
             const header = document.createElement('div');
@@ -162,7 +175,7 @@
                 <span class="terminal-block__dot"></span>
                 <span class="terminal-block__dot"></span>
                 <span class="terminal-block__dot"></span>
-                <span class="terminal-block__title">terminal</span>
+                <span class="terminal-block__title">${displayName}</span>
             `;
 
             // Body with original code (keep Zola's syntax highlighting)
@@ -175,11 +188,11 @@
             clonedPre.className = '';
             body.appendChild(clonedPre);
 
-            terminal.appendChild(header);
-            terminal.appendChild(body);
+            block.appendChild(header);
+            block.appendChild(body);
 
             // Replace the pre element
-            pre.parentElement.replaceChild(terminal, pre);
+            pre.parentElement.replaceChild(block, pre);
         });
     })();
 
