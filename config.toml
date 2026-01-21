@@ -418,6 +418,30 @@ answer = "BHC has completed milestones M0–M10 (core compiler, profiles, GPU, W
 question = "How do I report bugs or contribute?"
 answer = "Open an issue or discussion on <a href=\"https://github.com/raskell-io/bhc\" target=\"_blank\" rel=\"noopener\">GitHub</a>. We follow conventional commits and welcome contributions. See CLAUDE.md for development guidelines."
 
+[[extra.product.faq]]
+question = "Does BHC work with Cabal and Stack?"
+answer = "Yes. BHC reads <code>.cabal</code> files directly and resolves dependencies from Hackage. Use <code>bhc build</code> as a drop-in for <code>cabal build</code>. Stack support is planned. Existing project files work without modification."
+
+[[extra.product.faq]]
+question = "How do I migrate a project from GHC?"
+answer = "Start with <code>bhc check</code> to identify compatibility issues. Most pure Haskell code compiles unchanged. Check the <a href=\"/compatibility/\">compatibility page</a> for extension support. Migration is incremental—you can compile some modules with BHC while others use GHC."
+
+[[extra.product.faq]]
+question = "Which GHC extensions are supported?"
+answer = "BHC supports most common extensions: GADTs, TypeFamilies, DataKinds, RankNTypes, FlexibleContexts, and more. Template Haskell has partial support. See the <a href=\"/compatibility/\">compatibility charter</a> for the full list and known gaps."
+
+[[extra.product.faq]]
+question = "Why is BHC written in Rust?"
+answer = "Rust provides memory safety, predictable performance, and excellent tooling. A clean-slate implementation lets us design a modern compiler architecture without legacy constraints. The choice has no effect on the Haskell code you write."
+
+[[extra.product.faq]]
+question = "How are BHC's error messages?"
+answer = "BHC prioritizes clear diagnostics. Error messages include source spans, suggested fixes, and explanations. Type errors show the full unification trace when needed. Use <code>--explain E0123</code> for detailed documentation on any error code."
+
+[[extra.product.faq]]
+question = "Can BHC cross-compile?"
+answer = "Yes. BHC supports multiple targets from a single installation: native (x86_64, aarch64), WebAssembly (wasm32-wasi), and embedded (ARM Cortex-M, RISC-V). Use <code>--target</code> to specify. No separate toolchain installation required for WASM."
+
 # Social links
 [extra.social]
 github = "https://github.com/raskell-io/bhc"
