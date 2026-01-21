@@ -93,8 +93,52 @@ Features:
 Best for:
 - WebAssembly targets
 - Serverless functions
-- Embedded contexts
 - Size-constrained deployments
+
+### realtime
+
+Bounded GC pauses and predictable latency for time-sensitive applications.
+
+```bash
+bhc --profile=realtime Main.hs
+```
+
+Features:
+- Bounded GC pauses (configurable, default <1ms)
+- Arena allocators for per-frame allocation
+- Incremental GC with latency guarantees
+- Predictable scheduling behavior
+- No GC during critical sections
+
+Best for:
+- Game engines and game logic
+- Audio processing and synthesis
+- Robotics and control systems
+- VR/AR applications
+- Any soft real-time system
+
+### embedded
+
+No garbage collector, static allocation only, bare-metal execution.
+
+```bash
+bhc --profile=embedded --target=thumbv7m-none-eabi Main.hs
+```
+
+Features:
+- No GC (compile-time error if GC would be needed)
+- Static memory allocation only
+- Stack-based computation
+- Direct hardware access primitives
+- Minimal or zero runtime
+- Interrupt-safe code generation
+
+Best for:
+- Microcontrollers (ARM Cortex-M, RISC-V)
+- Safety-critical systems
+- Bootloaders and firmware
+- Bare-metal applications
+- Memory-constrained devices (<64KB RAM)
 
 ## Selecting Profiles
 

@@ -285,6 +285,106 @@ encodeInt :: Int -> String
 encodeInt = show"""
 usage = "bhc --profile=edge --target=wasm32-wasi Lambda.hs"
 
+[[extra.product.profiles]]
+id = "realtime"
+name = "Realtime"
+description = "Bounded GC pauses, predictable latency, arena allocation. For games, audio, and robotics."
+example_file = "AudioEngine.hs"
+example_code = """{-# LANGUAGE BHC.Realtime #-}
+module AudioEngine where
+
+-- | Audio processing with hard latency requirements.
+-- The realtime profile guarantees bounded GC pauses (<1ms)
+-- and provides arena allocators for per-frame allocation.
+
+import BHC.Realtime.Arena (Arena, withArena, alloc)
+import BHC.Realtime.Audio (Sample, SampleRate, Buffer)
+import Data.Vector.Storable (Vector)
+import qualified Data.Vector.Storable as V
+
+-- | Audio callback invoked by the system at regular intervals.
+-- Must complete within the buffer period (e.g., 5ms for 48kHz/256 samples).
+-- Arena allocation ensures no GC occurs during processing.
+processAudio :: Arena -> Buffer Sample -> Buffer Sample -> IO ()
+processAudio arena input output = withArena arena $ do
+    -- All allocations in this block use the arena.
+    -- Memory is freed in bulk when the arena resets (per frame).
+    let filtered = applyLowPass 0.3 input
+    let amplified = V.map (* 0.8) filtered
+
+    -- Copy result to output buffer (pre-allocated by host).
+    V.copy output amplified
+
+-- | Low-pass filter with no heap allocation.
+-- Intermediate vectors allocated in arena, not GC heap.
+applyLowPass :: Double -> Buffer Sample -> Buffer Sample
+applyLowPass cutoff buf = V.zipWith blend buf smoothed
+  where
+    smoothed = V.scanl' (\\acc x -> acc + realToFrac cutoff * (x - acc)) 0 buf
+    blend orig filt = 0.7 * orig + 0.3 * filt
+
+-- | Game loop tick with deterministic timing.
+-- Realtime profile: GC only runs between frames, never during.
+gameTick :: Arena -> GameState -> GameState
+gameTick arena state = withArena arena $
+    updatePhysics . processInput . updateEntities $ state"""
+usage = "bhc --profile=realtime AudioEngine.hs"
+
+[[extra.product.profiles]]
+id = "embedded"
+name = "Embedded"
+description = "No GC, static allocation, bare-metal targets. For microcontrollers and safety-critical systems."
+example_file = "Firmware.hs"
+example_code = """{-# LANGUAGE BHC.Embedded #-}
+{-# LANGUAGE BHC.NoGC #-}
+module Firmware where
+
+-- | Bare-metal firmware for a microcontroller.
+-- The embedded profile eliminates the garbage collector entirely.
+-- All memory must be statically allocated or stack-based.
+
+import BHC.Embedded.GPIO (Pin, pinMode, digitalWrite, INPUT, OUTPUT)
+import BHC.Embedded.Static (StaticArray, staticArray, readAt, writeAt)
+import Data.Word (Word8, Word16)
+
+-- | Statically allocated sensor buffer (no heap).
+-- Size known at compile time, lives in .data section.
+{-# NOINLINE sensorBuffer #-}
+sensorBuffer :: StaticArray 64 Word16
+sensorBuffer = staticArray 0
+
+-- | Main firmware entry point. Runs forever, no allocation.
+-- All computation uses registers and stack only.
+foreign export ccall main :: IO ()
+main :: IO ()
+main = do
+    -- Initialize GPIO pins
+    pinMode led OUTPUT
+    pinMode button INPUT
+
+    -- Event loop: poll, process, actuate
+    forever $ do
+        reading <- readSensor
+        writeAt sensorBuffer 0 reading
+        when (reading > threshold) $
+            digitalWrite led True
+
+-- | Read ADC value. Pure register access, no allocation.
+readSensor :: IO Word16
+readSensor = peek sensorRegister
+
+-- | Hardware addresses (memory-mapped IO).
+led, button :: Pin
+led    = Pin 13
+button = Pin 2
+
+threshold :: Word16
+threshold = 512
+
+sensorRegister :: Ptr Word16
+sensorRegister = wordPtrToPtr 0x40001234"""
+usage = "bhc --profile=embedded --target=thumbv7m-none-eabi Firmware.hs"
+
 # FAQ
 [[extra.product.faq]]
 question = "Is BHC a fork of GHC?"
@@ -296,7 +396,7 @@ answer = "BHC is actively working on real-world Haskell compatibility (M11). It 
 
 [[extra.product.faq]]
 question = "What are runtime profiles?"
-answer = "Profiles are compile-time configurations with different performance contracts. <strong>Default</strong>: lazy evaluation, GC-managed. <strong>Server</strong>: structured concurrency, bounded latency, observability. <strong>Numeric</strong>: strict-by-default, unboxed, guaranteed fusion. <strong>Edge</strong>: minimal runtime for WASM."
+answer = "Profiles are compile-time configurations with different performance contracts. <strong>Default</strong>: lazy evaluation, GC-managed. <strong>Server</strong>: structured concurrency, observability. <strong>Numeric</strong>: strict-by-default, guaranteed fusion. <strong>Edge</strong>: minimal runtime for WASM. <strong>Realtime</strong>: bounded GC pauses for games/audio. <strong>Embedded</strong>: no GC, bare-metal targets."
 
 [[extra.product.faq]]
 question = "What makes the Numeric profile special?"
