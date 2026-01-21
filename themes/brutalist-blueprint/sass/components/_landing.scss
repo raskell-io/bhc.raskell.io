@@ -1257,6 +1257,14 @@ pre:hover > .code-copy-btn {
   border-top: 1px solid var(--color-grid);
 }
 
+.content-section__cta {
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-grid);
+  background: var(--color-bg-alt);
+  display: flex;
+  justify-content: center;
+}
+
 // =============================================================================
 // Page Hero Section (subpages)
 // =============================================================================

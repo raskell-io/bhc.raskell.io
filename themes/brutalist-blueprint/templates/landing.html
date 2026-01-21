@@ -1,8 +1,5 @@
-{% extends "base.html" %}
-
-{% block title %}{{ config.title }} - {{ config.extra.product.tagline }}{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}{{ config.title }} - {{
+config.extra.product.tagline }}{% endblock %} {% block content %}
 <!-- Side rails -->
 <div class="landing-rails">
     <div class="landing-rail landing-rail--left"></div>
@@ -14,7 +11,6 @@
 
 <div class="landing">
     <div class="landing__container">
-
         <!-- Hero Section -->
         <section class="hero" data-section="hero">
             <!-- Wireframe animation canvas -->
@@ -24,14 +20,27 @@
 
             <div class="hero__frame">
                 <div class="hero__header">
-                    <span class="hero__label">[ <span id="hero-spinner">⠋</span> COMPILING... ]</span>
+                    <span class="hero__label"
+                        >[ <span id="hero-spinner">⠋</span> COMPILING... ]</span
+                    >
                     {% if config.extra.product.badge %}
-                    <a href="https://github.com/raskell-io/bhc/releases" class="hero__badge" target="_blank" rel="noopener noreferrer">{{ config.extra.product.badge }}</a>
+                    <a
+                        href="https://github.com/raskell-io/bhc/releases"
+                        class="hero__badge"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >{{ config.extra.product.badge }}</a
+                    >
                     {% endif %}
                 </div>
                 <div class="hero__content">
                     <!-- Haskell Logo -->
-                    <img src="/img/haskell-logo.svg" alt="" class="hero__logo" aria-hidden="true">
+                    <img
+                        src="/img/haskell-logo.svg"
+                        alt=""
+                        class="hero__logo"
+                        aria-hidden="true"
+                    />
                     <h1 class="hero__title hero__title--gradient">
                         {{ config.extra.product.tagline }}
                     </h1>
@@ -40,9 +49,10 @@
                     </p>
 
                     <!-- Install Widget -->
-                    {% if config.extra.product.install_methods %}
-                    {% set default_method = config.extra.product.install_methods | filter(attribute="default", value=true) | first %}
-                    {% if default_method %}
+                    {% if config.extra.product.install_methods %} {% set
+                    default_method = config.extra.product.install_methods |
+                    filter(attribute="default", value=true) | first %} {% if
+                    default_method %}
                     <div class="install-widget">
                         <div class="install-widget__header">
                             <span class="install-widget__dot"></span>
@@ -52,30 +62,84 @@
                         </div>
                         <div class="install-widget__body">
                             <span class="install-widget__prompt">$</span>
-                            <code class="install-widget__command" id="install-command">{{ default_method.command }}</code>
-                            <button class="install-widget__copy" id="install-copy-btn" aria-label="Copy command">
-                                <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            <code
+                                class="install-widget__command"
+                                id="install-command"
+                                >{{ default_method.command }}</code
+                            >
+                            <button
+                                class="install-widget__copy"
+                                id="install-copy-btn"
+                                aria-label="Copy command"
+                            >
+                                <svg
+                                    class="icon-copy"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <rect
+                                        x="9"
+                                        y="9"
+                                        width="13"
+                                        height="13"
+                                        rx="2"
+                                        ry="2"
+                                    />
+                                    <path
+                                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                    />
                                 </svg>
-                                <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12"/>
+                                <svg
+                                    class="icon-check"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <polyline points="20 6 9 17 4 12" />
                                 </svg>
                             </button>
                         </div>
                     </div>
-                    {% endif %}
-                    {% endif %}
+                    {% endif %} {% endif %}
 
-                    <div class="hero__actions" style="margin-top: 2rem;">
-                        <a href="{{ config.extra.docs_url | default(value='/docs/') }}" class="btn btn--primary">
+                    <div class="hero__actions" style="margin-top: 2rem">
+                        <a
+                            href="{{ config.extra.docs_url | default(value='/docs/') }}"
+                            class="btn btn--primary"
+                        >
                             Get Started
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
                             </svg>
                         </a>
-                        <a href="{{ config.extra.github_repo | default(value='#') }}" class="btn btn--secondary">
+                        <a
+                            href="{{ config.extra.github_repo | default(value='#') }}"
+                            class="btn btn--secondary"
+                        >
                             View on GitHub
                         </a>
                     </div>
@@ -87,61 +151,195 @@
         <section class="haskell-foundation" data-section="haskell">
             <div class="haskell-foundation__frame">
                 <div class="haskell-foundation__header">
-                    <span class="haskell-foundation__label">[ THIS IS HASKELL ]</span>
-                    <a href="https://www.haskell.org/" class="haskell-foundation__link" target="_blank" rel="noopener noreferrer">
+                    <span class="haskell-foundation__label"
+                        >[ THIS IS HASKELL ]</span
+                    >
+                    <a
+                        href="https://www.haskell.org/"
+                        class="haskell-foundation__link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         haskell.org
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                            />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
                     </a>
                 </div>
 
                 <h2 class="haskell-foundation__title">This is Haskell</h2>
 
                 <div class="haskell-foundation__intro">
-                    <p>BHC compiles <strong>Haskell</strong>—the same language you know. Your code, your packages, your ecosystem. We're not inventing a new language; we're building a new compiler.</p>
+                    <p>
+                        BHC compiles <strong>Haskell</strong> — the same
+                        language you know. Your code, your packages, your
+                        ecosystem. We're not inventing a new language; we're
+                        building a new compiler.
+                    </p>
                 </div>
 
                 <div class="haskell-foundation__features">
                     <div class="haskell-feature">
                         <div class="haskell-feature__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                                />
+                            </svg>
                         </div>
                         <h4 class="haskell-feature__title">Statically typed</h4>
-                        <p class="haskell-feature__desc">Every expression has a type determined at compile time. Types are inferred—write less, catch more.</p>
+                        <p class="haskell-feature__desc">
+                            Every expression has a type determined at compile
+                            time. Types are inferred—write less, catch more.
+                        </p>
                     </div>
                     <div class="haskell-feature">
                         <div class="haskell-feature__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
                         </div>
-                        <h4 class="haskell-feature__title">Purely functional</h4>
-                        <p class="haskell-feature__desc">Functions have no side effects. State and I/O are explicit. Equational reasoning works.</p>
+                        <h4 class="haskell-feature__title">
+                            Purely functional
+                        </h4>
+                        <p class="haskell-feature__desc">
+                            Functions have no side effects. State and I/O are
+                            explicit. Equational reasoning works.
+                        </p>
                     </div>
                     <div class="haskell-feature">
                         <div class="haskell-feature__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                <path
+                                    d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                                />
+                            </svg>
                         </div>
                         <h4 class="haskell-feature__title">Type inference</h4>
-                        <p class="haskell-feature__desc">The compiler deduces types. You write signatures where they help; the machine handles the rest.</p>
+                        <p class="haskell-feature__desc">
+                            The compiler deduces types. You write signatures
+                            where they help; the machine handles the rest.
+                        </p>
                     </div>
                     <div class="haskell-feature">
                         <div class="haskell-feature__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                                />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
                         </div>
                         <h4 class="haskell-feature__title">Concurrent</h4>
-                        <p class="haskell-feature__desc">Lightweight threads, software transactional memory, and primitives that compose.</p>
+                        <p class="haskell-feature__desc">
+                            Lightweight threads, software transactional memory,
+                            and primitives that compose.
+                        </p>
                     </div>
                     <div class="haskell-feature">
                         <div class="haskell-feature__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M5 12h14" />
+                                <path d="M12 5v14" />
+                            </svg>
                         </div>
                         <h4 class="haskell-feature__title">Lazy</h4>
-                        <p class="haskell-feature__desc">Values are computed only when needed. Define infinite data structures; consume what you use.</p>
+                        <p class="haskell-feature__desc">
+                            Values are computed only when needed. Define
+                            infinite data structures; consume what you use.
+                        </p>
                     </div>
                     <div class="haskell-feature">
                         <div class="haskell-feature__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                                />
+                            </svg>
                         </div>
                         <h4 class="haskell-feature__title">Packages</h4>
-                        <p class="haskell-feature__desc">Hackage hosts thousands of libraries. Cabal manages dependencies. The ecosystem exists.</p>
+                        <p class="haskell-feature__desc">
+                            Hackage hosts thousands of libraries. Cabal manages
+                            dependencies. The ecosystem exists.
+                        </p>
                     </div>
                 </div>
 
@@ -154,28 +352,41 @@
                             <span class="bhc-addition__marker">→</span>
                             <div class="bhc-addition__content">
                                 <strong>Ecosystem preserved</strong>
-                                <span>Use existing .cabal files and Hackage packages. No forks, no rewrites.</span>
+                                <span
+                                    >Use existing .cabal files and Hackage
+                                    packages. No forks, no rewrites.</span
+                                >
                             </div>
                         </div>
                         <div class="bhc-addition">
                             <span class="bhc-addition__marker">→</span>
                             <div class="bhc-addition__content">
                                 <strong>Improved developer experience</strong>
-                                <span>Clear diagnostics, predictable compilation, modern toolchain integration.</span>
+                                <span
+                                    >Clear diagnostics, predictable compilation,
+                                    modern toolchain integration.</span
+                                >
                             </div>
                         </div>
                         <div class="bhc-addition">
                             <span class="bhc-addition__marker">→</span>
                             <div class="bhc-addition__content">
                                 <strong>Numerical and GPU focus</strong>
-                                <span>Tensor IR, guaranteed fusion, SIMD lowering, CUDA/ROCm codegen for compute workloads.</span>
+                                <span
+                                    >Tensor IR, guaranteed fusion, SIMD
+                                    lowering, CUDA/ROCm codegen for compute
+                                    workloads.</span
+                                >
                             </div>
                         </div>
                         <div class="bhc-addition">
                             <span class="bhc-addition__marker">→</span>
                             <div class="bhc-addition__content">
                                 <strong>Multiple targets</strong>
-                                <span>Native binaries, WASM for edge and browser, runtime profiles per package.</span>
+                                <span
+                                    >Native binaries, WASM for edge and browser,
+                                    runtime profiles per package.</span
+                                >
                             </div>
                         </div>
                     </div>
@@ -184,9 +395,19 @@
                 <div class="haskell-foundation__cta">
                     <a href="/get-started/" class="btn btn--primary">
                         Get Started
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                            <polyline points="12 5 19 12 12 19"/>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
                         </svg>
                     </a>
                     <a href="/numeric/" class="btn btn--secondary">
@@ -204,9 +425,14 @@
                 <div class="features__header">
                     <span class="features__label">[ CAPABILITIES ]</span>
                 </div>
-                <h2 class="features__title">{{ config.extra.product.features_title | default(value="Capabilities") }}</h2>
+                <h2 class="features__title">
+                    {{ config.extra.product.features_title |
+                    default(value="Capabilities") }}
+                </h2>
                 {% if config.extra.product.features_subtitle %}
-                <p class="features__subtitle">{{ config.extra.product.features_subtitle }}</p>
+                <p class="features__subtitle">
+                    {{ config.extra.product.features_subtitle }}
+                </p>
                 {% endif %}
                 <div class="features__grid">
                     {% for feature in config.extra.product.features %}
@@ -215,16 +441,28 @@
                             {{ feature.icon | safe }}
                         </div>
                         <h3 class="feature__title">{{ feature.title }}</h3>
-                        <p class="feature__description">{{ feature.description }}</p>
+                        <p class="feature__description">
+                            {{ feature.description }}
+                        </p>
                     </div>
                     {% endfor %}
                 </div>
                 <div class="features__cta">
                     <a href="/compatibility/" class="btn btn--secondary">
                         Compatibility Charter
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                            <polyline points="12 5 19 12 12 19"/>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
                         </svg>
                     </a>
                 </div>
@@ -237,45 +475,88 @@
         <section class="benchmarks" data-section="benchmarks">
             <div class="benchmarks__frame">
                 <div class="benchmarks__header">
-                    <span class="benchmarks__label">{{ config.extra.product.benchmarks.title | default(value="[ BENCHMARKS ]") }}</span>
+                    <span class="benchmarks__label"
+                        >{{ config.extra.product.benchmarks.title |
+                        default(value="[ BENCHMARKS ]") }}</span
+                    >
                 </div>
-                <h2 class="benchmarks__title">{{ config.extra.product.benchmarks.title | default(value="Benchmarks") }}</h2>
+                <h2 class="benchmarks__title">
+                    {{ config.extra.product.benchmarks.title |
+                    default(value="Benchmarks") }}
+                </h2>
                 {% if config.extra.product.benchmarks.subtitle %}
-                <p class="benchmarks__subtitle">{{ config.extra.product.benchmarks.subtitle }}</p>
+                <p class="benchmarks__subtitle">
+                    {{ config.extra.product.benchmarks.subtitle }}
+                </p>
                 {% endif %}
                 <div class="benchmarks__content">
                     {% for stat in config.extra.product.benchmarks.stats %}
                     <div class="benchmark-row">
-                        <span class="benchmark-row__label">{{ stat.label }}</span>
+                        <span class="benchmark-row__label"
+                            >{{ stat.label }}</span
+                        >
                         <div class="benchmark-row__bars">
                             <!-- bhc bar -->
-                            <div class="benchmark-bar" data-width="{{ stat.hx_percent }}">
-                                <span class="benchmark-bar__label">{{ stat.native_label | safe }}</span>
+                            <div
+                                class="benchmark-bar"
+                                data-width="{{ stat.hx_percent }}"
+                            >
+                                <span class="benchmark-bar__label"
+                                    >{{ stat.native_label | safe }}</span
+                                >
                                 <div class="benchmark-bar__track">
-                                    <div class="benchmark-bar__fill benchmark-bar__fill--accent" style="--bar-width: {{ stat.hx_percent }}%;"></div>
+                                    <div
+                                        class="benchmark-bar__fill benchmark-bar__fill--accent"
+                                        style="--bar-width: {{ stat.hx_percent }}%;"
+                                    ></div>
                                 </div>
-                                <span class="benchmark-bar__value">{{ stat.native }}</span>
+                                <span class="benchmark-bar__value"
+                                    >{{ stat.native }}</span
+                                >
                             </div>
                             <!-- baseline bar -->
                             <div class="benchmark-bar" data-width="100">
-                                <span class="benchmark-bar__label">{{ stat.baseline_label | safe }}</span>
+                                <span class="benchmark-bar__label"
+                                    >{{ stat.baseline_label | safe }}</span
+                                >
                                 <div class="benchmark-bar__track">
-                                    <div class="benchmark-bar__fill" style="--bar-width: 100%;"></div>
+                                    <div
+                                        class="benchmark-bar__fill"
+                                        style="--bar-width: 100%"
+                                    ></div>
                                 </div>
-                                <span class="benchmark-bar__value">{{ stat.cabal }}</span>
+                                <span class="benchmark-bar__value"
+                                    >{{ stat.cabal }}</span
+                                >
                             </div>
                         </div>
-                        <span class="benchmark-row__speedup">{{ stat.speedup }}</span>
+                        <span class="benchmark-row__speedup"
+                            >{{ stat.speedup }}</span
+                        >
                     </div>
                     {% endfor %}
                 </div>
                 {% if config.extra.product.benchmarks.cta_url %}
                 <div class="benchmarks__cta">
-                    <a href="{{ config.extra.product.benchmarks.cta_url }}" class="btn btn--secondary">
-                        {{ config.extra.product.benchmarks.cta_text | default(value="Full Benchmarks") }}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                            <polyline points="12 5 19 12 12 19"/>
+                    <a
+                        href="{{ config.extra.product.benchmarks.cta_url }}"
+                        class="btn btn--secondary"
+                    >
+                        {{ config.extra.product.benchmarks.cta_text |
+                        default(value="Full Benchmarks") }}
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
                         </svg>
                     </a>
                 </div>
@@ -293,17 +574,22 @@
                     <span class="profiles__label">[ PROFILES ]</span>
                 </div>
                 <h2 class="profiles__title">Runtime Profiles</h2>
-                <p class="profiles__subtitle">Same language, different runtime behavior. Choose a profile per package.</p>
+                <p class="profiles__subtitle">
+                    Same language, different runtime behavior. Choose a profile
+                    per package.
+                </p>
 
                 <!-- Profile Tabs -->
                 <div class="profiles__tabs">
                     <div class="profiles__tab-list" role="tablist">
                         {% for profile in config.extra.product.profiles %}
-                        <button class="profiles__tab {% if loop.first %}profiles__tab--active{% endif %}"
-                                role="tab"
-                                aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
-                                aria-controls="profile-{{ profile.id }}"
-                                data-profile="{{ profile.id }}">
+                        <button
+                            class="profiles__tab {% if loop.first %}profiles__tab--active{% endif %}"
+                            role="tab"
+                            aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+                            aria-controls="profile-{{ profile.id }}"
+                            data-profile="{{ profile.id }}"
+                        >
                             {{ profile.name }}
                         </button>
                         {% endfor %}
@@ -311,23 +597,34 @@
 
                     <div class="profiles__tab-panels">
                         {% for profile in config.extra.product.profiles %}
-                        <div class="profiles__tab-panel {% if loop.first %}profiles__tab-panel--active{% endif %}"
-                             role="tabpanel"
-                             id="profile-{{ profile.id }}"
-                             aria-hidden="{% if loop.first %}false{% else %}true{% endif %}">
+                        <div
+                            class="profiles__tab-panel {% if loop.first %}profiles__tab-panel--active{% endif %}"
+                            role="tabpanel"
+                            id="profile-{{ profile.id }}"
+                            aria-hidden="{% if loop.first %}false{% else %}true{% endif %}"
+                        >
                             <div class="profile-content">
                                 <div class="profile-content__info">
                                     <div class="profile-content__header">
-                                        <code class="profile-content__flag">--profile={{ profile.id }}</code>
+                                        <code class="profile-content__flag"
+                                            >--profile={{ profile.id }}</code
+                                        >
                                     </div>
-                                    <p class="profile-content__description">{{ profile.description }}</p>
+                                    <p class="profile-content__description">
+                                        {{ profile.description }}
+                                    </p>
                                     <div class="profile-content__usage">
-                                        <span class="profile-content__usage-label">Compile:</span>
+                                        <span
+                                            class="profile-content__usage-label"
+                                            >Compile:</span
+                                        >
                                         <code>{{ profile.usage }}</code>
                                     </div>
                                 </div>
                                 <div class="profile-content__example">
-                                    <div class="profile-content__example-header">
+                                    <div
+                                        class="profile-content__example-header"
+                                    >
                                         <span>{{ profile.example_file }}</span>
                                     </div>
                                     <pre><code class="language-haskell">{{ profile.example_code }}</code></pre>
@@ -341,9 +638,19 @@
                 <div class="profiles__cta">
                     <a href="/profiles/" class="btn btn--secondary">
                         Profile Documentation
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                            <polyline points="12 5 19 12 12 19"/>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
                         </svg>
                     </a>
                 </div>
@@ -361,6 +668,25 @@
                 <div class="content-section__body">
                     {{ section.content | safe }}
                 </div>
+                <div class="content-section__cta">
+                    <a href="/docs/" class="btn btn--secondary">
+                        Full Documentation
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </section>
         {% endif %}
@@ -376,18 +702,37 @@
                 <div class="faq__content">
                     {% for item in config.extra.product.faq %}
                     <details class="faq__item">
-                        <summary class="faq__question">{{ item.question }}</summary>
+                        <summary class="faq__question">
+                            {{ item.question }}
+                        </summary>
                         <div class="faq__answer">{{ item.answer | safe }}</div>
                     </details>
                     {% endfor %}
                 </div>
                 <div class="faq__cta">
-                    <a href="https://github.com/raskell-io/bhc/discussions" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+                    <a
+                        href="https://github.com/raskell-io/bhc/discussions"
+                        class="btn btn--secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         Ask a Question
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                            <polyline points="15 3 21 3 21 9"/>
-                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                            />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
                         </svg>
                     </a>
                 </div>
@@ -397,14 +742,24 @@
 
         <!-- Footer -->
         <footer class="footer" data-section="footer">
-            <canvas id="wireframe-footer-canvas" class="footer__canvas"></canvas>
-            <canvas id="lissajous-canvas" class="footer__canvas footer__canvas--corners"></canvas>
+            <canvas
+                id="wireframe-footer-canvas"
+                class="footer__canvas"
+            ></canvas>
+            <canvas
+                id="lissajous-canvas"
+                class="footer__canvas footer__canvas--corners"
+            ></canvas>
             <div class="footer__container">
                 <div class="footer__grid">
                     <div class="footer__brand">
-                        <span class="footer__brand-name">{{ config.title }}</span>
+                        <span class="footer__brand-name"
+                            >{{ config.title }}</span
+                        >
                         {% if config.extra.product.footer_tagline %}
-                        <span class="footer__brand-tagline">{{ config.extra.product.footer_tagline }}</span>
+                        <span class="footer__brand-tagline"
+                            >{{ config.extra.product.footer_tagline }}</span
+                        >
                         {% endif %}
                     </div>
 
@@ -413,7 +768,18 @@
                         <h4 class="footer__column-title">{{ group.title }}</h4>
                         <div class="footer__links">
                             {% for link in group.links %}
-                            <a href="{{ link.url }}" class="footer__link" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                            <a
+                                href="{{ link.url }}"
+                                class="footer__link"
+                                {%
+                                if
+                                link.external
+                                %}target="_blank"
+                                rel="noopener noreferrer"
+                                {%
+                                endif
+                                %}
+                            >
                                 {{ link.text }}
                             </a>
                             {% endfor %}
@@ -423,26 +789,62 @@
                 </div>
 
                 <div class="footer__bottom">
-                    <span class="footer__copyright">{{ config.extra.product.footer_note | safe }}</span>
+                    <span class="footer__copyright"
+                        >{{ config.extra.product.footer_note | safe }}</span
+                    >
                     <div class="footer__social">
                         {% if config.extra.social.github %}
-                        <a href="{{ config.extra.social.github }}" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        <a
+                            href="{{ config.extra.social.github }}"
+                            class="footer__social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                                />
                             </svg>
                         </a>
-                        {% endif %}
-                        {% if config.extra.social.twitter %}
-                        <a href="{{ config.extra.social.twitter }}" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        {% endif %} {% if config.extra.social.twitter %}
+                        <a
+                            href="{{ config.extra.social.twitter }}"
+                            class="footer__social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                                />
                             </svg>
                         </a>
-                        {% endif %}
-                        {% if config.extra.social.discord %}
-                        <a href="{{ config.extra.social.discord }}" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Discord">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                        {% endif %} {% if config.extra.social.discord %}
+                        <a
+                            href="{{ config.extra.social.discord }}"
+                            class="footer__social-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Discord"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"
+                                />
                             </svg>
                         </a>
                         {% endif %}
@@ -450,7 +852,6 @@
                 </div>
             </div>
         </footer>
-
     </div>
 </div>
 
@@ -458,11 +859,11 @@
     // ==========================================================================
     // Hero spinner animation (like Claude Code's working indicator)
     // ==========================================================================
-    (function() {
-        const spinner = document.getElementById('hero-spinner');
+    (function () {
+        const spinner = document.getElementById("hero-spinner");
         if (!spinner) return;
 
-        const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+        const frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
         let i = 0;
 
         setInterval(() => {
@@ -472,63 +873,68 @@
     })();
 
     // Copy command to clipboard
-    (function() {
-        const btn = document.getElementById('install-copy-btn');
+    (function () {
+        const btn = document.getElementById("install-copy-btn");
         if (btn) {
-            btn.addEventListener('click', async () => {
-                const command = document.getElementById('install-command').textContent;
+            btn.addEventListener("click", async () => {
+                const command =
+                    document.getElementById("install-command").textContent;
                 try {
                     await navigator.clipboard.writeText(command);
-                    btn.classList.add('copied');
+                    btn.classList.add("copied");
                     setTimeout(() => {
-                        btn.classList.remove('copied');
+                        btn.classList.remove("copied");
                     }, 2000);
                 } catch (err) {
-                    console.error('Failed to copy:', err);
+                    console.error("Failed to copy:", err);
                 }
             });
         }
     })();
 
     // Animate benchmark bars on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.2 });
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        },
+        { threshold: 0.2 },
+    );
 
-    document.querySelectorAll('.benchmark-bar').forEach(bar => {
+    document.querySelectorAll(".benchmark-bar").forEach((bar) => {
         observer.observe(bar);
     });
 
     // Generate section dividers with diamonds at section boundaries
     function generateSectionDividers() {
-        const container = document.getElementById('section-dividers');
-        const sections = document.querySelectorAll('[data-section]');
-        const railsContainer = document.querySelector('.landing-rails');
+        const container = document.getElementById("section-dividers");
+        const sections = document.querySelectorAll("[data-section]");
+        const railsContainer = document.querySelector(".landing-rails");
 
         // Clear existing dividers
-        container.innerHTML = '';
+        container.innerHTML = "";
 
         // Get rail positions (aligned with content container)
         const railsRect = railsContainer.getBoundingClientRect();
-        const leftRail = document.querySelector('.landing-rail--left');
-        const rightRail = document.querySelector('.landing-rail--right');
+        const leftRail = document.querySelector(".landing-rail--left");
+        const rightRail = document.querySelector(".landing-rail--right");
         const leftRailX = leftRail.getBoundingClientRect().left;
         const rightRailX = rightRail.getBoundingClientRect().left;
 
-        sections.forEach(section => {
+        sections.forEach((section) => {
             const rect = section.getBoundingClientRect();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
             const topPos = rect.top + scrollTop;
             const bottomPos = rect.bottom + scrollTop;
 
             // Create divider at section start
-            const startDivider = document.createElement('div');
-            startDivider.className = 'section-divider';
-            startDivider.style.top = topPos + 'px';
+            const startDivider = document.createElement("div");
+            startDivider.className = "section-divider";
+            startDivider.style.top = topPos + "px";
             startDivider.innerHTML = `
                 <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
                 <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
@@ -536,9 +942,9 @@
             container.appendChild(startDivider);
 
             // Create divider at section end
-            const endDivider = document.createElement('div');
-            endDivider.className = 'section-divider';
-            endDivider.style.top = bottomPos + 'px';
+            const endDivider = document.createElement("div");
+            endDivider.className = "section-divider";
+            endDivider.style.top = bottomPos + "px";
             endDivider.innerHTML = `
                 <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
                 <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
@@ -549,25 +955,25 @@
 
     // Generate on load and resize
     generateSectionDividers();
-    window.addEventListener('resize', generateSectionDividers);
+    window.addEventListener("resize", generateSectionDividers);
     // Also regenerate after fonts load (can affect section heights)
     document.fonts.ready.then(generateSectionDividers);
 
     // ==========================================================================
     // Wireframe Torus Animation (Demoscene style)
     // ==========================================================================
-    (function() {
-        const canvas = document.getElementById('wireframe-canvas');
+    (function () {
+        const canvas = document.getElementById("wireframe-canvas");
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         let width, height;
         let animationId;
         let time = 0;
 
         // Torus parameters - sized to be visible around the hero frame
         const R = 280; // Major radius
-        const r = 100;  // Minor radius
+        const r = 100; // Minor radius
         const uSegments = 28;
         const vSegments = 14;
 
@@ -588,31 +994,19 @@
         function rotateX(p, angle) {
             const cos = Math.cos(angle);
             const sin = Math.sin(angle);
-            return [
-                p[0],
-                p[1] * cos - p[2] * sin,
-                p[1] * sin + p[2] * cos
-            ];
+            return [p[0], p[1] * cos - p[2] * sin, p[1] * sin + p[2] * cos];
         }
 
         function rotateY(p, angle) {
             const cos = Math.cos(angle);
             const sin = Math.sin(angle);
-            return [
-                p[0] * cos + p[2] * sin,
-                p[1],
-                -p[0] * sin + p[2] * cos
-            ];
+            return [p[0] * cos + p[2] * sin, p[1], -p[0] * sin + p[2] * cos];
         }
 
         function rotateZ(p, angle) {
             const cos = Math.cos(angle);
             const sin = Math.sin(angle);
-            return [
-                p[0] * cos - p[1] * sin,
-                p[0] * sin + p[1] * cos,
-                p[2]
-            ];
+            return [p[0] * cos - p[1] * sin, p[0] * sin + p[1] * cos, p[2]];
         }
 
         // Project 3D to 2D with perspective
@@ -620,11 +1014,7 @@
             const fov = 500;
             const z = p[2] + 500;
             const scale = fov / z;
-            return [
-                p[0] * scale + width / 2,
-                p[1] * scale + height / 2,
-                z
-            ];
+            return [p[0] * scale + width / 2, p[1] * scale + height / 2, z];
         }
 
         // Generate torus point
@@ -640,7 +1030,8 @@
 
             // Get line color from CSS
             const style = getComputedStyle(document.documentElement);
-            const lineColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+            const lineColor =
+                style.getPropertyValue("--color-accent").trim() || "#cba6f7";
 
             ctx.strokeStyle = lineColor;
             ctx.lineWidth = 1;
@@ -702,11 +1093,11 @@
 
         // Start animation
         resize();
-        window.addEventListener('resize', resize);
+        window.addEventListener("resize", resize);
         draw();
 
         // Pause when not visible
-        document.addEventListener('visibilitychange', () => {
+        document.addEventListener("visibilitychange", () => {
             if (document.hidden) {
                 cancelAnimationFrame(animationId);
             } else {
@@ -718,37 +1109,37 @@
     // ==========================================================================
     // Profile Tabs
     // ==========================================================================
-    (function() {
-        const tabList = document.querySelector('.profiles__tab-list');
+    (function () {
+        const tabList = document.querySelector(".profiles__tab-list");
         if (!tabList) return;
 
-        const tabs = tabList.querySelectorAll('.profiles__tab');
-        const panels = document.querySelectorAll('.profiles__tab-panel');
+        const tabs = tabList.querySelectorAll(".profiles__tab");
+        const panels = document.querySelectorAll(".profiles__tab-panel");
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
                 // Deactivate all tabs
-                tabs.forEach(t => {
-                    t.classList.remove('profiles__tab--active');
-                    t.setAttribute('aria-selected', 'false');
+                tabs.forEach((t) => {
+                    t.classList.remove("profiles__tab--active");
+                    t.setAttribute("aria-selected", "false");
                 });
 
                 // Hide all panels
-                panels.forEach(p => {
-                    p.classList.remove('profiles__tab-panel--active');
-                    p.setAttribute('aria-hidden', 'true');
+                panels.forEach((p) => {
+                    p.classList.remove("profiles__tab-panel--active");
+                    p.setAttribute("aria-hidden", "true");
                 });
 
                 // Activate clicked tab
-                tab.classList.add('profiles__tab--active');
-                tab.setAttribute('aria-selected', 'true');
+                tab.classList.add("profiles__tab--active");
+                tab.setAttribute("aria-selected", "true");
 
                 // Show corresponding panel
                 const profileId = tab.dataset.profile;
-                const panel = document.getElementById('profile-' + profileId);
+                const panel = document.getElementById("profile-" + profileId);
                 if (panel) {
-                    panel.classList.add('profiles__tab-panel--active');
-                    panel.setAttribute('aria-hidden', 'false');
+                    panel.classList.add("profiles__tab-panel--active");
+                    panel.setAttribute("aria-hidden", "false");
                 }
             });
         });
@@ -757,25 +1148,29 @@
     // ==========================================================================
     // Styled code blocks with language headers
     // ==========================================================================
-    (function() {
+    (function () {
         const haskellIcon = `<svg class="terminal-block__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.5"><path stroke="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path stroke="currentColor" d="M14 2v6h6"/><g transform="translate(5,10) scale(0.13)" fill="none" stroke="none"><path fill="#5e5086" d="M1.842 77.722L26.586 40.63 1.842 3.537H20.4L45.144 40.63 20.4 77.722H1.842zm0 0"/><path fill="#5e5086" d="M26.586 77.722L51.33 40.63 26.586 3.537h18.558L94.63 77.722H76.074L60.61 54.54 45.143 77.722H26.586zm0 0"/><path fill="#8b4fc7" d="M86.384 56.085L78.136 43.72h28.868v12.366h-20.62zM74.012 37.54l-8.248-12.365h41.24V37.54H74.012zm0 0"/></g></svg>`;
         const cabalIcon = `<svg class="terminal-block__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.5"><path stroke="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path stroke="currentColor" d="M14 2v6h6"/><path stroke="#5e5086" d="M8 12h8M8 15h6"/></svg>`;
 
         // Helper to slugify text for paths
         function slugify(text) {
-            return text.toLowerCase()
-                .replace(/[^a-z0-9]+/g, '-')
-                .replace(/^-|-$/g, '');
+            return text
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-|-$/g, "");
         }
 
         // Find nearest heading before an element
         function findContext(el) {
-            let h2 = null, h3 = null;
+            let h2 = null,
+                h3 = null;
             let current = el.previousElementSibling;
 
             while (current) {
-                if (current.tagName === 'H2' && !h2) h2 = current.textContent.trim();
-                if (current.tagName === 'H3' && !h3) h3 = current.textContent.trim();
+                if (current.tagName === "H2" && !h2)
+                    h2 = current.textContent.trim();
+                if (current.tagName === "H3" && !h3)
+                    h3 = current.textContent.trim();
                 if (h2 && h3) break;
                 current = current.previousElementSibling;
             }
@@ -785,64 +1180,73 @@
 
         // Generate contextual path based on headings
         function generatePath(context, isExample) {
-            let path = '';
+            let path = "";
             if (context.h2) {
                 const section = slugify(context.h2);
-                if (section.includes('example')) {
-                    path = 'examples/';
-                } else if (section.includes('usage')) {
-                    path = 'src/';
+                if (section.includes("example")) {
+                    path = "examples/";
+                } else if (section.includes("usage")) {
+                    path = "src/";
                 } else {
-                    path = 'src/' + section + '/';
+                    path = "src/" + section + "/";
                 }
             } else {
-                path = isExample ? 'examples/' : 'src/';
+                path = isExample ? "examples/" : "src/";
             }
             return path;
         }
 
-        const codeBlocks = document.querySelectorAll('.content-section__body pre code[data-lang]');
+        const codeBlocks = document.querySelectorAll(
+            ".content-section__body pre code[data-lang]",
+        );
         let defaultCounter = 1;
 
-        codeBlocks.forEach(codeEl => {
+        codeBlocks.forEach((codeEl) => {
             const pre = codeEl.parentElement;
-            const lang = codeEl.getAttribute('data-lang') || 'code';
+            const lang = codeEl.getAttribute("data-lang") || "code";
             const code = codeEl.textContent;
 
-            const isTerminal = lang === 'shellscript' || lang === 'bash';
-            const isHaskell = lang === 'haskell';
-            const isCabal = lang === 'cabal';
+            const isTerminal = lang === "shellscript" || lang === "bash";
+            const isHaskell = lang === "haskell";
+            const isCabal = lang === "cabal";
 
             let filepath = null;
-            let icon = '';
+            let icon = "";
 
             if (isHaskell) {
                 icon = haskellIcon;
                 const context = findContext(pre);
-                const moduleMatch = code.match(/^module\s+([A-Z][a-zA-Z0-9_.]*)/m);
+                const moduleMatch = code.match(
+                    /^module\s+([A-Z][a-zA-Z0-9_.]*)/m,
+                );
 
                 let filename;
                 if (moduleMatch) {
                     const moduleName = moduleMatch[1];
-                    filename = moduleName.split('.').pop() + '.hs';
+                    filename = moduleName.split(".").pop() + ".hs";
                 } else {
                     filename = `Example${defaultCounter++}.hs`;
                 }
 
-                const isExample = code.includes('example') || (context.h2 && context.h2.toLowerCase().includes('example'));
+                const isExample =
+                    code.includes("example") ||
+                    (context.h2 &&
+                        context.h2.toLowerCase().includes("example"));
                 const path = generatePath(context, isExample);
                 filepath = path + filename;
             } else if (isCabal) {
                 icon = cabalIcon;
                 const nameMatch = code.match(/^name:\s*(\S+)/m);
-                filepath = nameMatch ? `${nameMatch[1]}.cabal` : 'myproject.cabal';
+                filepath = nameMatch
+                    ? `${nameMatch[1]}.cabal`
+                    : "myproject.cabal";
             }
 
-            const block = document.createElement('div');
-            block.className = 'terminal-block';
+            const block = document.createElement("div");
+            block.className = "terminal-block";
 
-            const header = document.createElement('div');
-            header.className = 'terminal-block__header';
+            const header = document.createElement("div");
+            header.className = "terminal-block__header";
 
             if (isTerminal) {
                 header.innerHTML = `
@@ -852,8 +1256,8 @@
                     <span class="terminal-block__title">terminal</span>
                 `;
             } else if (filepath) {
-                header.innerHTML = `${icon}<span class="terminal-block__file" data-filename="${filepath.split('/').pop()}" data-code="${encodeURIComponent(code)}">${filepath}</span>`;
-                header.classList.add('terminal-block__header--file');
+                header.innerHTML = `${icon}<span class="terminal-block__file" data-filename="${filepath.split("/").pop()}" data-code="${encodeURIComponent(code)}">${filepath}</span>`;
+                header.classList.add("terminal-block__header--file");
             } else {
                 header.innerHTML = `
                     <span class="terminal-block__dot"></span>
@@ -863,12 +1267,12 @@
                 `;
             }
 
-            const body = document.createElement('div');
-            body.className = 'terminal-block__body';
+            const body = document.createElement("div");
+            body.className = "terminal-block__body";
 
             const clonedPre = pre.cloneNode(true);
-            clonedPre.style = '';
-            clonedPre.className = '';
+            clonedPre.style = "";
+            clonedPre.className = "";
             body.appendChild(clonedPre);
 
             block.appendChild(header);
@@ -878,13 +1282,13 @@
         });
 
         // Add click handlers for file downloads
-        document.querySelectorAll('.terminal-block__file').forEach(el => {
-            el.addEventListener('click', () => {
+        document.querySelectorAll(".terminal-block__file").forEach((el) => {
+            el.addEventListener("click", () => {
                 const filename = el.dataset.filename;
                 const code = decodeURIComponent(el.dataset.code);
-                const blob = new Blob([code], { type: 'text/plain' });
+                const blob = new Blob([code], { type: "text/plain" });
                 const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
+                const a = document.createElement("a");
                 a.href = url;
                 a.download = filename;
                 a.click();
@@ -896,30 +1300,33 @@
     // ==========================================================================
     // Syntax Highlighting (minimal Haskell highlighter)
     // ==========================================================================
-    (function() {
-        const codeBlocks = document.querySelectorAll('code.language-haskell');
+    (function () {
+        const codeBlocks = document.querySelectorAll("code.language-haskell");
 
-        codeBlocks.forEach(block => {
+        codeBlocks.forEach((block) => {
             let code = block.textContent;
             const tokens = [];
             let i = 0;
 
             while (i < code.length) {
                 // Pragmas {-# ... #-}
-                if (code.slice(i, i + 3) === '{-#') {
-                    const end = code.indexOf('#-}', i);
+                if (code.slice(i, i + 3) === "{-#") {
+                    const end = code.indexOf("#-}", i);
                     if (end !== -1) {
-                        tokens.push({ type: 'pragma', text: code.slice(i, end + 3) });
+                        tokens.push({
+                            type: "pragma",
+                            text: code.slice(i, end + 3),
+                        });
                         i = end + 3;
                         continue;
                     }
                 }
 
                 // Line comments --
-                if (code.slice(i, i + 2) === '--') {
-                    let end = code.indexOf('\n', i);
+                if (code.slice(i, i + 2) === "--") {
+                    let end = code.indexOf("\n", i);
                     if (end === -1) end = code.length;
-                    tokens.push({ type: 'comment', text: code.slice(i, end) });
+                    tokens.push({ type: "comment", text: code.slice(i, end) });
                     i = end;
                     continue;
                 }
@@ -928,10 +1335,10 @@
                 if (code[i] === '"') {
                     let j = i + 1;
                     while (j < code.length && code[j] !== '"') {
-                        if (code[j] === '\\') j++;
+                        if (code[j] === "\\") j++;
                         j++;
                     }
-                    tokens.push({ type: 'string', text: code.slice(i, j + 1) });
+                    tokens.push({ type: "string", text: code.slice(i, j + 1) });
                     i = j + 1;
                     continue;
                 }
@@ -939,15 +1346,39 @@
                 // Words (keywords, types, identifiers)
                 if (/[a-zA-Z_]/.test(code[i])) {
                     let j = i;
-                    while (j < code.length && /[a-zA-Z0-9_']/.test(code[j])) j++;
+                    while (j < code.length && /[a-zA-Z0-9_']/.test(code[j]))
+                        j++;
                     const word = code.slice(i, j);
-                    const keywords = ['module', 'where', 'import', 'data', 'type', 'newtype', 'class', 'instance', 'deriving', 'let', 'in', 'case', 'of', 'if', 'then', 'else', 'do', 'return', 'foreign', 'export', 'ccall', 'otherwise'];
+                    const keywords = [
+                        "module",
+                        "where",
+                        "import",
+                        "data",
+                        "type",
+                        "newtype",
+                        "class",
+                        "instance",
+                        "deriving",
+                        "let",
+                        "in",
+                        "case",
+                        "of",
+                        "if",
+                        "then",
+                        "else",
+                        "do",
+                        "return",
+                        "foreign",
+                        "export",
+                        "ccall",
+                        "otherwise",
+                    ];
                     if (keywords.includes(word)) {
-                        tokens.push({ type: 'keyword', text: word });
+                        tokens.push({ type: "keyword", text: word });
                     } else if (/^[A-Z]/.test(word)) {
-                        tokens.push({ type: 'type', text: word });
+                        tokens.push({ type: "type", text: word });
                     } else {
-                        tokens.push({ type: 'ident', text: word });
+                        tokens.push({ type: "ident", text: word });
                     }
                     i = j;
                     continue;
@@ -957,23 +1388,30 @@
                 if (/[0-9]/.test(code[i])) {
                     let j = i;
                     while (j < code.length && /[0-9.]/.test(code[j])) j++;
-                    tokens.push({ type: 'number', text: code.slice(i, j) });
+                    tokens.push({ type: "number", text: code.slice(i, j) });
                     i = j;
                     continue;
                 }
 
                 // Other characters
-                tokens.push({ type: 'plain', text: code[i] });
+                tokens.push({ type: "plain", text: code[i] });
                 i++;
             }
 
             // Build HTML
-            const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            let html = tokens.map(t => {
-                const escaped = escapeHtml(t.text);
-                if (t.type === 'plain' || t.type === 'ident') return escaped;
-                return `<span class="hl-${t.type}">${escaped}</span>`;
-            }).join('');
+            const escapeHtml = (s) =>
+                s
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+            let html = tokens
+                .map((t) => {
+                    const escaped = escapeHtml(t.text);
+                    if (t.type === "plain" || t.type === "ident")
+                        return escaped;
+                    return `<span class="hl-${t.type}">${escaped}</span>`;
+                })
+                .join("");
 
             block.innerHTML = html;
         });
@@ -982,27 +1420,27 @@
     // ==========================================================================
     // Copy buttons for code blocks
     // ==========================================================================
-    (function() {
+    (function () {
         const copyIcon = `<svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
         const checkIcon = `<svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
 
         function createCopyButton(getText) {
-            const btn = document.createElement('button');
-            btn.className = 'code-copy-btn';
-            btn.setAttribute('aria-label', 'Copy code');
+            const btn = document.createElement("button");
+            btn.className = "code-copy-btn";
+            btn.setAttribute("aria-label", "Copy code");
             btn.innerHTML = copyIcon + checkIcon;
 
-            btn.addEventListener('click', async (e) => {
+            btn.addEventListener("click", async (e) => {
                 e.preventDefault();
                 const text = getText();
                 try {
                     await navigator.clipboard.writeText(text);
-                    btn.classList.add('copied');
+                    btn.classList.add("copied");
                     setTimeout(() => {
-                        btn.classList.remove('copied');
+                        btn.classList.remove("copied");
                     }, 2000);
                 } catch (err) {
-                    console.error('Failed to copy:', err);
+                    console.error("Failed to copy:", err);
                 }
             });
 
@@ -1010,17 +1448,19 @@
         }
 
         // Add copy buttons to profile examples
-        document.querySelectorAll('.profile-content__example').forEach(example => {
-            const code = example.querySelector('code');
-            if (code) {
-                const btn = createCopyButton(() => code.textContent);
-                example.appendChild(btn);
-            }
-        });
+        document
+            .querySelectorAll(".profile-content__example")
+            .forEach((example) => {
+                const code = example.querySelector("code");
+                if (code) {
+                    const btn = createCopyButton(() => code.textContent);
+                    example.appendChild(btn);
+                }
+            });
 
         // Add copy buttons to terminal blocks
-        document.querySelectorAll('.terminal-block').forEach(terminal => {
-            const code = terminal.querySelector('code');
+        document.querySelectorAll(".terminal-block").forEach((terminal) => {
+            const code = terminal.querySelector("code");
             if (code) {
                 const btn = createCopyButton(() => code.textContent);
                 terminal.appendChild(btn);
@@ -1028,25 +1468,27 @@
         });
 
         // Add copy buttons to regular pre blocks (not inside terminal-block)
-        document.querySelectorAll('.content-section__body pre').forEach(pre => {
-            // Skip if already inside a terminal block
-            if (pre.closest('.terminal-block')) return;
-            const code = pre.querySelector('code');
-            if (code) {
-                const btn = createCopyButton(() => code.textContent);
-                pre.appendChild(btn);
-            }
-        });
+        document
+            .querySelectorAll(".content-section__body pre")
+            .forEach((pre) => {
+                // Skip if already inside a terminal block
+                if (pre.closest(".terminal-block")) return;
+                const code = pre.querySelector("code");
+                if (code) {
+                    const btn = createCopyButton(() => code.textContent);
+                    pre.appendChild(btn);
+                }
+            });
     })();
 
     // ==========================================================================
     // Wireframe Cube Animation (Footer) - Outside the rails
     // ==========================================================================
-    (function() {
-        const canvas = document.getElementById('wireframe-footer-canvas');
+    (function () {
+        const canvas = document.getElementById("wireframe-footer-canvas");
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         let width, height, canvasWidth;
         let animationId;
         let time = 0;
@@ -1056,15 +1498,30 @@
         // Cube vertices
         const size = 50;
         const vertices = [
-            [-1, -1, -1], [1, -1, -1], [1, 1, -1], [-1, 1, -1],
-            [-1, -1, 1], [1, -1, 1], [1, 1, 1], [-1, 1, 1]
-        ].map(v => v.map(c => c * size));
+            [-1, -1, -1],
+            [1, -1, -1],
+            [1, 1, -1],
+            [-1, 1, -1],
+            [-1, -1, 1],
+            [1, -1, 1],
+            [1, 1, 1],
+            [-1, 1, 1],
+        ].map((v) => v.map((c) => c * size));
 
         // Cube edges
         const edges = [
-            [0, 1], [1, 2], [2, 3], [3, 0],
-            [4, 5], [5, 6], [6, 7], [7, 4],
-            [0, 4], [1, 5], [2, 6], [3, 7]
+            [0, 1],
+            [1, 2],
+            [2, 3],
+            [3, 0],
+            [4, 5],
+            [5, 6],
+            [6, 7],
+            [7, 4],
+            [0, 4],
+            [1, 5],
+            [2, 6],
+            [3, 7],
         ];
 
         function resize() {
@@ -1076,17 +1533,20 @@
         }
 
         function rotateX(p, angle) {
-            const cos = Math.cos(angle), sin = Math.sin(angle);
+            const cos = Math.cos(angle),
+                sin = Math.sin(angle);
             return [p[0], p[1] * cos - p[2] * sin, p[1] * sin + p[2] * cos];
         }
 
         function rotateY(p, angle) {
-            const cos = Math.cos(angle), sin = Math.sin(angle);
+            const cos = Math.cos(angle),
+                sin = Math.sin(angle);
             return [p[0] * cos + p[2] * sin, p[1], -p[0] * sin + p[2] * cos];
         }
 
         function rotateZ(p, angle) {
-            const cos = Math.cos(angle), sin = Math.sin(angle);
+            const cos = Math.cos(angle),
+                sin = Math.sin(angle);
             return [p[0] * cos - p[1] * sin, p[0] * sin + p[1] * cos, p[2]];
         }
 
@@ -1098,7 +1558,7 @@
         }
 
         function drawCube(cx, cy, rotX, rotY, rotZ) {
-            const projected = vertices.map(v => {
+            const projected = vertices.map((v) => {
                 let p = rotateX(v, rotX);
                 p = rotateY(p, rotY);
                 p = rotateZ(p, rotZ);
@@ -1128,7 +1588,8 @@
             }
 
             const style = getComputedStyle(document.documentElement);
-            const lineColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+            const lineColor =
+                style.getPropertyValue("--color-accent").trim() || "#cba6f7";
 
             ctx.strokeStyle = lineColor;
             ctx.lineWidth = 1;
@@ -1142,17 +1603,23 @@
 
             // Right cube - different speeds and phase offset for asymmetry
             const rightCubeX = rightRail + (canvasWidth - rightRail) / 2;
-            drawCube(rightCubeX, centerY, time * 0.35 + 1.5, time * 0.45 + 0.8, time * 0.25 + 2.1);
+            drawCube(
+                rightCubeX,
+                centerY,
+                time * 0.35 + 1.5,
+                time * 0.45 + 0.8,
+                time * 0.25 + 2.1,
+            );
 
             ctx.globalAlpha = 1;
             animationId = requestAnimationFrame(draw);
         }
 
         resize();
-        window.addEventListener('resize', resize);
+        window.addEventListener("resize", resize);
         draw();
 
-        document.addEventListener('visibilitychange', () => {
+        document.addEventListener("visibilitychange", () => {
             if (document.hidden) {
                 cancelAnimationFrame(animationId);
             } else {
@@ -1164,11 +1631,11 @@
     // ==========================================================================
     // Lissajous Curves Animation (Footer corners) - Outside the rails
     // ==========================================================================
-    (function() {
-        const canvas = document.getElementById('lissajous-canvas');
+    (function () {
+        const canvas = document.getElementById("lissajous-canvas");
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         let canvasWidth, height;
         let animationId;
         let time = 0;
@@ -1183,7 +1650,17 @@
             canvas.height = height;
         }
 
-        function drawLissajous(centerX, centerY, scaleX, scaleY, a, b, delta, points, rotation) {
+        function drawLissajous(
+            centerX,
+            centerY,
+            scaleX,
+            scaleY,
+            a,
+            b,
+            delta,
+            points,
+            rotation,
+        ) {
             ctx.beginPath();
             for (let i = 0; i <= points; i++) {
                 const t = (i / points) * Math.PI * 2 * 4;
@@ -1219,7 +1696,8 @@
             }
 
             const style = getComputedStyle(document.documentElement);
-            const accentColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+            const accentColor =
+                style.getPropertyValue("--color-accent").trim() || "#cba6f7";
 
             ctx.lineWidth = 1;
 
@@ -1232,29 +1710,69 @@
 
             ctx.strokeStyle = accentColor;
             ctx.globalAlpha = 0.25;
-            drawLissajous(leftX, centerY, size, size * 0.7, 3, 2, time, 250, time * 0.12);
+            drawLissajous(
+                leftX,
+                centerY,
+                size,
+                size * 0.7,
+                3,
+                2,
+                time,
+                250,
+                time * 0.12,
+            );
 
             ctx.globalAlpha = 0.15;
-            drawLissajous(leftX, centerY, size * 0.7, size * 0.5, 5, 4, time * 1.3, 250, -time * 0.08);
+            drawLissajous(
+                leftX,
+                centerY,
+                size * 0.7,
+                size * 0.5,
+                5,
+                4,
+                time * 1.3,
+                250,
+                -time * 0.08,
+            );
 
             // Right corner curves - different speeds/phases for asymmetry
             const rightX = rightRail + (canvasWidth - rightRail) / 2;
 
             ctx.globalAlpha = 0.25;
-            drawLissajous(rightX, centerY, size, size * 0.7, 4, 3, time * 0.8 + 2.3, 250, time * 0.09 + 1.1);
+            drawLissajous(
+                rightX,
+                centerY,
+                size,
+                size * 0.7,
+                4,
+                3,
+                time * 0.8 + 2.3,
+                250,
+                time * 0.09 + 1.1,
+            );
 
             ctx.globalAlpha = 0.15;
-            drawLissajous(rightX, centerY, size * 0.7, size * 0.5, 3, 5, time * 1.1 + 1.7, 250, time * 0.11 + 0.5);
+            drawLissajous(
+                rightX,
+                centerY,
+                size * 0.7,
+                size * 0.5,
+                3,
+                5,
+                time * 1.1 + 1.7,
+                250,
+                time * 0.11 + 0.5,
+            );
 
             ctx.globalAlpha = 1;
             animationId = requestAnimationFrame(draw);
         }
 
         resize();
-        window.addEventListener('resize', resize);
+        window.addEventListener("resize", resize);
         draw();
 
-        document.addEventListener('visibilitychange', () => {
+        document.addEventListener("visibilitychange", () => {
             if (document.hidden) {
                 cancelAnimationFrame(animationId);
             } else {
@@ -1266,11 +1784,11 @@
     // ==========================================================================
     // Floating Particles Animation (Features)
     // ==========================================================================
-    (function() {
-        const canvas = document.getElementById('particles-canvas');
+    (function () {
+        const canvas = document.getElementById("particles-canvas");
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         let width, height;
         let particles = [];
         const numParticles = 30;
@@ -1297,7 +1815,7 @@
                     speedY: (Math.random() - 0.5) * 0.3,
                     rotation: Math.random() * Math.PI * 2,
                     rotationSpeed: (Math.random() - 0.5) * 0.02,
-                    shape: Math.floor(Math.random() * 3) // 0: square, 1: diamond, 2: cross
+                    shape: Math.floor(Math.random() * 3), // 0: square, 1: diamond, 2: cross
                 });
             }
         }
@@ -1344,13 +1862,14 @@
             time += 0.01;
 
             const style = getComputedStyle(document.documentElement);
-            const lineColor = style.getPropertyValue('--color-grid').trim() || '#45475a';
+            const lineColor =
+                style.getPropertyValue("--color-grid").trim() || "#45475a";
 
             ctx.strokeStyle = lineColor;
             ctx.lineWidth = 1;
             ctx.globalAlpha = 0.4;
 
-            particles.forEach(p => {
+            particles.forEach((p) => {
                 drawShape(p.x, p.y, p.size, p.rotation, p.shape);
 
                 // Update position
@@ -1373,10 +1892,10 @@
         }
 
         resize();
-        window.addEventListener('resize', resize);
+        window.addEventListener("resize", resize);
         draw();
 
-        document.addEventListener('visibilitychange', () => {
+        document.addEventListener("visibilitychange", () => {
             if (document.hidden) {
                 cancelAnimationFrame(animationId);
             } else {
@@ -1388,11 +1907,11 @@
     // ==========================================================================
     // Oscilloscope Wave Animation (Profiles)
     // ==========================================================================
-    (function() {
-        const canvas = document.getElementById('wave-canvas');
+    (function () {
+        const canvas = document.getElementById("wave-canvas");
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext("2d");
         let width, height;
         let animationId;
         let time = 0;
@@ -1410,16 +1929,17 @@
             time += 0.015;
 
             const style = getComputedStyle(document.documentElement);
-            const waveColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+            const waveColor =
+                style.getPropertyValue("--color-accent").trim() || "#cba6f7";
 
             // Draw multiple sine waves
             const waves = [
                 { amp: 20, freq: 0.008, speed: 1, opacity: 0.15 },
                 { amp: 15, freq: 0.012, speed: 1.3, opacity: 0.1 },
-                { amp: 25, freq: 0.006, speed: 0.8, opacity: 0.08 }
+                { amp: 25, freq: 0.006, speed: 0.8, opacity: 0.08 },
             ];
 
-            waves.forEach(wave => {
+            waves.forEach((wave) => {
                 ctx.beginPath();
                 ctx.strokeStyle = waveColor;
                 ctx.lineWidth = 1.5;
@@ -1428,9 +1948,14 @@
                 const centerY = height * 0.5;
 
                 for (let x = 0; x < width; x += 2) {
-                    const y = centerY +
+                    const y =
+                        centerY +
                         Math.sin(x * wave.freq + time * wave.speed) * wave.amp +
-                        Math.sin(x * wave.freq * 0.5 + time * wave.speed * 0.7) * wave.amp * 0.5;
+                        Math.sin(
+                            x * wave.freq * 0.5 + time * wave.speed * 0.7,
+                        ) *
+                            wave.amp *
+                            0.5;
 
                     if (x === 0) {
                         ctx.moveTo(x, y);
@@ -1446,10 +1971,10 @@
         }
 
         resize();
-        window.addEventListener('resize', resize);
+        window.addEventListener("resize", resize);
         draw();
 
-        document.addEventListener('visibilitychange', () => {
+        document.addEventListener("visibilitychange", () => {
             if (document.hidden) {
                 cancelAnimationFrame(animationId);
             } else {
