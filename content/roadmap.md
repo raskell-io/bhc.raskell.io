@@ -8,85 +8,146 @@ template = "page.html"
 
 BHC is under active development. This roadmap outlines our priorities and milestones.
 
-## Current Status: v0.2.0 (Alpha)
+## Current Status
 
-**Native code generation is working!** The compiler can now build and run standalone executables.
+**M0–M10 Complete.** The compiler has working native code generation, runtime profiles, Tensor IR with fusion guarantees, SIMD vectorization, GPU backends, WebAssembly support, dependent types preview, and Cargo-quality diagnostics.
 
 ## Completed Milestones
 
 ### M0 — Proof of Life ✅
 
-Tree-walking interpreter foundation.
-
-### M0.5 — Native Code Generation ✅
-
-End-to-end native compilation pipeline:
-
-- LLVM backend via inkwell
-- Core IR to LLVM lowering
-- Runtime system with mark-sweep GC
-- Linker integration for standalone executables
-- Basic IO primitives (`print`, `putStrLn`)
-
-```bash
-$ cat Main.hs
-main = print 42
-
-$ bhc run Main.hs
-42
-```
+Tree-walking interpreter foundation with lexer, parser, minimal type checker, and Core IR.
 
 ### M1 — Numeric Profile Skeleton ✅
 
-Profile system with numeric-specific compilation paths.
+Strict-by-default evaluation for numeric code:
 
-### M2 — Tensor IR ✅
+- Unboxed primitive types (`I32`, `I64`, `F32`, `F64`)
+- Unboxed `UArray` representation
+- Hot Arena allocator in RTS
+- `lazy { }` escape hatch syntax
 
-Tensor intermediate representation with guaranteed fusion patterns.
+### M2 — Tensor IR v1 ✅
 
-### M3 — Vectorization ✅
+Tensor intermediate representation with guaranteed fusion:
 
-Loop IR with SIMD auto-vectorization and parallel loops.
+- `Tensor` type with shape/stride metadata
+- View operations (`reshape`, `slice`, `transpose`)
+- Fusion pass for guaranteed patterns
+- Kernel report mode (`-fkernel-report`)
+
+### M3 — Vectorization + Parallel Loops ✅
+
+Auto-vectorization and parallel execution:
+
+- SIMD primitive types (`Vec4F32`, `Vec8F32`, `Vec2F64`, `Vec4F64`)
+- Auto-vectorization pass
+- `parFor`, `parMap`, `parReduce` primitives
+- Work-stealing scheduler in RTS
 
 ### M4 — Pinned Arrays + FFI ✅
 
-Foreign function interface with pinned memory for zero-copy interop.
+Zero-copy FFI and external BLAS integration:
 
-### M5 — Server Runtime ✅
+- Pinned heap region in RTS
+- `PinnedUArray` type
+- Safe FFI boundary with pinned buffer support
+- Reference OpenBLAS integration
 
-Structured concurrency with work-stealing scheduler, cancellation, and deadlines.
+### M5 — Server Runtime Contract ✅
+
+Production-ready concurrent runtime:
+
+- Structured concurrency primitives
+- Cancellation propagation (cooperative)
+- Deadline/timeout support
+- Incremental/concurrent GC
+- Event tracing hooks
 
 ### M6 — Platform Standardization ✅
 
-Cross-platform standard library foundation.
+Complete H26 Platform and conformance suite:
+
+- All H26 Platform modules implemented
+- Conformance test suite
+- Package manifest and lockfile formats
+- Reproducible build verification
 
 ### M7 — GPU Backend ✅
 
-CUDA and ROCm code generation from Tensor IR.
+GPU compute support for numeric workloads:
+
+- CUDA/ROCm code generation
+- Device memory management
+- Kernel fusion across host/device boundary
 
 ### M8 — WASM Target ✅
 
-WebAssembly backend with WASI support.
+WebAssembly compilation for edge deployment:
+
+- WebAssembly code generation
+- Browser runtime
+- Edge profile optimization
 
 ### M9 — Dependent Types Preview ✅
 
-Experimental dependent types support.
+Shape-indexed tensors with compile-time dimension checking:
+
+- Type-level naturals and lists
+- Promoted list syntax `'[1024, 768]`
+- Type families for shape operations
+- Dynamic escape hatch (`DynTensor`)
 
 ### M10 — Cargo-Quality Diagnostics ✅
 
-Structured error messages with suggestions and context.
+World-class compiler error messages:
+
+- Cargo-style rendering with colors and context
+- "Did you mean?" suggestions
+- Visual ASCII diagrams for tensor shape errors
+- LSP integration with code actions
 
 ## Current Focus
 
 ### M11 — Real-World Haskell Compatibility 🔄
 
-- LANGUAGE pragma support
-- Full Haskell 2010 layout rule
-- Module system with qualified imports
-- Type classes and instances
-- Pattern guards and view patterns
-- Type families and advanced type features
-- Improved Prelude coverage
+Enable BHC to compile real-world Haskell projects like xmonad, pandoc, and lens.
+
+#### Phase 1: LANGUAGE Pragmas
+- Parse `{-# LANGUAGE ExtensionName #-}` at module level
+- Parse `{-# OPTIONS_GHC ... #-}` and `{-# INLINE/NOINLINE #-}` pragmas
+- Common extensions: `OverloadedStrings`, `LambdaCase`, `BangPatterns`, etc.
+
+#### Phase 2: Layout Rule
+- Implement Haskell 2010 layout rule (Section 10.3)
+- Implicit `{`, `}`, `;` insertion based on indentation
+- Handle `where`, `let`, `do`, `of`, `case` layout contexts
+
+#### Phase 3: Module System
+- Full export list syntax
+- Import declarations with all forms (qualified, hiding, as)
+- Hierarchical module names
+
+#### Phase 4: Declarations
+- Type class declarations with methods and defaults
+- Instance declarations
+- `deriving` clauses and standalone deriving
+- GADT syntax, pattern synonyms, foreign declarations
+
+#### Phase 5: Patterns & Expressions
+- Pattern guards, view patterns, as-patterns
+- Record patterns, infix constructor patterns
+- Multi-way if, lambda-case, typed holes
+
+#### Phase 6: Types
+- `forall` quantification, scoped type variables
+- Type applications, kind signatures
+- Type families and associated types
+
+#### Exit Criteria
+- `bhc check` succeeds on xmonad source files
+- `bhc check` succeeds on pandoc source files
+- All Haskell 2010 Report features supported
 
 ## Future Milestones
 
