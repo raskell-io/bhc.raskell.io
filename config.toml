@@ -444,7 +444,7 @@ answer = "Yes. BHC uses LLVM for native code generation, just like GHC (optional
 
 [[extra.product.faq]]
 question = "What does BHC enable for Haskell?"
-answer = "BHC makes Haskell viable for domains where it previously struggled to compete. <strong>Machine learning</strong> with tensor-native compilation and GPU acceleration. <strong>Bioinformatics</strong> — protein folding, genomics, sequence analysis — with predictable numeric performance. <strong>Security policy engines</strong> where declarative "what, not how" expressiveness ensures correctness. In a world where AI generates implementation code, languages that cleanly express intent, constraints, and invariants become primary. Haskell's type safety and declarative style are assets, not luxuries. BHC adds the runtime to match: WebAssembly for edge enforcement, GPUs for compute, realtime for robotics. Specify <em>what</em> you want; let the compiler and runtime handle <em>how</em>."
+answer = "BHC makes Haskell viable for domains where it previously struggled to compete. <strong>Machine learning</strong> with tensor-native compilation and GPU acceleration. <strong>Bioinformatics</strong> — protein folding, genomics, sequence analysis — with predictable numeric performance. <strong>Security policy engines</strong> where declarative 'what, not how' expressiveness ensures correctness. In a world where AI generates implementation code, languages that cleanly express intent, constraints, and invariants become primary. Haskell's type safety and declarative style are assets, not luxuries. BHC adds the runtime to match: WebAssembly for edge enforcement, GPUs for compute, realtime for robotics. Specify <em>what</em> you want; let the compiler and runtime handle <em>how</em>."
 
 [[extra.product.faq]]
 question = "How are BHC's error messages?"
@@ -515,6 +515,10 @@ external = true
 [[extra.nav_links]]
 name = "Get Started"
 url = "/get-started/"
+
+[[extra.nav_links]]
+name = "Playground"
+url = "/playground/"
 
 [[extra.nav_links]]
 name = "Features"
