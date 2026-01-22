@@ -20,6 +20,14 @@ But it works on other levels too. Glasgow gave Haskell its compiler — thirty y
 
 So: a Haskell compiler from Basel, named after Basel. It's personal, not a marketing exercise.
 
+## How We Got Here
+
+BHC wasn't the first project. [hx](https://hx.raskell.io) came before it — a package manager and build tool for Haskell, also written in Rust. The idea was simple: Haskell's tooling situation is fragmented (cabal, stack, ghcup), and a unified tool could help.
+
+Building hx meant understanding how Haskell projects are structured, how dependencies resolve, how builds should work. At some point the question became: if we're rethinking the tooling, why not rethink the compiler too?
+
+So hx and BHC are siblings. hx handles packages, dependencies, and builds. BHC handles compilation. They're designed to work together, though BHC also works standalone with traditional cabal workflows.
+
 ## Project Goals
 
 BHC exists to strengthen the Haskell ecosystem:
