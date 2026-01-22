@@ -567,82 +567,106 @@
 
         // ==========================================================================
         // COMPILER: Infinite fractal zoom (Sierpinski-like triangles)
+        // Optimized for lower CPU usage with frame throttling and depth limits
         // ==========================================================================
         function drawCompiler() {
-            ctx.clearRect(0, 0, width, height);
-            time += 0.004;
+            // Throttle to ~30fps for lower CPU usage
+            const targetFPS = 30;
+            const frameInterval = 1000 / targetFPS;
+            let lastFrameTime = 0;
 
-            const centerX = width / 2;
-            const centerY = height / 2;
+            function render(currentTime) {
+                animationId = requestAnimationFrame(render);
 
-            ctx.strokeStyle = accentColor;
-            ctx.lineWidth = 1;
+                // Skip frame if not enough time has passed
+                if (currentTime - lastFrameTime < frameInterval) return;
+                lastFrameTime = currentTime;
 
-            // Zoom factor cycles continuously for infinite zoom effect
-            const zoomCycle = 3; // How many levels before pattern repeats
-            const zoomSpeed = 0.3;
-            const zoomPhase = (time * zoomSpeed) % zoomCycle;
-            const baseZoom = Math.pow(2, zoomPhase);
+                ctx.clearRect(0, 0, width, height);
+                time += 0.008; // Adjusted for 30fps
 
-            // Draw recursive triangles at multiple zoom levels
-            function drawTriangle(cx, cy, size, rotation, depth) {
-                if (size < 2 || depth > 8) return;
-                if (size > Math.max(width, height) * 2) return; // Skip if too large
+                const centerX = width / 2;
+                const centerY = height / 2;
 
-                // Alpha based on size (fade in as they grow, fade out when huge)
-                const normalizedSize = size / 150;
-                let alpha;
-                if (normalizedSize < 0.3) {
-                    alpha = normalizedSize / 0.3 * 0.5; // Fade in small
-                } else if (normalizedSize > 3) {
-                    alpha = Math.max(0, (6 - normalizedSize) / 3 * 0.5); // Fade out large
-                } else {
-                    alpha = 0.5;
+                ctx.strokeStyle = accentColor;
+                ctx.lineWidth = 1;
+
+                // Zoom factor cycles continuously for infinite zoom effect
+                const zoomCycle = 3;
+                const zoomSpeed = 0.3;
+                const zoomPhase = (time * zoomSpeed) % zoomCycle;
+                const baseZoom = Math.pow(2, zoomPhase);
+
+                // Viewport bounds for culling (with padding)
+                const pad = 100;
+                const minX = -pad, maxX = width + pad;
+                const minY = -pad, maxY = height + pad;
+
+                // Draw recursive triangles at multiple zoom levels
+                function drawTriangle(cx, cy, size, rotation, depth) {
+                    // Reduced max depth from 8 to 5 for lower CPU
+                    if (size < 3 || depth > 5) return;
+                    if (size > Math.max(width, height) * 1.5) return;
+
+                    // Early viewport culling - skip if center is far outside bounds
+                    if (cx + size < minX || cx - size > maxX ||
+                        cy + size < minY || cy - size > maxY) return;
+
+                    // Alpha based on size
+                    const normalizedSize = size / 150;
+                    let alpha;
+                    if (normalizedSize < 0.3) {
+                        alpha = normalizedSize / 0.3 * 0.5;
+                    } else if (normalizedSize > 3) {
+                        alpha = Math.max(0, (6 - normalizedSize) / 3 * 0.5);
+                    } else {
+                        alpha = 0.5;
+                    }
+
+                    if (alpha <= 0.02) return;
+                    ctx.globalAlpha = alpha;
+
+                    // Draw triangle
+                    ctx.beginPath();
+                    for (let i = 0; i <= 3; i++) {
+                        const angle = rotation + (i * Math.PI * 2 / 3) - Math.PI / 2;
+                        const x = cx + Math.cos(angle) * size;
+                        const y = cy + Math.sin(angle) * size;
+                        if (i === 0) ctx.moveTo(x, y);
+                        else ctx.lineTo(x, y);
+                    }
+                    ctx.closePath();
+                    ctx.stroke();
+
+                    // Recursively draw smaller triangles at vertices
+                    const childSize = size / 2;
+                    const childDist = size / 2;
+
+                    for (let i = 0; i < 3; i++) {
+                        const angle = rotation + (i * Math.PI * 2 / 3) - Math.PI / 2;
+                        const childX = cx + Math.cos(angle) * childDist;
+                        const childY = cy + Math.sin(angle) * childDist;
+                        drawTriangle(childX, childY, childSize, rotation, depth + 1);
+                    }
                 }
 
-                if (alpha <= 0.02) return;
-                ctx.globalAlpha = alpha;
+                // Reduced from 6 to 4 base sizes for lower CPU
+                const baseSizes = [30, 80, 200, 500];
+                const rotationSpeed = 0.1;
 
-                // Draw triangle
-                ctx.beginPath();
-                for (let i = 0; i <= 3; i++) {
-                    const angle = rotation + (i * Math.PI * 2 / 3) - Math.PI / 2;
-                    const x = cx + Math.cos(angle) * size;
-                    const y = cy + Math.sin(angle) * size;
-                    if (i === 0) ctx.moveTo(x, y);
-                    else ctx.lineTo(x, y);
+                for (let i = 0; i < baseSizes.length; i++) {
+                    const size = baseSizes[i] * baseZoom;
+                    const rotation = time * rotationSpeed + i * 0.1;
+
+                    if (size > 5 && size < 1200) {
+                        drawTriangle(centerX, centerY, size, rotation, 0);
+                    }
                 }
-                ctx.closePath();
-                ctx.stroke();
 
-                // Recursively draw smaller triangles at vertices
-                const childSize = size / 2;
-                const childDist = size / 2;
-
-                for (let i = 0; i < 3; i++) {
-                    const angle = rotation + (i * Math.PI * 2 / 3) - Math.PI / 2;
-                    const childX = cx + Math.cos(angle) * childDist;
-                    const childY = cy + Math.sin(angle) * childDist;
-                    drawTriangle(childX, childY, childSize, rotation, depth + 1);
-                }
+                ctx.globalAlpha = 1;
             }
 
-            // Draw multiple zoom levels to create infinite zoom illusion
-            const baseSizes = [20, 40, 80, 160, 320, 640];
-            const rotationSpeed = 0.1;
-
-            for (let i = 0; i < baseSizes.length; i++) {
-                const size = baseSizes[i] * baseZoom;
-                const rotation = time * rotationSpeed + i * 0.1;
-
-                // Only draw if within reasonable bounds
-                if (size > 5 && size < 1500) {
-                    drawTriangle(centerX, centerY, size, rotation, 0);
-                }
-            }
-
-            ctx.globalAlpha = 1;
-            animationId = requestAnimationFrame(drawCompiler);
+            animationId = requestAnimationFrame(render);
         }
 
         // Select animation based on page slug
