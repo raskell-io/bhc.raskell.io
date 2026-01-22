@@ -8,15 +8,33 @@ template = "page.html"
 
 BHC is under active development. This roadmap outlines our priorities and milestones.
 
-## Current Status: v0.1.0 (Alpha)
+## Current Status: v0.2.0 (Alpha)
 
-Core compiler infrastructure is complete. Currently focused on real-world Haskell compatibility.
+**Native code generation is working!** The compiler can now build and run standalone executables.
 
 ## Completed Milestones
 
 ### M0 — Proof of Life ✅
 
 Tree-walking interpreter foundation.
+
+### M0.5 — Native Code Generation ✅
+
+End-to-end native compilation pipeline:
+
+- LLVM backend via inkwell
+- Core IR to LLVM lowering
+- Runtime system with mark-sweep GC
+- Linker integration for standalone executables
+- Basic IO primitives (`print`, `putStrLn`)
+
+```bash
+$ cat Main.hs
+main = print 42
+
+$ bhc run Main.hs
+42
+```
 
 ### M1 — Numeric Profile Skeleton ✅
 
