@@ -9,6 +9,9 @@
     <div class="landing-rail landing-rail--right"></div>
 </div>
 
+<!-- Section dividers container (populated by JS) -->
+<div id="section-dividers"></div>
+
 <div class="landing">
     <div class="landing__container">
 
@@ -787,6 +790,60 @@ updateHighlight();
 
 // Initialize
 initPlayground();
+</script>
+
+<script>
+// Generate section dividers with diamonds at section boundaries
+function generateSectionDividers() {
+    const container = document.getElementById('section-dividers');
+    const sections = document.querySelectorAll('[data-section]');
+    const railsContainer = document.querySelector('.landing-rails');
+
+    if (!container || !railsContainer) return;
+
+    // Clear existing dividers
+    container.innerHTML = '';
+
+    // Get rail positions (aligned with content container)
+    const leftRail = document.querySelector('.landing-rail--left');
+    const rightRail = document.querySelector('.landing-rail--right');
+    if (!leftRail || !rightRail) return;
+
+    const leftRailX = leftRail.getBoundingClientRect().left;
+    const rightRailX = rightRail.getBoundingClientRect().left;
+
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const topPos = rect.top + scrollTop;
+        const bottomPos = rect.bottom + scrollTop;
+
+        // Create divider at section start
+        const startDivider = document.createElement('div');
+        startDivider.className = 'section-divider';
+        startDivider.style.top = topPos + 'px';
+        startDivider.innerHTML = `
+            <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
+            <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
+        `;
+        container.appendChild(startDivider);
+
+        // Create divider at section end
+        const endDivider = document.createElement('div');
+        endDivider.className = 'section-divider';
+        endDivider.style.top = bottomPos + 'px';
+        endDivider.innerHTML = `
+            <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
+            <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
+        `;
+        container.appendChild(endDivider);
+    });
+}
+
+// Generate on load and resize
+generateSectionDividers();
+window.addEventListener('resize', generateSectionDividers);
+document.fonts.ready.then(generateSectionDividers);
 </script>
 
 <script>
