@@ -14,17 +14,15 @@ BHC targets Haskell 2010 and selected GHC editions (for a documented subset of e
 
 ## Why Basel?
 
-Glasgow gave Haskell its industrial-strength compiler. For over three decades, GHC has been the reference implementation, the research vehicle, and the production workhorse. That's a remarkable legacy.
+We needed a name. "Alternative GHC" wasn't going to work.
 
-Basel is a deliberate successor name — not a replacement, but a continuation. Like Glasgow, Basel is a European city with a history of precision engineering and scientific rigor. It's home to pharmaceutical research, chemical engineering, and a tradition of getting complex things right.
+Glasgow gave Haskell its compiler. Thirty years of work, countless PhD theses, production deployments everywhere. We're not trying to compete with that history or claim we're somehow better. That would be absurd.
 
-The name signals what this project values:
+Basel is just another European city. It happens to be known for precision work — pharmaceuticals, chemistry, watchmaking nearby. It felt right for a project that cares about predictable behavior and getting details right. Mostly, it's a nod to Glasgow without pretending to be Glasgow.
 
-- **Precision over magic** — If performance matters, the compiler tells you what happened. No folklore, no "try adding bang patterns and see."
-- **Engineering over research** — BHC isn't a research vehicle. It's built to ship production software to real targets.
-- **Respect for lineage** — We're not here to "fix" Haskell or declare GHC obsolete. We're building on what works and making different tradeoffs for different use cases.
+If we're being honest, the name is also a bit aspirational. We'd like BHC to be the kind of project where things work the way they're documented, where performance isn't folklore, where you don't need to know twenty years of mailing list history to understand why something is slow.
 
-The Basel name is also a reminder: this is one compiler among potentially many. Haskell is bigger than any single implementation. A healthy ecosystem has room for compilers optimized for different goals.
+Whether we get there is another question. But that's the intent.
 
 ## Project Goals
 
@@ -37,68 +35,51 @@ BHC exists to strengthen the Haskell ecosystem:
 
 ## Design Decisions
 
-Every compiler makes tradeoffs. Here's why BHC made the choices it did.
+Some of these choices might be wrong. We won't know for years. But here's our reasoning.
 
 ### Why Rust?
 
-GHC is written in Haskell (bootstrapped). That's elegant, but it also means the compiler inherits Haskell's runtime characteristics — lazy evaluation, garbage collection, unpredictable memory usage during compilation.
+The honest answer: we wanted a language with good tooling, no garbage collector in the compiler itself, and a type system that catches mistakes. Rust fits.
 
-Rust gives us:
+There's no deeper philosophy here. Writing a compiler in Haskell is elegant — GHC does it — but we didn't want to debug the compiler's memory behavior while also debugging the compiler's correctness. Rust lets us focus on one problem at a time.
 
-- **Predictable compilation performance** — No GC pauses during compilation, predictable memory usage, fast incremental builds.
-- **Memory safety without runtime cost** — The compiler itself won't segfault or leak. We get safety guarantees at compile time.
-- **Modern tooling** — Cargo, rust-analyzer, excellent IDE support. Contributors can be productive quickly.
-- **No bootstrap problem** — You don't need a working Haskell compiler to build BHC.
-
-This choice has no effect on the Haskell code you write. It's purely about compiler engineering.
+It also means you don't need a Haskell compiler to build BHC, which makes bootstrapping easier. Small thing, but it matters for contributors.
 
 ### Why LLVM?
 
-We didn't want to write a code generator from scratch. LLVM gives us:
+Because writing a code generator is a lot of work and we'd probably do it worse than the LLVM team.
 
-- **Battle-tested optimizations** — Decades of work on register allocation, instruction selection, loop optimization.
-- **Multi-target support** — x86-64, ARM64, RISC-V, WebAssembly (via separate backend), and more.
-- **SIMD auto-vectorization** — Critical for the Numeric profile's performance guarantees.
-- **Industry standard** — GHC uses LLVM (optionally). So do Rust, Swift, Julia, and Clang. The tooling and knowledge base are mature.
+LLVM handles register allocation, instruction selection, vectorization, and a dozen other things we'd rather not think about. GHC uses it (optionally), Rust uses it, Swift uses it. It's not exciting, but it works.
 
-The GPU backends (CUDA/ROCm) generate PTX and AMDGCN directly — LLVM doesn't help there. The WASM backend also bypasses LLVM for tighter control over output size.
+We do bypass LLVM for GPU code (CUDA/ROCm) and WebAssembly, where we wanted tighter control. But for native x86/ARM, LLVM saves us years of work.
 
-### Why Profiles Instead of Flags?
+### Why Profiles?
 
-GHC has hundreds of flags. You can enable strictness analysis, change the GC, tune the RTS, enable LLVM, and more. This is powerful but creates a combinatorial explosion of configurations.
+GHC has a lot of flags. You can spend hours tuning RTS options, optimization levels, and strictness settings. Sometimes you get faster code. Sometimes you get subtle bugs. Often you're not sure what you're doing.
 
-Profiles are opinionated bundles:
+Profiles are our attempt to make this less painful. Instead of "here are 200 knobs," we say "here are six configurations we've actually tested." Pick the one that matches your use case.
 
-- **Fewer decisions** — Pick `server`, `numeric`, or `edge`. The compiler knows what that means.
-- **Tested combinations** — Each profile is a tested, documented configuration. We don't ship flag combinations we haven't validated.
-- **Clear contracts** — "Numeric profile guarantees fusion for these patterns" is a contract. "Try `-fstrictness` and see" is not.
-- **Per-module granularity** — Different modules can use different profiles. Your hot numeric loop gets `numeric`; your CLI parsing gets `default`.
-
-You can still tune within a profile, but the profile gives you a sane starting point with documented behavior.
+It's opinionated, which means we're sometimes wrong about what you need. But we'd rather ship tested combinations than untested flexibility.
 
 ### Why a New Runtime?
 
-Haskell's semantics don't mandate a specific runtime. GHC's RTS is excellent but optimized for GHC's compilation model.
+Haskell doesn't require a specific runtime — that's an implementation detail. GHC's runtime is good, but it's one runtime trying to serve everyone.
 
-BHC's RTS is designed around profiles:
+We wanted different runtimes for different jobs. The server profile needs a work-stealing scheduler and cancellation. The numeric profile needs arena allocators and pinned memory. The realtime profile needs bounded GC pauses. The embedded profile needs no GC at all.
 
-- **Server profile** — Work-stealing scheduler, structured concurrency primitives, cancellation propagation, tracing hooks.
-- **Numeric profile** — Hot arena allocation, pinned buffers for FFI, minimal GC interaction in hot paths.
-- **Realtime profile** — Incremental GC with bounded pauses, per-frame arenas.
-- **Embedded profile** — No GC at all. Static allocation only.
+You can't really do that with one runtime and some flags. So we wrote multiple.
 
-A single RTS can't optimize for all of these. Profile-specific runtime code lets us make different tradeoffs for different deployment targets.
+### Why Start From Scratch?
 
-### Why Clean-Slate?
+This is the decision we second-guess the most.
 
-We could have forked GHC and modified it. We chose not to because:
+We could have forked GHC. We'd have years of work already done. We'd have compatibility from day one. It would have been the sensible choice.
 
-- **Different implementation language** — Rust vs Haskell means a fork isn't practical anyway.
-- **Architectural freedom** — We wanted to design the IR pipeline, the query system, and the driver from scratch for modern incremental compilation.
-- **No legacy constraints** — GHC supports platforms and features we don't need. A clean slate lets us focus.
-- **Learning opportunity** — Building a compiler from scratch forces you to understand every decision. That understanding shows up in the design.
+But we wanted to use Rust (see above), and forking a Haskell codebase into Rust isn't really forking. We also wanted to rethink some architectural decisions — the IR pipeline, incremental compilation, the query system — and doing that in an existing codebase is harder than it sounds.
 
-The downside is real: we're reimplementing decades of work. But we're also able to make choices GHC can't make without breaking existing users.
+So we started over. It's slower. We're reimplementing things GHC solved decades ago. But we understand every line of code, and we can make changes without worrying about breaking twenty years of accumulated expectations.
+
+Ask us in five years whether this was the right call.
 
 ## What BHC Is Not
 
