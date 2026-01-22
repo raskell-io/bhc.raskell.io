@@ -46,6 +46,11 @@
                                 <button id="playground-check" class="playground__button playground__button--check" disabled>
                                     Check
                                 </button>
+                                <button id="playground-fullscreen" class="playground__button playground__button--fullscreen" title="Fullscreen (F11)">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                         <textarea id="playground-editor" class="playground__editor" spellcheck="false">-- Try some Haskell!
@@ -294,6 +299,59 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     outline: none;
 }
 
+/* Fullscreen button */
+.playground__button--fullscreen {
+    padding: 0.375rem;
+}
+
+.playground__button--fullscreen svg {
+    display: block;
+}
+
+/* Fullscreen mode */
+.playground--fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.playground--fullscreen .playground__status {
+    flex-shrink: 0;
+}
+
+.playground--fullscreen .playground__editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+}
+
+.playground--fullscreen .playground__editor-header {
+    flex-shrink: 0;
+}
+
+.playground--fullscreen .playground__editor {
+    flex: 1;
+    min-height: 0;
+    resize: none;
+}
+
+.playground--fullscreen .playground__output-container,
+.playground--fullscreen .playground__examples {
+    display: none;
+}
+
+/* Exit fullscreen icon */
+.playground--fullscreen .playground__button--fullscreen svg path {
+    d: path("M4 14h3a2 2 0 0 1 2 2v3m4-3v3a2 2 0 0 0 2 2h3M14 4v3a2 2 0 0 0 2 2h3M4 10V7a2 2 0 0 1 2-2h3");
+}
+
 .playground__output-container {
     border-bottom: 1px solid var(--color-grid);
 }
@@ -407,13 +465,27 @@ let isReady = false;
 const statusEl = document.getElementById('playground-status');
 const statusTextEl = statusEl.querySelector('.playground__status-text');
 const statusIndicatorEl = statusEl.querySelector('.playground__status-indicator');
+const playgroundEl = document.querySelector('.playground');
 const editorEl = document.getElementById('playground-editor');
 const outputEl = document.getElementById('playground-output');
 const runBtn = document.getElementById('playground-run');
 const checkBtn = document.getElementById('playground-check');
 const clearBtn = document.getElementById('playground-clear');
+const fullscreenBtn = document.getElementById('playground-fullscreen');
 const profileSelect = document.getElementById('playground-profile');
 const exampleBtns = document.querySelectorAll('.playground__example');
+
+// Fullscreen toggle
+function toggleFullscreen() {
+    playgroundEl.classList.toggle('playground--fullscreen');
+    if (playgroundEl.classList.contains('playground--fullscreen')) {
+        editorEl.focus();
+    }
+}
+
+function exitFullscreen() {
+    playgroundEl.classList.remove('playground--fullscreen');
+}
 
 function setStatus(text, state) {
     statusTextEl.textContent = text;
@@ -526,13 +598,29 @@ runBtn.addEventListener('click', runCode);
 checkBtn.addEventListener('click', checkCode);
 clearBtn.addEventListener('click', clearOutput);
 
-// Keyboard shortcut: Ctrl/Cmd + Enter to run
+// Keyboard shortcuts
 editorEl.addEventListener('keydown', (e) => {
+    // Ctrl/Cmd + Enter to run
     if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
         e.preventDefault();
         runCode();
     }
+    // Escape to exit fullscreen
+    if (e.key === 'Escape') {
+        exitFullscreen();
+    }
 });
+
+// F11 for fullscreen (when editor focused)
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'F11' && document.activeElement === editorEl) {
+        e.preventDefault();
+        toggleFullscreen();
+    }
+});
+
+// Fullscreen button
+fullscreenBtn.addEventListener('click', toggleFullscreen);
 
 // Example buttons
 exampleBtns.forEach(btn => {
