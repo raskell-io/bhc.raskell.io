@@ -62,7 +62,9 @@
                                 </button>
                             </div>
                         </div>
-                        <textarea id="playground-editor" class="playground__editor" spellcheck="false">-- Try some Haskell!
+                        <div class="playground__code-wrapper">
+                            <pre class="playground__highlight" aria-hidden="true"><code id="playground-highlight-code"></code></pre>
+                            <textarea id="playground-editor" class="playground__editor" spellcheck="false">-- Try some Haskell!
 -- Examples:
 
 -- Simple arithmetic
@@ -79,6 +81,7 @@
 
 -- Fibonacci
 main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</textarea>
+                        </div>
                     </div>
 
                     <!-- Output area -->
@@ -291,22 +294,68 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     font-size: 0.625rem;
 }
 
-.playground__editor {
-    width: 100%;
+.playground__code-wrapper {
+    position: relative;
     min-height: 300px;
-    padding: 1rem;
     background: var(--color-code-bg);
-    border: none;
-    color: var(--color-text);
+}
+
+.playground__highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 1rem;
+    overflow: hidden;
+    pointer-events: none;
+    background: transparent;
+}
+
+.playground__highlight code {
+    display: block;
     font-family: var(--font-mono);
     font-size: 0.875rem;
     line-height: 1.5;
-    resize: vertical;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--color-text);
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.playground__editor {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    color: transparent;
+    caret-color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    resize: none;
+}
+
+.playground__editor::selection {
+    background: var(--ctp-surface1);
 }
 
 .playground__editor:focus {
     outline: none;
 }
+
+/* Syntax highlighting */
+.hl-comment { color: var(--ctp-overlay1); font-style: italic; }
+.hl-string { color: var(--ctp-green); }
+.hl-number { color: var(--ctp-peach); }
+.hl-keyword { color: var(--ctp-mauve); }
+.hl-type { color: var(--ctp-yellow); }
+.hl-operator { color: var(--ctp-sky); }
 
 /* Fullscreen button */
 .playground__button--fullscreen {
@@ -471,7 +520,7 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     background: #ffffff;
 }
 
-[data-theme="light"] .playground__editor {
+[data-theme="light"] .playground__code-wrapper {
     background: #ffffff;
 }
 
@@ -494,7 +543,60 @@ const statusTextEl = statusEl.querySelector('.playground__status-text');
 const statusIndicatorEl = statusEl.querySelector('.playground__status-indicator');
 const playgroundEl = document.querySelector('.playground');
 const editorEl = document.getElementById('playground-editor');
+const highlightCode = document.getElementById('playground-highlight-code');
 const outputEl = document.getElementById('playground-output');
+
+// Syntax highlighting
+function highlight(code) {
+    // Escape HTML first
+    let html = code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    // Tokenize with regex - order matters
+    const tokens = [
+        [/^(--[^\n]*)/m, 'hl-comment'],           // Line comments
+        [/^("(?:[^"\\]|\\.)*")/m, 'hl-string'],   // Strings
+        [/^('(?:[^'\\]|\\.)')/m, 'hl-string'],    // Chars
+        [/^(\d+\.?\d*)/m, 'hl-number'],           // Numbers
+        [/^(let|in|if|then|else|case|of|where|do|module|import|data|type|newtype|class|instance|deriving)\b/m, 'hl-keyword'],
+        [/^([A-Z][a-zA-Z0-9_']*)/m, 'hl-type'],   // Types
+        [/^(::|-&gt;|&lt;-|=&gt;|=|\+\+|\+|-|\*|\/|&gt;=|&lt;=|&gt;|&lt;|&amp;&amp;|\|\||\.\.)/m, 'hl-operator'],
+    ];
+
+    let result = '';
+    let i = 0;
+
+    while (i < html.length) {
+        let matched = false;
+        const remaining = html.slice(i);
+
+        for (const [regex, cls] of tokens) {
+            const match = remaining.match(regex);
+            if (match && match.index === 0) {
+                result += `<span class="${cls}">${match[1]}</span>`;
+                i += match[1].length;
+                matched = true;
+                break;
+            }
+        }
+
+        if (!matched) {
+            result += html[i];
+            i++;
+        }
+    }
+
+    return result;
+}
+
+function updateHighlight() {
+    highlightCode.innerHTML = highlight(editorEl.value) + '\n';
+}
+
+function syncScroll() {
+    const pre = highlightCode.parentElement;
+    pre.scrollTop = editorEl.scrollTop;
+    pre.scrollLeft = editorEl.scrollLeft;
+}
 const runBtn = document.getElementById('playground-run');
 const checkBtn = document.getElementById('playground-check');
 const clearBtn = document.getElementById('playground-clear');
@@ -649,13 +751,21 @@ document.addEventListener('keydown', (e) => {
 // Fullscreen button
 fullscreenBtn.addEventListener('click', toggleFullscreen);
 
+// Syntax highlighting
+editorEl.addEventListener('input', updateHighlight);
+editorEl.addEventListener('scroll', syncScroll);
+
 // Example buttons
 exampleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         editorEl.value = btn.dataset.code;
+        updateHighlight();
         clearOutput();
     });
 });
+
+// Initial highlight
+updateHighlight();
 
 // Initialize
 initPlayground();
