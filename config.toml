@@ -435,6 +435,10 @@ question = "Why is BHC written in Rust?"
 answer = "Rust provides memory safety, predictable performance, and excellent tooling. A clean-slate implementation lets us design a modern compiler architecture without legacy constraints. The choice has no effect on the Haskell code you write."
 
 [[extra.product.faq]]
+question = "Does BHC use LLVM?"
+answer = "Yes. BHC uses LLVM for native code generation, just like GHC (optionally), Rust, Swift, and many other modern compilers. LLVM provides battle-tested optimizations, broad target support (x86, ARM, RISC-V), and SIMD auto-vectorization. The GPU backends generate PTX/AMDGCN directly, while the WASM backend emits WebAssembly without LLVM."
+
+[[extra.product.faq]]
 question = "How are BHC's error messages?"
 answer = "BHC prioritizes clear diagnostics. Error messages include source spans, suggested fixes, and explanations. Type errors show the full unification trace when needed. Use <code>--explain E0123</code> for detailed documentation on any error code."
 
