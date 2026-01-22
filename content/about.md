@@ -14,15 +14,11 @@ BHC targets Haskell 2010 and selected GHC editions (for a documented subset of e
 
 ## Why Basel?
 
-We needed a name. "Alternative GHC" wasn't going to work.
+Because I'm from Basel and still live there. That's the real reason.
 
-Glasgow gave Haskell its compiler. Thirty years of work, countless PhD theses, production deployments everywhere. We're not trying to compete with that history or claim we're somehow better. That would be absurd.
+But it works on other levels too. Glasgow gave Haskell its compiler — thirty years of work, production deployments everywhere. Basel is another European city with its own history. The Bernoullis were from here. Euler worked here. There's a tradition of mathematics in this town that I grew up taking for granted.
 
-Basel is just another European city. It happens to be known for precision work — pharmaceuticals, chemistry, watchmaking nearby. It felt right for a project that cares about predictable behavior and getting details right. Mostly, it's a nod to Glasgow without pretending to be Glasgow.
-
-If we're being honest, the name is also a bit aspirational. We'd like BHC to be the kind of project where things work the way they're documented, where performance isn't folklore, where you don't need to know twenty years of mailing list history to understand why something is slow.
-
-Whether we get there is another question. But that's the intent.
+So: a Haskell compiler from Basel, named after Basel. It's personal, not a marketing exercise.
 
 ## Project Goals
 
