@@ -48,7 +48,9 @@
                                 </button>
                             </div>
                         </div>
-                        <textarea id="playground-editor" class="playground__editor" spellcheck="false">-- Try some Haskell!
+                        <div class="playground__code-area">
+                            <div id="playground-backdrop" class="playground__backdrop"><div class="playground__backdrop-content"></div></div>
+                            <textarea id="playground-editor" class="playground__editor" spellcheck="false">-- Try some Haskell!
 -- Examples:
 
 -- Simple arithmetic
@@ -65,6 +67,7 @@
 
 -- Fibonacci
 main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</textarea>
+                        </div>
                     </div>
 
                     <!-- Output area -->
@@ -277,22 +280,73 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     font-size: 0.625rem;
 }
 
-.playground__editor {
-    width: 100%;
-    min-height: 300px;
-    padding: 1rem;
+.playground__code-area {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.playground__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
     background: var(--color-code-bg);
-    border: none;
-    color: var(--color-text);
+    pointer-events: none;
+}
+
+.playground__backdrop-content {
+    padding: 1rem;
     font-family: var(--font-mono);
     font-size: 0.875rem;
     line-height: 1.5;
-    resize: vertical;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--color-text);
+}
+
+.playground__editor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: transparent;
+    caret-color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    resize: none;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .playground__editor:focus {
     outline: none;
 }
+
+.playground__editor::selection {
+    background: var(--ctp-surface2);
+    color: transparent;
+}
+
+/* Syntax highlighting tokens */
+.hl-keyword { color: var(--ctp-mauve); }
+.hl-type { color: var(--ctp-yellow); }
+.hl-string { color: var(--ctp-green); }
+.hl-char { color: var(--ctp-teal); }
+.hl-number { color: var(--ctp-peach); }
+.hl-comment { color: var(--ctp-overlay1); font-style: italic; }
+.hl-operator { color: var(--ctp-sky); }
+.hl-punctuation { color: var(--ctp-overlay2); }
+.hl-function { color: var(--ctp-blue); }
 
 .playground__output-container {
     border-bottom: 1px solid var(--color-grid);
@@ -386,7 +440,7 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     background: #ffffff;
 }
 
-[data-theme="light"] .playground__editor {
+[data-theme="light"] .playground__backdrop {
     background: #ffffff;
 }
 
@@ -408,12 +462,71 @@ const statusEl = document.getElementById('playground-status');
 const statusTextEl = statusEl.querySelector('.playground__status-text');
 const statusIndicatorEl = statusEl.querySelector('.playground__status-indicator');
 const editorEl = document.getElementById('playground-editor');
+const backdropEl = document.getElementById('playground-backdrop');
+const backdropContent = backdropEl.querySelector('.playground__backdrop-content');
 const outputEl = document.getElementById('playground-output');
 const runBtn = document.getElementById('playground-run');
 const checkBtn = document.getElementById('playground-check');
 const clearBtn = document.getElementById('playground-clear');
 const profileSelect = document.getElementById('playground-profile');
 const exampleBtns = document.querySelectorAll('.playground__example');
+
+// Haskell syntax highlighting
+function highlightHaskell(code) {
+    const keywords = /\b(let|in|if|then|else|case|of|where|do|module|import|data|type|newtype|class|instance|deriving|qualified|as|hiding|infixl|infixr|infix|default|foreign)\b/g;
+    const types = /\b([A-Z][a-zA-Z0-9_']*)\b/g;
+    const numbers = /\b(\d+\.?\d*(?:e[+-]?\d+)?)\b/g;
+    const strings = /"(?:[^"\\]|\\.)*"/g;
+    const chars = /'(?:[^'\\]|\\.)*'/g;
+    const comments = /--[^\n]*/g;
+    const blockComments = /\{-[\s\S]*?-\}/g;
+    const operators = /(::|->|<-|=>|\.\.|\+\+|>>=|>>|<\$>|<\*>|<\|>|\|\||&&|==|\/=|<=|>=|[+\-*\/<>=!@#$%^&|~?]+)/g;
+
+    // Tokenize to avoid conflicts
+    const tokens = [];
+    let result = code;
+
+    // Helper to escape HTML
+    const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    // Extract and replace with placeholders
+    const extract = (regex, cls) => {
+        result = result.replace(regex, match => {
+            tokens.push({ text: esc(match), cls });
+            return `\x00${tokens.length - 1}\x00`;
+        });
+    };
+
+    // Order matters: comments first, then strings, then others
+    extract(blockComments, 'hl-comment');
+    extract(comments, 'hl-comment');
+    extract(strings, 'hl-string');
+    extract(chars, 'hl-char');
+    extract(numbers, 'hl-number');
+    extract(keywords, 'hl-keyword');
+    extract(types, 'hl-type');
+    extract(operators, 'hl-operator');
+
+    // Escape remaining text
+    result = esc(result);
+
+    // Restore tokens with spans
+    result = result.replace(/\x00(\d+)\x00/g, (_, i) => {
+        const t = tokens[parseInt(i)];
+        return `<span class="${t.cls}">${t.text}</span>`;
+    });
+
+    return result;
+}
+
+function updateHighlight() {
+    backdropContent.innerHTML = highlightHaskell(editorEl.value) + '\n';
+}
+
+function syncScroll() {
+    backdropEl.scrollTop = editorEl.scrollTop;
+    backdropEl.scrollLeft = editorEl.scrollLeft;
+}
 
 function setStatus(text, state) {
     statusTextEl.textContent = text;
@@ -534,13 +647,21 @@ editorEl.addEventListener('keydown', (e) => {
     }
 });
 
+// Syntax highlighting
+editorEl.addEventListener('input', updateHighlight);
+editorEl.addEventListener('scroll', syncScroll);
+
 // Example buttons
 exampleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         editorEl.value = btn.dataset.code;
+        updateHighlight();
         clearOutput();
     });
 });
+
+// Initial highlight
+updateHighlight();
 
 // Initialize
 initPlayground();
