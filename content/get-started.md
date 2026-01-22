@@ -185,6 +185,8 @@ bhc build
 bhc run
 ```
 
+You can also use [hx](https://hx.raskell.io), a unified Haskell toolchain that handles packages, dependencies, and builds. hx and BHC are designed to work together, but BHC also works standalone with traditional cabal workflows.
+
 ## Next Steps
 
 - Read the [Compatibility Charter](/compatibility/) to understand what's supported

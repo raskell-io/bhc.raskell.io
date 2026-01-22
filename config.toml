@@ -488,6 +488,10 @@ url = "/roadmap/"
 text = "Changelog"
 url = "https://github.com/raskell-io/bhc/blob/main/CHANGELOG.md"
 external = true
+[[extra.product.footer_links.links]]
+text = "hx (toolchain)"
+url = "https://hx.raskell.io"
+external = true
 
 [[extra.product.footer_links]]
 title = "Community"
