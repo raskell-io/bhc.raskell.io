@@ -770,11 +770,9 @@ function drawPlayground() {
         // Get colors from CSS custom properties
         const style = getComputedStyle(document.documentElement);
         const accentColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
-        const bgColor = style.getPropertyValue('--color-bg').trim() || '#0a0a0f';
 
-        // Clear with fade for slight trail effect
-        ctx.fillStyle = bgColor.startsWith('#') ? bgColor + '26' : 'rgba(0, 0, 0, 0.15)';
-        ctx.fillRect(0, 0, w, h);
+        // Clear canvas
+        ctx.clearRect(0, 0, w, h);
 
         // Rotation angles
         const rotX = time * 0.3;
