@@ -156,8 +156,8 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
 }
 
 .playground {
-    background: var(--color-bg-secondary, #0a0a0a);
-    border: 1px solid var(--color-border, #333);
+    background: var(--color-bg);
+    border: 1px solid var(--color-grid);
     margin-bottom: 2rem;
 }
 
@@ -166,11 +166,11 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    background: var(--color-bg-tertiary, #111);
-    border-bottom: 1px solid var(--color-border, #333);
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-grid);
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--color-text-secondary, #888);
+    color: var(--color-text-muted);
 }
 
 .playground__status-indicator {
@@ -181,16 +181,16 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
 }
 
 .playground__status-indicator--loading {
-    background: #f59e0b;
+    background: var(--ctp-yellow);
     animation: pulse 1s ease-in-out infinite;
 }
 
 .playground__status-indicator--ready {
-    background: #22c55e;
+    background: var(--ctp-green);
 }
 
 .playground__status-indicator--error {
-    background: #ef4444;
+    background: var(--ctp-red);
 }
 
 @keyframes pulse {
@@ -199,7 +199,7 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
 }
 
 .playground__editor-container {
-    border-bottom: 1px solid var(--color-border, #333);
+    border-bottom: 1px solid var(--color-grid);
 }
 
 .playground__editor-header {
@@ -207,14 +207,14 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    background: var(--color-bg-tertiary, #111);
-    border-bottom: 1px solid var(--color-border, #333);
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-grid);
 }
 
 .playground__editor-label {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--color-text-secondary, #888);
+    color: var(--color-text-muted);
 }
 
 .playground__editor-actions {
@@ -227,9 +227,9 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     font-family: var(--font-mono);
     font-size: 0.75rem;
     padding: 0.375rem 0.75rem;
-    background: var(--color-bg-secondary, #0a0a0a);
-    border: 1px solid var(--color-border, #333);
-    color: var(--color-text, #fff);
+    background: var(--color-bg);
+    border: 1px solid var(--color-grid);
+    color: var(--color-text);
     cursor: pointer;
 }
 
@@ -237,9 +237,9 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     font-family: var(--font-mono);
     font-size: 0.75rem;
     padding: 0.375rem 0.75rem;
-    background: var(--color-bg-secondary, #0a0a0a);
-    border: 1px solid var(--color-border, #333);
-    color: var(--color-text, #fff);
+    background: var(--color-bg);
+    border: 1px solid var(--color-grid);
+    color: var(--color-text);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -248,8 +248,8 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
 }
 
 .playground__button:hover:not(:disabled) {
-    background: var(--color-bg-tertiary, #111);
-    border-color: var(--color-accent, #3b82f6);
+    background: var(--color-bg-alt);
+    border-color: var(--color-accent);
 }
 
 .playground__button:disabled {
@@ -258,12 +258,15 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
 }
 
 .playground__button--run {
-    background: var(--color-accent, #3b82f6);
-    border-color: var(--color-accent, #3b82f6);
+    background: var(--ctp-green);
+    border-color: var(--ctp-green);
+    color: var(--ctp-crust);
+    font-weight: 500;
 }
 
 .playground__button--run:hover:not(:disabled) {
-    background: #2563eb;
+    background: var(--ctp-teal);
+    border-color: var(--ctp-teal);
 }
 
 .playground__button--small {
@@ -278,9 +281,9 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     width: 100%;
     min-height: 300px;
     padding: 1rem;
-    background: var(--color-bg-secondary, #0a0a0a);
+    background: var(--color-code-bg);
     border: none;
-    color: var(--color-text, #fff);
+    color: var(--color-text);
     font-family: var(--font-mono);
     font-size: 0.875rem;
     line-height: 1.5;
@@ -292,7 +295,7 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
 }
 
 .playground__output-container {
-    border-bottom: 1px solid var(--color-border, #333);
+    border-bottom: 1px solid var(--color-grid);
 }
 
 .playground__output-header {
@@ -300,14 +303,14 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    background: var(--color-bg-tertiary, #111);
-    border-bottom: 1px solid var(--color-border, #333);
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-grid);
 }
 
 .playground__output-label {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--color-text-secondary, #888);
+    color: var(--color-text-muted);
 }
 
 .playground__output {
@@ -320,19 +323,20 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     line-height: 1.5;
     white-space: pre-wrap;
     word-break: break-word;
+    background: var(--color-code-bg);
 }
 
 .playground__output-placeholder {
-    color: var(--color-text-secondary, #666);
+    color: var(--color-text-muted);
     font-style: italic;
 }
 
 .playground__output--success {
-    color: #22c55e;
+    color: var(--ctp-green);
 }
 
 .playground__output--error {
-    color: #ef4444;
+    color: var(--ctp-red);
 }
 
 .playground__examples {
@@ -346,7 +350,7 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
 .playground__examples-label {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--color-text-secondary, #888);
+    color: var(--color-text-muted);
 }
 
 .playground__example {
@@ -354,15 +358,15 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
     font-size: 0.625rem;
     padding: 0.25rem 0.5rem;
     background: transparent;
-    border: 1px solid var(--color-border, #333);
-    color: var(--color-text-secondary, #888);
+    border: 1px solid var(--color-grid);
+    color: var(--color-text-muted);
     cursor: pointer;
     transition: all 0.15s ease;
 }
 
 .playground__example:hover {
-    border-color: var(--color-accent, #3b82f6);
-    color: var(--color-text, #fff);
+    border-color: var(--color-accent);
+    color: var(--color-text);
 }
 
 .playground-info {
@@ -628,11 +632,16 @@ function drawPlayground() {
 
         const w = canvas.width;
         const h = canvas.height;
-        const scale = Math.min(w, h) * 0.4;
+        const scale = Math.min(w, h) * 0.55;
         const distance = 4;
 
+        // Get colors from CSS custom properties
+        const style = getComputedStyle(document.documentElement);
+        const accentColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+        const bgColor = style.getPropertyValue('--color-bg').trim() || '#0a0a0f';
+
         // Clear with fade for slight trail effect
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+        ctx.fillStyle = bgColor.startsWith('#') ? bgColor + '26' : 'rgba(0, 0, 0, 0.15)';
         ctx.fillRect(0, 0, w, h);
 
         // Rotation angles
@@ -654,8 +663,8 @@ function drawPlayground() {
             projected.push(row);
         }
 
-        // Draw wireframe
-        ctx.strokeStyle = 'rgba(59, 130, 246, 0.6)';
+        // Draw wireframe with accent color
+        ctx.strokeStyle = accentColor + '99'; // 60% opacity
         ctx.lineWidth = 1;
 
         // Draw lines along u (around the strip)
@@ -687,7 +696,7 @@ function drawPlayground() {
         }
 
         // Draw edge highlights
-        ctx.strokeStyle = 'rgba(59, 130, 246, 0.9)';
+        ctx.strokeStyle = accentColor + 'e6'; // 90% opacity
         ctx.lineWidth = 1.5;
 
         // Top edge
