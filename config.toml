@@ -391,6 +391,10 @@ question = "Is BHC a fork of GHC?"
 answer = "No. BHC is a clean-slate compiler written in Rust. It targets the Haskell 2026 Platform specification and prioritizes predictable performance, structured concurrency, and a tensor-native numeric pipeline. It does not share code with GHC."
 
 [[extra.product.faq]]
+question = "Why might I choose BHC over GHC?"
+answer = "BHC makes different tradeoffs. <strong>Choose BHC if:</strong> you need WebAssembly, GPU compute, or embedded targets as first-class citizens; you want guaranteed fusion contracts rather than best-effort optimization; you need structured concurrency with cancellation and deadlines; you're targeting realtime systems with bounded GC pauses; or you want a smaller, more hackable compiler to contribute to. <strong>Choose GHC if:</strong> you need maximum Hackage compatibility today; you rely heavily on Template Haskell; you need battle-tested production stability; or your codebase uses GHC-specific extensions BHC doesn't yet support. They compile the same language. BHC is younger but opinionated about modern deployment targets and numeric workloads. GHC has decades of ecosystem and stability. Many projects may eventually use both."
+
+[[extra.product.faq]]
 question = "Can I use my existing Haskell packages?"
 answer = "BHC is actively working on real-world Haskell compatibility (M11). It supports LANGUAGE pragmas, the Haskell 2010 layout rule, the full module system, type classes, and many common extensions. Check the compatibility page for current status."
 
