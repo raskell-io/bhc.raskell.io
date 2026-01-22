@@ -1141,6 +1141,9 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                     panel.classList.add("profiles__tab-panel--active");
                     panel.setAttribute("aria-hidden", "false");
                 }
+
+                // Regenerate section dividers since panel heights changed
+                generateSectionDividers();
             });
         });
     })();
