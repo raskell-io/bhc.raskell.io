@@ -439,6 +439,10 @@ question = "Does BHC use LLVM?"
 answer = "Yes. BHC uses LLVM for native code generation, just like GHC (optionally), Rust, Swift, and many other modern compilers. LLVM provides battle-tested optimizations, broad target support (x86, ARM, RISC-V), and SIMD auto-vectorization. The GPU backends generate PTX/AMDGCN directly, while the WASM backend emits WebAssembly without LLVM."
 
 [[extra.product.faq]]
+question = "What does BHC enable for Haskell?"
+answer = "BHC makes Haskell viable for domains where it previously struggled to compete. <strong>Machine learning</strong> with tensor-native compilation and GPU acceleration. <strong>Bioinformatics</strong> — protein folding, genomics, sequence analysis — with predictable numeric performance. <strong>Security policy engines</strong> where declarative "what, not how" expressiveness ensures correctness. In a world where AI generates implementation code, languages that cleanly express intent, constraints, and invariants become primary. Haskell's type safety and declarative style are assets, not luxuries. BHC adds the runtime to match: WebAssembly for edge enforcement, GPUs for compute, realtime for robotics. Specify <em>what</em> you want; let the compiler and runtime handle <em>how</em>."
+
+[[extra.product.faq]]
 question = "How are BHC's error messages?"
 answer = "BHC prioritizes clear diagnostics. Error messages include source spans, suggested fixes, and explanations. Type errors show the full unification trace when needed. Use <code>--explain E0123</code> for detailed documentation on any error code."
 
