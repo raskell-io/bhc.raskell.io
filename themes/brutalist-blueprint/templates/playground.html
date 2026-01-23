@@ -851,6 +851,15 @@ function generateSectionDividers() {
 generateSectionDividers();
 window.addEventListener('resize', generateSectionDividers);
 document.fonts.ready.then(generateSectionDividers);
+
+// Watch for editor resize (user dragging the resize handle)
+const codeWrapper = document.querySelector('.playground__code-wrapper');
+if (codeWrapper && typeof ResizeObserver !== 'undefined') {
+    const resizeObserver = new ResizeObserver(() => {
+        generateSectionDividers();
+    });
+    resizeObserver.observe(codeWrapper);
+}
 </script>
 
 <script>
