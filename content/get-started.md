@@ -193,3 +193,4 @@ You can also use [hx](https://hx.raskell.io), a unified Haskell toolchain that h
 - Learn about [Runtime Profiles](/profiles/)
 - Explore [Numeric Performance](/numeric/) for numeric workloads
 - See [Target Backends](/targets/) for WASM and other targets
+- Browse the [API Reference](/docs/api/) for Prelude and standard library documentation

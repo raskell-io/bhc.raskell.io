@@ -474,6 +474,9 @@ url = "/profiles/"
 [[extra.product.footer_links.links]]
 text = "Numeric"
 url = "/numeric/"
+[[extra.product.footer_links.links]]
+text = "API Reference"
+url = "/docs/api/"
 
 [[extra.product.footer_links]]
 title = "Resources"
@@ -551,6 +554,10 @@ desc = "Architecture deep dive"
 name = "Docs"
 url = "/docs/"
 desc = "Full documentation"
+[[extra.nav_links.items]]
+name = "API Reference"
+url = "/docs/api/"
+desc = "Prelude & stdlib"
 
 [[extra.nav_links]]
 name = "About"
