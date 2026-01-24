@@ -453,7 +453,14 @@
                     <td>
                         <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
                     </td>
-                    <td></td>
+                    <td>Type      | Width   | Elements | Instructions |
+-----------|---------|----------|--------------|
+Vec4F32   | 128-bit | 4×f32    | SSE          |
+Vec8F32   | 256-bit | 8×f32    | AVX          |
+Vec16F32  | 512-bit | 16×f32   | AVX-512      |
+Vec2F64   | 128-bit | 2×f64    | SSE          |
+Vec4F64   | 256-bit | 4×f64    | AVX          |
+Vec8F64   | 512-bit | 8×f64    | AVX-512      |</td>
                 </tr>
                 
                 <tr>
@@ -481,7 +488,13 @@
                     <td>
                         <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
                     </td>
-                    <td></td>
+                    <td>Backend          | Description                         |
+------------------|-------------------------------------|
+MKL              | Intel Math Kernel Library           |
+OpenBLAS         | Open-source optimized BLAS          |
+AppleAccelerate  | Apple&#x27;s Accelerate framework        |
+CUDA             | NVIDIA GPU via cuBLAS               |
+PureHaskell      | Fallback pure implementation        |</td>
                 </tr>
                 
                 <tr>
@@ -691,7 +704,13 @@
                     <td>
                         <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
                     </td>
-                    <td></td>
+                    <td>Operation     | Time Complexity |
+---------------|-----------------|
+member        | O(min(n, W))    |
+insert        | O(min(n, W))    |
+delete        | O(min(n, W))    |
+union         | O(n + m)        |
+intersection  | O(n + m)        |</td>
                 </tr>
                 
                 <tr>
@@ -712,7 +731,12 @@
                     <td>
                         <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
                     </td>
-                    <td></td>
+                    <td>Operation | Time Complexity |
+-----------|-----------------|
+lookup    | O(min(n, W))    |
+insert    | O(min(n, W))    |
+delete    | O(min(n, W))    |
+union     | O(n + m)        |</td>
                 </tr>
                 
                 <tr>

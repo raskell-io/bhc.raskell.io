@@ -287,7 +287,7 @@
         <div class="page-header__bar">
             <span class="page-header__label">Module</span>
             
-            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs" class="source-link" title="View source">
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs" class="source-link" title="View source">
                 <span class="source-icon">{ }</span>
                 <span class="source-path">stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs</span>
             </a>
@@ -296,6 +296,15 @@
         </div>
         <div class="page-header__content">
             <h1>IntMap</h1>
+            
+            <div class="module-doc">
+                Operation | Time Complexity |
+-----------|-----------------|
+lookup    | O(min(n, W))    |
+insert    | O(min(n, W))    |
+delete    | O(min(n, W))    |
+union     | O(n + m)        |
+            </div>
             
         </div>
     </div>
@@ -313,7 +322,7 @@
                     <code class="decl-name">data IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L157" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L184" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -342,7 +351,7 @@
                     <code class="decl-name">type Key = Int</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L166" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L193" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -357,7 +366,7 @@
                     <code class="decl-name">type Prefix = Int</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L167" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L194" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -372,7 +381,7 @@
                     <code class="decl-name">type Mask = Int</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L168" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L195" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -401,7 +410,7 @@
                     <code class="decl-name">empty :: IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L202" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L229" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -420,7 +429,7 @@
                     <code class="decl-name">singleton :: Key -&gt; a -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L209" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L236" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -439,7 +448,7 @@
                     <code class="decl-name">fromList :: [(Key, a)] -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L218" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L245" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -458,7 +467,7 @@
                     <code class="decl-name">fromListWith :: (a -&gt; a -&gt; a) -&gt; [(Key, a)] -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L222" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L249" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -477,7 +486,7 @@
                     <code class="decl-name">fromListWithKey :: (Key -&gt; a -&gt; a -&gt; a) -&gt; [(Key, a)] -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L226" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L253" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -496,7 +505,7 @@
                     <code class="decl-name">fromAscList :: [(Key, a)] -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L230" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L257" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -515,7 +524,7 @@
                     <code class="decl-name">fromDistinctAscList :: [(Key, a)] -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L234" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L261" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -534,7 +543,7 @@
                     <code class="decl-name">insert :: Key -&gt; a -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L244" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L271" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -553,7 +562,7 @@
                     <code class="decl-name">insertWith :: (a -&gt; a -&gt; a) -&gt; Key -&gt; a -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L248" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L275" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -572,7 +581,7 @@
                     <code class="decl-name">insertWithKey :: (Key -&gt; a -&gt; a -&gt; a) -&gt; Key -&gt; a -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L252" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L279" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -591,7 +600,7 @@
                     <code class="decl-name">insertLookupWithKey :: (Key -&gt; a -&gt; a -&gt; a) -&gt; Key -&gt; a -&gt; (IntMap a) -&gt; (Maybe a, IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L264" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L291" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -610,7 +619,7 @@
                     <code class="decl-name">delete :: Key -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L282" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L309" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -629,7 +638,7 @@
                     <code class="decl-name">adjust :: (a -&gt; a) -&gt; Key -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L294" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L321" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -648,7 +657,7 @@
                     <code class="decl-name">adjustWithKey :: (Key -&gt; a -&gt; a) -&gt; Key -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L298" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L325" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -667,7 +676,7 @@
                     <code class="decl-name">update :: (a -&gt; Maybe a) -&gt; Key -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L302" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L329" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -686,7 +695,7 @@
                     <code class="decl-name">updateWithKey :: (Key -&gt; a -&gt; Maybe a) -&gt; Key -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L306" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L333" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -705,7 +714,7 @@
                     <code class="decl-name">updateLookupWithKey :: (Key -&gt; a -&gt; Maybe a) -&gt; Key -&gt; (IntMap a) -&gt; (Maybe a, IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L320" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L347" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -724,7 +733,7 @@
                     <code class="decl-name">alter :: ((Maybe a) -&gt; Maybe a) -&gt; Key -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L336" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L363" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -743,7 +752,7 @@
                     <code class="decl-name">alterF :: (Functor f) =&gt; ((Maybe a) -&gt; f (Maybe a)) -&gt; Key -&gt; (IntMap a) -&gt; f (IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L356" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L383" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -762,7 +771,7 @@
                     <code class="decl-name">lookup :: Key -&gt; (IntMap a) -&gt; Maybe a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L366" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L393" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -781,7 +790,7 @@
                     <code class="decl-name">!? :: (IntMap a) -&gt; Key -&gt; Maybe a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L377" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L404" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -800,7 +809,7 @@
                     <code class="decl-name">m :: </code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L381" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L408" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -815,7 +824,7 @@
                     <code class="decl-name">findWithDefault :: a -&gt; Key -&gt; (IntMap a) -&gt; a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L385" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L412" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -834,7 +843,7 @@
                     <code class="decl-name">member :: Key -&gt; (IntMap a) -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L389" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L416" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -853,7 +862,7 @@
                     <code class="decl-name">notMember :: Key -&gt; (IntMap a) -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L395" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L422" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -872,7 +881,7 @@
                     <code class="decl-name">null :: (IntMap a) -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L399" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L426" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -891,7 +900,7 @@
                     <code class="decl-name">size :: (IntMap a) -&gt; Int</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L404" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L431" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -910,7 +919,7 @@
                     <code class="decl-name">union :: (IntMap a) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L416" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L443" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -929,7 +938,7 @@
                     <code class="decl-name">unionWith :: (a -&gt; a -&gt; a) -&gt; (IntMap a) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L420" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L447" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -948,7 +957,7 @@
                     <code class="decl-name">unionWithKey :: (Key -&gt; a -&gt; a -&gt; a) -&gt; (IntMap a) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L424" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L451" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -967,7 +976,7 @@
                     <code class="decl-name">unions :: [IntMap a] -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L446" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L473" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -986,7 +995,7 @@
                     <code class="decl-name">unionsWith :: (a -&gt; a -&gt; a) -&gt; [IntMap a] -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L450" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L477" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1005,7 +1014,7 @@
                     <code class="decl-name">difference :: (IntMap a) -&gt; (IntMap b) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L454" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L481" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1024,7 +1033,7 @@
                     <code class="decl-name">differenceWith :: (a -&gt; b -&gt; Maybe a) -&gt; (IntMap a) -&gt; (IntMap b) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L458" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L485" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1043,7 +1052,7 @@
                     <code class="decl-name">differenceWithKey :: (Key -&gt; a -&gt; b -&gt; Maybe a) -&gt; (IntMap a) -&gt; (IntMap b) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L462" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L489" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1062,7 +1071,7 @@
                     <code class="decl-name">intersection :: (IntMap a) -&gt; (IntMap b) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L488" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L515" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1081,7 +1090,7 @@
                     <code class="decl-name">intersectionWith :: (a -&gt; b -&gt; c) -&gt; (IntMap a) -&gt; (IntMap b) -&gt; IntMap c</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L492" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L519" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1100,7 +1109,7 @@
                     <code class="decl-name">intersectionWithKey :: (Key -&gt; a -&gt; b -&gt; c) -&gt; (IntMap a) -&gt; (IntMap b) -&gt; IntMap c</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L496" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L523" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1119,7 +1128,7 @@
                     <code class="decl-name">map :: (a -&gt; b) -&gt; (IntMap a) -&gt; IntMap b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L526" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L553" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1138,7 +1147,7 @@
                     <code class="decl-name">mapWithKey :: (Key -&gt; a -&gt; b) -&gt; (IntMap a) -&gt; IntMap b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L530" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L557" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1157,7 +1166,7 @@
                     <code class="decl-name">traverseWithKey :: (Applicative f) =&gt; (Key -&gt; a -&gt; f b) -&gt; (IntMap a) -&gt; f (IntMap b)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L537" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L564" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1176,7 +1185,7 @@
                     <code class="decl-name">mapAccum :: (a -&gt; b -&gt; (a, c)) -&gt; a -&gt; (IntMap b) -&gt; (a, IntMap c)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L544" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L571" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1195,7 +1204,7 @@
                     <code class="decl-name">mapAccumWithKey :: (a -&gt; Key -&gt; b -&gt; (a, c)) -&gt; a -&gt; (IntMap b) -&gt; (a, IntMap c)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L548" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L575" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1214,7 +1223,7 @@
                     <code class="decl-name">mapAccumRWithKey :: (a -&gt; Key -&gt; b -&gt; (a, c)) -&gt; a -&gt; (IntMap b) -&gt; (a, IntMap c)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L557" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L584" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1229,7 +1238,7 @@
                     <code class="decl-name">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; (IntMap a) -&gt; b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L570" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L597" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1244,7 +1253,7 @@
                     <code class="decl-name">foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; (IntMap a) -&gt; b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L574" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L601" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1263,7 +1272,7 @@
                     <code class="decl-name">foldrWithKey :: (Key -&gt; a -&gt; b -&gt; b) -&gt; b -&gt; (IntMap a) -&gt; b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L578" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L605" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1282,7 +1291,7 @@
                     <code class="decl-name">foldlWithKey :: (b -&gt; Key -&gt; a -&gt; b) -&gt; b -&gt; (IntMap a) -&gt; b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L585" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L612" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1301,7 +1310,7 @@
                     <code class="decl-name">foldMapWithKey :: (Monoid m) =&gt; (Key -&gt; a -&gt; m) -&gt; (IntMap a) -&gt; m</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L592" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L619" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1320,7 +1329,7 @@
                     <code class="decl-name">foldr&#x27; :: (a -&gt; b -&gt; b) -&gt; b -&gt; (IntMap a) -&gt; b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L596" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L623" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1339,7 +1348,7 @@
                     <code class="decl-name">foldl&#x27; :: (b -&gt; a -&gt; b) -&gt; b -&gt; (IntMap a) -&gt; b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L600" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L627" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1358,7 +1367,7 @@
                     <code class="decl-name">foldrWithKey&#x27; :: (Key -&gt; a -&gt; b -&gt; b) -&gt; b -&gt; (IntMap a) -&gt; b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L604" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L631" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1377,7 +1386,7 @@
                     <code class="decl-name">foldlWithKey&#x27; :: (b -&gt; Key -&gt; a -&gt; b) -&gt; b -&gt; (IntMap a) -&gt; b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L612" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L639" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1396,7 +1405,7 @@
                     <code class="decl-name">elems :: (IntMap a) -&gt; [a]</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L624" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L651" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1415,7 +1424,7 @@
                     <code class="decl-name">keys :: (IntMap a) -&gt; [Key]</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L628" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L655" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1434,7 +1443,7 @@
                     <code class="decl-name">assocs :: (IntMap a) -&gt; [(Key, a)]</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L632" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L659" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1453,7 +1462,7 @@
                     <code class="decl-name">keysSet :: (IntMap a) -&gt; IntSet.IntSet</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L636" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L663" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1472,7 +1481,7 @@
                     <code class="decl-name">toList :: (IntMap a) -&gt; [(Key, a)]</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L640" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L667" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1491,7 +1500,7 @@
                     <code class="decl-name">toAscList :: (IntMap a) -&gt; [(Key, a)]</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L644" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L671" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1510,7 +1519,7 @@
                     <code class="decl-name">toDescList :: (IntMap a) -&gt; [(Key, a)]</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L648" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L675" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1529,7 +1538,7 @@
                     <code class="decl-name">filter :: (a -&gt; Bool) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L656" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L683" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1548,7 +1557,7 @@
                     <code class="decl-name">filterWithKey :: (Key -&gt; a -&gt; Bool) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L660" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L687" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1567,7 +1576,7 @@
                     <code class="decl-name">restrictKeys :: (IntMap a) -&gt; IntSet.IntSet -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L669" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L696" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1586,7 +1595,7 @@
                     <code class="decl-name">withoutKeys :: (IntMap a) -&gt; IntSet.IntSet -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L673" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L700" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1605,7 +1614,7 @@
                     <code class="decl-name">partition :: (a -&gt; Bool) -&gt; (IntMap a) -&gt; (IntMap a, IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L677" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L704" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1624,7 +1633,7 @@
                     <code class="decl-name">partitionWithKey :: (Key -&gt; a -&gt; Bool) -&gt; (IntMap a) -&gt; (IntMap a, IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L681" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L708" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1643,7 +1652,7 @@
                     <code class="decl-name">mapMaybe :: (a -&gt; Maybe b) -&gt; (IntMap a) -&gt; IntMap b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L685" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L712" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1662,7 +1671,7 @@
                     <code class="decl-name">mapMaybeWithKey :: (Key -&gt; a -&gt; Maybe b) -&gt; (IntMap a) -&gt; IntMap b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L689" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L716" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1681,7 +1690,7 @@
                     <code class="decl-name">mapEither :: (a -&gt; Either b c) -&gt; (IntMap a) -&gt; (IntMap b, IntMap c)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L698" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L725" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1700,7 +1709,7 @@
                     <code class="decl-name">mapEitherWithKey :: (Key -&gt; a -&gt; Either b c) -&gt; (IntMap a) -&gt; (IntMap b, IntMap c)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L702" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L729" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1719,7 +1728,7 @@
                     <code class="decl-name">isSubmapOf :: (Eq a) =&gt; (IntMap a) -&gt; (IntMap a) -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L711" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L738" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1738,7 +1747,7 @@
                     <code class="decl-name">isSubmapOfBy :: (a -&gt; b -&gt; Bool) -&gt; (IntMap a) -&gt; (IntMap b) -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L715" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L742" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1757,7 +1766,7 @@
                     <code class="decl-name">isProperSubmapOf :: (Eq a) =&gt; (IntMap a) -&gt; (IntMap a) -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L731" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L758" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1776,7 +1785,7 @@
                     <code class="decl-name">isProperSubmapOfBy :: (a -&gt; b -&gt; Bool) -&gt; (IntMap a) -&gt; (IntMap b) -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L735" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L762" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1795,7 +1804,7 @@
                     <code class="decl-name">lookupMin :: (IntMap a) -&gt; Maybe (Key, a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L743" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L770" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1814,7 +1823,7 @@
                     <code class="decl-name">lookupMax :: (IntMap a) -&gt; Maybe (Key, a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L749" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L776" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1833,7 +1842,7 @@
                     <code class="decl-name">findMin :: (IntMap a) -&gt; (Key, a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L755" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L782" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1852,7 +1861,7 @@
                     <code class="decl-name">findMax :: (IntMap a) -&gt; (Key, a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L759" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L786" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1871,7 +1880,7 @@
                     <code class="decl-name">deleteMin :: (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L763" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L790" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1890,7 +1899,7 @@
                     <code class="decl-name">deleteMax :: (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L767" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L794" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1909,7 +1918,7 @@
                     <code class="decl-name">deleteFindMin :: (IntMap a) -&gt; ((Key, a), IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L771" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L798" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1928,7 +1937,7 @@
                     <code class="decl-name">deleteFindMax :: (IntMap a) -&gt; ((Key, a), IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L777" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L804" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1947,7 +1956,7 @@
                     <code class="decl-name">updateMin :: (a -&gt; Maybe a) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L783" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L810" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1966,7 +1975,7 @@
                     <code class="decl-name">updateMax :: (a -&gt; Maybe a) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L787" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L814" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -1985,7 +1994,7 @@
                     <code class="decl-name">updateMinWithKey :: (Key -&gt; a -&gt; Maybe a) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L791" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L818" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2004,7 +2013,7 @@
                     <code class="decl-name">updateMaxWithKey :: (Key -&gt; a -&gt; Maybe a) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L800" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L827" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2023,7 +2032,7 @@
                     <code class="decl-name">minView :: (IntMap a) -&gt; Maybe (a, IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L809" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L836" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2042,7 +2051,7 @@
                     <code class="decl-name">maxView :: (IntMap a) -&gt; Maybe (a, IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L813" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L840" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2061,7 +2070,7 @@
                     <code class="decl-name">minViewWithKey :: (IntMap a) -&gt; Maybe ((Key, a), IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L817" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L844" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2080,7 +2089,7 @@
                     <code class="decl-name">maxViewWithKey :: (IntMap a) -&gt; Maybe ((Key, a), IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L826" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L853" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2099,7 +2108,7 @@
                     <code class="decl-name">split :: Key -&gt; (IntMap a) -&gt; (IntMap a, IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L839" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L866" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2118,7 +2127,7 @@
                     <code class="decl-name">splitLookup :: Key -&gt; (IntMap a) -&gt; (IntMap a, Maybe a, IntMap a)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L844" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L871" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2137,7 +2146,7 @@
                     <code class="decl-name">splitRoot :: (IntMap a) -&gt; [IntMap a]</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L859" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L886" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2156,7 +2165,7 @@
                     <code class="decl-name">link :: Prefix -&gt; (IntMap a) -&gt; Prefix -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L869" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L896" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2175,7 +2184,7 @@
                     <code class="decl-name">bin :: Prefix -&gt; Mask -&gt; (IntMap a) -&gt; (IntMap a) -&gt; IntMap a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L878" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L905" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2194,7 +2203,7 @@
                     <code class="decl-name">zero :: Key -&gt; Mask -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L884" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L911" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2213,7 +2222,7 @@
                     <code class="decl-name">nomatch :: Key -&gt; Prefix -&gt; Mask -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L888" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L915" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2232,7 +2241,7 @@
                     <code class="decl-name">match :: Key -&gt; Prefix -&gt; Mask -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L892" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L919" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2251,7 +2260,7 @@
                     <code class="decl-name">mask :: Key -&gt; Mask -&gt; Prefix</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L896" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L923" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2270,7 +2279,7 @@
                     <code class="decl-name">shorter :: Mask -&gt; Mask -&gt; Bool</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L900" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L927" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2285,7 +2294,7 @@
                     <code class="decl-name">branchMask :: Prefix -&gt; Prefix -&gt; Mask</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L904" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L931" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2304,7 +2313,7 @@
                     <code class="decl-name">highestBitMask :: Int -&gt; Int</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L908" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L935" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2334,7 +2343,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance Show a => Show (IntMap a)</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L170" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L197" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2346,7 +2355,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance Functor IntMap</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L174" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L201" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2358,7 +2367,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance Foldable IntMap</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L177" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L204" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2370,7 +2379,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance Traversable IntMap</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L183" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L210" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2382,7 +2391,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance Semigroup (IntMap a)</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L186" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L213" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -2394,7 +2403,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance Monoid (IntMap a)</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L189" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntMap.hs#L216" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     

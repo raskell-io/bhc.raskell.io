@@ -287,7 +287,7 @@
         <div class="page-header__bar">
             <span class="page-header__label">Module</span>
             
-            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs" class="source-link" title="View source">
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs" class="source-link" title="View source">
                 <span class="source-icon">{ }</span>
                 <span class="source-path">stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs</span>
             </a>
@@ -313,7 +313,7 @@
                     <code class="decl-name">type State s = StateT s Identity</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L42" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L80" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -332,7 +332,7 @@
                     <code class="decl-name">newtype StateT s m a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L65" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L120" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -371,7 +371,7 @@
                 <div class="decl-header">
                     <code class="decl-name">class Monad m => MonadState s m</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L131" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L229" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -422,7 +422,7 @@
                     <code class="decl-name">runState :: (State s a) -&gt; s -&gt; (a, s)</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L46" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L91" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -430,7 +430,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Run a State.
+                    <em>O(1)</em>. Run a <a href="#State">State</a> computation with an initial state.
                 </div>
                 
                 
@@ -441,7 +441,7 @@
                     <code class="decl-name">evalState :: (State s a) -&gt; s -&gt; a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L50" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L100" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -449,7 +449,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Run and return only the result.
+                    <em>O(1)</em>. Run a <a href="#State">State</a> computation, returning only the result.
                 </div>
                 
                 
@@ -460,7 +460,7 @@
                     <code class="decl-name">execState :: (State s a) -&gt; s -&gt; s</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L54" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L109" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -468,7 +468,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Run and return only the final state.
+                    <em>O(1)</em>. Run a <a href="#State">State</a> computation, returning only the final state.
                 </div>
                 
                 
@@ -479,7 +479,7 @@
                     <code class="decl-name">mapState :: ((a, s) -&gt; (b, s)) -&gt; (State s a) -&gt; State s b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L58" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L113" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -498,7 +498,7 @@
                     <code class="decl-name">withState :: (s -&gt; s) -&gt; (State s a) -&gt; State s a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L62" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L117" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -517,7 +517,7 @@
                     <code class="decl-name">&lt;*&gt; :: </code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L72" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L127" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -532,7 +532,7 @@
                     <code class="decl-name">&gt;&gt;= :: </code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L78" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L133" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -547,7 +547,7 @@
                     <code class="decl-name">evalStateT :: (Monad m) =&gt; (StateT s m a) -&gt; s -&gt; m a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L92" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L147" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -566,7 +566,7 @@
                     <code class="decl-name">execStateT :: (Monad m) =&gt; (StateT s m a) -&gt; s -&gt; m s</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L96" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L151" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -585,7 +585,7 @@
                     <code class="decl-name">mapStateT :: ((m (a, s)) -&gt; n (b, s)) -&gt; (StateT s m a) -&gt; StateT s n b</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L100" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L155" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -604,7 +604,7 @@
                     <code class="decl-name">withStateT :: (s -&gt; s) -&gt; (StateT s m a) -&gt; StateT s m a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L104" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L159" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -623,7 +623,7 @@
                     <code class="decl-name">get :: (Monad m) =&gt; StateT s m s</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L108" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L168" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -631,7 +631,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Fetch the current state.
+                    <em>O(1)</em>. Retrieve the current state.
                 </div>
                 
                 
@@ -642,7 +642,7 @@
                     <code class="decl-name">put :: (Monad m) =&gt; s -&gt; StateT s m ()</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L112" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L177" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -650,7 +650,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Set the state.
+                    <em>O(1)</em>. Replace the state with a new value.
                 </div>
                 
                 
@@ -661,7 +661,7 @@
                     <code class="decl-name">modify :: (Monad m) =&gt; (s -&gt; s) -&gt; StateT s m ()</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L116" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L188" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -669,7 +669,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Modify the state.
+                    <em>O(1)</em>. Modify the state by applying a function.
                 </div>
                 
                 
@@ -680,7 +680,7 @@
                     <code class="decl-name">modify&#x27; :: (Monad m) =&gt; (s -&gt; s) -&gt; StateT s m ()</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L120" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L204" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -688,7 +688,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Strict modify.
+                    <em>O(1)</em>. Strictly modify the state.
                 </div>
                 
                 
@@ -699,7 +699,7 @@
                     <code class="decl-name">gets :: (Monad m) =&gt; (s -&gt; a) -&gt; StateT s m a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L124" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L215" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -707,7 +707,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Get a function of the state.
+                    <em>O(1)</em>. Retrieve a function of the current state.
                 </div>
                 
                 
@@ -718,7 +718,7 @@
                     <code class="decl-name">state :: (Monad m) =&gt; (s -&gt; (a, s)) -&gt; StateT s m a</code>
                     
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L128" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L226" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -726,7 +726,7 @@
                 </div>
                 
                 <div class="decl-doc">
-                    Create state from a function.
+                    <em>O(1)</em>. Embed a state action into the monad.
                 </div>
                 
                 
@@ -748,7 +748,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance Functor m => Functor (StateT s m)</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L67" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L122" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -760,7 +760,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance MonadTrans (StateT s)</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L82" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L137" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -772,7 +772,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance MonadIO m => MonadIO (StateT s m)</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L87" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L142" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
@@ -784,7 +784,7 @@
                 <div class="decl-header">
                     <code class="decl-name">instance Monad m => MonadState s (StateT s m)</code>
                     
-                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;a4ccc31085b396c6ce667791d721755be496f22a&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L142" class="source-link-small" title="View source">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;36c95ac83afc3f7bb993220fdff45bca057e0a05&#x2F;stdlib&#x2F;bhc-transformers&#x2F;hs&#x2F;BHC&#x2F;Control&#x2F;Monad&#x2F;State.hs#L240" class="source-link-small" title="View source">
                         <span class="source-icon-small">{ }</span>
                     </a>
                     
