@@ -1,0 +1,3761 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeric - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;H26&#x2F;Numeric.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>Numeric</h1>
+            
+        </div>
+    </div>
+
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:Fixed" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype Fixed r</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L201" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Fixed" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Fixed Integer</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:FixedS16" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type FixedS16 = Fixed S16</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L204" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:FixedS16" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    16-bit signed fixed point (1/65536 resolution).
+                </div>
+                
+            </div>
+            
+            <div id="t:FixedS32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type FixedS32 = Fixed S32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L207" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:FixedS32" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    32-bit signed fixed point (1/4294967296 resolution).
+                </div>
+                
+            </div>
+            
+            <div id="t:FixedU16" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type FixedU16 = Fixed U16</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L210" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:FixedU16" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    16-bit unsigned fixed point.
+                </div>
+                
+            </div>
+            
+            <div id="t:FixedU32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type FixedU32 = Fixed U32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L213" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:FixedU32" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    32-bit unsigned fixed point.
+                </div>
+                
+            </div>
+            
+            <div id="t:Rational" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type Rational = Ratio Integer</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L259" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Rational" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:RoundingMode" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data RoundingMode</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L733" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:RoundingMode" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>RoundNearest</code>
+                        
+                        <p class="con-doc">Round to nearest, ties to even</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>RoundDown</code>
+                        
+                        <p class="con-doc">Round toward negative infinity</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>RoundUp</code>
+                        
+                        <p class="con-doc">Round toward positive infinity</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>RoundToZero</code>
+                        
+                        <p class="con-doc">Round toward zero</p>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    IEEE 754 rounding modes.
+                </div>
+                
+            </div>
+            
+            <div id="t:FPException" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data FPException</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L752" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:FPException" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>FPInvalid</code>
+                        
+                        <p class="con-doc">Invalid operation (e.g., sqrt(-1))</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>FPDivByZero</code>
+                        
+                        <p class="con-doc">Division by zero</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>FPOverflow</code>
+                        
+                        <p class="con-doc">Result too large</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>FPUnderflow</code>
+                        
+                        <p class="con-doc">Result too small</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>FPInexact</code>
+                        
+                        <p class="con-doc">Rounded result</p>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Floating point exception flags.
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Type Classes Section Frame -->
+    <div id="classes" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Type Classes</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="c:Real" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Num a => Real a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L527" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Real" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>toRational :: a -&gt; Rational</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Real numbers (can convert to Rational).
+                </div>
+                
+            </div>
+            
+            <div id="c:Integral" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Real a, Enum a => Integral a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L531" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Integral" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>quot :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>rem :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>div :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>mod :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>quotRem :: a -&gt; a -&gt; (a, a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>divMod :: a -&gt; a -&gt; (a, a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>toInteger :: a -&gt; Integer</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Integral numbers.
+                </div>
+                
+            </div>
+            
+            <div id="c:Fractional" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Num a => Fractional a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L537" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Fractional" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>&#x2F; :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>recip :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>fromRational :: Rational -&gt; a</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Fractional numbers.
+                </div>
+                
+            </div>
+            
+            <div id="c:Floating" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Fractional a => Floating a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L543" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Floating" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>pi :: a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>exp :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>log :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>sqrt :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>** :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>logBase :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>sin :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>cos :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>tan :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>asin :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>acos :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>atan :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>sinh :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>cosh :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>tanh :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>asinh :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>acosh :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>atanh :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Floating point numbers.
+                </div>
+                
+            </div>
+            
+            <div id="c:RealFrac" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Real a, Fractional a => RealFrac a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L553" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:RealFrac" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>properFraction :: (Integral b) =&gt; a -&gt; (b, a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>truncate :: (Integral b) =&gt; a -&gt; b</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>round :: (Integral b) =&gt; a -&gt; b</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>ceiling :: (Integral b) =&gt; a -&gt; b</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>floor :: (Integral b) =&gt; a -&gt; b</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Real fractional numbers.
+                </div>
+                
+            </div>
+            
+            <div id="c:RealFloat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class RealFrac a, Floating a => RealFloat a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L558" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:RealFloat" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>floatRadix :: a -&gt; Integer</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>floatDigits :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>floatRange :: a -&gt; (Int, Int)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>decodeFloat :: a -&gt; (Integer, Int)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>encodeFloat :: Integer -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>exponent :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>significand :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>scaleFloat :: Int -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>isNaN :: a -&gt; Bool</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>isInfinite :: a -&gt; Bool</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>isDenormalized :: a -&gt; Bool</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>isNegativeZero :: a -&gt; Bool</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>isIEEE :: a -&gt; Bool</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>atan2 :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Real floating point numbers.
+                </div>
+                
+            </div>
+            
+            <div id="c:NumericPrimitive" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class NumericPrimitive a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L571" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:NumericPrimitive" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Primitive numeric types.
+                </div>
+                
+            </div>
+            
+            <div id="c:Unboxed" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Unboxed a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L574" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Unboxed" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Unboxed types.
+                </div>
+                
+            </div>
+            
+            <div id="c:SimdPrimitive" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class SimdPrimitive v a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L577" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:SimdPrimitive" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>simdWidth :: v -&gt; Int</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    SIMD primitive types.
+                </div>
+                
+            </div>
+            
+            <div id="c:Bits" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Eq a => Bits a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L591" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Bits" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>.&amp;. :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>.|. :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>xor :: a -&gt; a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>complement :: a -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>shift :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>shiftL :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>shiftR :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>rotate :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>rotateL :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>rotateR :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>bit :: Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>setBit :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>clearBit :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>complementBit :: a -&gt; Int -&gt; a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>testBit :: a -&gt; Int -&gt; Bool</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>bitSize :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>bitSizeMaybe :: a -&gt; Maybe Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>isSigned :: a -&gt; Bool</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>popCount :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Class for types with bit operations.
+                </div>
+                
+            </div>
+            
+            <div id="c:FiniteBits" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Bits a => FiniteBits a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L613" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:FiniteBits" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>finiteBitSize :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>countLeadingZeros :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>countTrailingZeros :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Bits with finite size.
+                </div>
+                
+            </div>
+            
+            <div id="c:Enum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Enum a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L773" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Enum" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="c:Bounded" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Bounded a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L774" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Bounded" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:resolution" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">resolution :: (Fixed r) -&gt; Integer</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L216" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:resolution" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get resolution of fixed-point type.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mkFixed" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mkFixed :: Integer -&gt; Fixed r</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L219" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mkFixed" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create fixed-point from integer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromFixed" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromFixed :: (Fixed r) -&gt; Integer</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L222" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromFixed" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert fixed to integer (truncates).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fixedToRational" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fixedToRational :: (Fixed r) -&gt; Rational</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L225" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fixedToRational" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert fixed to exact Rational.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:realPart" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">realPart :: (Complex a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L232" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:realPart" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:imagPart" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">imagPart :: (Complex a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L235" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:imagPart" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Extract imaginary part.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mkPolar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mkPolar :: (Floating a) =&gt; a -&gt; a -&gt; Complex a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L238" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mkPolar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create from polar coordinates.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:cis" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">cis :: (Floating a) =&gt; a -&gt; Complex a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L241" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:cis" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Unit complex from angle.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:polar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">polar :: (RealFloat a) =&gt; (Complex a) -&gt; (a, a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L244" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:polar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert to polar form (magnitude, phase).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:magnitude" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">magnitude :: (RealFloat a) =&gt; (Complex a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L247" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:magnitude" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Magnitude (absolute value).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:phase" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">phase :: (RealFloat a) =&gt; (Complex a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L250" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:phase" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Phase angle.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:conjugate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">conjugate :: (Num a) =&gt; (Complex a) -&gt; Complex a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L253" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:conjugate" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Complex conjugate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:numerator" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">numerator :: (Ratio a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L265" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:numerator" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:denominator" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">denominator :: (Ratio a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L268" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:denominator" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Extract denominator.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:approxRational" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">approxRational :: (RealFrac a) =&gt; a -&gt; a -&gt; Rational</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L271" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:approxRational" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Approximate rational.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec2f32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec2f32 :: Float -&gt; Float -&gt; Vec2F32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L320" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec2f32" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec4f32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec4f32 :: Float -&gt; Float -&gt; Float -&gt; Float -&gt; Vec4F32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L323" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec4f32" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 4-element Float vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec8f32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec8f32 :: Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Vec8F32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L326" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec8f32" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 8-element Float vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec16f32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec16f32 :: Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Float -&gt; Vec16F32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L330" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec16f32" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 16-element Float vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec2f64" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec2f64 :: Double -&gt; Double -&gt; Vec2F64</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L336" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec2f64" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 2-element Double vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec4f64" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec4f64 :: Double -&gt; Double -&gt; Double -&gt; Double -&gt; Vec4F64</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L339" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec4f64" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 4-element Double vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec8f64" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec8f64 :: Double -&gt; Double -&gt; Double -&gt; Double -&gt; Double -&gt; Double -&gt; Double -&gt; Double -&gt; Vec8F64</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L342" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec8f64" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 8-element Double vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec2i32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec2i32 :: Int32 -&gt; Int32 -&gt; Vec2I32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L346" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec2i32" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 2-element Int32 vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec4i32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec4i32 :: Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Vec4I32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L349" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec4i32" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 4-element Int32 vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec8i32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec8i32 :: Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Vec8I32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L352" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec8i32" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 8-element Int32 vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec16i32" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec16i32 :: Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Int32 -&gt; Vec16I32</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L356" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec16i32" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 16-element Int32 vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec2i64" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec2i64 :: Int64 -&gt; Int64 -&gt; Vec2I64</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L362" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec2i64" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 2-element Int64 vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec4i64" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec4i64 :: Int64 -&gt; Int64 -&gt; Int64 -&gt; Int64 -&gt; Vec4I64</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L365" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec4i64" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 4-element Int64 vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vec8i64" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vec8i64 :: Int64 -&gt; Int64 -&gt; Int64 -&gt; Int64 -&gt; Int64 -&gt; Int64 -&gt; Int64 -&gt; Int64 -&gt; Vec8I64</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L368" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vec8i64" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create 8-element Int64 vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:broadcast" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">broadcast :: (SimdPrimitive v a) =&gt; a -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L372" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:broadcast" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Broadcast scalar to all elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromList :: (SimdPrimitive v a) =&gt; [a] -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L375" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create vector from list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toList :: (SimdPrimitive v a) =&gt; v -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L378" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert vector to list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:extract" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">extract :: (SimdPrimitive v a) =&gt; Int -&gt; v -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L383" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:extract" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Extract element at index.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:insert" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">insert :: (SimdPrimitive v a) =&gt; Int -&gt; a -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L386" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:insert" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Insert element at index.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:shuffle" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">shuffle :: (SimdPrimitive v a) =&gt; [Int] -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L389" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:shuffle" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Shuffle elements using mask.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:permute" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">permute :: (SimdPrimitive v a) =&gt; [Int] -&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L392" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:permute" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Permute elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vAdd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vAdd :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L397" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vAdd" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector addition.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vSub" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vSub :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L400" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vSub" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector subtraction.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vMul" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vMul :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L403" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vMul" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector multiplication.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vDiv" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vDiv :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L406" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vDiv" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector division.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vNeg" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vNeg :: (SimdPrimitive v a) =&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L409" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vNeg" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector negation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vAbs" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vAbs :: (SimdPrimitive v a) =&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L412" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vAbs" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector absolute value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vMin" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vMin :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L415" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vMin" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Element-wise minimum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vMax" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vMax :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L418" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vMax" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Element-wise maximum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vSqrt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vSqrt :: (SimdPrimitive v a) =&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L421" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vSqrt" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector square root.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vRsqrt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vRsqrt :: (SimdPrimitive v a) =&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L424" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vRsqrt" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Reciprocal square root (approximate).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vRcp" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vRcp :: (SimdPrimitive v a) =&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L427" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vRcp" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Reciprocal (approximate).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vFMA" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vFMA :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L430" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vFMA" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fused multiply-add: a * b + c.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vFMS" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vFMS :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L433" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vFMS" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fused multiply-subtract: a * b - c.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vEq" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vEq :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L438" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vEq" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector equality comparison.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vNe" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vNe :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L441" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vNe" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector inequality comparison.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vLt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vLt :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L444" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vLt" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector less-than comparison.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vLe" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vLe :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L447" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vLe" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector less-equal comparison.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vGt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vGt :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L450" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vGt" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector greater-than comparison.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vGe" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vGe :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L453" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vGe" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vector greater-equal comparison.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vAnd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vAnd :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L456" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vAnd" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Bitwise AND.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vOr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vOr :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L459" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vOr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Bitwise OR.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vXor" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vXor :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L462" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vXor" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Bitwise XOR.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vAndNot" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vAndNot :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L465" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vAndNot" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Bitwise AND-NOT.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vSelect" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vSelect :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L468" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vSelect" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Select elements based on mask.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vSum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vSum :: (SimdPrimitive v a) =&gt; v -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L473" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vSum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Sum all elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vProduct" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vProduct :: (SimdPrimitive v a) =&gt; v -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L476" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vProduct" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Product of all elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vMin1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vMin1 :: (SimdPrimitive v a) =&gt; v -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L479" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vMin1" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Minimum element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vMax1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vMax1 :: (SimdPrimitive v a) =&gt; v -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L482" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vMax1" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Maximum element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vHAdd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vHAdd :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L485" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vHAdd" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Horizontal add (adjacent pairs).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vHSub" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vHSub :: (SimdPrimitive v a) =&gt; v -&gt; v -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L488" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vHSub" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Horizontal subtract (adjacent pairs).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vLoad" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vLoad :: (SimdPrimitive v a) =&gt; (Ptr a) -&gt; IO v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L493" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vLoad" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Load vector from memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vLoadAligned" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vLoadAligned :: (SimdPrimitive v a) =&gt; (Ptr a) -&gt; IO v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L496" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vLoadAligned" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Load from aligned memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vStore" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vStore :: (SimdPrimitive v a) =&gt; (Ptr a) -&gt; v -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L499" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vStore" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Store vector to memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vStoreAligned" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vStoreAligned :: (SimdPrimitive v a) =&gt; (Ptr a) -&gt; v -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L502" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vStoreAligned" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Store to aligned memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vMaskedLoad" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vMaskedLoad :: (SimdPrimitive v a) =&gt; v -&gt; (Ptr a) -&gt; v -&gt; IO v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L505" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vMaskedLoad" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Masked load.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vMaskedStore" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vMaskedStore :: (SimdPrimitive v a) =&gt; (Ptr a) -&gt; v -&gt; v -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L508" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vMaskedStore" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Masked store.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vGather" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vGather :: (SimdPrimitive v a) =&gt; (Ptr a) -&gt; Vec4I32 -&gt; v</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L511" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vGather" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Gather from non-contiguous memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vScatter" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vScatter :: (SimdPrimitive v a) =&gt; (Ptr a) -&gt; Vec4I32 -&gt; v -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L514" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vScatter" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Scatter to non-contiguous memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:negate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">negate :: a -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L521" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:negate" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:abs" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">abs :: a -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L522" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:abs" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:signum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">signum :: a -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L523" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:signum" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromInteger" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromInteger :: Integer -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L524" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromInteger" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromIntegral" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromIntegral :: (Integral a, Num b) =&gt; a -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L583" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromIntegral" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert between integral types.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:realToFrac" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">realToFrac :: (Real a, Fractional b) =&gt; a -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L586" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:realToFrac" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert between fractional types.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:infinity" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">infinity :: (RealFloat a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L621" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:infinity" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Positive infinity.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:negInfinity" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">negInfinity :: (RealFloat a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L624" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:negInfinity" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Negative infinity.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:nan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">nan :: (RealFloat a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L627" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:nan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Not a number.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:minNormal" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">minNormal :: (RealFloat a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L630" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:minNormal" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Smallest positive normal.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:maxFinite" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">maxFinite :: (RealFloat a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L633" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:maxFinite" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Largest finite value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:epsilon" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">epsilon :: (RealFloat a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L636" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:epsilon" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Machine epsilon.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:e" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">e :: (Floating a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L639" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:e" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Euler's number.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:gcd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">gcd :: (Integral a) =&gt; a -&gt; a -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L644" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:gcd" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Greatest common divisor.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lcm" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lcm :: (Integral a) =&gt; a -&gt; a -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L647" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lcm" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Least common multiple.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:subtract" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">subtract :: (Num a) =&gt; a -&gt; a -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L650" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:subtract" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Subtraction (flip of -).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:even" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">even :: (Integral a) =&gt; a -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L653" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:even" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Test if even.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:odd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">odd :: (Integral a) =&gt; a -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L656" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:odd" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Test if odd.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:^" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">^ :: (Num a, Integral b) =&gt; a -&gt; b -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L659" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:^" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Integer power.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:^^" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">^^ :: (Fractional a, Integral b) =&gt; a -&gt; b -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L662" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:^^" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fractional power.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sum :: (Num a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L667" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Sum of list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:product" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">product :: (Num a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L670" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:product" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Product of list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:kahanSum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">kahanSum :: (RealFloat a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L675" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:kahanSum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Kahan compensated summation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:pairwiseSum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">pairwiseSum :: (RealFloat a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L680" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:pairwiseSum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Pairwise summation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:neumaierSum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">neumaierSum :: (RealFloat a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L683" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:neumaierSum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Neumaier summation (improved Kahan).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mean" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mean :: (Fractional a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L688" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mean" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Arithmetic mean.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:variance" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">variance :: (Floating a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L691" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:variance" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Sample variance.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:stddev" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">stddev :: (Floating a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L694" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:stddev" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Standard deviation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:covariance" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">covariance :: (Floating a) =&gt; [a] -&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L697" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:covariance" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Sample covariance.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:correlation" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">correlation :: (Floating a) =&gt; [a] -&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L700" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:correlation" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Pearson correlation coefficient.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:enumFromTo" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">enumFromTo :: (Enum a) =&gt; a -&gt; a -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L705" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:enumFromTo" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Enumeration from start to end.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:enumFromThenTo" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">enumFromThenTo :: (Enum a) =&gt; a -&gt; a -&gt; a -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L708" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:enumFromThenTo" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Enumeration with step.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:range" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">range :: Int -&gt; Int -&gt; [Int]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L711" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:range" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Integer range.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:linspace" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">linspace :: (Fractional a) =&gt; a -&gt; a -&gt; Int -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L714" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:linspace" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Linear spacing.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:logspace" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">logspace :: (Floating a) =&gt; a -&gt; a -&gt; Int -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L717" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:logspace" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Logarithmic spacing.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:geomspace" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">geomspace :: (Floating a) =&gt; a -&gt; a -&gt; Int -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L720" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:geomspace" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Geometric spacing.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:maxBound" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">maxBound :: (Bounded a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L725" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:maxBound" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Maximum value for bounded type.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:minBound" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">minBound :: (Bounded a) =&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L728" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:minBound" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Minimum value for bounded type.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:setRoundingMode" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">setRoundingMode :: RoundingMode -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L741" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:setRoundingMode" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Set current rounding mode.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getRoundingMode" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getRoundingMode :: IO RoundingMode</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L744" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getRoundingMode" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get current rounding mode.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withRoundingMode" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withRoundingMode :: RoundingMode -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L747" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withRoundingMode" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute with specific rounding mode.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getFPExceptions" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getFPExceptions :: IO [FPException]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L761" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getFPExceptions" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get current FP exception flags.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:clearFPExceptions" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">clearFPExceptions :: IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L764" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:clearFPExceptions" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Clear all FP exception flags.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:enableFPException" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">enableFPException :: FPException -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L767" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:enableFPException" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Enable trapping for exception.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:disableFPException" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">disableFPException :: FPException -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Numeric.hs#L770" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:disableFPException" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Disable trapping for exception.
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:Fixed">Fixed</a></li>
+                    
+                    <li><a href="#t:FixedS16">FixedS16</a></li>
+                    
+                    <li><a href="#t:FixedS32">FixedS32</a></li>
+                    
+                    <li><a href="#t:FixedU16">FixedU16</a></li>
+                    
+                    <li><a href="#t:FixedU32">FixedU32</a></li>
+                    
+                    <li><a href="#t:Rational">Rational</a></li>
+                    
+                    <li><a href="#t:RoundingMode">RoundingMode</a></li>
+                    
+                    <li><a href="#t:FPException">FPException</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#classes" class="toc-section-link">Classes</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#c:Real">Real</a></li>
+                    
+                    <li><a href="#c:Integral">Integral</a></li>
+                    
+                    <li><a href="#c:Fractional">Fractional</a></li>
+                    
+                    <li><a href="#c:Floating">Floating</a></li>
+                    
+                    <li><a href="#c:RealFrac">RealFrac</a></li>
+                    
+                    <li><a href="#c:RealFloat">RealFloat</a></li>
+                    
+                    <li><a href="#c:NumericPrimitive">NumericPrimitive</a></li>
+                    
+                    <li><a href="#c:Unboxed">Unboxed</a></li>
+                    
+                    <li><a href="#c:SimdPrimitive">SimdPrimitive</a></li>
+                    
+                    <li><a href="#c:Bits">Bits</a></li>
+                    
+                    <li><a href="#c:FiniteBits">FiniteBits</a></li>
+                    
+                    <li><a href="#c:Enum">Enum</a></li>
+                    
+                    <li><a href="#c:Bounded">Bounded</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:resolution">resolution</a></li>
+                    
+                    <li><a href="#v:mkFixed">mkFixed</a></li>
+                    
+                    <li><a href="#v:fromFixed">fromFixed</a></li>
+                    
+                    <li><a href="#v:fixedToRational">fixedToRational</a></li>
+                    
+                    <li><a href="#v:realPart">realPart</a></li>
+                    
+                    <li><a href="#v:imagPart">imagPart</a></li>
+                    
+                    <li><a href="#v:mkPolar">mkPolar</a></li>
+                    
+                    <li><a href="#v:cis">cis</a></li>
+                    
+                    <li><a href="#v:polar">polar</a></li>
+                    
+                    <li><a href="#v:magnitude">magnitude</a></li>
+                    
+                    <li><a href="#v:phase">phase</a></li>
+                    
+                    <li><a href="#v:conjugate">conjugate</a></li>
+                    
+                    <li><a href="#v:numerator">numerator</a></li>
+                    
+                    <li><a href="#v:denominator">denominator</a></li>
+                    
+                    <li><a href="#v:approxRational">approxRational</a></li>
+                    
+                    <li><a href="#v:vec2f32">vec2f32</a></li>
+                    
+                    <li><a href="#v:vec4f32">vec4f32</a></li>
+                    
+                    <li><a href="#v:vec8f32">vec8f32</a></li>
+                    
+                    <li><a href="#v:vec16f32">vec16f32</a></li>
+                    
+                    <li><a href="#v:vec2f64">vec2f64</a></li>
+                    
+                    <li><a href="#v:vec4f64">vec4f64</a></li>
+                    
+                    <li><a href="#v:vec8f64">vec8f64</a></li>
+                    
+                    <li><a href="#v:vec2i32">vec2i32</a></li>
+                    
+                    <li><a href="#v:vec4i32">vec4i32</a></li>
+                    
+                    <li><a href="#v:vec8i32">vec8i32</a></li>
+                    
+                    <li><a href="#v:vec16i32">vec16i32</a></li>
+                    
+                    <li><a href="#v:vec2i64">vec2i64</a></li>
+                    
+                    <li><a href="#v:vec4i64">vec4i64</a></li>
+                    
+                    <li><a href="#v:vec8i64">vec8i64</a></li>
+                    
+                    <li><a href="#v:broadcast">broadcast</a></li>
+                    
+                    <li><a href="#v:fromList">fromList</a></li>
+                    
+                    <li><a href="#v:toList">toList</a></li>
+                    
+                    <li><a href="#v:extract">extract</a></li>
+                    
+                    <li><a href="#v:insert">insert</a></li>
+                    
+                    <li><a href="#v:shuffle">shuffle</a></li>
+                    
+                    <li><a href="#v:permute">permute</a></li>
+                    
+                    <li><a href="#v:vAdd">vAdd</a></li>
+                    
+                    <li><a href="#v:vSub">vSub</a></li>
+                    
+                    <li><a href="#v:vMul">vMul</a></li>
+                    
+                    <li><a href="#v:vDiv">vDiv</a></li>
+                    
+                    <li><a href="#v:vNeg">vNeg</a></li>
+                    
+                    <li><a href="#v:vAbs">vAbs</a></li>
+                    
+                    <li><a href="#v:vMin">vMin</a></li>
+                    
+                    <li><a href="#v:vMax">vMax</a></li>
+                    
+                    <li><a href="#v:vSqrt">vSqrt</a></li>
+                    
+                    <li><a href="#v:vRsqrt">vRsqrt</a></li>
+                    
+                    <li><a href="#v:vRcp">vRcp</a></li>
+                    
+                    <li><a href="#v:vFMA">vFMA</a></li>
+                    
+                    <li><a href="#v:vFMS">vFMS</a></li>
+                    
+                    <li><a href="#v:vEq">vEq</a></li>
+                    
+                    <li><a href="#v:vNe">vNe</a></li>
+                    
+                    <li><a href="#v:vLt">vLt</a></li>
+                    
+                    <li><a href="#v:vLe">vLe</a></li>
+                    
+                    <li><a href="#v:vGt">vGt</a></li>
+                    
+                    <li><a href="#v:vGe">vGe</a></li>
+                    
+                    <li><a href="#v:vAnd">vAnd</a></li>
+                    
+                    <li><a href="#v:vOr">vOr</a></li>
+                    
+                    <li><a href="#v:vXor">vXor</a></li>
+                    
+                    <li><a href="#v:vAndNot">vAndNot</a></li>
+                    
+                    <li><a href="#v:vSelect">vSelect</a></li>
+                    
+                    <li><a href="#v:vSum">vSum</a></li>
+                    
+                    <li><a href="#v:vProduct">vProduct</a></li>
+                    
+                    <li><a href="#v:vMin1">vMin1</a></li>
+                    
+                    <li><a href="#v:vMax1">vMax1</a></li>
+                    
+                    <li><a href="#v:vHAdd">vHAdd</a></li>
+                    
+                    <li><a href="#v:vHSub">vHSub</a></li>
+                    
+                    <li><a href="#v:vLoad">vLoad</a></li>
+                    
+                    <li><a href="#v:vLoadAligned">vLoadAligned</a></li>
+                    
+                    <li><a href="#v:vStore">vStore</a></li>
+                    
+                    <li><a href="#v:vStoreAligned">vStoreAligned</a></li>
+                    
+                    <li><a href="#v:vMaskedLoad">vMaskedLoad</a></li>
+                    
+                    <li><a href="#v:vMaskedStore">vMaskedStore</a></li>
+                    
+                    <li><a href="#v:vGather">vGather</a></li>
+                    
+                    <li><a href="#v:vScatter">vScatter</a></li>
+                    
+                    <li><a href="#v:negate">negate</a></li>
+                    
+                    <li><a href="#v:abs">abs</a></li>
+                    
+                    <li><a href="#v:signum">signum</a></li>
+                    
+                    <li><a href="#v:fromInteger">fromInteger</a></li>
+                    
+                    <li><a href="#v:fromIntegral">fromIntegral</a></li>
+                    
+                    <li><a href="#v:realToFrac">realToFrac</a></li>
+                    
+                    <li><a href="#v:infinity">infinity</a></li>
+                    
+                    <li><a href="#v:negInfinity">negInfinity</a></li>
+                    
+                    <li><a href="#v:nan">nan</a></li>
+                    
+                    <li><a href="#v:minNormal">minNormal</a></li>
+                    
+                    <li><a href="#v:maxFinite">maxFinite</a></li>
+                    
+                    <li><a href="#v:epsilon">epsilon</a></li>
+                    
+                    <li><a href="#v:e">e</a></li>
+                    
+                    <li><a href="#v:gcd">gcd</a></li>
+                    
+                    <li><a href="#v:lcm">lcm</a></li>
+                    
+                    <li><a href="#v:subtract">subtract</a></li>
+                    
+                    <li><a href="#v:even">even</a></li>
+                    
+                    <li><a href="#v:odd">odd</a></li>
+                    
+                    <li><a href="#v:^">^</a></li>
+                    
+                    <li><a href="#v:^^">^^</a></li>
+                    
+                    <li><a href="#v:sum">sum</a></li>
+                    
+                    <li><a href="#v:product">product</a></li>
+                    
+                    <li><a href="#v:kahanSum">kahanSum</a></li>
+                    
+                    <li><a href="#v:pairwiseSum">pairwiseSum</a></li>
+                    
+                    <li><a href="#v:neumaierSum">neumaierSum</a></li>
+                    
+                    <li><a href="#v:mean">mean</a></li>
+                    
+                    <li><a href="#v:variance">variance</a></li>
+                    
+                    <li><a href="#v:stddev">stddev</a></li>
+                    
+                    <li><a href="#v:covariance">covariance</a></li>
+                    
+                    <li><a href="#v:correlation">correlation</a></li>
+                    
+                    <li><a href="#v:enumFromTo">enumFromTo</a></li>
+                    
+                    <li><a href="#v:enumFromThenTo">enumFromThenTo</a></li>
+                    
+                    <li><a href="#v:range">range</a></li>
+                    
+                    <li><a href="#v:linspace">linspace</a></li>
+                    
+                    <li><a href="#v:logspace">logspace</a></li>
+                    
+                    <li><a href="#v:geomspace">geomspace</a></li>
+                    
+                    <li><a href="#v:maxBound">maxBound</a></li>
+                    
+                    <li><a href="#v:minBound">minBound</a></li>
+                    
+                    <li><a href="#v:setRoundingMode">setRoundingMode</a></li>
+                    
+                    <li><a href="#v:getRoundingMode">getRoundingMode</a></li>
+                    
+                    <li><a href="#v:withRoundingMode">withRoundingMode</a></li>
+                    
+                    <li><a href="#v:getFPExceptions">getFPExceptions</a></li>
+                    
+                    <li><a href="#v:clearFPExceptions">clearFPExceptions</a></li>
+                    
+                    <li><a href="#v:enableFPException">enableFPException</a></li>
+                    
+                    <li><a href="#v:disableFPException">disableFPException</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

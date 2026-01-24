@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prelude - BHC Documentation</title>
+    <title>BHC.System.Directory - BHC Documentation</title>
     <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
     <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
 </head>
@@ -54,11 +54,11 @@
             <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
         </li>
         
-        <li >
+        <li class="active">
             <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
         </li>
         
-        <li class="active">
+        <li >
             <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
         </li>
         
@@ -102,7 +102,7 @@
             <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
         </li>
         
-        <li class="active">
+        <li >
             <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
         </li>
         
@@ -287,14 +287,145 @@
         <div class="page-header__bar">
             <span class="page-header__label">Module</span>
             
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-system&#x2F;hs&#x2F;BHC&#x2F;System&#x2F;Directory.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;bhc-system&#x2F;hs&#x2F;BHC&#x2F;System&#x2F;Directory.hs</span>
+            </a>
+            
             
         </div>
         <div class="page-header__content">
-            <h1>Prelude</h1>
+            <h1>BHC.System.Directory</h1>
             
         </div>
     </div>
 
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:Permissions" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data Permissions</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-system&#x2F;hs&#x2F;BHC&#x2F;System&#x2F;Directory.hs#L91" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Permissions" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Permissions { readable :: Bool, writable :: Bool, executable :: Bool, searchable :: Bool }</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    File permissions.
+                </div>
+                
+            </div>
+            
+            <div id="t:XdgDirectory" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data XdgDirectory</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-system&#x2F;hs&#x2F;BHC&#x2F;System&#x2F;Directory.hs#L99" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:XdgDirectory" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>XdgData</code>
+                        
+                        <p class="con-doc">User data directory</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>XdgConfig</code>
+                        
+                        <p class="con-doc">User configuration directory</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>XdgCache</code>
+                        
+                        <p class="con-doc">User cache directory</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>XdgState</code>
+                        
+                        <p class="con-doc">User state directory</p>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    XDG Base Directory specification.
+                </div>
+                
+            </div>
+            
+            <div id="t:XdgDirectoryList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data XdgDirectoryList</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-system&#x2F;hs&#x2F;BHC&#x2F;System&#x2F;Directory.hs#L107" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:XdgDirectoryList" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>XdgDataDirs</code>
+                        
+                        <p class="con-doc">System data directories</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>XdgConfigDirs</code>
+                        
+                        <p class="con-doc">System configuration directories</p>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    XDG directory lists.
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
     
 
     
@@ -317,6 +448,19 @@
     </div>
     <nav class="toc-content" id="toc-content">
         <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:Permissions">Permissions</a></li>
+                    
+                    <li><a href="#t:XdgDirectory">XdgDirectory</a></li>
+                    
+                    <li><a href="#t:XdgDirectoryList">XdgDirectoryList</a></li>
+                    
+                </ul>
+            </li>
             
             
             

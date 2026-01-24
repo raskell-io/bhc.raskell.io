@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bytes - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;H26&#x2F;Bytes.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>Bytes</h1>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:empty" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">empty :: Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L151" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:empty" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:singleton" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">singleton :: Word8 -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L154" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:singleton" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). A byte array with a single element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:pack" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">pack :: [Word8] -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L157" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:pack" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Pack a list of bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unpack" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unpack :: Bytes -&gt; [Word8]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L160" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unpack" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Unpack to a list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:replicate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">replicate :: Int -&gt; Word8 -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L163" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:replicate" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Replicate a byte n times.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:generate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">generate :: Int -&gt; (Int -&gt; Word8) -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L166" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:generate" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Generate bytes using a function.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:length" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">length :: Bytes -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L169" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:length" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Length in bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:null" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">null :: Bytes -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L172" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:null" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Test if empty.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:index" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">index :: Bytes -&gt; Int -&gt; Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L175" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:index" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Index a byte (unsafe).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:!?" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">!? :: Bytes -&gt; Int -&gt; Maybe Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L178" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:!?" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Safe indexing.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:head" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">head :: Bytes -&gt; Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L181" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:head" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). First byte (unsafe on empty).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tail" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tail :: Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L184" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tail" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). All but the first byte (view).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:last" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">last :: Bytes -&gt; Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L187" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:last" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Last byte (unsafe on empty).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:init" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">init :: Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L190" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:init" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). All but the last byte (view).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:take" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">take :: Int -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L193" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:take" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Take first n bytes (view).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:drop" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">drop :: Int -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L196" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:drop" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Drop first n bytes (view).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:splitAt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">splitAt :: Int -&gt; Bytes -&gt; (Bytes, Bytes)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L199" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:splitAt" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Split at position (views).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:slice" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">slice :: Int -&gt; Int -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L202" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:slice" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Slice from start to end indices (view).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:takeWhile" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">takeWhile :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L205" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:takeWhile" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Take while predicate holds.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dropWhile" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dropWhile :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L208" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dropWhile" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Drop while predicate holds.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:span" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">span :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; (Bytes, Bytes)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L211" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:span" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Split at first element not satisfying predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:break" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">break :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; (Bytes, Bytes)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L214" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:break" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Split at first element satisfying predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:append" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">append :: Bytes -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L217" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:append" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Append two byte arrays.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:concat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">concat :: [Bytes] -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L220" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:concat" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Concatenate a list of byte arrays.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:intercalate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">intercalate :: Bytes -&gt; [Bytes] -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L223" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:intercalate" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Intercalate a separator.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:elem" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">elem :: Word8 -&gt; Bytes -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L226" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:elem" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Test membership.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:notElem" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">notElem :: Word8 -&gt; Bytes -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L229" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:notElem" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Test non-membership.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:find" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">find :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; Maybe Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L232" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:find" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Find first element satisfying predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:findIndex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">findIndex :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; Maybe Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L235" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:findIndex" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Find index of first element satisfying predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:findIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">findIndices :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; [Int]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L238" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:findIndices" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Find all indices of elements satisfying predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:elemIndex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">elemIndex :: Word8 -&gt; Bytes -&gt; Maybe Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L241" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:elemIndex" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Find index of element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:elemIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">elemIndices :: Word8 -&gt; Bytes -&gt; [Int]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L244" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:elemIndices" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Find all indices of element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:map" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">map :: (Word8 -&gt; Word8) -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L247" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:map" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Map a function over bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:reverse" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">reverse :: Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L250" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:reverse" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Reverse byte order.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:intersperse" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">intersperse :: Word8 -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L253" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:intersperse" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Intersperse a byte between elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:transpose" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">transpose :: [Bytes] -&gt; [Bytes]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L256" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:transpose" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n*m). Transpose rows and columns.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl :: (a -&gt; Word8 -&gt; a) -&gt; a -&gt; Bytes -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L259" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Left fold.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl&#x27; :: (a -&gt; Word8 -&gt; a) -&gt; a -&gt; Bytes -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L262" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Strict left fold.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldr :: (Word8 -&gt; a -&gt; a) -&gt; a -&gt; Bytes -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L265" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Right fold.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl1 :: (Word8 -&gt; Word8 -&gt; Word8) -&gt; Bytes -&gt; Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L268" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl1" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Left fold without starting value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldr1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldr1 :: (Word8 -&gt; Word8 -&gt; Word8) -&gt; Bytes -&gt; Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L271" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldr1" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Right fold without starting value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:all" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">all :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L274" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:all" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Test if all elements satisfy predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:any" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">any :: (Word8 -&gt; Bool) -&gt; Bytes -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L277" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:any" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Test if any element satisfies predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:maximum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">maximum :: Bytes -&gt; Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L280" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:maximum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Maximum element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:minimum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">minimum :: Bytes -&gt; Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L283" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:minimum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Minimum element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sum :: Bytes -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L286" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Sum of elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scanl" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scanl :: (Word8 -&gt; Word8 -&gt; Word8) -&gt; Word8 -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L289" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scanl" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Scan left.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scanr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scanr :: (Word8 -&gt; Word8 -&gt; Word8) -&gt; Word8 -&gt; Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L292" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scanr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Scan right.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unfoldr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unfoldr :: (a -&gt; Maybe (Word8, a)) -&gt; a -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L295" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unfoldr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Build from unfolding function.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zip" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zip :: Bytes -&gt; Bytes -&gt; [(Word8, Word8)]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L298" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zip" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Zip two byte arrays.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zipWith" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zipWith :: (Word8 -&gt; Word8 -&gt; a) -&gt; Bytes -&gt; Bytes -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L301" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zipWith" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Zip with function.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unzip" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unzip :: [(Word8, Word8)] -&gt; (Bytes, Bytes)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L304" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unzip" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Unzip pairs.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toPinned" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toPinned :: Bytes -&gt; PinnedBytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L309" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toPinned" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Copy to pinned memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromPinned" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromPinned :: PinnedBytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L312" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromPinned" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Convert pinned to regular (view).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withPinnedPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withPinnedPtr :: PinnedBytes -&gt; ((Ptr Word8) -&gt; IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L317" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withPinnedPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute action with pointer to pinned data.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unsafePinnedPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unsafePinnedPtr :: PinnedBytes -&gt; Ptr Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L320" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unsafePinnedPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get raw pointer (unsafe, caller manages lifetime).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:new" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">new :: Int -&gt; IO (MutableBytes RealWorld)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L323" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:new" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Allocate new mutable byte array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:read" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">read :: (MutableBytes s) -&gt; Int -&gt; ST s Word8</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L326" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:read" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Read byte at index.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:write" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">write :: (MutableBytes s) -&gt; Int -&gt; Word8 -&gt; ST s ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L329" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:write" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Write byte at index.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:modify" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">modify :: (MutableBytes s) -&gt; Int -&gt; (Word8 -&gt; Word8) -&gt; ST s ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L332" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:modify" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Modify byte at index.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:freeze" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">freeze :: (MutableBytes s) -&gt; ST s Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L335" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:freeze" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Freeze mutable to immutable.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:thaw" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">thaw :: Bytes -&gt; ST s (MutableBytes s)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L338" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:thaw" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Thaw immutable to mutable.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:copy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">copy :: (MutableBytes s) -&gt; Int -&gt; (MutableBytes s) -&gt; Int -&gt; Int -&gt; ST s ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L341" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:copy" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Copy bytes between mutable arrays.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toList :: Bytes -&gt; [Word8]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L344" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Convert to list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromList :: [Word8] -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L347" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(n). Convert from list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toStrict" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toStrict :: Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L350" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toStrict" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Convert lazy to strict.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromStrict" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromStrict :: Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L353" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromStrict" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    O(1). Convert strict to lazy.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:encodeUtf8" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">encodeUtf8 :: Text -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L356" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:encodeUtf8" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Encode Text to UTF-8 bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decodeUtf8" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decodeUtf8 :: Bytes -&gt; Text</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L359" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decodeUtf8" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decode UTF-8 bytes to Text (unsafe on invalid).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decodeUtf8&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decodeUtf8&#x27; :: Bytes -&gt; Either String Text</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L362" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decodeUtf8&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decode UTF-8 with error handling.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:encodeBase64" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">encodeBase64 :: Bytes -&gt; Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L365" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:encodeBase64" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Encode to Base64.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decodeBase64" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decodeBase64 :: Bytes -&gt; Either String Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L368" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decodeBase64" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decode from Base64.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readFile" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readFile :: FilePath -&gt; IO Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L371" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readFile" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read entire file as bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:writeFile" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">writeFile :: FilePath -&gt; Bytes -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L374" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:writeFile" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write bytes to file.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:appendFile" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">appendFile :: FilePath -&gt; Bytes -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L377" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:appendFile" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Append bytes to file.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:hGet" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">hGet :: Handle -&gt; Int -&gt; IO Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L380" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:hGet" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read n bytes from handle.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:hPut" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">hPut :: Handle -&gt; Bytes -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L383" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:hPut" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write bytes to handle.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:hGetLine" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">hGetLine :: Handle -&gt; IO Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L386" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:hGetLine" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read line from handle.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:hGetContents" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">hGetContents :: Handle -&gt; IO Bytes</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Bytes.hs#L389" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:hGetContents" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read all remaining contents.
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:empty">empty</a></li>
+                    
+                    <li><a href="#v:singleton">singleton</a></li>
+                    
+                    <li><a href="#v:pack">pack</a></li>
+                    
+                    <li><a href="#v:unpack">unpack</a></li>
+                    
+                    <li><a href="#v:replicate">replicate</a></li>
+                    
+                    <li><a href="#v:generate">generate</a></li>
+                    
+                    <li><a href="#v:length">length</a></li>
+                    
+                    <li><a href="#v:null">null</a></li>
+                    
+                    <li><a href="#v:index">index</a></li>
+                    
+                    <li><a href="#v:!?">!?</a></li>
+                    
+                    <li><a href="#v:head">head</a></li>
+                    
+                    <li><a href="#v:tail">tail</a></li>
+                    
+                    <li><a href="#v:last">last</a></li>
+                    
+                    <li><a href="#v:init">init</a></li>
+                    
+                    <li><a href="#v:take">take</a></li>
+                    
+                    <li><a href="#v:drop">drop</a></li>
+                    
+                    <li><a href="#v:splitAt">splitAt</a></li>
+                    
+                    <li><a href="#v:slice">slice</a></li>
+                    
+                    <li><a href="#v:takeWhile">takeWhile</a></li>
+                    
+                    <li><a href="#v:dropWhile">dropWhile</a></li>
+                    
+                    <li><a href="#v:span">span</a></li>
+                    
+                    <li><a href="#v:break">break</a></li>
+                    
+                    <li><a href="#v:append">append</a></li>
+                    
+                    <li><a href="#v:concat">concat</a></li>
+                    
+                    <li><a href="#v:intercalate">intercalate</a></li>
+                    
+                    <li><a href="#v:elem">elem</a></li>
+                    
+                    <li><a href="#v:notElem">notElem</a></li>
+                    
+                    <li><a href="#v:find">find</a></li>
+                    
+                    <li><a href="#v:findIndex">findIndex</a></li>
+                    
+                    <li><a href="#v:findIndices">findIndices</a></li>
+                    
+                    <li><a href="#v:elemIndex">elemIndex</a></li>
+                    
+                    <li><a href="#v:elemIndices">elemIndices</a></li>
+                    
+                    <li><a href="#v:map">map</a></li>
+                    
+                    <li><a href="#v:reverse">reverse</a></li>
+                    
+                    <li><a href="#v:intersperse">intersperse</a></li>
+                    
+                    <li><a href="#v:transpose">transpose</a></li>
+                    
+                    <li><a href="#v:foldl">foldl</a></li>
+                    
+                    <li><a href="#v:foldl&#x27;">foldl&#x27;</a></li>
+                    
+                    <li><a href="#v:foldr">foldr</a></li>
+                    
+                    <li><a href="#v:foldl1">foldl1</a></li>
+                    
+                    <li><a href="#v:foldr1">foldr1</a></li>
+                    
+                    <li><a href="#v:all">all</a></li>
+                    
+                    <li><a href="#v:any">any</a></li>
+                    
+                    <li><a href="#v:maximum">maximum</a></li>
+                    
+                    <li><a href="#v:minimum">minimum</a></li>
+                    
+                    <li><a href="#v:sum">sum</a></li>
+                    
+                    <li><a href="#v:scanl">scanl</a></li>
+                    
+                    <li><a href="#v:scanr">scanr</a></li>
+                    
+                    <li><a href="#v:unfoldr">unfoldr</a></li>
+                    
+                    <li><a href="#v:zip">zip</a></li>
+                    
+                    <li><a href="#v:zipWith">zipWith</a></li>
+                    
+                    <li><a href="#v:unzip">unzip</a></li>
+                    
+                    <li><a href="#v:toPinned">toPinned</a></li>
+                    
+                    <li><a href="#v:fromPinned">fromPinned</a></li>
+                    
+                    <li><a href="#v:withPinnedPtr">withPinnedPtr</a></li>
+                    
+                    <li><a href="#v:unsafePinnedPtr">unsafePinnedPtr</a></li>
+                    
+                    <li><a href="#v:new">new</a></li>
+                    
+                    <li><a href="#v:read">read</a></li>
+                    
+                    <li><a href="#v:write">write</a></li>
+                    
+                    <li><a href="#v:modify">modify</a></li>
+                    
+                    <li><a href="#v:freeze">freeze</a></li>
+                    
+                    <li><a href="#v:thaw">thaw</a></li>
+                    
+                    <li><a href="#v:copy">copy</a></li>
+                    
+                    <li><a href="#v:toList">toList</a></li>
+                    
+                    <li><a href="#v:fromList">fromList</a></li>
+                    
+                    <li><a href="#v:toStrict">toStrict</a></li>
+                    
+                    <li><a href="#v:fromStrict">fromStrict</a></li>
+                    
+                    <li><a href="#v:encodeUtf8">encodeUtf8</a></li>
+                    
+                    <li><a href="#v:decodeUtf8">decodeUtf8</a></li>
+                    
+                    <li><a href="#v:decodeUtf8&#x27;">decodeUtf8&#x27;</a></li>
+                    
+                    <li><a href="#v:encodeBase64">encodeBase64</a></li>
+                    
+                    <li><a href="#v:decodeBase64">decodeBase64</a></li>
+                    
+                    <li><a href="#v:readFile">readFile</a></li>
+                    
+                    <li><a href="#v:writeFile">writeFile</a></li>
+                    
+                    <li><a href="#v:appendFile">appendFile</a></li>
+                    
+                    <li><a href="#v:hGet">hGet</a></li>
+                    
+                    <li><a href="#v:hPut">hPut</a></li>
+                    
+                    <li><a href="#v:hGetLine">hGetLine</a></li>
+                    
+                    <li><a href="#v:hGetContents">hGetContents</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

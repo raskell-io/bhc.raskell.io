@@ -1,0 +1,2834 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFI - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;H26&#x2F;FFI.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>FFI</h1>
+            
+        </div>
+    </div>
+
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:CString" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type CString = Ptr CChar</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L349" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CString" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C string (null-terminated).
+                </div>
+                
+            </div>
+            
+            <div id="t:CStringLen" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type CStringLen = (Ptr CChar, Int)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L352" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CStringLen" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C string with length.
+                </div>
+                
+            </div>
+            
+            <div id="t:CChar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CChar</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L379" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CChar" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CChar Int8</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C signed char.
+                </div>
+                
+            </div>
+            
+            <div id="t:CSChar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CSChar</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L382" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CSChar" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CSChar Int8</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C signed char (explicit).
+                </div>
+                
+            </div>
+            
+            <div id="t:CUChar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CUChar</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L385" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CUChar" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CUChar Word8</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C unsigned char.
+                </div>
+                
+            </div>
+            
+            <div id="t:CShort" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CShort</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L388" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CShort" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CShort Int16</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C short.
+                </div>
+                
+            </div>
+            
+            <div id="t:CUShort" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CUShort</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L391" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CUShort" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CUShort Word16</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C unsigned short.
+                </div>
+                
+            </div>
+            
+            <div id="t:CInt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CInt</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L394" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CInt" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CInt Int32</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C int.
+                </div>
+                
+            </div>
+            
+            <div id="t:CUInt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CUInt</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L397" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CUInt" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CUInt Word32</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C unsigned int.
+                </div>
+                
+            </div>
+            
+            <div id="t:CLong" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CLong</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L400" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CLong" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CLong Int64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C long.
+                </div>
+                
+            </div>
+            
+            <div id="t:CULong" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CULong</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L403" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CULong" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CULong Word64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C unsigned long.
+                </div>
+                
+            </div>
+            
+            <div id="t:CLLong" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CLLong</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L406" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CLLong" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CLLong Int64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C long long.
+                </div>
+                
+            </div>
+            
+            <div id="t:CULLong" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CULLong</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L409" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CULLong" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CULLong Word64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C unsigned long long.
+                </div>
+                
+            </div>
+            
+            <div id="t:CFloat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CFloat</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L412" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CFloat" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CFloat Float</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C float.
+                </div>
+                
+            </div>
+            
+            <div id="t:CDouble" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CDouble</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L415" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CDouble" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CDouble Double</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C double.
+                </div>
+                
+            </div>
+            
+            <div id="t:CSize" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CSize</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L418" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CSize" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CSize Word64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C size_t.
+                </div>
+                
+            </div>
+            
+            <div id="t:CSSize" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CSSize</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L421" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CSSize" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CSSize Int64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C ssize_t.
+                </div>
+                
+            </div>
+            
+            <div id="t:CPtrdiff" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CPtrdiff</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L424" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CPtrdiff" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CPtrdiff Int64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C ptrdiff_t.
+                </div>
+                
+            </div>
+            
+            <div id="t:CIntPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CIntPtr</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L427" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CIntPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CIntPtr Int64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C intptr_t.
+                </div>
+                
+            </div>
+            
+            <div id="t:CUIntPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CUIntPtr</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L430" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CUIntPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CUIntPtr Word64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C uintptr_t.
+                </div>
+                
+            </div>
+            
+            <div id="t:CBool" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype CBool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L433" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CBool" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CBool Word8</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C bool.
+                </div>
+                
+            </div>
+            
+            <div id="t:Errno" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype Errno</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L463" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Errno" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Errno CInt</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    C errno value.
+                </div>
+                
+            </div>
+            
+            <div id="t:FinalizerPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type FinalizerPtr a = FunPtr ((Ptr a) -&gt; IO ())</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L528" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:FinalizerPtr" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Type Classes Section Frame -->
+    <div id="classes" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Type Classes</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="c:Storable" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Storable a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L224" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Storable" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>sizeOf :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>alignment :: a -&gt; Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>peek :: (Ptr a) -&gt; IO a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>poke :: (Ptr a) -&gt; a -&gt; IO ()</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>peekByteOff :: (Ptr b) -&gt; Int -&gt; IO a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>pokeByteOff :: (Ptr b) -&gt; Int -&gt; a -&gt; IO ()</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>peekElemOff :: (Ptr a) -&gt; Int -&gt; IO a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>pokeElemOff :: (Ptr a) -&gt; Int -&gt; a -&gt; IO ()</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Class for types that can be stored in memory.
+                </div>
+                
+            </div>
+            
+            <div id="c:CCallable" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class CCallable a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L491" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:CCallable" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Constraint for types callable from C.
+                </div>
+                
+            </div>
+            
+            <div id="c:CReturnable" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class CReturnable a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L494" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:CReturnable" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Constraint for types returnable to C.
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:nullPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">nullPtr :: Ptr a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L173" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:nullPtr" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:nullFunPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">nullFunPtr :: FunPtr a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L176" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:nullFunPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    The null function pointer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:castPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">castPtr :: (Ptr a) -&gt; Ptr b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L179" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:castPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Cast pointer to different type.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:castFunPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">castFunPtr :: (FunPtr a) -&gt; FunPtr b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L182" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:castFunPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Cast function pointer to different type.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:plusPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">plusPtr :: (Ptr a) -&gt; Int -&gt; Ptr b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L185" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:plusPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Advance pointer by offset bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:minusPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">minusPtr :: (Ptr a) -&gt; (Ptr b) -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L188" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:minusPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Compute byte difference between pointers.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:alignPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">alignPtr :: (Ptr a) -&gt; Int -&gt; Ptr a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L191" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:alignPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Align pointer to alignment boundary.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newForeignPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newForeignPtr :: (FinalizerPtr a) -&gt; (Ptr a) -&gt; IO (ForeignPtr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L194" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newForeignPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create foreign pointer with finalizer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newForeignPtr_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newForeignPtr_ :: (Ptr a) -&gt; IO (ForeignPtr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L197" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newForeignPtr_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create foreign pointer without finalizer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withForeignPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withForeignPtr :: (ForeignPtr a) -&gt; ((Ptr a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L200" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withForeignPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute action with foreign pointer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:touchForeignPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">touchForeignPtr :: (ForeignPtr a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L203" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:touchForeignPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Keep foreign pointer alive.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:castForeignPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">castForeignPtr :: (ForeignPtr a) -&gt; ForeignPtr b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L206" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:castForeignPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Cast foreign pointer to different type.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocForeignPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocForeignPtr :: (Storable a) =&gt; IO (ForeignPtr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L209" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocForeignPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate foreign memory for Storable value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocForeignPtrBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocForeignPtrBytes :: Int -&gt; IO (ForeignPtr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L212" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocForeignPtrBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate foreign memory of given size.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocForeignPtrArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocForeignPtrArray :: (Storable a) =&gt; Int -&gt; IO (ForeignPtr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L215" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocForeignPtrArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate foreign array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:addForeignPtrFinalizer" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">addForeignPtrFinalizer :: (FinalizerPtr a) -&gt; (ForeignPtr a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L218" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:addForeignPtrFinalizer" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Add finalizer to foreign pointer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:finalizeForeignPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">finalizeForeignPtr :: (ForeignPtr a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L221" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:finalizeForeignPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run finalizers immediately.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:malloc" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">malloc :: (Storable a) =&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L250" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:malloc" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate memory for a Storable value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocBytes :: Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L253" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate memory of given size.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocArray :: (Storable a) =&gt; Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L256" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate array of Storable values.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:calloc" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">calloc :: (Storable a) =&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L259" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:calloc" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate zero-initialized memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:callocBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">callocBytes :: Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L262" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:callocBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate zero-initialized bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:callocArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">callocArray :: (Storable a) =&gt; Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L265" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:callocArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate zero-initialized array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:realloc" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">realloc :: (Storable b) =&gt; (Ptr a) -&gt; IO (Ptr b)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L268" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:realloc" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Resize allocated memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:reallocBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">reallocBytes :: (Ptr a) -&gt; Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L271" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:reallocBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Resize to given size.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:reallocArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">reallocArray :: (Storable a) =&gt; (Ptr a) -&gt; Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L274" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:reallocArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Resize array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:free" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">free :: (Ptr a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L277" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:free" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Free allocated memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:freeBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">freeBytes :: (Ptr a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L280" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:freeBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Free allocated bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocPinned" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocPinned :: (Storable a) =&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L283" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocPinned" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate pinned memory (won't be moved by GC).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocPinnedBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocPinnedBytes :: Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L286" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocPinnedBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate pinned bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocPinnedArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocPinnedArray :: (Storable a) =&gt; Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L289" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocPinnedArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate pinned array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mallocAligned" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mallocAligned :: Int -&gt; Int -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L292" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mallocAligned" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate with specific alignment.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isPinned" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isPinned :: (Ptr a) -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L295" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isPinned" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if memory is pinned.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:alloca" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">alloca :: (Storable a) =&gt; ((Ptr a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L298" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:alloca" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate temporary memory for Storable.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:allocaBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">allocaBytes :: Int -&gt; ((Ptr a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L301" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:allocaBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate temporary bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:allocaArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">allocaArray :: (Storable a) =&gt; Int -&gt; ((Ptr a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L304" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:allocaArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate temporary array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:with" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">with :: (Storable a) =&gt; a -&gt; ((Ptr a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L307" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:with" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate and initialize with value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withArray :: (Storable a) =&gt; [a] -&gt; ((Ptr a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L310" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate and initialize array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withArrayLen" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withArrayLen :: (Storable a) =&gt; [a] -&gt; (Int -&gt; (Ptr a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L313" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withArrayLen" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate array with length.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withArray0" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withArray0 :: (Storable a) =&gt; a -&gt; [a] -&gt; ((Ptr a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L316" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withArray0" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate null-terminated array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:copyArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">copyArray :: (Storable a) =&gt; (Ptr a) -&gt; (Ptr a) -&gt; Int -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L319" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:copyArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Copy array elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:moveArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">moveArray :: (Storable a) =&gt; (Ptr a) -&gt; (Ptr a) -&gt; Int -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L322" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:moveArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Move array elements (may overlap).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lengthArray0" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lengthArray0 :: (Storable a, Eq a) =&gt; a -&gt; (Ptr a) -&gt; IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L325" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lengthArray0" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Find length of null-terminated array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:advancePtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">advancePtr :: (Storable a) =&gt; (Ptr a) -&gt; Int -&gt; Ptr a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L328" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:advancePtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Advance pointer by element count.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:peekArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">peekArray :: (Storable a) =&gt; Int -&gt; (Ptr a) -&gt; IO [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L331" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:peekArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read array from memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:peekArray0" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">peekArray0 :: (Storable a, Eq a) =&gt; a -&gt; (Ptr a) -&gt; IO [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L334" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:peekArray0" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read null-terminated array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:pokeArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">pokeArray :: (Storable a) =&gt; (Ptr a) -&gt; [a] -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L337" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:pokeArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write array to memory.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:pokeArray0" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">pokeArray0 :: (Storable a) =&gt; a -&gt; (Ptr a) -&gt; [a] -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L340" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:pokeArray0" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write null-terminated array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newArray :: (Storable a) =&gt; [a] -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L343" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate and initialize new array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newArray0" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newArray0 :: (Storable a) =&gt; a -&gt; [a] -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L346" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newArray0" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Allocate null-terminated array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:peekCString" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">peekCString :: CString -&gt; IO String</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L355" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:peekCString" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read C string to Haskell String.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:peekCStringLen" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">peekCStringLen :: CStringLen -&gt; IO String</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L358" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:peekCStringLen" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read C string with length.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newCString" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newCString :: String -&gt; IO CString</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L361" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newCString" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create new C string.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newCStringLen" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newCStringLen :: String -&gt; IO CStringLen</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L364" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newCStringLen" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create C string with length.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withCString" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withCString :: String -&gt; (CString -&gt; IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L367" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withCString" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute with temporary C string.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withCStringLen" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withCStringLen :: String -&gt; (CStringLen -&gt; IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L370" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withCStringLen" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute with temporary C string and length.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:castCharToCChar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">castCharToCChar :: Char -&gt; CChar</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L373" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:castCharToCChar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert Char to CChar.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:castCCharToChar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">castCCharToChar :: CChar -&gt; Char</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L376" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:castCCharToChar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert CChar to Char.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newStablePtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newStablePtr :: a -&gt; IO (StablePtr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L436" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newStablePtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create stable pointer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:deRefStablePtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">deRefStablePtr :: (StablePtr a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L439" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:deRefStablePtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Dereference stable pointer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:freeStablePtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">freeStablePtr :: (StablePtr a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L442" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:freeStablePtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Free stable pointer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:castStablePtrToPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">castStablePtrToPtr :: (StablePtr a) -&gt; Ptr ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L445" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:castStablePtrToPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Cast stable pointer to raw pointer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:castPtrToStablePtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">castPtrToStablePtr :: (Ptr ()) -&gt; StablePtr a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L448" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:castPtrToStablePtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Cast raw pointer to stable pointer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:wrapFunPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">wrapFunPtr :: a -&gt; IO (FunPtr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L454" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:wrapFunPtr" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:freeFunPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">freeFunPtr :: (FunPtr a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L457" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:freeFunPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Free function pointer wrapper.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dynamicFunPtr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dynamicFunPtr :: (FunPtr a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L460" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dynamicFunPtr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Call function pointer dynamically.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getErrno" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getErrno :: IO Errno</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L467" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getErrno" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get current errno.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:resetErrno" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">resetErrno :: IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L470" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:resetErrno" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Reset errno to zero.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:throwErrno" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">throwErrno :: String -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L473" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:throwErrno" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Throw IO error based on errno.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:throwErrnoIf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">throwErrnoIf :: (a -&gt; Bool) -&gt; String -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L476" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:throwErrnoIf" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Throw if predicate holds.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:throwErrnoIfMinus1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">throwErrnoIfMinus1 :: (Eq a, Num a) =&gt; String -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L479" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:throwErrnoIfMinus1" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Throw if result is -1.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:throwErrnoIfNull" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">throwErrnoIfNull :: String -&gt; (IO (Ptr a)) -&gt; IO (Ptr a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L482" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:throwErrnoIfNull" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Throw if result is null.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:throwErrnoPath" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">throwErrnoPath :: String -&gt; FilePath -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L485" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:throwErrnoPath" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Throw with path information.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:throwErrnoPathIf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">throwErrnoPathIf :: (a -&gt; Bool) -&gt; String -&gt; FilePath -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L488" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:throwErrnoPathIf" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Throw with path if predicate holds.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:importC" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">importC :: String -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L499" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:importC" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Import C function (compile-time).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:exportC" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">exportC :: String -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L504" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:exportC" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Export Haskell function to C (compile-time).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unsafePerformIO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unsafePerformIO :: (IO a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L512" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unsafePerformIO" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Perform IO unsafely.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unsafeInterleaveIO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unsafeInterleaveIO :: (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L517" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unsafeInterleaveIO" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Interleave IO lazily.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unsafeDupablePerformIO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unsafeDupablePerformIO :: (IO a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L522" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unsafeDupablePerformIO" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Perform IO unsafely (may be duplicated).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unsafeLocalState" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unsafeLocalState :: (IO a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;FFI.hs#L525" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unsafeLocalState" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create local mutable state.
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:CString">CString</a></li>
+                    
+                    <li><a href="#t:CStringLen">CStringLen</a></li>
+                    
+                    <li><a href="#t:CChar">CChar</a></li>
+                    
+                    <li><a href="#t:CSChar">CSChar</a></li>
+                    
+                    <li><a href="#t:CUChar">CUChar</a></li>
+                    
+                    <li><a href="#t:CShort">CShort</a></li>
+                    
+                    <li><a href="#t:CUShort">CUShort</a></li>
+                    
+                    <li><a href="#t:CInt">CInt</a></li>
+                    
+                    <li><a href="#t:CUInt">CUInt</a></li>
+                    
+                    <li><a href="#t:CLong">CLong</a></li>
+                    
+                    <li><a href="#t:CULong">CULong</a></li>
+                    
+                    <li><a href="#t:CLLong">CLLong</a></li>
+                    
+                    <li><a href="#t:CULLong">CULLong</a></li>
+                    
+                    <li><a href="#t:CFloat">CFloat</a></li>
+                    
+                    <li><a href="#t:CDouble">CDouble</a></li>
+                    
+                    <li><a href="#t:CSize">CSize</a></li>
+                    
+                    <li><a href="#t:CSSize">CSSize</a></li>
+                    
+                    <li><a href="#t:CPtrdiff">CPtrdiff</a></li>
+                    
+                    <li><a href="#t:CIntPtr">CIntPtr</a></li>
+                    
+                    <li><a href="#t:CUIntPtr">CUIntPtr</a></li>
+                    
+                    <li><a href="#t:CBool">CBool</a></li>
+                    
+                    <li><a href="#t:Errno">Errno</a></li>
+                    
+                    <li><a href="#t:FinalizerPtr">FinalizerPtr</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#classes" class="toc-section-link">Classes</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#c:Storable">Storable</a></li>
+                    
+                    <li><a href="#c:CCallable">CCallable</a></li>
+                    
+                    <li><a href="#c:CReturnable">CReturnable</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:nullPtr">nullPtr</a></li>
+                    
+                    <li><a href="#v:nullFunPtr">nullFunPtr</a></li>
+                    
+                    <li><a href="#v:castPtr">castPtr</a></li>
+                    
+                    <li><a href="#v:castFunPtr">castFunPtr</a></li>
+                    
+                    <li><a href="#v:plusPtr">plusPtr</a></li>
+                    
+                    <li><a href="#v:minusPtr">minusPtr</a></li>
+                    
+                    <li><a href="#v:alignPtr">alignPtr</a></li>
+                    
+                    <li><a href="#v:newForeignPtr">newForeignPtr</a></li>
+                    
+                    <li><a href="#v:newForeignPtr_">newForeignPtr_</a></li>
+                    
+                    <li><a href="#v:withForeignPtr">withForeignPtr</a></li>
+                    
+                    <li><a href="#v:touchForeignPtr">touchForeignPtr</a></li>
+                    
+                    <li><a href="#v:castForeignPtr">castForeignPtr</a></li>
+                    
+                    <li><a href="#v:mallocForeignPtr">mallocForeignPtr</a></li>
+                    
+                    <li><a href="#v:mallocForeignPtrBytes">mallocForeignPtrBytes</a></li>
+                    
+                    <li><a href="#v:mallocForeignPtrArray">mallocForeignPtrArray</a></li>
+                    
+                    <li><a href="#v:addForeignPtrFinalizer">addForeignPtrFinalizer</a></li>
+                    
+                    <li><a href="#v:finalizeForeignPtr">finalizeForeignPtr</a></li>
+                    
+                    <li><a href="#v:malloc">malloc</a></li>
+                    
+                    <li><a href="#v:mallocBytes">mallocBytes</a></li>
+                    
+                    <li><a href="#v:mallocArray">mallocArray</a></li>
+                    
+                    <li><a href="#v:calloc">calloc</a></li>
+                    
+                    <li><a href="#v:callocBytes">callocBytes</a></li>
+                    
+                    <li><a href="#v:callocArray">callocArray</a></li>
+                    
+                    <li><a href="#v:realloc">realloc</a></li>
+                    
+                    <li><a href="#v:reallocBytes">reallocBytes</a></li>
+                    
+                    <li><a href="#v:reallocArray">reallocArray</a></li>
+                    
+                    <li><a href="#v:free">free</a></li>
+                    
+                    <li><a href="#v:freeBytes">freeBytes</a></li>
+                    
+                    <li><a href="#v:mallocPinned">mallocPinned</a></li>
+                    
+                    <li><a href="#v:mallocPinnedBytes">mallocPinnedBytes</a></li>
+                    
+                    <li><a href="#v:mallocPinnedArray">mallocPinnedArray</a></li>
+                    
+                    <li><a href="#v:mallocAligned">mallocAligned</a></li>
+                    
+                    <li><a href="#v:isPinned">isPinned</a></li>
+                    
+                    <li><a href="#v:alloca">alloca</a></li>
+                    
+                    <li><a href="#v:allocaBytes">allocaBytes</a></li>
+                    
+                    <li><a href="#v:allocaArray">allocaArray</a></li>
+                    
+                    <li><a href="#v:with">with</a></li>
+                    
+                    <li><a href="#v:withArray">withArray</a></li>
+                    
+                    <li><a href="#v:withArrayLen">withArrayLen</a></li>
+                    
+                    <li><a href="#v:withArray0">withArray0</a></li>
+                    
+                    <li><a href="#v:copyArray">copyArray</a></li>
+                    
+                    <li><a href="#v:moveArray">moveArray</a></li>
+                    
+                    <li><a href="#v:lengthArray0">lengthArray0</a></li>
+                    
+                    <li><a href="#v:advancePtr">advancePtr</a></li>
+                    
+                    <li><a href="#v:peekArray">peekArray</a></li>
+                    
+                    <li><a href="#v:peekArray0">peekArray0</a></li>
+                    
+                    <li><a href="#v:pokeArray">pokeArray</a></li>
+                    
+                    <li><a href="#v:pokeArray0">pokeArray0</a></li>
+                    
+                    <li><a href="#v:newArray">newArray</a></li>
+                    
+                    <li><a href="#v:newArray0">newArray0</a></li>
+                    
+                    <li><a href="#v:peekCString">peekCString</a></li>
+                    
+                    <li><a href="#v:peekCStringLen">peekCStringLen</a></li>
+                    
+                    <li><a href="#v:newCString">newCString</a></li>
+                    
+                    <li><a href="#v:newCStringLen">newCStringLen</a></li>
+                    
+                    <li><a href="#v:withCString">withCString</a></li>
+                    
+                    <li><a href="#v:withCStringLen">withCStringLen</a></li>
+                    
+                    <li><a href="#v:castCharToCChar">castCharToCChar</a></li>
+                    
+                    <li><a href="#v:castCCharToChar">castCCharToChar</a></li>
+                    
+                    <li><a href="#v:newStablePtr">newStablePtr</a></li>
+                    
+                    <li><a href="#v:deRefStablePtr">deRefStablePtr</a></li>
+                    
+                    <li><a href="#v:freeStablePtr">freeStablePtr</a></li>
+                    
+                    <li><a href="#v:castStablePtrToPtr">castStablePtrToPtr</a></li>
+                    
+                    <li><a href="#v:castPtrToStablePtr">castPtrToStablePtr</a></li>
+                    
+                    <li><a href="#v:wrapFunPtr">wrapFunPtr</a></li>
+                    
+                    <li><a href="#v:freeFunPtr">freeFunPtr</a></li>
+                    
+                    <li><a href="#v:dynamicFunPtr">dynamicFunPtr</a></li>
+                    
+                    <li><a href="#v:getErrno">getErrno</a></li>
+                    
+                    <li><a href="#v:resetErrno">resetErrno</a></li>
+                    
+                    <li><a href="#v:throwErrno">throwErrno</a></li>
+                    
+                    <li><a href="#v:throwErrnoIf">throwErrnoIf</a></li>
+                    
+                    <li><a href="#v:throwErrnoIfMinus1">throwErrnoIfMinus1</a></li>
+                    
+                    <li><a href="#v:throwErrnoIfNull">throwErrnoIfNull</a></li>
+                    
+                    <li><a href="#v:throwErrnoPath">throwErrnoPath</a></li>
+                    
+                    <li><a href="#v:throwErrnoPathIf">throwErrnoPathIf</a></li>
+                    
+                    <li><a href="#v:importC">importC</a></li>
+                    
+                    <li><a href="#v:exportC">exportC</a></li>
+                    
+                    <li><a href="#v:unsafePerformIO">unsafePerformIO</a></li>
+                    
+                    <li><a href="#v:unsafeInterleaveIO">unsafeInterleaveIO</a></li>
+                    
+                    <li><a href="#v:unsafeDupablePerformIO">unsafeDupablePerformIO</a></li>
+                    
+                    <li><a href="#v:unsafeLocalState">unsafeLocalState</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>Matrix</h1>
+            
+        </div>
+    </div>
+
+    
+
+    
+    <!-- Type Classes Section Frame -->
+    <div id="classes" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Type Classes</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="c:MatrixElem" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class MatrixElem a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L158" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:MatrixElem" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>matrixFromList :: Int -&gt; Int -&gt; [a] -&gt; IO (Matrix a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixGet :: (Matrix a) -&gt; Int -&gt; Int -&gt; IO a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixZeros :: Int -&gt; Int -&gt; IO (Matrix a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixIdentity :: Int -&gt; IO (Matrix a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixMatmul :: (Matrix a) -&gt; (Matrix a) -&gt; IO (Matrix a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixTranspose :: (Matrix a) -&gt; IO (Matrix a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixAdd :: (Matrix a) -&gt; (Matrix a) -&gt; IO (Matrix a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixScale :: a -&gt; (Matrix a) -&gt; IO (Matrix a)</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixTrace :: (Matrix a) -&gt; IO a</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>matrixNorm :: (Matrix a) -&gt; IO a</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:zeros" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zeros :: (MatrixElem a) =&gt; Int -&gt; Int -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L241" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zeros" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create matrix of zeros.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:ones" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">ones :: (Num a, MatrixElem a) =&gt; Int -&gt; Int -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L246" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:ones" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create matrix of ones.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:full" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">full :: (MatrixElem a) =&gt; Int -&gt; Int -&gt; a -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L250" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:full" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create matrix filled with value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromLists" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromLists :: (MatrixElem a) =&gt; [[a]] -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L257" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromLists" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create matrix from nested lists.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromList :: (MatrixElem a) =&gt; Int -&gt; Int -&gt; [a] -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L264" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create matrix from flat list with dimensions.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromRows" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromRows :: (V.VectorElem a, MatrixElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L269" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromRows" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create matrix from row vectors.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromCols" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromCols :: (V.VectorElem a, MatrixElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L276" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromCols" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create matrix from column vectors.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:identity" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">identity :: (MatrixElem a) =&gt; Int -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L283" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:identity" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Identity matrix.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:eye" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">eye :: (MatrixElem a) =&gt; Int -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L288" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:eye" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Identity matrix (alias for identity).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:diag" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">diag :: (Num a, MatrixElem a) =&gt; [a] -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L291" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:diag" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Diagonal matrix from list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:diagFrom" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">diagFrom :: (Num a, V.VectorElem a, MatrixElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L300" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:diagFrom" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:rows" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">rows :: (Matrix a) -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L308" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:rows" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Number of rows.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:cols" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">cols :: (Matrix a) -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L312" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:cols" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Number of columns.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:size" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">size :: (Matrix a) -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L316" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:size" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Total number of elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:shape" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">shape :: (Matrix a) -&gt; (Int, Int)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L320" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:shape" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Shape as (rows, cols).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:m" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">m :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L328" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:m" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:!?" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">!? :: (MatrixElem a) =&gt; (Matrix a) -&gt; (Int, Int) -&gt; Maybe a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L332" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:!?" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Index into matrix (safe).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:row" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">row :: (MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L339" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:row" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:col" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">col :: (MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L343" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:col" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getRow" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getRow :: (MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L348" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getRow" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getCol" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getCol :: (MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L352" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getCol" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get column (alias for col).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getDiag" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getDiag :: (MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L355" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getDiag" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get main diagonal.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:submatrix" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">submatrix :: (MatrixElem a) =&gt; Int -&gt; Int -&gt; Int -&gt; Int -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L365" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:submatrix" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:takeRows" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">takeRows :: (MatrixElem a) =&gt; Int -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L373" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:takeRows" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dropRows" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dropRows :: (MatrixElem a) =&gt; Int -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L377" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dropRows" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Drop first n rows.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:takeCols" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">takeCols :: (MatrixElem a) =&gt; Int -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L381" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:takeCols" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Take first n columns.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dropCols" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dropCols :: (MatrixElem a) =&gt; Int -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L385" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dropCols" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Drop first n columns.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:|||" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">||| :: (MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L395" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:|||" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Horizontal concatenation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:r1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">r1 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L414" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:r1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:r2" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">r2 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L415" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:r2" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:c" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">c :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L416" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:c" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:hcat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">hcat :: (MatrixElem a) =&gt; [Matrix a] -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L426" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:hcat" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:vcat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">vcat :: (MatrixElem a) =&gt; [Matrix a] -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L429" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:vcat" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Vertical concatenation of multiple matrices.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromBlocks" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromBlocks :: (MatrixElem a) =&gt; [[Matrix a]] -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L436" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromBlocks" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:map" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">map :: (MatrixElem a, MatrixElem b) =&gt; (a -&gt; b) -&gt; (Matrix a) -&gt; Matrix b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L443" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:map" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Map function over elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:imap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">imap :: (MatrixElem a, MatrixElem b) =&gt; (Int -&gt; Int -&gt; a -&gt; b) -&gt; (Matrix a) -&gt; Matrix b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L448" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:imap" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zipWith" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zipWith :: (MatrixElem a, MatrixElem b, MatrixElem c) =&gt; (a -&gt; b -&gt; c) -&gt; (Matrix a) -&gt; (Matrix b) -&gt; Matrix c</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L453" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zipWith" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:izipWith" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">izipWith :: (MatrixElem a, MatrixElem b, MatrixElem c) =&gt; (Int -&gt; Int -&gt; a -&gt; b -&gt; c) -&gt; (Matrix a) -&gt; (Matrix b) -&gt; Matrix c</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L461" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:izipWith" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:transpose" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">transpose :: (MatrixElem a) =&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L477" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:transpose" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:^." class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">^. :: (MatrixElem a) =&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L482" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:^." class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Transpose operator.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:+." class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">+. :: (Num a, MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L487" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:+." class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Element-wise addition.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:-." class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">-. :: (Num a, MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L492" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:-." class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Element-wise subtraction.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:*." class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">*. :: (Num a, MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L497" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:*." class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Element-wise multiplication (Hadamard product).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:&#x2F;." class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">&#x2F;. :: (Fractional a, MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L502" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:&#x2F;." class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Element-wise division.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scale" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scale :: (MatrixElem a) =&gt; a -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L507" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scale" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Scale matrix by scalar.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mul" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mul :: (MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L522" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mul" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Matrix multiplication.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:@@" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">@@ :: (MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L527" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:@@" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Matrix multiplication operator.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mulV" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mulV :: (Num a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L533" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mulV" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Matrix-vector multiplication.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:trace" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">trace :: (MatrixElem a) =&gt; (Matrix a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L545" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:trace" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:det" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">det :: (Fractional a, Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L552" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:det" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Matrix determinant.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:==" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">== :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L556" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:==" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sign" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sign :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L562" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sign" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:n" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">n :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L565" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:n" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:rank" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">rank :: (Floating a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L571" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:rank" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Matrix rank.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:inv" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">inv :: (Fractional a, Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L581" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:inv" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Matrix inverse.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:gaussJordanInverse" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">gaussJordanInverse :: (Fractional a, Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L587" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:gaussJordanInverse" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Gauss-Jordan elimination for matrix inverse.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:gaussElim" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">gaussElim :: (Fractional a, Ord a, MatrixElem a) =&gt; Int -&gt; Int -&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L597" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:gaussElim" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Gaussian elimination with partial pivoting (modifies to reduced row echelon form).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mat2" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mat2 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L611" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mat2" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mat3" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mat3 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L613" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mat3" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:pinv" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">pinv :: (Floating a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L642" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:pinv" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:solve" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">solve :: (Fractional a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L655" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:solve" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Solve linear system Ax = b.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:y" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">y :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L665" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:y" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:forwardSubst" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">forwardSubst :: (Fractional a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L672" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:forwardSubst" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:result" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">result :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L679" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:result" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:backSubst" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">backSubst :: (Fractional a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L682" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:backSubst" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Back substitution for Ux = b (U is upper triangular).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lstsq" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lstsq :: (Floating a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L698" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lstsq" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lu" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lu :: (Fractional a, Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a, Matrix a, Matrix a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L714" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lu" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    LU decomposition.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:luWithPivot" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">luWithPivot :: (Fractional a, Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a, Matrix a, Matrix a, Int)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L719" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:luWithPivot" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Internal LU decomposition with pivot count.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mat&#x27;&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mat&#x27;&#x27; :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L741" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mat&#x27;&#x27;" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:l&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">l&#x27; :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L742" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:l&#x27;" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:qr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">qr :: (Floating a, Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; (Matrix a, Matrix a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L774" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:qr" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:normV" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">normV :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L791" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:normV" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:qj" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">qj :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L792" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:qj" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:rjj" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">rjj :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L795" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:rjj" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:subtractProjections" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">subtractProjections :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L798" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:subtractProjections" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:q" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">q :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L804" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:q" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:r" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">r :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L805" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:r" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:svd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">svd :: (Floating a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L818" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:svd" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Singular value decomposition.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:powerIterationMultiple" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">powerIterationMultiple :: (Floating a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L838" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:powerIterationMultiple" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Power iteration for multiple eigenvectors.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:cholesky" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">cholesky :: (Floating a, Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; Matrix a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L876" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:cholesky" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Cholesky decomposition.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lMatrix" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lMatrix :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L899" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lMatrix" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lij" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lij :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L900" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lij" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:eig" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">eig :: (Floating a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L908" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:eig" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:eigvals" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">eigvals :: (Floating a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L917" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:eigvals" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Eigenvalues only.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:backSubstRect" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">backSubstRect :: (Fractional a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L920" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:backSubstRect" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Back substitution for rectangular upper triangular system.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:norm1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">norm1 :: (Num a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L939" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:norm1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:norm2" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">norm2 :: (MatrixElem a) =&gt; (Matrix a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L944" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:norm2" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    2-norm (spectral norm, largest singular value).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:normInf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">normInf :: (Num a, Ord a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L949" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:normInf" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Infinity norm (maximum row sum).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:normFrob" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">normFrob :: (Floating a, MatrixElem a) =&gt; (Matrix a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L952" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:normFrob" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Frobenius norm (sqrt of sum of squares).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sum :: (Num a, MatrixElem a) =&gt; (Matrix a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L960" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sum" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:product" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">product :: (Num a, MatrixElem a) =&gt; (Matrix a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L964" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:product" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:maximum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">maximum :: (Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L968" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:maximum" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:minimum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">minimum :: (Ord a, MatrixElem a) =&gt; (Matrix a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L972" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:minimum" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sumRows" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sumRows :: (Num a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L977" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sumRows" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sumCols" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sumCols :: (Num a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L981" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sumCols" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Sum each column.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:meanRows" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">meanRows :: (Fractional a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L985" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:meanRows" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Mean of each row.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:meanCols" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">meanCols :: (Fractional a, MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L989" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:meanCols" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Mean of each column.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toLists" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toLists :: (MatrixElem a) =&gt; (Matrix a) -&gt; [[a]]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L996" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toLists" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert to nested lists.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toList :: (MatrixElem a) =&gt; (Matrix a) -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L1001" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toList" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:flatten" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">flatten :: (MatrixElem a, V.VectorElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L1005" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:flatten" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Flatten to vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:asColumn" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">asColumn :: (V.VectorElem a, MatrixElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L1009" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:asColumn" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    View vector as 1-column matrix.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:asVector" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">asVector :: (V.VectorElem a, MatrixElem a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L1013" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:asVector" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    View vector as 1-row matrix.
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Instances Section Frame -->
+    <div id="instances" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Instances</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance MatrixElem Double</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Matrix.hs#L170" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            
+            <li class="toc-section">
+                <a href="#classes" class="toc-section-link">Classes</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#c:MatrixElem">MatrixElem</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:zeros">zeros</a></li>
+                    
+                    <li><a href="#v:ones">ones</a></li>
+                    
+                    <li><a href="#v:full">full</a></li>
+                    
+                    <li><a href="#v:fromLists">fromLists</a></li>
+                    
+                    <li><a href="#v:fromList">fromList</a></li>
+                    
+                    <li><a href="#v:fromRows">fromRows</a></li>
+                    
+                    <li><a href="#v:fromCols">fromCols</a></li>
+                    
+                    <li><a href="#v:identity">identity</a></li>
+                    
+                    <li><a href="#v:eye">eye</a></li>
+                    
+                    <li><a href="#v:diag">diag</a></li>
+                    
+                    <li><a href="#v:diagFrom">diagFrom</a></li>
+                    
+                    <li><a href="#v:rows">rows</a></li>
+                    
+                    <li><a href="#v:cols">cols</a></li>
+                    
+                    <li><a href="#v:size">size</a></li>
+                    
+                    <li><a href="#v:shape">shape</a></li>
+                    
+                    <li><a href="#v:m">m</a></li>
+                    
+                    <li><a href="#v:!?">!?</a></li>
+                    
+                    <li><a href="#v:row">row</a></li>
+                    
+                    <li><a href="#v:col">col</a></li>
+                    
+                    <li><a href="#v:getRow">getRow</a></li>
+                    
+                    <li><a href="#v:getCol">getCol</a></li>
+                    
+                    <li><a href="#v:getDiag">getDiag</a></li>
+                    
+                    <li><a href="#v:submatrix">submatrix</a></li>
+                    
+                    <li><a href="#v:takeRows">takeRows</a></li>
+                    
+                    <li><a href="#v:dropRows">dropRows</a></li>
+                    
+                    <li><a href="#v:takeCols">takeCols</a></li>
+                    
+                    <li><a href="#v:dropCols">dropCols</a></li>
+                    
+                    <li><a href="#v:|||">|||</a></li>
+                    
+                    <li><a href="#v:r1">r1</a></li>
+                    
+                    <li><a href="#v:r2">r2</a></li>
+                    
+                    <li><a href="#v:c">c</a></li>
+                    
+                    <li><a href="#v:hcat">hcat</a></li>
+                    
+                    <li><a href="#v:vcat">vcat</a></li>
+                    
+                    <li><a href="#v:fromBlocks">fromBlocks</a></li>
+                    
+                    <li><a href="#v:map">map</a></li>
+                    
+                    <li><a href="#v:imap">imap</a></li>
+                    
+                    <li><a href="#v:zipWith">zipWith</a></li>
+                    
+                    <li><a href="#v:izipWith">izipWith</a></li>
+                    
+                    <li><a href="#v:transpose">transpose</a></li>
+                    
+                    <li><a href="#v:^.">^.</a></li>
+                    
+                    <li><a href="#v:+.">+.</a></li>
+                    
+                    <li><a href="#v:-.">-.</a></li>
+                    
+                    <li><a href="#v:*.">*.</a></li>
+                    
+                    <li><a href="#v:&#x2F;.">&#x2F;.</a></li>
+                    
+                    <li><a href="#v:scale">scale</a></li>
+                    
+                    <li><a href="#v:mul">mul</a></li>
+                    
+                    <li><a href="#v:@@">@@</a></li>
+                    
+                    <li><a href="#v:mulV">mulV</a></li>
+                    
+                    <li><a href="#v:trace">trace</a></li>
+                    
+                    <li><a href="#v:det">det</a></li>
+                    
+                    <li><a href="#v:==">==</a></li>
+                    
+                    <li><a href="#v:sign">sign</a></li>
+                    
+                    <li><a href="#v:n">n</a></li>
+                    
+                    <li><a href="#v:rank">rank</a></li>
+                    
+                    <li><a href="#v:inv">inv</a></li>
+                    
+                    <li><a href="#v:gaussJordanInverse">gaussJordanInverse</a></li>
+                    
+                    <li><a href="#v:gaussElim">gaussElim</a></li>
+                    
+                    <li><a href="#v:mat2">mat2</a></li>
+                    
+                    <li><a href="#v:mat3">mat3</a></li>
+                    
+                    <li><a href="#v:pinv">pinv</a></li>
+                    
+                    <li><a href="#v:solve">solve</a></li>
+                    
+                    <li><a href="#v:y">y</a></li>
+                    
+                    <li><a href="#v:forwardSubst">forwardSubst</a></li>
+                    
+                    <li><a href="#v:result">result</a></li>
+                    
+                    <li><a href="#v:backSubst">backSubst</a></li>
+                    
+                    <li><a href="#v:lstsq">lstsq</a></li>
+                    
+                    <li><a href="#v:lu">lu</a></li>
+                    
+                    <li><a href="#v:luWithPivot">luWithPivot</a></li>
+                    
+                    <li><a href="#v:mat&#x27;&#x27;">mat&#x27;&#x27;</a></li>
+                    
+                    <li><a href="#v:l&#x27;">l&#x27;</a></li>
+                    
+                    <li><a href="#v:qr">qr</a></li>
+                    
+                    <li><a href="#v:normV">normV</a></li>
+                    
+                    <li><a href="#v:qj">qj</a></li>
+                    
+                    <li><a href="#v:rjj">rjj</a></li>
+                    
+                    <li><a href="#v:subtractProjections">subtractProjections</a></li>
+                    
+                    <li><a href="#v:q">q</a></li>
+                    
+                    <li><a href="#v:r">r</a></li>
+                    
+                    <li><a href="#v:svd">svd</a></li>
+                    
+                    <li><a href="#v:powerIterationMultiple">powerIterationMultiple</a></li>
+                    
+                    <li><a href="#v:cholesky">cholesky</a></li>
+                    
+                    <li><a href="#v:lMatrix">lMatrix</a></li>
+                    
+                    <li><a href="#v:lij">lij</a></li>
+                    
+                    <li><a href="#v:eig">eig</a></li>
+                    
+                    <li><a href="#v:eigvals">eigvals</a></li>
+                    
+                    <li><a href="#v:backSubstRect">backSubstRect</a></li>
+                    
+                    <li><a href="#v:norm1">norm1</a></li>
+                    
+                    <li><a href="#v:norm2">norm2</a></li>
+                    
+                    <li><a href="#v:normInf">normInf</a></li>
+                    
+                    <li><a href="#v:normFrob">normFrob</a></li>
+                    
+                    <li><a href="#v:sum">sum</a></li>
+                    
+                    <li><a href="#v:product">product</a></li>
+                    
+                    <li><a href="#v:maximum">maximum</a></li>
+                    
+                    <li><a href="#v:minimum">minimum</a></li>
+                    
+                    <li><a href="#v:sumRows">sumRows</a></li>
+                    
+                    <li><a href="#v:sumCols">sumCols</a></li>
+                    
+                    <li><a href="#v:meanRows">meanRows</a></li>
+                    
+                    <li><a href="#v:meanCols">meanCols</a></li>
+                    
+                    <li><a href="#v:toLists">toLists</a></li>
+                    
+                    <li><a href="#v:toList">toList</a></li>
+                    
+                    <li><a href="#v:flatten">flatten</a></li>
+                    
+                    <li><a href="#v:asColumn">asColumn</a></li>
+                    
+                    <li><a href="#v:asVector">asVector</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#instances" class="toc-section-link">Instances</a>
+            </li>
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

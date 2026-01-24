@@ -1,0 +1,3934 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurrency - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;H26&#x2F;Concurrency.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>Concurrency</h1>
+            
+        </div>
+    </div>
+
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:TaskId" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype TaskId</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L289" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:TaskId" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>TaskId Word64</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Task identifier.
+                </div>
+                
+            </div>
+            
+            <div id="t:TaskStatus" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data TaskStatus</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L293" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:TaskStatus" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>TaskPending</code>
+                        
+                        <p class="con-doc">Not yet started</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>TaskRunning</code>
+                        
+                        <p class="con-doc">Currently executing</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>TaskCompleted</code>
+                        
+                        <p class="con-doc">Finished successfully</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>TaskCancelled</code>
+                        
+                        <p class="con-doc">Was cancelled</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>TaskFailed</code>
+                        
+                        <p class="con-doc">Threw an exception</p>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Status of a task.
+                </div>
+                
+            </div>
+            
+            <div id="t:CancelledException" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data CancelledException</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L332" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:CancelledException" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>CancelledException</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Exception thrown when task is cancelled.
+                </div>
+                
+            </div>
+            
+            <div id="t:DeadlineExceeded" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data DeadlineExceeded</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L360" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:DeadlineExceeded" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>DeadlineExceeded</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Exception for deadline exceeded.
+                </div>
+                
+            </div>
+            
+            <div id="t:Strategy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type Strategy a = a -&gt; Eval a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L815" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Strategy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Type Classes Section Frame -->
+    <div id="classes" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Type Classes</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="c:Cancellable" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Cancellable a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L314" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Cancellable" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>requestCancel :: a -&gt; IO ()</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>wasCancelled :: a -&gt; IO Bool</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Types that can be cancelled.
+                </div>
+                
+            </div>
+            
+            <div id="c:NFData" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class NFData a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L793" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:NFData" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>rnf :: a -&gt; ()</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Class for deep evaluation.
+                </div>
+                
+            </div>
+            
+            <div id="c:Exception" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Exception e</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L819" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Exception" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:withScope" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withScope :: (Scope -&gt; IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L250" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withScope" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withScopeNamed" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withScopeNamed :: String -&gt; (Scope -&gt; IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L253" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withScopeNamed" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run action within a named scope (for debugging).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:cancelScope" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">cancelScope :: Scope -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L256" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:cancelScope" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Cancel all tasks in scope.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scopeName" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scopeName :: Scope -&gt; Maybe String</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L259" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scopeName" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get scope name (if any).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:spawn" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">spawn :: Scope -&gt; (IO a) -&gt; IO (Task a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L265" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:spawn" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:spawnNamed" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">spawnNamed :: String -&gt; Scope -&gt; (IO a) -&gt; IO (Task a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L268" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:spawnNamed" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Spawn a named task.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:await" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">await :: (Task a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L271" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:await" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait for task completion.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:awaitAll" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">awaitAll :: [Task a] -&gt; IO [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L274" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:awaitAll" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait for all tasks.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:poll" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">poll :: (Task a) -&gt; IO (Maybe (Either SomeException a))</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L277" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:poll" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if task completed (non-blocking).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:cancel" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">cancel :: (Task a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L280" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:cancel" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Cancel a task.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:taskId" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">taskId :: (Task a) -&gt; TaskId</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L283" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:taskId" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get task identifier.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:taskStatus" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">taskStatus :: (Task a) -&gt; IO TaskStatus</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L286" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:taskStatus" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get current task status.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isRunning" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isRunning :: TaskStatus -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L302" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isRunning" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if task is running.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isCompleted" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isCompleted :: TaskStatus -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L305" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isCompleted" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if task completed successfully.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isCancelled" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isCancelled :: TaskStatus -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L308" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isCancelled" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if task was cancelled.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isFailed" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isFailed :: TaskStatus -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L311" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isFailed" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if task failed with exception.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:checkCancelled" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">checkCancelled :: IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L323" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:checkCancelled" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if current task is cancelled.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withCancellation" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withCancellation :: (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L326" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withCancellation" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run action with cancellation support.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:onCancel" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">onCancel :: (IO a) -&gt; (IO ()) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L329" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:onCancel" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Register cleanup handler for cancellation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isCancelledException" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isCancelledException :: SomeException -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L338" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isCancelledException" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if exception is cancellation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withDeadline" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withDeadline :: Duration -&gt; (IO a) -&gt; IO (Maybe a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L343" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withDeadline" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run action with deadline.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withTimeout" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withTimeout :: Duration -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L348" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withTimeout" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run action with timeout.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getDeadline" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getDeadline :: IO (Maybe Deadline)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L354" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getDeadline" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:remainingTime" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">remainingTime :: Deadline -&gt; IO Duration</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L357" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:remainingTime" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Time remaining until deadline.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:async" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">async :: (IO a) -&gt; IO (Task a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L366" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:async" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Spawn async computation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:asyncNamed" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">asyncNamed :: String -&gt; (IO a) -&gt; IO (Task a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L369" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:asyncNamed" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Spawn named async computation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:wait" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">wait :: (Task a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L372" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:wait" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait for async result.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:waitCatch" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">waitCatch :: (Task a) -&gt; IO (Either SomeException a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L375" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:waitCatch" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait for async result, catching exceptions.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:waitAny" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">waitAny :: [Task a] -&gt; IO (Task a, a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L378" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:waitAny" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait for any task to complete.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:waitAll" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">waitAll :: [Task a] -&gt; IO [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L381" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:waitAll" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait for all tasks to complete.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:waitEither" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">waitEither :: (Task a) -&gt; (Task b) -&gt; IO (Either a b)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L384" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:waitEither" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait for either task to complete.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:race" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">race :: (IO a) -&gt; (IO b) -&gt; IO (Either a b)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L387" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:race" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Race two actions, cancel loser.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:race_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">race_ :: (IO a) -&gt; (IO b) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L390" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:race_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Race two actions, discard result.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:concurrently" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">concurrently :: (IO a) -&gt; (IO b) -&gt; IO (a, b)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L393" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:concurrently" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run two actions concurrently.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:concurrently_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">concurrently_ :: (IO a) -&gt; (IO b) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L396" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:concurrently_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run two actions concurrently, discard results.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mapConcurrently" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mapConcurrently :: (a -&gt; IO b) -&gt; [a] -&gt; IO [b]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L399" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mapConcurrently" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Map function over list concurrently.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mapConcurrently_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mapConcurrently_ :: (a -&gt; IO b) -&gt; [a] -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L402" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mapConcurrently_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Map function over list concurrently, discard results.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:forConcurrently" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">forConcurrently :: [a] -&gt; (a -&gt; IO b) -&gt; IO [b]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L405" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:forConcurrently" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Flipped mapConcurrently.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:forConcurrently_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">forConcurrently_ :: [a] -&gt; (a -&gt; IO b) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L408" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:forConcurrently_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Flipped mapConcurrently_.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:replicateConcurrently" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">replicateConcurrently :: Int -&gt; (IO a) -&gt; IO [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L411" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:replicateConcurrently" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Replicate action concurrently.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:replicateConcurrently_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">replicateConcurrently_ :: Int -&gt; (IO a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L414" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:replicateConcurrently_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Replicate action concurrently, discard results.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newChan :: IO (Chan a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L420" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newChan" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readChan :: (Chan a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L423" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read from channel (blocks if empty).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:writeChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">writeChan :: (Chan a) -&gt; a -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L426" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:writeChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write to channel.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryReadChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryReadChan :: (Chan a) -&gt; IO (Maybe a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L429" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryReadChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to read (non-blocking).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryWriteChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryWriteChan :: (Chan a) -&gt; a -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L432" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryWriteChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to write (non-blocking).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isEmptyChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isEmptyChan :: (Chan a) -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L435" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isEmptyChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if channel is empty.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dupChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dupChan :: (Chan a) -&gt; IO (Chan a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L438" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dupChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Duplicate channel (new read end).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newBoundedChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newBoundedChan :: Int -&gt; IO (BoundedChan a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L444" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newBoundedChan" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readBoundedChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readBoundedChan :: (BoundedChan a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L447" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readBoundedChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read from bounded channel.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:writeBoundedChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">writeBoundedChan :: (BoundedChan a) -&gt; a -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L450" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:writeBoundedChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write to bounded channel (blocks if full).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryReadBoundedChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryReadBoundedChan :: (BoundedChan a) -&gt; IO (Maybe a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L453" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryReadBoundedChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to read from bounded channel.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryWriteBoundedChan" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryWriteBoundedChan :: (BoundedChan a) -&gt; a -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L456" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryWriteBoundedChan" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to write to bounded channel.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isFull" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isFull :: (BoundedChan a) -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L459" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isFull" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if channel is at capacity.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:capacity" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">capacity :: (BoundedChan a) -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L462" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:capacity" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get channel capacity.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newMVar :: a -&gt; IO (MVar a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L468" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newMVar" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newEmptyMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newEmptyMVar :: IO (MVar a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L471" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newEmptyMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create empty MVar.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:takeMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">takeMVar :: (MVar a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L474" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:takeMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Take value from MVar (blocks if empty).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:putMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">putMVar :: (MVar a) -&gt; a -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L477" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:putMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Put value into MVar (blocks if full).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readMVar :: (MVar a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L480" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read MVar without taking.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryTakeMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryTakeMVar :: (MVar a) -&gt; IO (Maybe a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L483" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryTakeMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to take (non-blocking).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryPutMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryPutMVar :: (MVar a) -&gt; a -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L486" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryPutMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to put (non-blocking).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryReadMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryReadMVar :: (MVar a) -&gt; IO (Maybe a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L489" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryReadMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to read (non-blocking).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isEmptyMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isEmptyMVar :: (MVar a) -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L492" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isEmptyMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if MVar is empty.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:modifyMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">modifyMVar :: (MVar a) -&gt; (a -&gt; IO (a, b)) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L495" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:modifyMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Modify MVar contents atomically.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:modifyMVar_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">modifyMVar_ :: (MVar a) -&gt; (a -&gt; IO a) -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L498" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:modifyMVar_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Modify MVar contents atomically (no result).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withMVar :: (MVar a) -&gt; (a -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L501" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute action with MVar value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:swapMVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">swapMVar :: (MVar a) -&gt; a -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L504" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:swapMVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Swap MVar contents.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newTVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newTVar :: a -&gt; STM (TVar a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L510" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newTVar" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newTVarIO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newTVarIO :: a -&gt; IO (TVar a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L513" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newTVarIO" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create TVar in IO.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readTVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readTVar :: (TVar a) -&gt; STM a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L516" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readTVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read TVar in STM.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readTVarIO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readTVarIO :: (TVar a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L519" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readTVarIO" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read TVar in IO.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:writeTVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">writeTVar :: (TVar a) -&gt; a -&gt; STM ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L522" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:writeTVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write TVar in STM.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:modifyTVar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">modifyTVar :: (TVar a) -&gt; (a -&gt; a) -&gt; STM ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L525" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:modifyTVar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Modify TVar.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:modifyTVar&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">modifyTVar&#x27; :: (TVar a) -&gt; (a -&gt; a) -&gt; STM ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L528" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:modifyTVar&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Modify TVar strictly.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:atomically" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">atomically :: (STM a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L534" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:atomically" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:retry" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">retry :: STM a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L537" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:retry" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Retry transaction (block until TVars change).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:orElse" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">orElse :: (STM a) -&gt; (STM a) -&gt; STM a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L540" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:orElse" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try first, then second if first retries.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:check" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">check :: Bool -&gt; STM ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L543" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:check" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Retry if condition is false.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:throwSTM" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">throwSTM :: (Exception e) =&gt; e -&gt; STM a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L546" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:throwSTM" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Throw exception in STM.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:catchSTM" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">catchSTM :: (Exception e) =&gt; (STM a) -&gt; (e -&gt; STM a) -&gt; STM a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L549" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:catchSTM" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Catch exception in STM.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newSemaphore" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newSemaphore :: Int -&gt; IO Semaphore</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L555" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newSemaphore" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:acquireSemaphore" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">acquireSemaphore :: Semaphore -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L558" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:acquireSemaphore" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Acquire permit (decrement, blocks if zero).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:releaseSemaphore" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">releaseSemaphore :: Semaphore -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L561" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:releaseSemaphore" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Release permit (increment).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryAcquireSemaphore" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryAcquireSemaphore :: Semaphore -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L564" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryAcquireSemaphore" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to acquire (non-blocking).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withSemaphore" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withSemaphore :: Semaphore -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L567" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withSemaphore" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute with acquired semaphore.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newMutex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newMutex :: IO Mutex</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L573" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newMutex" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lock :: Mutex -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L576" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Acquire mutex lock.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unlock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unlock :: Mutex -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L579" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unlock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Release mutex lock.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tryLock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tryLock :: Mutex -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L582" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tryLock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to acquire lock (non-blocking).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withMutex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withMutex :: Mutex -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L585" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withMutex" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute with mutex locked.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newRWLock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newRWLock :: IO RWLock</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L591" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newRWLock" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readLock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readLock :: RWLock -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L594" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readLock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Acquire read lock.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readUnlock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readUnlock :: RWLock -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L597" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readUnlock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Release read lock.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:writeLock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">writeLock :: RWLock -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L600" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:writeLock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Acquire write lock.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:writeUnlock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">writeUnlock :: RWLock -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L603" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:writeUnlock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Release write lock.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withReadLock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withReadLock :: RWLock -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L606" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withReadLock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute with read lock.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withWriteLock" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withWriteLock :: RWLock -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L609" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withWriteLock" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute with write lock.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newCondition" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newCondition :: IO Condition</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L615" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newCondition" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:waitCondition" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">waitCondition :: Condition -&gt; Mutex -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L618" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:waitCondition" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait on condition (must hold associated mutex).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:waitConditionFor" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">waitConditionFor :: Condition -&gt; Mutex -&gt; Duration -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L621" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:waitConditionFor" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait on condition with timeout.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:signal" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">signal :: Condition -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L624" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:signal" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Signal one waiting thread.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:broadcast" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">broadcast :: Condition -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L627" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:broadcast" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Signal all waiting threads.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newBarrier" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newBarrier :: Int -&gt; IO Barrier</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L633" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newBarrier" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:waitBarrier" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">waitBarrier :: Barrier -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L636" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:waitBarrier" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Wait at barrier.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newOnce" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newOnce :: IO Once</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L642" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newOnce" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:runOnce" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">runOnce :: Once -&gt; (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L645" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:runOnce" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run action at most once.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newAtomicInt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newAtomicInt :: Int -&gt; IO AtomicInt</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L651" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newAtomicInt" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readAtomicInt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readAtomicInt :: AtomicInt -&gt; IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L654" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readAtomicInt" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read atomic integer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:writeAtomicInt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">writeAtomicInt :: AtomicInt -&gt; Int -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L657" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:writeAtomicInt" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write atomic integer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:atomicAdd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">atomicAdd :: AtomicInt -&gt; Int -&gt; IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L660" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:atomicAdd" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Atomic add, returns old value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:atomicSub" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">atomicSub :: AtomicInt -&gt; Int -&gt; IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L663" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:atomicSub" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Atomic subtract, returns old value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:atomicAnd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">atomicAnd :: AtomicInt -&gt; Int -&gt; IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L666" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:atomicAnd" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Atomic bitwise and, returns old value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:atomicOr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">atomicOr :: AtomicInt -&gt; Int -&gt; IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L669" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:atomicOr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Atomic bitwise or, returns old value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:atomicXor" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">atomicXor :: AtomicInt -&gt; Int -&gt; IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L672" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:atomicXor" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Atomic bitwise xor, returns old value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:compareAndSwap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">compareAndSwap :: AtomicInt -&gt; Int -&gt; Int -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L675" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:compareAndSwap" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Compare and swap, returns success.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:newAtomicRef" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newAtomicRef :: a -&gt; IO (AtomicRef a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L681" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:newAtomicRef" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:readAtomicRef" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">readAtomicRef :: (AtomicRef a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L684" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:readAtomicRef" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Read atomic reference.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:writeAtomicRef" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">writeAtomicRef :: (AtomicRef a) -&gt; a -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L687" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:writeAtomicRef" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Write atomic reference.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:atomicModifyRef" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">atomicModifyRef :: (AtomicRef a) -&gt; (a -&gt; (a, b)) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L690" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:atomicModifyRef" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Atomically modify reference.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:atomicModifyRef&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">atomicModifyRef&#x27; :: (AtomicRef a) -&gt; (a -&gt; (a, b)) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L693" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:atomicModifyRef&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Atomically modify reference strictly.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:casRef" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">casRef :: (AtomicRef a) -&gt; a -&gt; a -&gt; IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L696" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:casRef" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Compare and swap reference.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:myThreadId" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">myThreadId :: IO ThreadId</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L703" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:myThreadId" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:forkIO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">forkIO :: (IO ()) -&gt; IO ThreadId</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L706" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:forkIO" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fork new thread.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:forkOS" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">forkOS :: (IO ()) -&gt; IO ThreadId</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L709" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:forkOS" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fork bound thread.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:forkOn" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">forkOn :: Int -&gt; (IO ()) -&gt; IO ThreadId</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L712" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:forkOn" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fork on specific capability.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:forkFinally" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">forkFinally :: (IO a) -&gt; ((Either SomeException a) -&gt; IO ()) -&gt; IO ThreadId</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L715" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:forkFinally" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fork with cleanup handler.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:killThread" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">killThread :: ThreadId -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L718" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:killThread" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Kill thread with async exception.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:yield" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">yield :: IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L721" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:yield" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Yield to scheduler.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:threadDelay" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">threadDelay :: Int -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L724" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:threadDelay" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Delay for microseconds.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:threadCapability" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">threadCapability :: ThreadId -&gt; IO (Int, Bool)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L727" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:threadCapability" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get thread's capability.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:setNumCapabilities" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">setNumCapabilities :: Int -&gt; IO ()</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L730" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:setNumCapabilities" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Set number of capabilities.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getNumCapabilities" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getNumCapabilities :: IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L733" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getNumCapabilities" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get number of capabilities.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getNumProcessors" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getNumProcessors :: IO Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L736" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getNumProcessors" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get number of processors.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isCurrentThreadBound" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isCurrentThreadBound :: IO Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L739" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isCurrentThreadBound" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if current thread is bound.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:runInBoundThread" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">runInBoundThread :: (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L742" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:runInBoundThread" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run in bound thread.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:runInUnboundThread" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">runInUnboundThread :: (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L745" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:runInUnboundThread" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run in unbound thread.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mask" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mask :: ((forall a. (IO a) -&gt; IO a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L748" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mask" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Mask async exceptions.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mask_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mask_ :: (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L751" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mask_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Mask async exceptions (no restore).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:uninterruptibleMask" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">uninterruptibleMask :: ((forall a. (IO a) -&gt; IO a) -&gt; IO b) -&gt; IO b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L754" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:uninterruptibleMask" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Mask async exceptions uninterruptibly.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:uninterruptibleMask_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">uninterruptibleMask_ :: (IO a) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L757" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:uninterruptibleMask_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Mask async exceptions uninterruptibly (no restore).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:bracket" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">bracket :: (IO a) -&gt; (a -&gt; IO b) -&gt; (a -&gt; IO c) -&gt; IO c</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L760" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:bracket" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Acquire/release pattern.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:bracket_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">bracket_ :: (IO a) -&gt; (IO b) -&gt; (IO c) -&gt; IO c</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L763" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:bracket_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Bracket without resource.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:bracketOnError" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">bracketOnError :: (IO a) -&gt; (a -&gt; IO b) -&gt; (a -&gt; IO c) -&gt; IO c</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L766" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:bracketOnError" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Bracket with cleanup only on error.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:finally" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">finally :: (IO a) -&gt; (IO b) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L769" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:finally" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run action with cleanup.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:onException" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">onException :: (IO a) -&gt; (IO b) -&gt; IO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L772" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:onException" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run cleanup on exception.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:par" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">par :: a -&gt; b -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L775" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:par" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Spark parallel evaluation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:pseq" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">pseq :: a -&gt; b -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L778" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:pseq" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parallel sequence.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:parMap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parMap :: (a -&gt; b) -&gt; [a] -&gt; [b]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L781" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parMap" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parallel map.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:parList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parList :: (Strategy a) -&gt; Strategy [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L784" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parallel list evaluation.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:parBuffer" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parBuffer :: Int -&gt; (Strategy a) -&gt; Strategy [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L787" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parBuffer" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parallel buffer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:parListChunk" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parListChunk :: Int -&gt; (Strategy a) -&gt; Strategy [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L790" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parListChunk" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parallel chunked list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:rseq" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">rseq :: Strategy a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L797" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:rseq" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Evaluate to WHNF strategy.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:rpar" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">rpar :: Strategy a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L800" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:rpar" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Spark parallel evaluation strategy.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:rdeepseq" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">rdeepseq :: (NFData a) =&gt; Strategy a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L803" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:rdeepseq" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Evaluate to NF strategy.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:using" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">using :: a -&gt; (Strategy a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L806" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:using" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Apply strategy to value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withStrategy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withStrategy :: (Strategy a) -&gt; a -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L809" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withStrategy" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Apply strategy in context.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:runEval" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">runEval :: (Eval a) -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L812" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:runEval" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run evaluation.
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Instances Section Frame -->
+    <div id="instances" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Instances</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance Exception CancelledException</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L335" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance Exception DeadlineExceeded</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;Concurrency.hs#L363" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:TaskId">TaskId</a></li>
+                    
+                    <li><a href="#t:TaskStatus">TaskStatus</a></li>
+                    
+                    <li><a href="#t:CancelledException">CancelledException</a></li>
+                    
+                    <li><a href="#t:DeadlineExceeded">DeadlineExceeded</a></li>
+                    
+                    <li><a href="#t:Strategy">Strategy</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#classes" class="toc-section-link">Classes</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#c:Cancellable">Cancellable</a></li>
+                    
+                    <li><a href="#c:NFData">NFData</a></li>
+                    
+                    <li><a href="#c:Exception">Exception</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:withScope">withScope</a></li>
+                    
+                    <li><a href="#v:withScopeNamed">withScopeNamed</a></li>
+                    
+                    <li><a href="#v:cancelScope">cancelScope</a></li>
+                    
+                    <li><a href="#v:scopeName">scopeName</a></li>
+                    
+                    <li><a href="#v:spawn">spawn</a></li>
+                    
+                    <li><a href="#v:spawnNamed">spawnNamed</a></li>
+                    
+                    <li><a href="#v:await">await</a></li>
+                    
+                    <li><a href="#v:awaitAll">awaitAll</a></li>
+                    
+                    <li><a href="#v:poll">poll</a></li>
+                    
+                    <li><a href="#v:cancel">cancel</a></li>
+                    
+                    <li><a href="#v:taskId">taskId</a></li>
+                    
+                    <li><a href="#v:taskStatus">taskStatus</a></li>
+                    
+                    <li><a href="#v:isRunning">isRunning</a></li>
+                    
+                    <li><a href="#v:isCompleted">isCompleted</a></li>
+                    
+                    <li><a href="#v:isCancelled">isCancelled</a></li>
+                    
+                    <li><a href="#v:isFailed">isFailed</a></li>
+                    
+                    <li><a href="#v:checkCancelled">checkCancelled</a></li>
+                    
+                    <li><a href="#v:withCancellation">withCancellation</a></li>
+                    
+                    <li><a href="#v:onCancel">onCancel</a></li>
+                    
+                    <li><a href="#v:isCancelledException">isCancelledException</a></li>
+                    
+                    <li><a href="#v:withDeadline">withDeadline</a></li>
+                    
+                    <li><a href="#v:withTimeout">withTimeout</a></li>
+                    
+                    <li><a href="#v:getDeadline">getDeadline</a></li>
+                    
+                    <li><a href="#v:remainingTime">remainingTime</a></li>
+                    
+                    <li><a href="#v:async">async</a></li>
+                    
+                    <li><a href="#v:asyncNamed">asyncNamed</a></li>
+                    
+                    <li><a href="#v:wait">wait</a></li>
+                    
+                    <li><a href="#v:waitCatch">waitCatch</a></li>
+                    
+                    <li><a href="#v:waitAny">waitAny</a></li>
+                    
+                    <li><a href="#v:waitAll">waitAll</a></li>
+                    
+                    <li><a href="#v:waitEither">waitEither</a></li>
+                    
+                    <li><a href="#v:race">race</a></li>
+                    
+                    <li><a href="#v:race_">race_</a></li>
+                    
+                    <li><a href="#v:concurrently">concurrently</a></li>
+                    
+                    <li><a href="#v:concurrently_">concurrently_</a></li>
+                    
+                    <li><a href="#v:mapConcurrently">mapConcurrently</a></li>
+                    
+                    <li><a href="#v:mapConcurrently_">mapConcurrently_</a></li>
+                    
+                    <li><a href="#v:forConcurrently">forConcurrently</a></li>
+                    
+                    <li><a href="#v:forConcurrently_">forConcurrently_</a></li>
+                    
+                    <li><a href="#v:replicateConcurrently">replicateConcurrently</a></li>
+                    
+                    <li><a href="#v:replicateConcurrently_">replicateConcurrently_</a></li>
+                    
+                    <li><a href="#v:newChan">newChan</a></li>
+                    
+                    <li><a href="#v:readChan">readChan</a></li>
+                    
+                    <li><a href="#v:writeChan">writeChan</a></li>
+                    
+                    <li><a href="#v:tryReadChan">tryReadChan</a></li>
+                    
+                    <li><a href="#v:tryWriteChan">tryWriteChan</a></li>
+                    
+                    <li><a href="#v:isEmptyChan">isEmptyChan</a></li>
+                    
+                    <li><a href="#v:dupChan">dupChan</a></li>
+                    
+                    <li><a href="#v:newBoundedChan">newBoundedChan</a></li>
+                    
+                    <li><a href="#v:readBoundedChan">readBoundedChan</a></li>
+                    
+                    <li><a href="#v:writeBoundedChan">writeBoundedChan</a></li>
+                    
+                    <li><a href="#v:tryReadBoundedChan">tryReadBoundedChan</a></li>
+                    
+                    <li><a href="#v:tryWriteBoundedChan">tryWriteBoundedChan</a></li>
+                    
+                    <li><a href="#v:isFull">isFull</a></li>
+                    
+                    <li><a href="#v:capacity">capacity</a></li>
+                    
+                    <li><a href="#v:newMVar">newMVar</a></li>
+                    
+                    <li><a href="#v:newEmptyMVar">newEmptyMVar</a></li>
+                    
+                    <li><a href="#v:takeMVar">takeMVar</a></li>
+                    
+                    <li><a href="#v:putMVar">putMVar</a></li>
+                    
+                    <li><a href="#v:readMVar">readMVar</a></li>
+                    
+                    <li><a href="#v:tryTakeMVar">tryTakeMVar</a></li>
+                    
+                    <li><a href="#v:tryPutMVar">tryPutMVar</a></li>
+                    
+                    <li><a href="#v:tryReadMVar">tryReadMVar</a></li>
+                    
+                    <li><a href="#v:isEmptyMVar">isEmptyMVar</a></li>
+                    
+                    <li><a href="#v:modifyMVar">modifyMVar</a></li>
+                    
+                    <li><a href="#v:modifyMVar_">modifyMVar_</a></li>
+                    
+                    <li><a href="#v:withMVar">withMVar</a></li>
+                    
+                    <li><a href="#v:swapMVar">swapMVar</a></li>
+                    
+                    <li><a href="#v:newTVar">newTVar</a></li>
+                    
+                    <li><a href="#v:newTVarIO">newTVarIO</a></li>
+                    
+                    <li><a href="#v:readTVar">readTVar</a></li>
+                    
+                    <li><a href="#v:readTVarIO">readTVarIO</a></li>
+                    
+                    <li><a href="#v:writeTVar">writeTVar</a></li>
+                    
+                    <li><a href="#v:modifyTVar">modifyTVar</a></li>
+                    
+                    <li><a href="#v:modifyTVar&#x27;">modifyTVar&#x27;</a></li>
+                    
+                    <li><a href="#v:atomically">atomically</a></li>
+                    
+                    <li><a href="#v:retry">retry</a></li>
+                    
+                    <li><a href="#v:orElse">orElse</a></li>
+                    
+                    <li><a href="#v:check">check</a></li>
+                    
+                    <li><a href="#v:throwSTM">throwSTM</a></li>
+                    
+                    <li><a href="#v:catchSTM">catchSTM</a></li>
+                    
+                    <li><a href="#v:newSemaphore">newSemaphore</a></li>
+                    
+                    <li><a href="#v:acquireSemaphore">acquireSemaphore</a></li>
+                    
+                    <li><a href="#v:releaseSemaphore">releaseSemaphore</a></li>
+                    
+                    <li><a href="#v:tryAcquireSemaphore">tryAcquireSemaphore</a></li>
+                    
+                    <li><a href="#v:withSemaphore">withSemaphore</a></li>
+                    
+                    <li><a href="#v:newMutex">newMutex</a></li>
+                    
+                    <li><a href="#v:lock">lock</a></li>
+                    
+                    <li><a href="#v:unlock">unlock</a></li>
+                    
+                    <li><a href="#v:tryLock">tryLock</a></li>
+                    
+                    <li><a href="#v:withMutex">withMutex</a></li>
+                    
+                    <li><a href="#v:newRWLock">newRWLock</a></li>
+                    
+                    <li><a href="#v:readLock">readLock</a></li>
+                    
+                    <li><a href="#v:readUnlock">readUnlock</a></li>
+                    
+                    <li><a href="#v:writeLock">writeLock</a></li>
+                    
+                    <li><a href="#v:writeUnlock">writeUnlock</a></li>
+                    
+                    <li><a href="#v:withReadLock">withReadLock</a></li>
+                    
+                    <li><a href="#v:withWriteLock">withWriteLock</a></li>
+                    
+                    <li><a href="#v:newCondition">newCondition</a></li>
+                    
+                    <li><a href="#v:waitCondition">waitCondition</a></li>
+                    
+                    <li><a href="#v:waitConditionFor">waitConditionFor</a></li>
+                    
+                    <li><a href="#v:signal">signal</a></li>
+                    
+                    <li><a href="#v:broadcast">broadcast</a></li>
+                    
+                    <li><a href="#v:newBarrier">newBarrier</a></li>
+                    
+                    <li><a href="#v:waitBarrier">waitBarrier</a></li>
+                    
+                    <li><a href="#v:newOnce">newOnce</a></li>
+                    
+                    <li><a href="#v:runOnce">runOnce</a></li>
+                    
+                    <li><a href="#v:newAtomicInt">newAtomicInt</a></li>
+                    
+                    <li><a href="#v:readAtomicInt">readAtomicInt</a></li>
+                    
+                    <li><a href="#v:writeAtomicInt">writeAtomicInt</a></li>
+                    
+                    <li><a href="#v:atomicAdd">atomicAdd</a></li>
+                    
+                    <li><a href="#v:atomicSub">atomicSub</a></li>
+                    
+                    <li><a href="#v:atomicAnd">atomicAnd</a></li>
+                    
+                    <li><a href="#v:atomicOr">atomicOr</a></li>
+                    
+                    <li><a href="#v:atomicXor">atomicXor</a></li>
+                    
+                    <li><a href="#v:compareAndSwap">compareAndSwap</a></li>
+                    
+                    <li><a href="#v:newAtomicRef">newAtomicRef</a></li>
+                    
+                    <li><a href="#v:readAtomicRef">readAtomicRef</a></li>
+                    
+                    <li><a href="#v:writeAtomicRef">writeAtomicRef</a></li>
+                    
+                    <li><a href="#v:atomicModifyRef">atomicModifyRef</a></li>
+                    
+                    <li><a href="#v:atomicModifyRef&#x27;">atomicModifyRef&#x27;</a></li>
+                    
+                    <li><a href="#v:casRef">casRef</a></li>
+                    
+                    <li><a href="#v:myThreadId">myThreadId</a></li>
+                    
+                    <li><a href="#v:forkIO">forkIO</a></li>
+                    
+                    <li><a href="#v:forkOS">forkOS</a></li>
+                    
+                    <li><a href="#v:forkOn">forkOn</a></li>
+                    
+                    <li><a href="#v:forkFinally">forkFinally</a></li>
+                    
+                    <li><a href="#v:killThread">killThread</a></li>
+                    
+                    <li><a href="#v:yield">yield</a></li>
+                    
+                    <li><a href="#v:threadDelay">threadDelay</a></li>
+                    
+                    <li><a href="#v:threadCapability">threadCapability</a></li>
+                    
+                    <li><a href="#v:setNumCapabilities">setNumCapabilities</a></li>
+                    
+                    <li><a href="#v:getNumCapabilities">getNumCapabilities</a></li>
+                    
+                    <li><a href="#v:getNumProcessors">getNumProcessors</a></li>
+                    
+                    <li><a href="#v:isCurrentThreadBound">isCurrentThreadBound</a></li>
+                    
+                    <li><a href="#v:runInBoundThread">runInBoundThread</a></li>
+                    
+                    <li><a href="#v:runInUnboundThread">runInUnboundThread</a></li>
+                    
+                    <li><a href="#v:mask">mask</a></li>
+                    
+                    <li><a href="#v:mask_">mask_</a></li>
+                    
+                    <li><a href="#v:uninterruptibleMask">uninterruptibleMask</a></li>
+                    
+                    <li><a href="#v:uninterruptibleMask_">uninterruptibleMask_</a></li>
+                    
+                    <li><a href="#v:bracket">bracket</a></li>
+                    
+                    <li><a href="#v:bracket_">bracket_</a></li>
+                    
+                    <li><a href="#v:bracketOnError">bracketOnError</a></li>
+                    
+                    <li><a href="#v:finally">finally</a></li>
+                    
+                    <li><a href="#v:onException">onException</a></li>
+                    
+                    <li><a href="#v:par">par</a></li>
+                    
+                    <li><a href="#v:pseq">pseq</a></li>
+                    
+                    <li><a href="#v:parMap">parMap</a></li>
+                    
+                    <li><a href="#v:parList">parList</a></li>
+                    
+                    <li><a href="#v:parBuffer">parBuffer</a></li>
+                    
+                    <li><a href="#v:parListChunk">parListChunk</a></li>
+                    
+                    <li><a href="#v:rseq">rseq</a></li>
+                    
+                    <li><a href="#v:rpar">rpar</a></li>
+                    
+                    <li><a href="#v:rdeepseq">rdeepseq</a></li>
+                    
+                    <li><a href="#v:using">using</a></li>
+                    
+                    <li><a href="#v:withStrategy">withStrategy</a></li>
+                    
+                    <li><a href="#v:runEval">runEval</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#instances" class="toc-section-link">Instances</a>
+            </li>
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prelude - BHC Documentation</title>
+    <title>BHC.Data.Random - BHC Documentation</title>
     <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
     <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
 </head>
@@ -58,7 +58,7 @@
             <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
         </li>
         
-        <li class="active">
+        <li >
             <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
         </li>
         
@@ -102,7 +102,7 @@
             <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
         </li>
         
-        <li class="active">
+        <li >
             <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
         </li>
         
@@ -198,7 +198,7 @@
             <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
         </li>
         
-        <li >
+        <li class="active">
             <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
         </li>
         
@@ -287,14 +287,57 @@
         <div class="page-header__bar">
             <span class="page-header__label">Module</span>
             
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-utils&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;Random.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;bhc-utils&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;Random.hs</span>
+            </a>
+            
             
         </div>
         <div class="page-header__content">
-            <h1>Prelude</h1>
+            <h1>BHC.Data.Random</h1>
             
         </div>
     </div>
 
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:Rng" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data Rng</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-utils&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;Random.hs#L44" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Rng" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Rng { rngState :: !(IORef (Word64, Word64)) }</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    A random number generator.
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
     
 
     
@@ -317,6 +360,15 @@
     </div>
     <nav class="toc-content" id="toc-content">
         <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:Rng">Rng</a></li>
+                    
+                </ul>
+            </li>
             
             
             

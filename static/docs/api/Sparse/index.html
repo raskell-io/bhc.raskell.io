@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparse - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>Sparse</h1>
+            
+        </div>
+    </div>
+
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:SparseFormat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data SparseFormat</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L121" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:SparseFormat" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>COO</code>
+                        
+                        <p class="con-doc">Coordinate format: (row, col, value) triples</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>CSR</code>
+                        
+                        <p class="con-doc">Compressed Sparse Row</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>CSC</code>
+                        
+                        <p class="con-doc">Compressed Sparse Column</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>BSR</code>
+                        
+                        <p class="con-doc">Block Sparse Row</p>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:SparseCOO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data SparseCOO a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L141" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:SparseCOO" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>SparseCOO { cooRows :: !Int, cooCols :: !Int, cooRowIndices :: !(VU.Vector Int), cooColIndices :: !(VU.Vector Int), cooValues :: !(VU.Vector a) }</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Coordinate (COO) sparse matrix format.
+                </div>
+                
+            </div>
+            
+            <div id="t:SparseCSR" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data SparseCSR a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L161" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:SparseCSR" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>SparseCSR { csrRows :: !Int, csrCols :: !Int, csrRowPtrs :: !(VU.Vector Int), csrColIndices :: !(VU.Vector Int), csrValues :: !(VU.Vector a) }</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Compressed Sparse Row (CSR) format.
+                </div>
+                
+            </div>
+            
+            <div id="t:SparseCSC" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data SparseCSC a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L172" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:SparseCSC" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>SparseCSC { cscRows :: !Int, cscCols :: !Int, cscColPtrs :: !(VU.Vector Int), cscRowIndices :: !(VU.Vector Int), cscValues :: !(VU.Vector a) }</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Compressed Sparse Column (CSC) format.
+                </div>
+                
+            </div>
+            
+            <div id="t:SparseBSR" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data SparseBSR a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L184" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:SparseBSR" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>SparseBSR { bsrRows :: !Int, bsrCols :: !Int, bsrBlockRows :: !Int, bsrBlockCols :: !Int, bsrRowPtrs :: !(VU.Vector Int), bsrColIndices :: !(VU.Vector Int), bsrValues :: !(V.Vector (VU.Vector a)) }</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Block Sparse Row (BSR) format.
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Type Classes Section Frame -->
+    <div id="classes" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Type Classes</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="c:Sparse" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class Sparse s</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L450" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:Sparse" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>nnz :: (s a) -&gt; Int</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>shape :: (s a) -&gt; (Int, Int)</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:mkCOO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mkCOO :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L208" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mkCOO" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create a COO sparse matrix from coordinate arrays.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mkCSR" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mkCSR :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L228" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mkCSR" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create a CSR sparse matrix directly.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mkCSC" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mkCSC :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L246" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mkCSC" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create a CSC sparse matrix directly.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromTriples" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromTriples :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L265" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromTriples" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Create sparse matrix from (row, col, value) triples.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromDense" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromDense :: (VU.Unbox a, Eq a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L275" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromDense" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert dense tensor to sparse COO format.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sh" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sh :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L279" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sh" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toCSR" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toCSR :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L305" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toCSR" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:row" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">row :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L323" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:row" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:col" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">col :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L341" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:col" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:val" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">val :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L342" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:val" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toCSC" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toCSC :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L358" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toCSC" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:col" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">col :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L376" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:col" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:row" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">row :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L393" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:row" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:col" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">col :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L394" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:col" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:val" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">val :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L395" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:val" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toCOO" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toCOO :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L408" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toCOO" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:end" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">end :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L418" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:end" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toDense" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toDense :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L427" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toDense" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:j" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">j :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L438" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:j" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:density" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">density :: (Sparse s) =&gt; (s a) -&gt; Double</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L468" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:density" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Density of the sparse matrix (nnz / total elements).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getRow" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getRow :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L476" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getRow" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get a specific row from CSR matrix as a sparse vector.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:end" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">end :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L481" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:end" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:getCol" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">getCol :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L487" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:getCol" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:end" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">end :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L492" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:end" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:colSlice" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">colSlice :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L513" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:colSlice" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:valSlice" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">valSlice :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L514" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:valSlice" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:get" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">get :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L520" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:get" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:end" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">end :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L526" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:end" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:colSlice" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">colSlice :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L527" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:colSlice" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:valSlice" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">valSlice :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L528" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:valSlice" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:slice" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">slice :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L534" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:slice" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:rowStart" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">rowStart :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L547" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:rowStart" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:rowEnd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">rowEnd :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L548" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:rowEnd" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:j" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">j :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L550" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:j" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:coo" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">coo :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L555" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:coo" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:transpose" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">transpose :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L568" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:transpose" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:end" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">end :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L580" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:end" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:spmv" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">spmv :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L593" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:spmv" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:end" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">end :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L602" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:end" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:col" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">col :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L604" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:col" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:val" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">val :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L605" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:val" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:xVal" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">xVal :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L606" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:xVal" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldM" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldM :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L613" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldM" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:spmm" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">spmm :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L624" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:spmm" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Sparse-dense matrix multiplication (SpMM).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:elemMul" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">elemMul :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L642" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:elemMul" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:add" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">add :: (VU.Unbox a, Num a, Eq a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L664" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:add" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Add two sparse matrices.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:validate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">validate :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L695" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:validate" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Validate sparse matrix invariants.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:curr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">curr :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L714" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:curr" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:col" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">col :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L720" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:col" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:compact" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">compact :: (VU.Unbox a, Num a, Eq a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L730" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:compact" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:binarySearch" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">binarySearch :: (VU.Vector Int) -&gt; Int -&gt; Maybe Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L757" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:binarySearch" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Binary search in a sorted vector.
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Instances Section Frame -->
+    <div id="instances" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Instances</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance Sparse SparseCOO</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L454" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance Sparse SparseCSR</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L458" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance Sparse SparseCSC</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Sparse.hs#L462" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:SparseFormat">SparseFormat</a></li>
+                    
+                    <li><a href="#t:SparseCOO">SparseCOO</a></li>
+                    
+                    <li><a href="#t:SparseCSR">SparseCSR</a></li>
+                    
+                    <li><a href="#t:SparseCSC">SparseCSC</a></li>
+                    
+                    <li><a href="#t:SparseBSR">SparseBSR</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#classes" class="toc-section-link">Classes</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#c:Sparse">Sparse</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:mkCOO">mkCOO</a></li>
+                    
+                    <li><a href="#v:mkCSR">mkCSR</a></li>
+                    
+                    <li><a href="#v:mkCSC">mkCSC</a></li>
+                    
+                    <li><a href="#v:fromTriples">fromTriples</a></li>
+                    
+                    <li><a href="#v:fromDense">fromDense</a></li>
+                    
+                    <li><a href="#v:sh">sh</a></li>
+                    
+                    <li><a href="#v:toCSR">toCSR</a></li>
+                    
+                    <li><a href="#v:row">row</a></li>
+                    
+                    <li><a href="#v:col">col</a></li>
+                    
+                    <li><a href="#v:val">val</a></li>
+                    
+                    <li><a href="#v:toCSC">toCSC</a></li>
+                    
+                    <li><a href="#v:col">col</a></li>
+                    
+                    <li><a href="#v:row">row</a></li>
+                    
+                    <li><a href="#v:col">col</a></li>
+                    
+                    <li><a href="#v:val">val</a></li>
+                    
+                    <li><a href="#v:toCOO">toCOO</a></li>
+                    
+                    <li><a href="#v:end">end</a></li>
+                    
+                    <li><a href="#v:toDense">toDense</a></li>
+                    
+                    <li><a href="#v:j">j</a></li>
+                    
+                    <li><a href="#v:density">density</a></li>
+                    
+                    <li><a href="#v:getRow">getRow</a></li>
+                    
+                    <li><a href="#v:end">end</a></li>
+                    
+                    <li><a href="#v:getCol">getCol</a></li>
+                    
+                    <li><a href="#v:end">end</a></li>
+                    
+                    <li><a href="#v:colSlice">colSlice</a></li>
+                    
+                    <li><a href="#v:valSlice">valSlice</a></li>
+                    
+                    <li><a href="#v:get">get</a></li>
+                    
+                    <li><a href="#v:end">end</a></li>
+                    
+                    <li><a href="#v:colSlice">colSlice</a></li>
+                    
+                    <li><a href="#v:valSlice">valSlice</a></li>
+                    
+                    <li><a href="#v:slice">slice</a></li>
+                    
+                    <li><a href="#v:rowStart">rowStart</a></li>
+                    
+                    <li><a href="#v:rowEnd">rowEnd</a></li>
+                    
+                    <li><a href="#v:j">j</a></li>
+                    
+                    <li><a href="#v:coo">coo</a></li>
+                    
+                    <li><a href="#v:transpose">transpose</a></li>
+                    
+                    <li><a href="#v:end">end</a></li>
+                    
+                    <li><a href="#v:spmv">spmv</a></li>
+                    
+                    <li><a href="#v:end">end</a></li>
+                    
+                    <li><a href="#v:col">col</a></li>
+                    
+                    <li><a href="#v:val">val</a></li>
+                    
+                    <li><a href="#v:xVal">xVal</a></li>
+                    
+                    <li><a href="#v:foldM">foldM</a></li>
+                    
+                    <li><a href="#v:spmm">spmm</a></li>
+                    
+                    <li><a href="#v:elemMul">elemMul</a></li>
+                    
+                    <li><a href="#v:add">add</a></li>
+                    
+                    <li><a href="#v:validate">validate</a></li>
+                    
+                    <li><a href="#v:curr">curr</a></li>
+                    
+                    <li><a href="#v:col">col</a></li>
+                    
+                    <li><a href="#v:compact">compact</a></li>
+                    
+                    <li><a href="#v:binarySearch">binarySearch</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#instances" class="toc-section-link">Instances</a>
+            </li>
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

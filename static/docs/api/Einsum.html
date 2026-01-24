@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einsum - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>Einsum</h1>
+            
+        </div>
+    </div>
+
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:EinsumSpec" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data EinsumSpec</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L107" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:EinsumSpec" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>EinsumSpec { esInputs :: ![[Char]], esOutput :: ![Char] }</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:ContractionOrder" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data ContractionOrder</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L153" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:ContractionOrder" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Contract Int Int ContractionOrder</code>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>Leaf Int</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Contraction order (which tensors to contract first).
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:parseEinsum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parseEinsum :: String -&gt; Either String EinsumSpec</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L117" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parseEinsum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse einsum specification string.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:allIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">allIndices :: EinsumSpec -&gt; [Char]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L133" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:allIndices" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get all unique indices from a spec.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:contractionIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">contractionIndices :: EinsumSpec -&gt; [Char]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L137" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:contractionIndices" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get contraction indices (in inputs but not output).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:batchIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">batchIndices :: EinsumSpec -&gt; [Char]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L143" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:batchIndices" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get batch indices (in all inputs and output).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:optimizeOrder" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">optimizeOrder :: EinsumSpec -&gt; [[Int]] -&gt; ContractionOrder</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L163" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:optimizeOrder" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Optimize contraction order to minimize FLOPs.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:greedyOrder" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">greedyOrder :: EinsumSpec -&gt; [[Int]] -&gt; ContractionOrder</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L170" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:greedyOrder" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:contractionCost" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">contractionCost :: EinsumSpec -&gt; [Int] -&gt; [Int] -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L192" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:contractionCost" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:resultShape" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">resultShape :: EinsumSpec -&gt; [Char] -&gt; [Int] -&gt; [Char] -&gt; [Int] -&gt; [Int]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L196" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:resultShape" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:einsum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">einsum :: VU.Unbox a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L210" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:einsum" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute einsum with single input.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:einsum2" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">einsum2 :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L219" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:einsum2" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute einsum with two inputs.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:einsum3" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">einsum3 :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L225" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:einsum3" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Execute einsum with three inputs.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:executeEinsum1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">executeEinsum1 :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L230" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:executeEinsum1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:outputStrides" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">outputStrides :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L245" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:outputStrides" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:srcIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">srcIndices :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L248" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:srcIndices" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:srcMap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">srcMap :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L249" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:srcMap" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dstFlat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dstFlat :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L251" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dstFlat" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:val" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">val :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L252" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:val" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:srcIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">srcIndices :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L260" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:srcIndices" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:srcMap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">srcMap :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L261" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:srcMap" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:allEqual" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">allEqual :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L264" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:allEqual" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dstFlat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dstFlat :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L267" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dstFlat" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:val" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">val :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L268" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:val" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:when" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">when :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L274" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:when" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:executeEinsum2" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">executeEinsum2 :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L278" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:executeEinsum2" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:outputIdx" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">outputIdx :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L283" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:outputIdx" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:shape1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">shape1 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L284" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:shape1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:shape2" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">shape2 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L285" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:shape2" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dimMap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dimMap :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L286" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dimMap" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:outputShape" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">outputShape :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L287" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:outputShape" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:outputSize" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">outputSize :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L288" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:outputSize" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:commonIdx" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">commonIdx :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L291" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:commonIdx" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:contractionIdx" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">contractionIdx :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L293" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:contractionIdx" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:allIdx" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">allIdx :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L298" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:allIdx" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:allDims" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">allDims :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L299" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:allDims" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:totalIter" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">totalIter :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L300" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:totalIter" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:idxVals" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">idxVals :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L303" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:idxVals" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:idxMap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">idxMap :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L304" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:idxMap" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:inBounds1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">inBounds1 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L311" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:inBounds1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:inBounds2" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">inBounds2 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L312" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:inBounds2" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:val1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">val1 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L315" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:val1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:val2" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">val2 :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L316" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:val2" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:prod" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">prod :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L317" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:prod" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dstFlat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dstFlat :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L320" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dstFlat" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:when" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">when :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L328" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:when" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:executeEinsum3" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">executeEinsum3 :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L333" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:executeEinsum3" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:matmul" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">matmul :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L351" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:matmul" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Matrix multiplication via einsum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:batchMatmul" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">batchMatmul :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L357" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:batchMatmul" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Batch matrix multiplication.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dot" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dot :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L363" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dot" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Dot product via einsum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:outer" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">outer :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L369" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:outer" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Outer product via einsum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:trace" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">trace :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L375" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:trace" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Trace via einsum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:diag" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">diag :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L381" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:diag" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Extract diagonal via einsum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:transpose" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">transpose :: (VU.Unbox a, Num a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L387" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:transpose" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Transpose via einsum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:computeStrides" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">computeStrides :: [Int] -&gt; [Int]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L394" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:computeStrides" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unflattenIndex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unflattenIndex :: [Int] -&gt; Int -&gt; [Int]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L398" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unflattenIndex" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:flattenIndex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">flattenIndex :: [Int] -&gt; [Int] -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-numeric&#x2F;hs&#x2F;BHC&#x2F;Numeric&#x2F;Einsum.hs#L406" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:flattenIndex" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:EinsumSpec">EinsumSpec</a></li>
+                    
+                    <li><a href="#t:ContractionOrder">ContractionOrder</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:parseEinsum">parseEinsum</a></li>
+                    
+                    <li><a href="#v:allIndices">allIndices</a></li>
+                    
+                    <li><a href="#v:contractionIndices">contractionIndices</a></li>
+                    
+                    <li><a href="#v:batchIndices">batchIndices</a></li>
+                    
+                    <li><a href="#v:optimizeOrder">optimizeOrder</a></li>
+                    
+                    <li><a href="#v:greedyOrder">greedyOrder</a></li>
+                    
+                    <li><a href="#v:contractionCost">contractionCost</a></li>
+                    
+                    <li><a href="#v:resultShape">resultShape</a></li>
+                    
+                    <li><a href="#v:einsum">einsum</a></li>
+                    
+                    <li><a href="#v:einsum2">einsum2</a></li>
+                    
+                    <li><a href="#v:einsum3">einsum3</a></li>
+                    
+                    <li><a href="#v:executeEinsum1">executeEinsum1</a></li>
+                    
+                    <li><a href="#v:outputStrides">outputStrides</a></li>
+                    
+                    <li><a href="#v:srcIndices">srcIndices</a></li>
+                    
+                    <li><a href="#v:srcMap">srcMap</a></li>
+                    
+                    <li><a href="#v:dstFlat">dstFlat</a></li>
+                    
+                    <li><a href="#v:val">val</a></li>
+                    
+                    <li><a href="#v:srcIndices">srcIndices</a></li>
+                    
+                    <li><a href="#v:srcMap">srcMap</a></li>
+                    
+                    <li><a href="#v:allEqual">allEqual</a></li>
+                    
+                    <li><a href="#v:dstFlat">dstFlat</a></li>
+                    
+                    <li><a href="#v:val">val</a></li>
+                    
+                    <li><a href="#v:when">when</a></li>
+                    
+                    <li><a href="#v:executeEinsum2">executeEinsum2</a></li>
+                    
+                    <li><a href="#v:outputIdx">outputIdx</a></li>
+                    
+                    <li><a href="#v:shape1">shape1</a></li>
+                    
+                    <li><a href="#v:shape2">shape2</a></li>
+                    
+                    <li><a href="#v:dimMap">dimMap</a></li>
+                    
+                    <li><a href="#v:outputShape">outputShape</a></li>
+                    
+                    <li><a href="#v:outputSize">outputSize</a></li>
+                    
+                    <li><a href="#v:commonIdx">commonIdx</a></li>
+                    
+                    <li><a href="#v:contractionIdx">contractionIdx</a></li>
+                    
+                    <li><a href="#v:allIdx">allIdx</a></li>
+                    
+                    <li><a href="#v:allDims">allDims</a></li>
+                    
+                    <li><a href="#v:totalIter">totalIter</a></li>
+                    
+                    <li><a href="#v:idxVals">idxVals</a></li>
+                    
+                    <li><a href="#v:idxMap">idxMap</a></li>
+                    
+                    <li><a href="#v:inBounds1">inBounds1</a></li>
+                    
+                    <li><a href="#v:inBounds2">inBounds2</a></li>
+                    
+                    <li><a href="#v:val1">val1</a></li>
+                    
+                    <li><a href="#v:val2">val2</a></li>
+                    
+                    <li><a href="#v:prod">prod</a></li>
+                    
+                    <li><a href="#v:dstFlat">dstFlat</a></li>
+                    
+                    <li><a href="#v:when">when</a></li>
+                    
+                    <li><a href="#v:executeEinsum3">executeEinsum3</a></li>
+                    
+                    <li><a href="#v:matmul">matmul</a></li>
+                    
+                    <li><a href="#v:batchMatmul">batchMatmul</a></li>
+                    
+                    <li><a href="#v:dot">dot</a></li>
+                    
+                    <li><a href="#v:outer">outer</a></li>
+                    
+                    <li><a href="#v:trace">trace</a></li>
+                    
+                    <li><a href="#v:diag">diag</a></li>
+                    
+                    <li><a href="#v:transpose">transpose</a></li>
+                    
+                    <li><a href="#v:computeStrides">computeStrides</a></li>
+                    
+                    <li><a href="#v:unflattenIndex">unflattenIndex</a></li>
+                    
+                    <li><a href="#v:flattenIndex">flattenIndex</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

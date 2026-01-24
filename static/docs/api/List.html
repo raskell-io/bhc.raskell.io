@@ -1,0 +1,2566 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>List</h1>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:head" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">head :: [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L120" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:head" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:last" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">last :: [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L126" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:last" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Extract the last element of a list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tail" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tail :: [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L132" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tail" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(1)</em>. Extract the elements after the head of a list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:init" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">init :: [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L137" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:init" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Return all elements except the last one.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:uncons" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">uncons :: [a] -&gt; Maybe (a, [a])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L143" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:uncons" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(1)</em>. Decompose a list into its head and tail.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unsnoc" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unsnoc :: [a] -&gt; Maybe ([a], a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L148" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unsnoc" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Decompose a list into its init and last.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:null" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">null :: [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L153" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:null" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(1)</em>. Test whether a list is empty.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:length" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">length :: [a] -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L158" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:length" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Return the length of a list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:++" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">++ :: [a] -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L162" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:++" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Append two lists.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:ys" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">ys :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L163" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:ys" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:map" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">map :: (a -&gt; b) -&gt; [a] -&gt; [b]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L170" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:map" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Apply a function to each element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:reverse" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">reverse :: [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L175" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:reverse" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Reverse a list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:intersperse" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">intersperse :: a -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L179" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:intersperse" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Insert an element between each pair.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:intercalate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">intercalate :: [a] -&gt; [[a]] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L185" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:intercalate" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    <em>O(n)</em>. Insert a list between each pair of lists.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:transpose" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">transpose :: [[a]] -&gt; [[a]]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L189" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:transpose" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Transpose rows and columns.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:subsequences" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">subsequences :: [a] -&gt; [[a]]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L196" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:subsequences" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    All subsequences (power set).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:permutations" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">permutations :: [a] -&gt; [[a]]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L204" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:permutations" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    All permutations.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L217" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl&#x27; :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L221" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl&#x27;" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl1 :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L225" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl1&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl1&#x27; :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L229" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl1&#x27;" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L233" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldr" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldr1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldr1 :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L237" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldr1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:concat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">concat :: [[a]] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L243" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:concat" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:concatMap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">concatMap :: (a -&gt; [b]) -&gt; [a] -&gt; [b]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L246" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:concatMap" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:and" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">and :: [Bool] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L249" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:and" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:or" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">or :: [Bool] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L252" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:or" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:any" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">any :: (a -&gt; Bool) -&gt; [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L255" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:any" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:all" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">all :: (a -&gt; Bool) -&gt; [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L258" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:all" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sum :: (Num a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L261" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sum" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:product" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">product :: (Num a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L264" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:product" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:maximum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">maximum :: (Ord a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L267" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:maximum" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:minimum" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">minimum :: (Ord a) =&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L270" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:minimum" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:maximumBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">maximumBy :: (a -&gt; a -&gt; Ordering) -&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L273" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:maximumBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:minimumBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">minimumBy :: (a -&gt; a -&gt; Ordering) -&gt; [a] -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L276" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:minimumBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scanl" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scanl :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; [b]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L280" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scanl" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scanl&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scanl&#x27; :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; [b]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L285" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scanl&#x27;" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scanl1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scanl1 :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L290" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scanl1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scanr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scanr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; [b]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L294" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scanr" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:scanr1" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">scanr1 :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L299" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:scanr1" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mapAccumL" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mapAccumL :: (acc -&gt; x -&gt; (acc, y)) -&gt; acc -&gt; [x] -&gt; (acc, [y])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L306" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mapAccumL" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mapAccumR" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mapAccumR :: (acc -&gt; x -&gt; (acc, y)) -&gt; acc -&gt; [x] -&gt; (acc, [y])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L312" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mapAccumR" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:iterate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">iterate :: (a -&gt; a) -&gt; a -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L319" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:iterate" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:iterate&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">iterate&#x27; :: (a -&gt; a) -&gt; a -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L322" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:iterate&#x27;" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:repeat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">repeat :: a -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L325" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:repeat" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:replicate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">replicate :: Int -&gt; a -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L328" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:replicate" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:cycle" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">cycle :: [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L331" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:cycle" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unfoldr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unfoldr :: (b -&gt; Maybe (a, b)) -&gt; b -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L335" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unfoldr" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:take" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">take :: Int -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L341" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:take" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:drop" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">drop :: Int -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L346" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:drop" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:splitAt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">splitAt :: Int -&gt; [a] -&gt; ([a], [a])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L351" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:splitAt" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:takeWhile" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">takeWhile :: (a -&gt; Bool) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L354" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:takeWhile" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dropWhile" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dropWhile :: (a -&gt; Bool) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L360" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dropWhile" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:dropWhileEnd" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">dropWhileEnd :: (a -&gt; Bool) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L366" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:dropWhileEnd" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:span" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">span :: (a -&gt; Bool) -&gt; [a] -&gt; ([a], [a])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L369" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:span" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:otherwise" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">otherwise :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L372" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:otherwise" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:break" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">break :: (a -&gt; Bool) -&gt; [a] -&gt; ([a], [a])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L375" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:break" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:stripPrefix" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">stripPrefix :: (Eq a) =&gt; [a] -&gt; [a] -&gt; Maybe [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L378" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:stripPrefix" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:group" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">group :: (Eq a) =&gt; [a] -&gt; [[a]]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L384" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:group" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:groupBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">groupBy :: (a -&gt; a -&gt; Bool) -&gt; [a] -&gt; [[a]]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L387" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:groupBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:inits" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">inits :: [a] -&gt; [[a]]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L392" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:inits" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tails" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tails :: [a] -&gt; [[a]]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L396" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tails" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isPrefixOf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isPrefixOf :: (Eq a) =&gt; [a] -&gt; [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L400" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isPrefixOf" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isSuffixOf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isSuffixOf :: (Eq a) =&gt; [a] -&gt; [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L405" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isSuffixOf" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isInfixOf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isInfixOf :: (Eq a) =&gt; [a] -&gt; [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L408" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isInfixOf" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isSubsequenceOf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isSubsequenceOf :: (Eq a) =&gt; [a] -&gt; [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L411" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isSubsequenceOf" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:elem" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">elem :: (Eq a) =&gt; a -&gt; [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L419" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:elem" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:notElem" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">notElem :: (Eq a) =&gt; a -&gt; [a] -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L423" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:notElem" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lookup" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lookup :: (Eq a) =&gt; a -&gt; [(a, b)] -&gt; Maybe b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L426" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lookup" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:find" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">find :: (a -&gt; Bool) -&gt; [a] -&gt; Maybe a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L432" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:find" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:filter" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L438" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:filter" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:partition" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">partition :: (a -&gt; Bool) -&gt; [a] -&gt; ([a], [a])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L444" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:partition" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:!?" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">!? :: [a] -&gt; Int -&gt; Maybe a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L449" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:!?" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:n" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">n :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L452" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:n" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:!!" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">!! :: [a] -&gt; Int -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L457" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:!!" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:n" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">n :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L460" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:n" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:elemIndex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">elemIndex :: (Eq a) =&gt; a -&gt; [a] -&gt; Maybe Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L464" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:elemIndex" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:elemIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">elemIndices :: (Eq a) =&gt; a -&gt; [a] -&gt; [Int]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L467" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:elemIndices" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:findIndex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">findIndex :: (a -&gt; Bool) -&gt; [a] -&gt; Maybe Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L470" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:findIndex" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:findIndices" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">findIndices :: (a -&gt; Bool) -&gt; [a] -&gt; [Int]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L476" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:findIndices" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zip" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zip :: [a] -&gt; [b] -&gt; [(a, b)]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L479" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zip" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zip3" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zip3 :: [a] -&gt; [b] -&gt; [c] -&gt; [(a, b, c)]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L482" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zip3" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zip4" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zip4 :: [a] -&gt; [b] -&gt; [c] -&gt; [d] -&gt; [(a, b, c, d)]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L485" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zip4" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zip5" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zip5 :: [a] -&gt; [b] -&gt; [c] -&gt; [d] -&gt; [e] -&gt; [(a, b, c, d, e)]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L488" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zip5" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zip6" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zip6 :: [a] -&gt; [b] -&gt; [c] -&gt; [d] -&gt; [e] -&gt; [f] -&gt; [(a, b, c, d, e, f)]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L491" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zip6" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zip7" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zip7 :: [a] -&gt; [b] -&gt; [c] -&gt; [d] -&gt; [e] -&gt; [f] -&gt; [g] -&gt; [(a, b, c, d, e, f, g)]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L494" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zip7" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zipWith" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zipWith :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L498" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zipWith" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zipWith3" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zipWith3 :: (a -&gt; b -&gt; c -&gt; d) -&gt; [a] -&gt; [b] -&gt; [c] -&gt; [d]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L503" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zipWith3" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zipWith4" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zipWith4 :: (a -&gt; b -&gt; c -&gt; d -&gt; e) -&gt; [a] -&gt; [b] -&gt; [c] -&gt; [d] -&gt; [e]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L509" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zipWith4" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zipWith5" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zipWith5 :: (a -&gt; b -&gt; c -&gt; d -&gt; e -&gt; f) -&gt; [a] -&gt; [b] -&gt; [c] -&gt; [d] -&gt; [e] -&gt; [f]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L512" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zipWith5" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zipWith6" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zipWith6 :: (a -&gt; b -&gt; c -&gt; d -&gt; e -&gt; f -&gt; g) -&gt; [a] -&gt; [b] -&gt; [c] -&gt; [d] -&gt; [e] -&gt; [f] -&gt; [g]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L515" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zipWith6" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zipWith7" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zipWith7 :: (a -&gt; b -&gt; c -&gt; d -&gt; e -&gt; f -&gt; g -&gt; h) -&gt; [a] -&gt; [b] -&gt; [c] -&gt; [d] -&gt; [e] -&gt; [f] -&gt; [g] -&gt; [h]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L518" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zipWith7" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unzip" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unzip :: [(a, b)] -&gt; ([a], [b])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L521" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unzip" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unzip3" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unzip3 :: [(a, b, c)] -&gt; ([a], [b], [c])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L524" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unzip3" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unzip4" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unzip4 :: [(a, b, c, d)] -&gt; ([a], [b], [c], [d])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L527" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unzip4" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unzip5" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unzip5 :: [(a, b, c, d, e)] -&gt; ([a], [b], [c], [d], [e])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L530" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unzip5" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unzip6" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unzip6 :: [(a, b, c, d, e, f)] -&gt; ([a], [b], [c], [d], [e], [f])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L533" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unzip6" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unzip7" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unzip7 :: [(a, b, c, d, e, f, g)] -&gt; ([a], [b], [c], [d], [e], [f], [g])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L536" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unzip7" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lines" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lines :: String -&gt; [String]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L540" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lines" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:words" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">words :: String -&gt; [String]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L547" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:words" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unlines" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unlines :: [String] -&gt; String</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L554" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unlines" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unwords" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unwords :: [String] -&gt; String</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L557" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unwords" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:nub" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">nub :: (Eq a) =&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L563" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:nub" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:nubBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">nubBy :: (a -&gt; a -&gt; Bool) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L566" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:nubBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:delete" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">delete :: (Eq a) =&gt; a -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L574" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:delete" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:deleteBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">deleteBy :: (a -&gt; a -&gt; Bool) -&gt; a -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L577" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:deleteBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:\\" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">\\ :: (Eq a) =&gt; [a] -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L583" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:\\" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:union" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">union :: (Eq a) =&gt; [a] -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L587" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:union" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unionBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unionBy :: (a -&gt; a -&gt; Bool) -&gt; [a] -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L590" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unionBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:intersect" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">intersect :: (Eq a) =&gt; [a] -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L593" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:intersect" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:intersectBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">intersectBy :: (a -&gt; a -&gt; Bool) -&gt; [a] -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L596" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:intersectBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sort" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sort :: (Ord a) =&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L601" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sort" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sortBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sortBy :: (a -&gt; a -&gt; Ordering) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L604" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sortBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mergeAll" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mergeAll :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L619" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mergeAll" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mergePairs" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mergePairs :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L623" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mergePairs" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:merge" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">merge :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L626" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:merge" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:sortOn" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">sortOn :: (Ord b) =&gt; (a -&gt; b) -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L633" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:sortOn" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:insert" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">insert :: (Ord a) =&gt; a -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L636" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:insert" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:insertBy" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">insertBy :: (a -&gt; a -&gt; Ordering) -&gt; a -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L639" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:insertBy" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:genericLength" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">genericLength :: (Num i) =&gt; [a] -&gt; i</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L646" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:genericLength" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:genericTake" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">genericTake :: (Integral i) =&gt; i -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L650" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:genericTake" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:genericDrop" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">genericDrop :: (Integral i) =&gt; i -&gt; [a] -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L655" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:genericDrop" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:genericSplitAt" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">genericSplitAt :: (Integral i) =&gt; i -&gt; [a] -&gt; ([a], [a])</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L660" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:genericSplitAt" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:genericIndex" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">genericIndex :: (Integral i) =&gt; [a] -&gt; i -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L663" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:genericIndex" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:genericReplicate" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">genericReplicate :: (Integral i) =&gt; i -&gt; a -&gt; [a]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L669" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:genericReplicate" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:errorEmptyList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">errorEmptyList :: String -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-base&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;List.hs#L673" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:errorEmptyList" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:head">head</a></li>
+                    
+                    <li><a href="#v:last">last</a></li>
+                    
+                    <li><a href="#v:tail">tail</a></li>
+                    
+                    <li><a href="#v:init">init</a></li>
+                    
+                    <li><a href="#v:uncons">uncons</a></li>
+                    
+                    <li><a href="#v:unsnoc">unsnoc</a></li>
+                    
+                    <li><a href="#v:null">null</a></li>
+                    
+                    <li><a href="#v:length">length</a></li>
+                    
+                    <li><a href="#v:++">++</a></li>
+                    
+                    <li><a href="#v:ys">ys</a></li>
+                    
+                    <li><a href="#v:map">map</a></li>
+                    
+                    <li><a href="#v:reverse">reverse</a></li>
+                    
+                    <li><a href="#v:intersperse">intersperse</a></li>
+                    
+                    <li><a href="#v:intercalate">intercalate</a></li>
+                    
+                    <li><a href="#v:transpose">transpose</a></li>
+                    
+                    <li><a href="#v:subsequences">subsequences</a></li>
+                    
+                    <li><a href="#v:permutations">permutations</a></li>
+                    
+                    <li><a href="#v:foldl">foldl</a></li>
+                    
+                    <li><a href="#v:foldl&#x27;">foldl&#x27;</a></li>
+                    
+                    <li><a href="#v:foldl1">foldl1</a></li>
+                    
+                    <li><a href="#v:foldl1&#x27;">foldl1&#x27;</a></li>
+                    
+                    <li><a href="#v:foldr">foldr</a></li>
+                    
+                    <li><a href="#v:foldr1">foldr1</a></li>
+                    
+                    <li><a href="#v:concat">concat</a></li>
+                    
+                    <li><a href="#v:concatMap">concatMap</a></li>
+                    
+                    <li><a href="#v:and">and</a></li>
+                    
+                    <li><a href="#v:or">or</a></li>
+                    
+                    <li><a href="#v:any">any</a></li>
+                    
+                    <li><a href="#v:all">all</a></li>
+                    
+                    <li><a href="#v:sum">sum</a></li>
+                    
+                    <li><a href="#v:product">product</a></li>
+                    
+                    <li><a href="#v:maximum">maximum</a></li>
+                    
+                    <li><a href="#v:minimum">minimum</a></li>
+                    
+                    <li><a href="#v:maximumBy">maximumBy</a></li>
+                    
+                    <li><a href="#v:minimumBy">minimumBy</a></li>
+                    
+                    <li><a href="#v:scanl">scanl</a></li>
+                    
+                    <li><a href="#v:scanl&#x27;">scanl&#x27;</a></li>
+                    
+                    <li><a href="#v:scanl1">scanl1</a></li>
+                    
+                    <li><a href="#v:scanr">scanr</a></li>
+                    
+                    <li><a href="#v:scanr1">scanr1</a></li>
+                    
+                    <li><a href="#v:mapAccumL">mapAccumL</a></li>
+                    
+                    <li><a href="#v:mapAccumR">mapAccumR</a></li>
+                    
+                    <li><a href="#v:iterate">iterate</a></li>
+                    
+                    <li><a href="#v:iterate&#x27;">iterate&#x27;</a></li>
+                    
+                    <li><a href="#v:repeat">repeat</a></li>
+                    
+                    <li><a href="#v:replicate">replicate</a></li>
+                    
+                    <li><a href="#v:cycle">cycle</a></li>
+                    
+                    <li><a href="#v:unfoldr">unfoldr</a></li>
+                    
+                    <li><a href="#v:take">take</a></li>
+                    
+                    <li><a href="#v:drop">drop</a></li>
+                    
+                    <li><a href="#v:splitAt">splitAt</a></li>
+                    
+                    <li><a href="#v:takeWhile">takeWhile</a></li>
+                    
+                    <li><a href="#v:dropWhile">dropWhile</a></li>
+                    
+                    <li><a href="#v:dropWhileEnd">dropWhileEnd</a></li>
+                    
+                    <li><a href="#v:span">span</a></li>
+                    
+                    <li><a href="#v:otherwise">otherwise</a></li>
+                    
+                    <li><a href="#v:break">break</a></li>
+                    
+                    <li><a href="#v:stripPrefix">stripPrefix</a></li>
+                    
+                    <li><a href="#v:group">group</a></li>
+                    
+                    <li><a href="#v:groupBy">groupBy</a></li>
+                    
+                    <li><a href="#v:inits">inits</a></li>
+                    
+                    <li><a href="#v:tails">tails</a></li>
+                    
+                    <li><a href="#v:isPrefixOf">isPrefixOf</a></li>
+                    
+                    <li><a href="#v:isSuffixOf">isSuffixOf</a></li>
+                    
+                    <li><a href="#v:isInfixOf">isInfixOf</a></li>
+                    
+                    <li><a href="#v:isSubsequenceOf">isSubsequenceOf</a></li>
+                    
+                    <li><a href="#v:elem">elem</a></li>
+                    
+                    <li><a href="#v:notElem">notElem</a></li>
+                    
+                    <li><a href="#v:lookup">lookup</a></li>
+                    
+                    <li><a href="#v:find">find</a></li>
+                    
+                    <li><a href="#v:filter">filter</a></li>
+                    
+                    <li><a href="#v:partition">partition</a></li>
+                    
+                    <li><a href="#v:!?">!?</a></li>
+                    
+                    <li><a href="#v:n">n</a></li>
+                    
+                    <li><a href="#v:!!">!!</a></li>
+                    
+                    <li><a href="#v:n">n</a></li>
+                    
+                    <li><a href="#v:elemIndex">elemIndex</a></li>
+                    
+                    <li><a href="#v:elemIndices">elemIndices</a></li>
+                    
+                    <li><a href="#v:findIndex">findIndex</a></li>
+                    
+                    <li><a href="#v:findIndices">findIndices</a></li>
+                    
+                    <li><a href="#v:zip">zip</a></li>
+                    
+                    <li><a href="#v:zip3">zip3</a></li>
+                    
+                    <li><a href="#v:zip4">zip4</a></li>
+                    
+                    <li><a href="#v:zip5">zip5</a></li>
+                    
+                    <li><a href="#v:zip6">zip6</a></li>
+                    
+                    <li><a href="#v:zip7">zip7</a></li>
+                    
+                    <li><a href="#v:zipWith">zipWith</a></li>
+                    
+                    <li><a href="#v:zipWith3">zipWith3</a></li>
+                    
+                    <li><a href="#v:zipWith4">zipWith4</a></li>
+                    
+                    <li><a href="#v:zipWith5">zipWith5</a></li>
+                    
+                    <li><a href="#v:zipWith6">zipWith6</a></li>
+                    
+                    <li><a href="#v:zipWith7">zipWith7</a></li>
+                    
+                    <li><a href="#v:unzip">unzip</a></li>
+                    
+                    <li><a href="#v:unzip3">unzip3</a></li>
+                    
+                    <li><a href="#v:unzip4">unzip4</a></li>
+                    
+                    <li><a href="#v:unzip5">unzip5</a></li>
+                    
+                    <li><a href="#v:unzip6">unzip6</a></li>
+                    
+                    <li><a href="#v:unzip7">unzip7</a></li>
+                    
+                    <li><a href="#v:lines">lines</a></li>
+                    
+                    <li><a href="#v:words">words</a></li>
+                    
+                    <li><a href="#v:unlines">unlines</a></li>
+                    
+                    <li><a href="#v:unwords">unwords</a></li>
+                    
+                    <li><a href="#v:nub">nub</a></li>
+                    
+                    <li><a href="#v:nubBy">nubBy</a></li>
+                    
+                    <li><a href="#v:delete">delete</a></li>
+                    
+                    <li><a href="#v:deleteBy">deleteBy</a></li>
+                    
+                    <li><a href="#v:\\">\\</a></li>
+                    
+                    <li><a href="#v:union">union</a></li>
+                    
+                    <li><a href="#v:unionBy">unionBy</a></li>
+                    
+                    <li><a href="#v:intersect">intersect</a></li>
+                    
+                    <li><a href="#v:intersectBy">intersectBy</a></li>
+                    
+                    <li><a href="#v:sort">sort</a></li>
+                    
+                    <li><a href="#v:sortBy">sortBy</a></li>
+                    
+                    <li><a href="#v:mergeAll">mergeAll</a></li>
+                    
+                    <li><a href="#v:mergePairs">mergePairs</a></li>
+                    
+                    <li><a href="#v:merge">merge</a></li>
+                    
+                    <li><a href="#v:sortOn">sortOn</a></li>
+                    
+                    <li><a href="#v:insert">insert</a></li>
+                    
+                    <li><a href="#v:insertBy">insertBy</a></li>
+                    
+                    <li><a href="#v:genericLength">genericLength</a></li>
+                    
+                    <li><a href="#v:genericTake">genericTake</a></li>
+                    
+                    <li><a href="#v:genericDrop">genericDrop</a></li>
+                    
+                    <li><a href="#v:genericSplitAt">genericSplitAt</a></li>
+                    
+                    <li><a href="#v:genericIndex">genericIndex</a></li>
+                    
+                    <li><a href="#v:genericReplicate">genericReplicate</a></li>
+                    
+                    <li><a href="#v:errorEmptyList">errorEmptyList</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

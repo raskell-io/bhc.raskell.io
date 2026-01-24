@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntSet - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>IntSet</h1>
+            
+        </div>
+    </div>
+
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:IntSet" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L103" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:IntSet" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Nil</code>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>Tip</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:Key" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type Key = Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L112" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Key" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:Prefix" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type Prefix = Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L113" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Prefix" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:Mask" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type Mask = Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L114" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Mask" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:BitMap" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type BitMap = Word</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L115" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:BitMap" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:bitsPerWord" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">bitsPerWord :: Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L134" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:bitsPerWord" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Number of bits in the bitmap (word size).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:suffixMask" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">suffixMask :: Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L138" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:suffixMask" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Mask for extracting suffix (bits within a tip).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:prefixMask" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">prefixMask :: Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L142" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:prefixMask" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Mask for extracting prefix (bits above the tip).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:empty" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">empty :: IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L150" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:empty" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    The empty set.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:singleton" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">singleton :: Key -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L154" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:singleton" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    A set with a single element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromList :: [Key] -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L158" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Build a set from a list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromAscList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromAscList :: [Key] -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L162" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromAscList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Build a set from an ascending list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromDistinctAscList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromDistinctAscList :: [Key] -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L166" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromDistinctAscList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Build a set from an ascending list of distinct elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:insert" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">insert :: Key -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L174" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:insert" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Insert an element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:delete" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">delete :: Key -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L190" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:delete" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Delete an element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:member" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">member :: Key -&gt; IntSet -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L206" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:member" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Is the element in the set?
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:notMember" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">notMember :: Key -&gt; IntSet -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L216" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:notMember" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Is the element not in the set?
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lookupLT" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lookupLT :: Key -&gt; IntSet -&gt; Maybe Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L220" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lookupLT" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Find largest element smaller than the given one.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lookupGT" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lookupGT :: Key -&gt; IntSet -&gt; Maybe Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L236" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lookupGT" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Find smallest element larger than the given one.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lookupLE" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lookupLE :: Key -&gt; IntSet -&gt; Maybe Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L252" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lookupLE" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Find largest element smaller than or equal to the given one.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lookupGE" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lookupGE :: Key -&gt; IntSet -&gt; Maybe Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L256" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lookupGE" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Find smallest element larger than or equal to the given one.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:null" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">null :: IntSet -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L260" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:null" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Is the set empty?
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:size" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">size :: IntSet -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L265" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:size" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Number of elements in the set.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isSubsetOf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isSubsetOf :: IntSet -&gt; IntSet -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L273" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isSubsetOf" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Is the first set a subset of the second?
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:isProperSubsetOf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">isProperSubsetOf :: IntSet -&gt; IntSet -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L290" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:isProperSubsetOf" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Is the first set a proper subset of the second?
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:disjoint" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">disjoint :: IntSet -&gt; IntSet -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L294" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:disjoint" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Are the two sets disjoint?
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:union" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">union :: IntSet -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L302" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:union" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Union of two sets.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:unions" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">unions :: [IntSet] -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L333" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:unions" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Union of a list of sets.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:difference" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">difference :: IntSet -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L336" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:difference" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Difference of two sets.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:intersection" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">intersection :: IntSet -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L373" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:intersection" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Intersection of two sets.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:filter" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">filter :: (Key -&gt; Bool) -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L408" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:filter" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Filter elements satisfying a predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:partition" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">partition :: (Key -&gt; Bool) -&gt; IntSet -&gt; (IntSet, IntSet)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L418" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:partition" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Partition by a predicate.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:split" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">split :: Key -&gt; IntSet -&gt; (IntSet, IntSet)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L422" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:split" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Split at a value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:splitMember" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">splitMember :: Key -&gt; IntSet -&gt; (IntSet, Bool, IntSet)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L427" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:splitMember" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Split and report membership.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:splitRoot" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">splitRoot :: IntSet -&gt; [IntSet]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L446" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:splitRoot" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decompose into pieces based on structure.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:map" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">map :: (Key -&gt; Key) -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L458" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:map" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Map a function over elements.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldr" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldr :: (Key -&gt; b -&gt; b) -&gt; b -&gt; IntSet -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L465" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldr" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Lazy right fold.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:f&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">f&#x27; :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L471" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:f&#x27;" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toAscListAux" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toAscListAux :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L472" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toAscListAux" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl :: (b -&gt; Key -&gt; b) -&gt; b -&gt; IntSet -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L478" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Lazy left fold.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldr&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldr&#x27; :: (Key -&gt; b -&gt; b) -&gt; b -&gt; IntSet -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L486" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldr&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Strict right fold.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:go&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">go&#x27; :: </code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L491" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:go&#x27;" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldl&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldl&#x27; :: (b -&gt; Key -&gt; b) -&gt; b -&gt; IntSet -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L497" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldl&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Strict left fold.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:findMin" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">findMin :: IntSet -&gt; Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L509" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:findMin" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Find minimum element (partial).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:findMax" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">findMax :: IntSet -&gt; Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L513" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:findMax" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Find maximum element (partial).
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lookupMin" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lookupMin :: IntSet -&gt; Maybe Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L517" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lookupMin" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Lookup minimum element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:lookupMax" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">lookupMax :: IntSet -&gt; Maybe Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L523" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:lookupMax" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Lookup maximum element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:deleteMin" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">deleteMin :: IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L529" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:deleteMin" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Delete minimum element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:deleteMax" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">deleteMax :: IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L533" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:deleteMax" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Delete maximum element.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:deleteFindMin" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">deleteFindMin :: IntSet -&gt; (Key, IntSet)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L537" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:deleteFindMin" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Delete and return minimum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:deleteFindMax" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">deleteFindMax :: IntSet -&gt; (Key, IntSet)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L543" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:deleteFindMax" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Delete and return maximum.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:minView" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">minView :: IntSet -&gt; Maybe (Key, IntSet)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L549" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:minView" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    View with minimum removed.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:maxView" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">maxView :: IntSet -&gt; Maybe (Key, IntSet)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L561" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:maxView" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    View with maximum removed.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:elems" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">elems :: IntSet -&gt; [Key]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L577" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:elems" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    All elements in ascending order.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toList :: IntSet -&gt; [Key]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L581" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert to a list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toAscList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toAscList :: IntSet -&gt; [Key]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L585" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toAscList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert to an ascending list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toDescList" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toDescList :: IntSet -&gt; [Key]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L589" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toDescList" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert to a descending list.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:link" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">link :: Prefix -&gt; IntSet -&gt; Prefix -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L597" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:link" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Link two disjoint trees.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:tip" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">tip :: Prefix -&gt; BitMap -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L606" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:tip" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Smart constructor for Tip.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:bin" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">bin :: Prefix -&gt; Mask -&gt; IntSet -&gt; IntSet -&gt; IntSet</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L611" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:bin" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Smart constructor for Bin.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:zero" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">zero :: Key -&gt; Mask -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L617" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:zero" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check if bit is zero.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:nomatch" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">nomatch :: Key -&gt; Prefix -&gt; Mask -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L621" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:nomatch" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check for match with prefix.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:match" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">match :: Key -&gt; Prefix -&gt; Mask -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L625" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:match" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Check for match.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:mask" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">mask :: Key -&gt; Mask -&gt; Prefix</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L629" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:mask" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get prefix.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:prefixOf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">prefixOf :: Key -&gt; Prefix</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L633" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:prefixOf" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:bitmapOf" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">bitmapOf :: Key -&gt; BitMap</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L637" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:bitmapOf" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get the bitmap for a key.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:shorter" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">shorter :: Mask -&gt; Mask -&gt; Bool</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L641" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:shorter" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Is the first mask shorter (higher bit)?
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:branchMask" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">branchMask :: Prefix -&gt; Prefix -&gt; Mask</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L645" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:branchMask" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Find branching bit.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:highestBitMask" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">highestBitMask :: Int -&gt; Int</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L649" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:highestBitMask" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Get highest set bit as mask.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldrBits" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldrBits :: Prefix -&gt; (Key -&gt; b -&gt; b) -&gt; b -&gt; BitMap -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L655" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldrBits" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fold right over bits in a bitmap.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:foldlBits" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">foldlBits :: Prefix -&gt; b -&gt; (b -&gt; Key -&gt; b) -&gt; BitMap -&gt; b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L664" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:foldlBits" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Fold left over bits in a bitmap.
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Instances Section Frame -->
+    <div id="instances" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Instances</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance Show IntSet</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L117" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance Semigroup IntSet</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L121" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="decl instance">
+                <div class="decl-header">
+                    <code class="decl-name">instance Monoid IntSet</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;bhc-containers&#x2F;hs&#x2F;BHC&#x2F;Data&#x2F;IntSet.hs#L124" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:IntSet">IntSet</a></li>
+                    
+                    <li><a href="#t:Key">Key</a></li>
+                    
+                    <li><a href="#t:Prefix">Prefix</a></li>
+                    
+                    <li><a href="#t:Mask">Mask</a></li>
+                    
+                    <li><a href="#t:BitMap">BitMap</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:bitsPerWord">bitsPerWord</a></li>
+                    
+                    <li><a href="#v:suffixMask">suffixMask</a></li>
+                    
+                    <li><a href="#v:prefixMask">prefixMask</a></li>
+                    
+                    <li><a href="#v:empty">empty</a></li>
+                    
+                    <li><a href="#v:singleton">singleton</a></li>
+                    
+                    <li><a href="#v:fromList">fromList</a></li>
+                    
+                    <li><a href="#v:fromAscList">fromAscList</a></li>
+                    
+                    <li><a href="#v:fromDistinctAscList">fromDistinctAscList</a></li>
+                    
+                    <li><a href="#v:insert">insert</a></li>
+                    
+                    <li><a href="#v:delete">delete</a></li>
+                    
+                    <li><a href="#v:member">member</a></li>
+                    
+                    <li><a href="#v:notMember">notMember</a></li>
+                    
+                    <li><a href="#v:lookupLT">lookupLT</a></li>
+                    
+                    <li><a href="#v:lookupGT">lookupGT</a></li>
+                    
+                    <li><a href="#v:lookupLE">lookupLE</a></li>
+                    
+                    <li><a href="#v:lookupGE">lookupGE</a></li>
+                    
+                    <li><a href="#v:null">null</a></li>
+                    
+                    <li><a href="#v:size">size</a></li>
+                    
+                    <li><a href="#v:isSubsetOf">isSubsetOf</a></li>
+                    
+                    <li><a href="#v:isProperSubsetOf">isProperSubsetOf</a></li>
+                    
+                    <li><a href="#v:disjoint">disjoint</a></li>
+                    
+                    <li><a href="#v:union">union</a></li>
+                    
+                    <li><a href="#v:unions">unions</a></li>
+                    
+                    <li><a href="#v:difference">difference</a></li>
+                    
+                    <li><a href="#v:intersection">intersection</a></li>
+                    
+                    <li><a href="#v:filter">filter</a></li>
+                    
+                    <li><a href="#v:partition">partition</a></li>
+                    
+                    <li><a href="#v:split">split</a></li>
+                    
+                    <li><a href="#v:splitMember">splitMember</a></li>
+                    
+                    <li><a href="#v:splitRoot">splitRoot</a></li>
+                    
+                    <li><a href="#v:map">map</a></li>
+                    
+                    <li><a href="#v:foldr">foldr</a></li>
+                    
+                    <li><a href="#v:f&#x27;">f&#x27;</a></li>
+                    
+                    <li><a href="#v:toAscListAux">toAscListAux</a></li>
+                    
+                    <li><a href="#v:foldl">foldl</a></li>
+                    
+                    <li><a href="#v:foldr&#x27;">foldr&#x27;</a></li>
+                    
+                    <li><a href="#v:go&#x27;">go&#x27;</a></li>
+                    
+                    <li><a href="#v:foldl&#x27;">foldl&#x27;</a></li>
+                    
+                    <li><a href="#v:findMin">findMin</a></li>
+                    
+                    <li><a href="#v:findMax">findMax</a></li>
+                    
+                    <li><a href="#v:lookupMin">lookupMin</a></li>
+                    
+                    <li><a href="#v:lookupMax">lookupMax</a></li>
+                    
+                    <li><a href="#v:deleteMin">deleteMin</a></li>
+                    
+                    <li><a href="#v:deleteMax">deleteMax</a></li>
+                    
+                    <li><a href="#v:deleteFindMin">deleteFindMin</a></li>
+                    
+                    <li><a href="#v:deleteFindMax">deleteFindMax</a></li>
+                    
+                    <li><a href="#v:minView">minView</a></li>
+                    
+                    <li><a href="#v:maxView">maxView</a></li>
+                    
+                    <li><a href="#v:elems">elems</a></li>
+                    
+                    <li><a href="#v:toList">toList</a></li>
+                    
+                    <li><a href="#v:toAscList">toAscList</a></li>
+                    
+                    <li><a href="#v:toDescList">toDescList</a></li>
+                    
+                    <li><a href="#v:link">link</a></li>
+                    
+                    <li><a href="#v:tip">tip</a></li>
+                    
+                    <li><a href="#v:bin">bin</a></li>
+                    
+                    <li><a href="#v:zero">zero</a></li>
+                    
+                    <li><a href="#v:nomatch">nomatch</a></li>
+                    
+                    <li><a href="#v:match">match</a></li>
+                    
+                    <li><a href="#v:mask">mask</a></li>
+                    
+                    <li><a href="#v:prefixOf">prefixOf</a></li>
+                    
+                    <li><a href="#v:bitmapOf">bitmapOf</a></li>
+                    
+                    <li><a href="#v:shorter">shorter</a></li>
+                    
+                    <li><a href="#v:branchMask">branchMask</a></li>
+                    
+                    <li><a href="#v:highestBitMask">highestBitMask</a></li>
+                    
+                    <li><a href="#v:foldrBits">foldrBits</a></li>
+                    
+                    <li><a href="#v:foldlBits">foldlBits</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#instances" class="toc-section-link">Instances</a>
+            </li>
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>

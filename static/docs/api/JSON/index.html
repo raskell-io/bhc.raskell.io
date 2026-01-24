@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - BHC Documentation</title>
+    <link rel="stylesheet" href="&#x2F;docs&#x2F;api/css/style.css">
+    <script defer src="&#x2F;docs&#x2F;api/js/main.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="&#x2F;docs&#x2F;api/" class="logo">BHC</a>
+            <div class="header-controls">
+                
+                <div class="version-select">
+                    <select id="version-select" aria-label="Select version">
+                        <option value="main" selected>main</option>
+                        
+                    </select>
+                </div>
+                
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="icon-sun">☀</span>
+                    <span class="icon-moon">☾</span>
+                </button>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search (/)..." aria-label="Search">
+        </div>
+        
+<nav class="nav-tree">
+    <h3>Modules</h3>
+    <ul>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Process.html">BHC.System.Process</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-FilePath.html">BHC.System.FilePath</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Exit.html">BHC.System.Exit</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-IO.html">BHC.System.IO</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Environment.html">BHC.System.Environment</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-System-Directory.html">BHC.System.Directory</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Einsum.html">Einsum</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Shaped.html">Shaped</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Matrix.html">Matrix</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Sparse.html">Sparse</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/SIMD.html">SIMD</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Grad.html">Grad</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Tensor.html">Tensor</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Prelude.html">Prelude</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Numeric.html">Numeric</a>
+        </li>
+        
+        <li class="active">
+            <a href="&#x2F;docs&#x2F;api/JSON.html">JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Random.html">Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Vector.html">Vector</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BLAS.html">BLAS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Concurrency.html">Concurrency</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/FFI.html">FFI</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Time.html">Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Bytes.html">Bytes</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Text.html">Text</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-STM.html">BHC.Control.Concurrent.STM</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Concurrent-Scope.html">BHC.Control.Concurrent.Scope</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Applicative.html">BHC.Control.Applicative</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Arrow.html">Arrow</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/Category.html">Category</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Either.html">BHC.Data.Either</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Ord.html">BHC.Data.Ord</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-String.html">BHC.Data.String</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Char.html">BHC.Data.Char</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Tuple.html">BHC.Data.Tuple</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/List.html">List</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Maybe.html">BHC.Data.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-JSON.html">BHC.Data.JSON</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Random.html">BHC.Data.Random</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Time.html">BHC.Data.Time</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Identity.html">BHC.Control.Monad.Identity</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Except.html">BHC.Control.Monad.Except</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Writer.html">BHC.Control.Monad.Writer</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-RWS.html">BHC.Control.Monad.RWS</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Cont.html">BHC.Control.Monad.Cont</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Reader.html">BHC.Control.Monad.Reader</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-State.html">BHC.Control.Monad.State</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Trans.html">BHC.Control.Monad.Trans</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Control-Monad-Maybe.html">BHC.Control.Monad.Maybe</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntSet.html">IntSet</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Set.html">BHC.Data.Set</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Sequence.html">BHC.Data.Sequence</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/IntMap.html">IntMap</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text-Encoding.html">BHC.Data.Text.Encoding</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString.html">BHC.Data.ByteString</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-ByteString-Builder.html">BHC.Data.ByteString.Builder</a>
+        </li>
+        
+        <li >
+            <a href="&#x2F;docs&#x2F;api/BHC-Data-Text.html">BHC.Data.Text</a>
+        </li>
+        
+    </ul>
+</nav>
+
+    </nav>
+
+    <main class="content">
+        
+<article class="module-page">
+    <!-- Module Header Frame -->
+    <div class="page-header">
+        <div class="page-header__bar">
+            <span class="page-header__label">Module</span>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs" class="source-link" title="View source">
+                <span class="source-icon">{ }</span>
+                <span class="source-path">stdlib&#x2F;H26&#x2F;JSON.hs</span>
+            </a>
+            
+            
+        </div>
+        <div class="page-header__content">
+            <h1>JSON</h1>
+            
+        </div>
+    </div>
+
+    
+    <!-- Types Section Frame -->
+    <div id="types" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Types</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="t:Value" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L99" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Value" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Object !Object</code>
+                        
+                        <p class="con-doc">JSON object (key-value pairs)</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>Array !Array</code>
+                        
+                        <p class="con-doc">JSON array</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>String !Text</code>
+                        
+                        <p class="con-doc">JSON string</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>Number !Number</code>
+                        
+                        <p class="con-doc">JSON number</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>Bool !Bool</code>
+                        
+                        <p class="con-doc">JSON boolean</p>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>Null</code>
+                        
+                        <p class="con-doc">JSON null</p>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:Object" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type Object = Map Key Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L109" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Object" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    JSON object (map from keys to values).
+                </div>
+                
+            </div>
+            
+            <div id="t:Array" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type Array = Vector Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L112" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Array" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    JSON array.
+                </div>
+                
+            </div>
+            
+            <div id="t:Key" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">newtype Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L115" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Key" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Key Text</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    JSON object key.
+                </div>
+                
+            </div>
+            
+            <div id="t:JSONError" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data JSONError</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L242" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:JSONError" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>ParseError String</code>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>TypeError JSONPath String</code>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>KeyError JSONPath Key</code>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>IndexError JSONPath Int</code>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>OtherError String</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    JSON parsing/encoding error.
+                </div>
+                
+            </div>
+            
+            <div id="t:JSONPath" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type JSONPath = [JSONPathElement]</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L251" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:JSONPath" class="anchor">#</a>
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Path to error location in JSON structure.
+                </div>
+                
+            </div>
+            
+            <div id="t:JSONPathElement" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data JSONPathElement</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L254" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:JSONPathElement" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Key Key</code>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>Index Int</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Element of JSON path.
+                </div>
+                
+            </div>
+            
+            <div id="t:Pair" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">type Pair = (Key, Value)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L287" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Pair" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="t:Result" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">data Result a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L289" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#t:Result" class="anchor">#</a>
+                </div>
+                
+                <div class="constructors">
+                    
+                    <div class="constructor">
+                        <code>Error String</code>
+                        
+                    </div>
+                    
+                    <div class="constructor">
+                        <code>Success a</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Type Classes Section Frame -->
+    <div id="classes" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Type Classes</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="c:FromJSON" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class FromJSON a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L182" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:FromJSON" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>parseJSON :: Value -&gt; Parser a</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Class for types that can be decoded from JSON.
+                </div>
+                
+            </div>
+            
+            <div id="c:ToJSON" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">class ToJSON a</code>
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L186" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#c:ToJSON" class="anchor">#</a>
+                </div>
+                
+                <div class="class-methods">
+                    <h4>Methods</h4>
+                    
+                    <div class="method">
+                        <code>toJSON :: a -&gt; Value</code>
+                        
+                    </div>
+                    
+                    <div class="method">
+                        <code>toEncoding :: a -&gt; Encoding</code>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="decl-doc">
+                    Class for types that can be encoded to JSON.
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <!-- Functions Section Frame -->
+    <div id="functions" class="decl-section">
+        <div class="decl-section__header">
+            <span class="decl-section__label">Functions</span>
+        </div>
+        <div class="decl-section__content">
+            
+            <div id="v:encode" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">encode :: (ToJSON a) =&gt; a -&gt; ByteString</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L125" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:encode" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:encodePretty" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">encodePretty :: (ToJSON a) =&gt; a -&gt; ByteString</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L128" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:encodePretty" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Encode with pretty printing.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:encodeToText" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">encodeToText :: (ToJSON a) =&gt; a -&gt; Text</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L131" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:encodeToText" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Encode to Text.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:encodeToBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">encodeToBytes :: (ToJSON a) =&gt; a -&gt; ByteString</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L134" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:encodeToBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Encode to strict ByteString.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decode" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decode :: (FromJSON a) =&gt; ByteString -&gt; Maybe a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L137" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decode" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decode JSON, returning Nothing on failure.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decode&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decode&#x27; :: (FromJSON a) =&gt; ByteString -&gt; Maybe a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L140" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decode&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Strict decode.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decodeStrict" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decodeStrict :: (FromJSON a) =&gt; ByteString -&gt; Maybe a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L143" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decodeStrict" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decode strict ByteString.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decodeStrict&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decodeStrict&#x27; :: (FromJSON a) =&gt; ByteString -&gt; Maybe a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L146" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decodeStrict&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Strict decode of strict ByteString.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:eitherDecode" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">eitherDecode :: (FromJSON a) =&gt; ByteString -&gt; Either String a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L149" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:eitherDecode" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decode with error message.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:eitherDecode&#x27;" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">eitherDecode&#x27; :: (FromJSON a) =&gt; ByteString -&gt; Either String a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L152" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:eitherDecode&#x27;" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Strict decode with error message.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decodeText" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decodeText :: (FromJSON a) =&gt; Text -&gt; Either String a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L155" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decodeText" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decode from Text.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:decodeBytes" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">decodeBytes :: (FromJSON a) =&gt; Bytes -&gt; Either String a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L158" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:decodeBytes" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Decode from strict Bytes.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:object" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">object :: [Pair] -&gt; Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L161" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:object" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Construct a JSON object from pairs.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:.=" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">.= :: (ToJSON a) =&gt; Key -&gt; a -&gt; Pair</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L164" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:.=" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Construct a key-value pair.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:.:" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">.: :: (FromJSON a) =&gt; Object -&gt; Key -&gt; Parser a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L167" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:.:" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse required field.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:.:?" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">.:? :: (FromJSON a) =&gt; Object -&gt; Key -&gt; Parser (Maybe a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L170" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:.:?" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse optional field.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:.:!" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">.:! :: (FromJSON a) =&gt; Object -&gt; Key -&gt; Parser (Maybe a)</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L173" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:.:!" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse optional field with explicit Nothing.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:.!=" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">.!= :: (Parser (Maybe a)) -&gt; a -&gt; Parser a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L176" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:.!=" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Provide default for optional field.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:array" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">array :: [Value] -&gt; Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L179" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:array" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Construct a JSON array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withObject" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withObject :: String -&gt; (Object -&gt; Parser a) -&gt; Value -&gt; Parser a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L191" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withObject" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse with object accessor.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withArray :: String -&gt; (Array -&gt; Parser a) -&gt; Value -&gt; Parser a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L194" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse with array accessor.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withText" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withText :: String -&gt; (Text -&gt; Parser a) -&gt; Value -&gt; Parser a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L197" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withText" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse with text accessor.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withNumber" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withNumber :: String -&gt; (Number -&gt; Parser a) -&gt; Value -&gt; Parser a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L200" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withNumber" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse with number accessor.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:withBool" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">withBool :: String -&gt; (Bool -&gt; Parser a) -&gt; Value -&gt; Parser a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L203" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:withBool" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Parse with boolean accessor.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:parse" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parse :: (a -&gt; Parser b) -&gt; a -&gt; Result b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L209" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parse" class="anchor">#</a>
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:parseEither" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parseEither :: (a -&gt; Parser b) -&gt; a -&gt; Either String b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L212" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parseEither" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run parser returning Either.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:parseMaybe" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parseMaybe :: (a -&gt; Parser b) -&gt; a -&gt; Maybe b</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L215" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parseMaybe" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Run parser returning Maybe.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:parseStrict" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">parseStrict :: (FromJSON a) =&gt; ByteString -&gt; Either JSONError a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L218" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:parseStrict" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Strict parsing.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromText" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromText :: Text -&gt; Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L221" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromText" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert Text to Key.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toText" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toText :: Key -&gt; Text</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L224" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toText" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert Key to Text.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromString" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromString :: String -&gt; Key</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L227" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromString" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert String to Key.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toString" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toString :: Key -&gt; String</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L230" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toString" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert Key to String.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:fromFloatDigits" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">fromFloatDigits :: (RealFloat a) =&gt; a -&gt; Scientific</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L233" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:fromFloatDigits" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert floating point to Scientific.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toRealFloat" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toRealFloat :: (RealFloat a) =&gt; Scientific -&gt; a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L236" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toRealFloat" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Convert Scientific to floating point.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:toBoundedInteger" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">toBoundedInteger :: (Bounded a, Integral a) =&gt; Scientific -&gt; Maybe a</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L239" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:toBoundedInteger" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Try to convert Scientific to bounded integer.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:formatError" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">formatError :: JSONError -&gt; String</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L260" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:formatError" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Format error message with path.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:formatPath" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">formatPath :: JSONPath -&gt; String</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L263" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:formatPath" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Format path for display.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:pairs" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">pairs :: [Pair] -&gt; Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L266" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:pairs" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Construct object from key-value pairs.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:emptyObject" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">emptyObject :: Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L269" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:emptyObject" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Empty JSON object.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:emptyArray" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">emptyArray :: Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L272" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:emptyArray" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Empty JSON array.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:null_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">null_ :: Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L275" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:null_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    JSON null value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:bool_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">bool_ :: Bool -&gt; Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L278" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:bool_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Construct boolean value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:number_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">number_ :: Scientific -&gt; Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L281" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:number_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Construct number value.
+                </div>
+                
+                
+            </div>
+            
+            <div id="v:string_" class="decl">
+                <div class="decl-header">
+                    <code class="decl-name">string_ :: Text -&gt; Value</code>
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;bhc&#x2F;blob&#x2F;3fe404030d66f8b409d64632875870b16e4890e2&#x2F;stdlib&#x2F;H26&#x2F;JSON.hs#L284" class="source-link-small" title="View source">
+                        <span class="source-icon-small">{ }</span>
+                    </a>
+                    
+                    <a href="#v:string_" class="anchor">#</a>
+                </div>
+                
+                <div class="decl-doc">
+                    Construct string value.
+                </div>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+</article>
+
+    </main>
+
+    
+<!-- Right sidebar: On this page -->
+<aside class="toc-sidebar" id="toc-sidebar">
+    <div class="toc-header">
+        <span class="toc-label">On this page</span>
+        <button class="toc-toggle" id="toc-toggle" aria-label="Toggle table of contents">
+            <span class="toc-toggle-icon">▼</span>
+        </button>
+    </div>
+    <nav class="toc-content" id="toc-content">
+        <ul class="toc-list">
+            
+            <li class="toc-section">
+                <a href="#types" class="toc-section-link">Types</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#t:Value">Value</a></li>
+                    
+                    <li><a href="#t:Object">Object</a></li>
+                    
+                    <li><a href="#t:Array">Array</a></li>
+                    
+                    <li><a href="#t:Key">Key</a></li>
+                    
+                    <li><a href="#t:JSONError">JSONError</a></li>
+                    
+                    <li><a href="#t:JSONPath">JSONPath</a></li>
+                    
+                    <li><a href="#t:JSONPathElement">JSONPathElement</a></li>
+                    
+                    <li><a href="#t:Pair">Pair</a></li>
+                    
+                    <li><a href="#t:Result">Result</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#classes" class="toc-section-link">Classes</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#c:FromJSON">FromJSON</a></li>
+                    
+                    <li><a href="#c:ToJSON">ToJSON</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li class="toc-section">
+                <a href="#functions" class="toc-section-link">Functions</a>
+                <ul class="toc-items">
+                    
+                    <li><a href="#v:encode">encode</a></li>
+                    
+                    <li><a href="#v:encodePretty">encodePretty</a></li>
+                    
+                    <li><a href="#v:encodeToText">encodeToText</a></li>
+                    
+                    <li><a href="#v:encodeToBytes">encodeToBytes</a></li>
+                    
+                    <li><a href="#v:decode">decode</a></li>
+                    
+                    <li><a href="#v:decode&#x27;">decode&#x27;</a></li>
+                    
+                    <li><a href="#v:decodeStrict">decodeStrict</a></li>
+                    
+                    <li><a href="#v:decodeStrict&#x27;">decodeStrict&#x27;</a></li>
+                    
+                    <li><a href="#v:eitherDecode">eitherDecode</a></li>
+                    
+                    <li><a href="#v:eitherDecode&#x27;">eitherDecode&#x27;</a></li>
+                    
+                    <li><a href="#v:decodeText">decodeText</a></li>
+                    
+                    <li><a href="#v:decodeBytes">decodeBytes</a></li>
+                    
+                    <li><a href="#v:object">object</a></li>
+                    
+                    <li><a href="#v:.=">.=</a></li>
+                    
+                    <li><a href="#v:.:">.:</a></li>
+                    
+                    <li><a href="#v:.:?">.:?</a></li>
+                    
+                    <li><a href="#v:.:!">.:!</a></li>
+                    
+                    <li><a href="#v:.!=">.!=</a></li>
+                    
+                    <li><a href="#v:array">array</a></li>
+                    
+                    <li><a href="#v:withObject">withObject</a></li>
+                    
+                    <li><a href="#v:withArray">withArray</a></li>
+                    
+                    <li><a href="#v:withText">withText</a></li>
+                    
+                    <li><a href="#v:withNumber">withNumber</a></li>
+                    
+                    <li><a href="#v:withBool">withBool</a></li>
+                    
+                    <li><a href="#v:parse">parse</a></li>
+                    
+                    <li><a href="#v:parseEither">parseEither</a></li>
+                    
+                    <li><a href="#v:parseMaybe">parseMaybe</a></li>
+                    
+                    <li><a href="#v:parseStrict">parseStrict</a></li>
+                    
+                    <li><a href="#v:fromText">fromText</a></li>
+                    
+                    <li><a href="#v:toText">toText</a></li>
+                    
+                    <li><a href="#v:fromString">fromString</a></li>
+                    
+                    <li><a href="#v:toString">toString</a></li>
+                    
+                    <li><a href="#v:fromFloatDigits">fromFloatDigits</a></li>
+                    
+                    <li><a href="#v:toRealFloat">toRealFloat</a></li>
+                    
+                    <li><a href="#v:toBoundedInteger">toBoundedInteger</a></li>
+                    
+                    <li><a href="#v:formatError">formatError</a></li>
+                    
+                    <li><a href="#v:formatPath">formatPath</a></li>
+                    
+                    <li><a href="#v:pairs">pairs</a></li>
+                    
+                    <li><a href="#v:emptyObject">emptyObject</a></li>
+                    
+                    <li><a href="#v:emptyArray">emptyArray</a></li>
+                    
+                    <li><a href="#v:null_">null_</a></li>
+                    
+                    <li><a href="#v:bool_">bool_</a></li>
+                    
+                    <li><a href="#v:number_">number_</a></li>
+                    
+                    <li><a href="#v:string_">string_</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        </ul>
+    </nav>
+</aside>
+
+
+    <div class="search-modal" id="search-modal" hidden>
+        <div class="search-modal-content">
+            <div class="search-modal__header">
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__dot"></span>
+                <span class="search-modal__title">Search</span>
+            </div>
+            <input type="text" id="search-input" placeholder="Type to search...">
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+</body>
+</html>
