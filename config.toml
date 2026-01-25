@@ -481,6 +481,9 @@ url = "/docs/api/"
 [[extra.product.footer_links]]
 title = "Resources"
 [[extra.product.footer_links.links]]
+text = "Blog"
+url = "/blog/"
+[[extra.product.footer_links.links]]
 text = "GitHub"
 url = "https://github.com/raskell-io/bhc"
 external = true
@@ -558,6 +561,10 @@ desc = "Full documentation"
 name = "API Reference"
 url = "/docs/api/"
 desc = "Prelude & stdlib"
+
+[[extra.nav_links]]
+name = "Blog"
+url = "/blog/"
 
 [[extra.nav_links]]
 name = "About"

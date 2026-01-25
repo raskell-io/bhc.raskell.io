@@ -1,0 +1,633 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - Blog - {{ config.title }}{% endblock %}
+
+{% block content %}
+<!-- Side rails -->
+<div class="landing-rails">
+    <div class="landing-rail landing-rail--left"></div>
+    <div class="landing-rail landing-rail--right"></div>
+</div>
+
+<!-- Section dividers container (populated by JS) -->
+<div id="section-dividers"></div>
+
+<div class="landing">
+    <div class="landing__container">
+
+        <!-- Page Hero Section -->
+        <section class="page-hero" data-section="hero" data-page-slug="blog-post">
+            <canvas id="page-hero-canvas" class="page-hero__canvas"></canvas>
+            <div class="page-hero__content">
+                <span class="page-hero__label">[ BLOG ]</span>
+            </div>
+        </section>
+
+        <!-- Blog Post Content -->
+        <section class="content-section content-section--page" data-section="content">
+            <div class="content-section__frame">
+                <div class="content-section__body content-section__body--page">
+                    <article class="blog-post">
+                        <header class="blog-post__header">
+                            <div class="blog-post__meta">
+                                {% if page.date %}
+                                <time class="blog-post__date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">
+                                    {{ page.date | date(format="%B %d, %Y") }}
+                                </time>
+                                {% endif %}
+                                {% if page.extra.tag %}
+                                <span class="blog-post__tag blog-post__tag--{{ page.extra.tag | slugify }}">{{ page.extra.tag }}</span>
+                                {% endif %}
+                            </div>
+                            <h1 class="blog-post__title">{{ page.title }}</h1>
+                            {% if page.description %}
+                            <p class="blog-post__description">{{ page.description }}</p>
+                            {% endif %}
+                        </header>
+
+                        <div class="blog-post__content">
+                            {{ page.content | safe }}
+                        </div>
+
+                        <footer class="blog-post__footer">
+                            <a href="/blog/" class="blog-post__back">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M19 12H5"/>
+                                    <path d="m12 19-7-7 7-7"/>
+                                </svg>
+                                Back to all posts
+                            </a>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" data-section="footer">
+            <canvas id="wireframe-footer-canvas" class="footer__canvas"></canvas>
+            <canvas id="lissajous-canvas" class="footer__canvas footer__canvas--corners"></canvas>
+            <div class="footer__container">
+                <div class="footer__grid">
+                    <div class="footer__brand">
+                        <a href="/" class="footer__brand-name">{{ config.title }}</a>
+                        {% if config.extra.product.footer_tagline %}
+                        <span class="footer__brand-tagline">{{ config.extra.product.footer_tagline }}</span>
+                        {% endif %}
+                    </div>
+
+                    {% for group in config.extra.product.footer_links %}
+                    <div class="footer__column">
+                        <h4 class="footer__column-title">{{ group.title }}</h4>
+                        <div class="footer__links">
+                            {% for link in group.links %}
+                            <a href="{{ link.url }}" class="footer__link" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                                {{ link.text }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="footer__bottom">
+                    <span class="footer__copyright">{{ config.extra.product.footer_note | safe }}</span>
+                    <div class="footer__social">
+                        {% if config.extra.social.github %}
+                        <a href="{{ config.extra.social.github }}" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        {% endif %}
+                        {% if config.extra.social.twitter %}
+                        <a href="{{ config.extra.social.twitter }}" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        {% endif %}
+                        {% if config.extra.social.discord %}
+                        <a href="{{ config.extra.social.discord }}" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                            </svg>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+<script>
+    // Generate section dividers with diamonds at section boundaries
+    function generateSectionDividers() {
+        const container = document.getElementById('section-dividers');
+        const sections = document.querySelectorAll('[data-section]');
+        const railsContainer = document.querySelector('.landing-rails');
+
+        if (!container || !railsContainer) return;
+
+        container.innerHTML = '';
+
+        const leftRail = document.querySelector('.landing-rail--left');
+        const rightRail = document.querySelector('.landing-rail--right');
+        if (!leftRail || !rightRail) return;
+
+        const leftRailX = leftRail.getBoundingClientRect().left;
+        const rightRailX = rightRail.getBoundingClientRect().left;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const topPos = rect.top + scrollTop;
+            const bottomPos = rect.bottom + scrollTop;
+
+            const startDivider = document.createElement('div');
+            startDivider.className = 'section-divider';
+            startDivider.style.top = topPos + 'px';
+            startDivider.innerHTML = `
+                <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
+                <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
+            `;
+            container.appendChild(startDivider);
+
+            const endDivider = document.createElement('div');
+            endDivider.className = 'section-divider';
+            endDivider.style.top = bottomPos + 'px';
+            endDivider.innerHTML = `
+                <div class="section-divider__diamond" style="left: ${leftRailX - 5}px;"></div>
+                <div class="section-divider__diamond" style="left: ${rightRailX - 5}px;"></div>
+            `;
+            container.appendChild(endDivider);
+        });
+    }
+
+    generateSectionDividers();
+    window.addEventListener('resize', generateSectionDividers);
+
+    // ==========================================================================
+    // Blog Post Hero Animation - Pulsing brackets
+    // ==========================================================================
+    (function() {
+        const canvas = document.getElementById('page-hero-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let animationId;
+        let time = 0;
+
+        function resize() {
+            width = canvas.parentElement.offsetWidth;
+            height = canvas.parentElement.offsetHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        const style = getComputedStyle(document.documentElement);
+        const accentColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.015;
+
+            const centerX = width / 2;
+            const centerY = height / 2;
+
+            ctx.strokeStyle = accentColor;
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+
+            // Draw multiple pulsing bracket pairs
+            for (let i = 0; i < 3; i++) {
+                const phase = time + i * 0.8;
+                const pulse = Math.sin(phase) * 0.5 + 0.5;
+                const size = 30 + i * 20 + pulse * 10;
+                const spread = 60 + i * 40 + pulse * 20;
+
+                ctx.globalAlpha = 0.15 + (1 - i / 3) * 0.15;
+
+                // Left bracket
+                ctx.beginPath();
+                ctx.moveTo(centerX - spread + 10, centerY - size);
+                ctx.lineTo(centerX - spread, centerY - size);
+                ctx.lineTo(centerX - spread, centerY + size);
+                ctx.lineTo(centerX - spread + 10, centerY + size);
+                ctx.stroke();
+
+                // Right bracket
+                ctx.beginPath();
+                ctx.moveTo(centerX + spread - 10, centerY - size);
+                ctx.lineTo(centerX + spread, centerY - size);
+                ctx.lineTo(centerX + spread, centerY + size);
+                ctx.lineTo(centerX + spread - 10, centerY + size);
+                ctx.stroke();
+            }
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(draw);
+        }
+
+        resize();
+        window.addEventListener('resize', resize);
+        draw();
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) cancelAnimationFrame(animationId);
+            else draw();
+        });
+    })();
+
+    document.fonts.ready.then(generateSectionDividers);
+
+    // ==========================================================================
+    // Styled code blocks with language headers
+    // ==========================================================================
+    (function() {
+        const haskellIcon = `<svg class="terminal-block__icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-width="1.5"><path stroke="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path stroke="currentColor" d="M14 2v6h6"/><g transform="translate(5,10) scale(0.13)" fill="none" stroke="none"><path fill="#5e5086" d="M1.842 77.722L26.586 40.63 1.842 3.537H20.4L45.144 40.63 20.4 77.722H1.842zm0 0"/><path fill="#5e5086" d="M26.586 77.722L51.33 40.63 26.586 3.537h18.558L94.63 77.722H76.074L60.61 54.54 45.143 77.722H26.586zm0 0"/><path fill="#8b4fc7" d="M86.384 56.085L78.136 43.72h28.868v12.366h-20.62zM74.012 37.54l-8.248-12.365h41.24V37.54H74.012zm0 0"/></g></svg>`;
+
+        const codeBlocks = document.querySelectorAll('.blog-post__content pre code[data-lang]');
+
+        codeBlocks.forEach(codeEl => {
+            const pre = codeEl.parentElement;
+            const lang = codeEl.getAttribute('data-lang') || 'code';
+            const code = codeEl.textContent;
+
+            const isTerminal = lang === 'shellscript' || lang === 'bash';
+            const isHaskell = lang === 'haskell';
+
+            const block = document.createElement('div');
+            block.className = 'terminal-block';
+
+            const isPlain = !lang || lang === 'plain' || lang === 'text';
+
+            if (!isPlain) {
+                const header = document.createElement('div');
+                header.className = 'terminal-block__header';
+
+                if (isTerminal) {
+                    header.innerHTML = `
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__title">terminal</span>
+                    `;
+                } else if (isHaskell) {
+                    header.innerHTML = `${haskellIcon}<span class="terminal-block__title">Haskell</span>`;
+                    header.classList.add('terminal-block__header--file');
+                } else {
+                    header.innerHTML = `
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__dot"></span>
+                        <span class="terminal-block__title">${lang}</span>
+                    `;
+                }
+                block.appendChild(header);
+            }
+
+            const body = document.createElement('div');
+            body.className = 'terminal-block__body';
+
+            const clonedPre = pre.cloneNode(true);
+            clonedPre.style = '';
+            clonedPre.className = '';
+            body.appendChild(clonedPre);
+
+            block.appendChild(body);
+
+            pre.parentElement.replaceChild(block, pre);
+        });
+    })();
+
+    // ==========================================================================
+    // Syntax Highlighting (minimal Haskell highlighter)
+    // ==========================================================================
+    (function() {
+        const codeBlocks = document.querySelectorAll('code.language-haskell');
+
+        codeBlocks.forEach(block => {
+            let code = block.textContent;
+            const tokens = [];
+            let i = 0;
+
+            while (i < code.length) {
+                if (code.slice(i, i + 3) === '{-#') {
+                    const end = code.indexOf('#-}', i);
+                    if (end !== -1) {
+                        tokens.push({ type: 'pragma', text: code.slice(i, end + 3) });
+                        i = end + 3;
+                        continue;
+                    }
+                }
+
+                if (code.slice(i, i + 2) === '--') {
+                    let end = code.indexOf('\n', i);
+                    if (end === -1) end = code.length;
+                    tokens.push({ type: 'comment', text: code.slice(i, end) });
+                    i = end;
+                    continue;
+                }
+
+                if (code[i] === '"') {
+                    let j = i + 1;
+                    while (j < code.length && code[j] !== '"') {
+                        if (code[j] === '\\') j++;
+                        j++;
+                    }
+                    tokens.push({ type: 'string', text: code.slice(i, j + 1) });
+                    i = j + 1;
+                    continue;
+                }
+
+                if (/[a-zA-Z_]/.test(code[i])) {
+                    let j = i;
+                    while (j < code.length && /[a-zA-Z0-9_']/.test(code[j])) j++;
+                    const word = code.slice(i, j);
+                    const keywords = ['module', 'where', 'import', 'data', 'type', 'newtype', 'class', 'instance', 'deriving', 'let', 'in', 'case', 'of', 'if', 'then', 'else', 'do', 'return', 'foreign', 'export', 'ccall', 'otherwise'];
+                    if (keywords.includes(word)) {
+                        tokens.push({ type: 'keyword', text: word });
+                    } else if (/^[A-Z]/.test(word)) {
+                        tokens.push({ type: 'type', text: word });
+                    } else {
+                        tokens.push({ type: 'ident', text: word });
+                    }
+                    i = j;
+                    continue;
+                }
+
+                if (/[0-9]/.test(code[i])) {
+                    let j = i;
+                    while (j < code.length && /[0-9.]/.test(code[j])) j++;
+                    tokens.push({ type: 'number', text: code.slice(i, j) });
+                    i = j;
+                    continue;
+                }
+
+                tokens.push({ type: 'plain', text: code[i] });
+                i++;
+            }
+
+            const escapeHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            let html = tokens.map(t => {
+                const escaped = escapeHtml(t.text);
+                if (t.type === 'plain' || t.type === 'ident') return escaped;
+                return `<span class="hl-${t.type}">${escaped}</span>`;
+            }).join('');
+
+            block.innerHTML = html;
+        });
+    })();
+
+    // ==========================================================================
+    // Copy buttons for code blocks
+    // ==========================================================================
+    (function() {
+        const copyIcon = `<svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+        const checkIcon = `<svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+        function createCopyButton(getText) {
+            const btn = document.createElement('button');
+            btn.className = 'code-copy-btn';
+            btn.setAttribute('aria-label', 'Copy code');
+            btn.innerHTML = copyIcon + checkIcon;
+
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const text = getText();
+                try {
+                    await navigator.clipboard.writeText(text);
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                }
+            });
+
+            return btn;
+        }
+
+        document.querySelectorAll('.terminal-block').forEach(terminal => {
+            const code = terminal.querySelector('code');
+            if (code) {
+                const btn = createCopyButton(() => code.textContent);
+                terminal.appendChild(btn);
+            }
+        });
+
+        document.querySelectorAll('.blog-post__content pre').forEach(pre => {
+            if (pre.closest('.terminal-block')) return;
+            const code = pre.querySelector('code');
+            if (code) {
+                const btn = createCopyButton(() => code.textContent);
+                pre.appendChild(btn);
+            }
+        });
+    })();
+
+    // ==========================================================================
+    // Wireframe Cube Animation (Footer)
+    // ==========================================================================
+    (function() {
+        const canvas = document.getElementById('wireframe-footer-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let width, height, canvasWidth;
+        let animationId;
+        let time = 0;
+
+        const maxContentWidth = 1200;
+
+        const size = 50;
+        const vertices = [
+            [-1, -1, -1], [1, -1, -1], [1, 1, -1], [-1, 1, -1],
+            [-1, -1, 1], [1, -1, 1], [1, 1, 1], [-1, 1, 1]
+        ].map(v => v.map(c => c * size));
+
+        const edges = [
+            [0, 1], [1, 2], [2, 3], [3, 0],
+            [4, 5], [5, 6], [6, 7], [7, 4],
+            [0, 4], [1, 5], [2, 6], [3, 7]
+        ];
+
+        function resize() {
+            const footer = canvas.parentElement;
+            canvasWidth = window.innerWidth;
+            height = footer.offsetHeight;
+            canvas.width = canvasWidth;
+            canvas.height = height;
+        }
+
+        function rotateX(p, angle) {
+            const cos = Math.cos(angle), sin = Math.sin(angle);
+            return [p[0], p[1] * cos - p[2] * sin, p[1] * sin + p[2] * cos];
+        }
+
+        function rotateY(p, angle) {
+            const cos = Math.cos(angle), sin = Math.sin(angle);
+            return [p[0] * cos + p[2] * sin, p[1], -p[0] * sin + p[2] * cos];
+        }
+
+        function rotateZ(p, angle) {
+            const cos = Math.cos(angle), sin = Math.sin(angle);
+            return [p[0] * cos - p[1] * sin, p[0] * sin + p[1] * cos, p[2]];
+        }
+
+        function project(p, cx, cy) {
+            const fov = 200;
+            const z = p[2] + 200;
+            const scale = fov / z;
+            return [p[0] * scale + cx, p[1] * scale + cy];
+        }
+
+        function drawCube(cx, cy, rX, rY, rZ) {
+            const projected = vertices.map(v => {
+                let p = rotateX(v, rX);
+                p = rotateY(p, rY);
+                p = rotateZ(p, rZ);
+                return project(p, cx, cy);
+            });
+
+            ctx.beginPath();
+            edges.forEach(([a, b]) => {
+                ctx.moveTo(projected[a][0], projected[a][1]);
+                ctx.lineTo(projected[b][0], projected[b][1]);
+            });
+            ctx.stroke();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvasWidth, height);
+            time += 0.008;
+
+            const leftRail = (canvasWidth - maxContentWidth) / 2;
+            const rightRail = (canvasWidth + maxContentWidth) / 2;
+
+            if (leftRail < 60) {
+                animationId = requestAnimationFrame(draw);
+                return;
+            }
+
+            const style = getComputedStyle(document.documentElement);
+            const lineColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+
+            ctx.strokeStyle = lineColor;
+            ctx.lineWidth = 1;
+            ctx.globalAlpha = 0.5;
+
+            const centerY = height / 2;
+            const leftCubeX = leftRail / 2;
+            drawCube(leftCubeX, centerY, time * 0.5, time * 0.3, time * 0.2);
+
+            const rightCubeX = rightRail + (canvasWidth - rightRail) / 2;
+            drawCube(rightCubeX, centerY, time * 0.35 + 1.5, time * 0.45 + 0.8, time * 0.25 + 2.1);
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(draw);
+        }
+
+        resize();
+        window.addEventListener('resize', resize);
+        draw();
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) cancelAnimationFrame(animationId);
+            else draw();
+        });
+    })();
+
+    // ==========================================================================
+    // Lissajous Curves Animation (Footer corners)
+    // ==========================================================================
+    (function() {
+        const canvas = document.getElementById('lissajous-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let canvasWidth, height;
+        let animationId;
+        let time = 0;
+
+        const maxContentWidth = 1200;
+
+        function resize() {
+            const footer = canvas.parentElement;
+            canvasWidth = window.innerWidth;
+            height = footer.offsetHeight;
+            canvas.width = canvasWidth;
+            canvas.height = height;
+        }
+
+        function drawLissajous(centerX, centerY, scaleX, scaleY, a, b, delta, points, rotation) {
+            ctx.beginPath();
+            for (let i = 0; i <= points; i++) {
+                const t = (i / points) * Math.PI * 2 * 4;
+                let x = Math.sin(a * t + delta) * scaleX;
+                let y = Math.sin(b * t) * scaleY;
+
+                const cos = Math.cos(rotation);
+                const sin = Math.sin(rotation);
+                const rx = x * cos - y * sin;
+                const ry = x * sin + y * cos;
+
+                if (i === 0) ctx.moveTo(centerX + rx, centerY + ry);
+                else ctx.lineTo(centerX + rx, centerY + ry);
+            }
+            ctx.stroke();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvasWidth, height);
+            time += 0.006;
+
+            const leftRail = (canvasWidth - maxContentWidth) / 2;
+            const rightRail = (canvasWidth + maxContentWidth) / 2;
+
+            if (leftRail < 50) {
+                animationId = requestAnimationFrame(draw);
+                return;
+            }
+
+            const style = getComputedStyle(document.documentElement);
+            const accentColor = style.getPropertyValue('--color-accent').trim() || '#cba6f7';
+
+            ctx.lineWidth = 1;
+            const centerY = height * 0.5;
+            const cornerWidth = leftRail;
+            const size = Math.min(cornerWidth * 0.5, height * 0.3);
+
+            const leftX = leftRail / 2;
+            ctx.strokeStyle = accentColor;
+            ctx.globalAlpha = 0.25;
+            drawLissajous(leftX, centerY, size, size * 0.7, 3, 2, time, 250, time * 0.12);
+            ctx.globalAlpha = 0.15;
+            drawLissajous(leftX, centerY, size * 0.7, size * 0.5, 5, 4, time * 1.3, 250, -time * 0.08);
+
+            const rightX = rightRail + (canvasWidth - rightRail) / 2;
+            ctx.globalAlpha = 0.25;
+            drawLissajous(rightX, centerY, size, size * 0.7, 4, 3, time * 0.8 + 2.3, 250, time * 0.09 + 1.1);
+            ctx.globalAlpha = 0.15;
+            drawLissajous(rightX, centerY, size * 0.7, size * 0.5, 3, 5, time * 1.1 + 1.7, 250, time * 0.11 + 0.5);
+
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(draw);
+        }
+
+        resize();
+        window.addEventListener('resize', resize);
+        draw();
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) cancelAnimationFrame(animationId);
+            else draw();
+        });
+    })();
+</script>
+{% endblock %}
