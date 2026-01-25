@@ -1848,7 +1848,15 @@ pre:hover > .code-copy-btn {
   font-size: var(--text-xl);
   font-weight: var(--weight-semibold);
   letter-spacing: -0.01em;
-  color: var(--color-heading);
+  background: linear-gradient(135deg, #cba6f7 0%, #89b4fa 50%, #5e5086 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .footer__brand-tagline {

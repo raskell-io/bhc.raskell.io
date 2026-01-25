@@ -11,20 +11,25 @@
                 {% if link.dropdown %}
                 <div class="header__dropdown">
                     <button class="header__link header__dropdown-toggle" aria-expanded="false">
+                        {% if link.icon %}<span class="header__link-icon">{{ link.icon | safe }}</span>{% endif %}
                         <span>{{ link.name }}</span>
                         <svg class="header__dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="header__dropdown-menu">
                         {% for item in link.items %}
                         <a href="{{ item.url | safe }}" class="header__dropdown-item">
-                            <span class="header__dropdown-item-name">{{ item.name }}</span>
-                            {% if item.desc %}<span class="header__dropdown-item-desc">{{ item.desc }}</span>{% endif %}
+                            {% if item.icon %}<span class="header__dropdown-item-icon">{{ item.icon | safe }}</span>{% endif %}
+                            <div class="header__dropdown-item-text">
+                                <span class="header__dropdown-item-name">{{ item.name }}</span>
+                                {% if item.desc %}<span class="header__dropdown-item-desc">{{ item.desc }}</span>{% endif %}
+                            </div>
                         </a>
                         {% endfor %}
                     </div>
                 </div>
                 {% else %}
                 <a href="{{ link.url | safe }}" class="header__link">
+                    {% if link.icon %}<span class="header__link-icon">{{ link.icon | safe }}</span>{% endif %}
                     <span>{{ link.name }}</span>
                 </a>
                 {% endif %}
@@ -81,7 +86,10 @@
             {% for link in config.extra.nav_links %}
             {% if link.dropdown %}
             <div class="mobile-nav__group">
-                <span class="mobile-nav__group-title">{{ link.name }}</span>
+                <span class="mobile-nav__group-title">
+                    {% if link.icon %}<span class="mobile-nav__icon">{{ link.icon | safe }}</span>{% endif %}
+                    {{ link.name }}
+                </span>
                 {% for item in link.items %}
                 <a href="{{ item.url | safe }}" class="mobile-nav__link mobile-nav__link--nested">
                     <span>{{ item.name }}</span>
@@ -90,6 +98,7 @@
             </div>
             {% else %}
             <a href="{{ link.url | safe }}" class="mobile-nav__link">
+                {% if link.icon %}<span class="mobile-nav__icon">{{ link.icon | safe }}</span>{% endif %}
                 <span>{{ link.name }}</span>
             </a>
             {% endif %}
