@@ -21,6 +21,7 @@ GITHUB_REPO="raskell-io/bhc"
 INSTALL_DIR="${BHC_INSTALL_DIR:-$HOME/.bhc}"
 BIN_DIR="$INSTALL_DIR/bin"
 LIB_DIR="$INSTALL_DIR/lib"
+EXAMPLES_DIR="$INSTALL_DIR/examples"
 
 # Colors (disabled if not a terminal)
 if [ -t 1 ]; then
@@ -145,6 +146,13 @@ install_bhc() {
     elif [ -f "$tmp_dir/libbhc_rts.a" ]; then
         cp "$tmp_dir/libbhc_rts.a" "$LIB_DIR/"
         info "RTS library installed to $LIB_DIR"
+    fi
+
+    # Install examples if present
+    if [ -d "$tmp_dir/examples" ]; then
+        mkdir -p "$EXAMPLES_DIR"
+        cp -r "$tmp_dir/examples/"* "$EXAMPLES_DIR/"
+        info "Examples installed to $EXAMPLES_DIR"
     fi
 
     success "BHC ${version} installed to $BIN_DIR/bhc"
