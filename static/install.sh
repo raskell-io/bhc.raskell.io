@@ -78,10 +78,11 @@ check_dependencies() {
     done
 }
 
-# Get the latest version from GitHub
+# Get the latest version from GitHub (includes prereleases)
 get_latest_version() {
-    curl -fsSL "https://api.github.com/repos/$GITHUB_REPO/releases/latest" \
+    curl -fsSL "https://api.github.com/repos/$GITHUB_REPO/releases" \
         | grep '"tag_name"' \
+        | head -1 \
         | sed -E 's/.*"([^"]+)".*/\1/'
 }
 
