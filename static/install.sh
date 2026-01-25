@@ -92,7 +92,7 @@ install_bhc() {
     local version="$3"
 
     # Construct download URL
-    local filename="bhc-${version}-${arch}-${os}.tar.gz"
+    local filename="bhc-${arch}-${os}.tar.gz"
     local url="https://github.com/$GITHUB_REPO/releases/download/${version}/${filename}"
 
     info "Downloading BHC ${version} for ${os}/${arch}..."
@@ -115,8 +115,8 @@ install_bhc() {
     # Find and install the binary
     if [ -f "$tmp_dir/bhc" ]; then
         mv "$tmp_dir/bhc" "$BIN_DIR/bhc"
-    elif [ -f "$tmp_dir/bhc-${version}-${arch}-${os}/bhc" ]; then
-        mv "$tmp_dir/bhc-${version}-${arch}-${os}/bhc" "$BIN_DIR/bhc"
+    elif [ -f "$tmp_dir/bhc-${arch}-${os}/bhc" ]; then
+        mv "$tmp_dir/bhc-${arch}-${os}/bhc" "$BIN_DIR/bhc"
     else
         # Try to find bhc binary anywhere in extracted files
         local bhc_bin
