@@ -22,6 +22,21 @@ curl -fsSL https://bhc.raskell.io/install.sh | sh
 cargo install bhc
 ```
 
+### hx (Haskell toolchain)
+
+If you use [hx](https://hx.raskell.io), add BHC as a compiler backend:
+
+```bash
+hx toolchain add bhc
+```
+
+Then configure your project to use BHC in `hx.toml`:
+
+```toml
+[compiler]
+backend = "bhc"
+```
+
 ### Verify installation
 
 ```bash
@@ -185,7 +200,63 @@ bhc build
 bhc run
 ```
 
-You can also use [hx](https://hx.raskell.io), a unified Haskell toolchain that handles packages, dependencies, and builds. hx and BHC are designed to work together, but BHC also works standalone with traditional cabal workflows.
+## Using hx with BHC
+
+[hx](https://hx.raskell.io) is a unified Haskell toolchain that handles packages, dependencies, and builds. hx and BHC are designed to work together seamlessly.
+
+### Basic Configuration
+
+In your project's `hx.toml`:
+
+```toml
+[compiler]
+backend = "bhc"
+```
+
+### BHC-Specific Options
+
+Configure BHC features directly in `hx.toml`:
+
+```toml
+[compiler]
+backend = "bhc"
+
+[compiler.bhc]
+profile = "numeric"           # default | server | numeric | edge
+target = "aarch64-linux-gnu"  # Cross-compilation target
+emit_kernel_report = true     # Performance reporting
+tensor_fusion = true          # Enable tensor fusion optimizations
+```
+
+### CLI Override
+
+Override the backend for a single build:
+
+```bash
+hx build --backend bhc
+```
+
+Priority order: CLI flag > hx.toml > default (GHC)
+
+### Cross-Compilation Targets
+
+hx with BHC supports additional targets beyond GHC:
+
+```toml
+[compiler.bhc]
+target = "wasm32-wasi"      # WebAssembly
+target = "riscv64-linux-gnu" # RISC-V
+target = "aarch64-linux-gnu" # ARM64
+```
+
+### Build Commands
+
+```bash
+hx build    # Build with configured backend
+hx check    # Type-check without full compilation
+```
+
+BHC also works standalone with traditional cabal workflows if you prefer not to use hx.
 
 ## Next Steps
 
