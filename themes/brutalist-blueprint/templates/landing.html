@@ -49,16 +49,29 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                     </p>
 
                     <!-- Install Widget -->
-                    {% if config.extra.product.install_methods %} {% set
-                    default_method = config.extra.product.install_methods |
-                    filter(attribute="default", value=true) | first %} {% if
-                    default_method %}
+                    {% if config.extra.product.install_methods %}
+                    {% set default_method = config.extra.product.install_methods | filter(attribute="default", value=true) | first %}
+                    {% if default_method %}
                     <div class="install-widget">
                         <div class="install-widget__header">
                             <span class="install-widget__dot"></span>
                             <span class="install-widget__dot"></span>
                             <span class="install-widget__dot"></span>
                             <span class="install-widget__title">terminal</span>
+                            <div class="install-widget__methods">
+                                {% for method in config.extra.product.install_methods %}
+                                <button
+                                    class="install-widget__method {% if method.default %}install-widget__method--active{% endif %}"
+                                    data-method="{{ method.id }}"
+                                    data-command="{{ method.command }}"
+                                    aria-label="Install via {{ method.label }}"
+                                    title="{{ method.label }}"
+                                >
+                                    {{ method.icon | safe }}
+                                    <span class="install-widget__method-label">{{ method.label }}</span>
+                                </button>
+                                {% endfor %}
+                            </div>
                         </div>
                         <div class="install-widget__body">
                             <span class="install-widget__prompt">$</span>
@@ -113,7 +126,8 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                             </button>
                         </div>
                     </div>
-                    {% endif %} {% endif %}
+                    {% endif %}
+                    {% endif %}
 
                     <div class="hero__actions" style="margin-top: 2rem">
                         <a
@@ -870,6 +884,28 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
             i = (i + 1) % frames.length;
             spinner.textContent = frames[i];
         }, 80);
+    })();
+
+    // Install method switching
+    (function () {
+        const methodBtns = document.querySelectorAll(".install-widget__method");
+        const commandEl = document.getElementById("install-command");
+
+        if (methodBtns.length && commandEl) {
+            methodBtns.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    // Update active state
+                    methodBtns.forEach((b) =>
+                        b.classList.remove("install-widget__method--active"),
+                    );
+                    btn.classList.add("install-widget__method--active");
+
+                    // Update command
+                    const command = btn.dataset.command;
+                    commandEl.textContent = command;
+                });
+            });
+        }
     })();
 
     // Copy command to clipboard
