@@ -16,10 +16,16 @@ Install BHC and compile your first Haskell project.
 curl -fsSL https://bhc.raskell.io/install.sh | sh
 ```
 
-### Cargo
+### Homebrew (macOS/Linux)
 
 ```bash
-cargo install bhc
+brew install raskell-io/tap/bhc
+```
+
+After installation, add the library path to your shell:
+
+```bash
+export LIBRARY_PATH="$(brew --prefix)/lib:$LIBRARY_PATH"
 ```
 
 ### hx (Haskell toolchain)
