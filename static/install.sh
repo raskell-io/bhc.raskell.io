@@ -145,48 +145,131 @@ install_bhc() {
     success "BHC ${version} installed to $BIN_DIR/bhc"
 }
 
-# Detect shell and suggest PATH addition
-suggest_path() {
+# Get shell config file and export syntax
+get_shell_config() {
     local shell_name
     shell_name=$(basename "$SHELL")
-
-    local path_export="export PATH=\"$BIN_DIR:\$PATH\""
-    local lib_export="export LIBRARY_PATH=\"$LIB_DIR:\$LIBRARY_PATH\""
-    local rc_file=""
 
     case "$shell_name" in
         bash)
             if [ -f "$HOME/.bashrc" ]; then
-                rc_file="$HOME/.bashrc"
+                SHELL_RC="$HOME/.bashrc"
             elif [ -f "$HOME/.bash_profile" ]; then
-                rc_file="$HOME/.bash_profile"
+                SHELL_RC="$HOME/.bash_profile"
+            else
+                SHELL_RC="$HOME/.bashrc"
             fi
+            PATH_EXPORT="export PATH=\"$BIN_DIR:\$PATH\""
+            LIB_EXPORT="export LIBRARY_PATH=\"$LIB_DIR:\$LIBRARY_PATH\""
             ;;
         zsh)
-            rc_file="$HOME/.zshrc"
+            SHELL_RC="$HOME/.zshrc"
+            PATH_EXPORT="export PATH=\"$BIN_DIR:\$PATH\""
+            LIB_EXPORT="export LIBRARY_PATH=\"$LIB_DIR:\$LIBRARY_PATH\""
             ;;
         fish)
-            path_export="set -gx PATH $BIN_DIR \$PATH"
-            lib_export="set -gx LIBRARY_PATH $LIB_DIR \$LIBRARY_PATH"
-            rc_file="$HOME/.config/fish/config.fish"
+            SHELL_RC="$HOME/.config/fish/config.fish"
+            PATH_EXPORT="set -gx PATH $BIN_DIR \$PATH"
+            LIB_EXPORT="set -gx LIBRARY_PATH $LIB_DIR \$LIBRARY_PATH"
+            ;;
+        *)
+            SHELL_RC=""
+            PATH_EXPORT="export PATH=\"$BIN_DIR:\$PATH\""
+            LIB_EXPORT="export LIBRARY_PATH=\"$LIB_DIR:\$LIBRARY_PATH\""
             ;;
     esac
+}
+
+# Check if BHC is already configured in shell
+is_shell_configured() {
+    if [ -z "$SHELL_RC" ] || [ ! -f "$SHELL_RC" ]; then
+        return 1
+    fi
+    grep -q "$BIN_DIR" "$SHELL_RC" 2>/dev/null
+}
+
+# Configure shell automatically
+configure_shell() {
+    if [ -z "$SHELL_RC" ]; then
+        return 1
+    fi
+
+    # Create parent directory if needed (for fish)
+    mkdir -p "$(dirname "$SHELL_RC")"
+
+    # Add BHC configuration block
+    {
+        echo ""
+        echo "# BHC - Basel Haskell Compiler"
+        echo "$PATH_EXPORT"
+        echo "$LIB_EXPORT"
+    } >> "$SHELL_RC"
+
+    return 0
+}
+
+# Prompt user to configure shell
+prompt_shell_config() {
+    get_shell_config
+
+    # If already configured, skip
+    if is_shell_configured; then
+        success "Shell already configured in $SHELL_RC"
+        return
+    fi
 
     echo ""
-    if [ -n "$rc_file" ]; then
+
+    # If not a terminal, just show manual instructions
+    if [ ! -t 0 ]; then
+        show_manual_instructions
+        return
+    fi
+
+    # Interactive prompt
+    if [ -n "$SHELL_RC" ]; then
+        printf "${BOLD}Would you like to add BHC to your shell config?${RESET} [Y/n] "
+        read -r response
+        case "$response" in
+            [nN][oO]|[nN])
+                show_manual_instructions
+                ;;
+            *)
+                if configure_shell; then
+                    success "Added BHC to $SHELL_RC"
+                    echo ""
+                    info "Restart your shell or run:"
+                    echo ""
+                    printf "    ${BOLD}source %s${RESET}\n" "$SHELL_RC"
+                else
+                    warn "Could not configure shell automatically"
+                    show_manual_instructions
+                fi
+                ;;
+        esac
+    else
+        show_manual_instructions
+    fi
+}
+
+# Show manual configuration instructions
+show_manual_instructions() {
+    get_shell_config
+    echo ""
+    if [ -n "$SHELL_RC" ]; then
         info "Add BHC to your PATH and LIBRARY_PATH by running:"
         echo ""
-        printf "    ${BOLD}echo '%s' >> %s${RESET}\n" "$path_export" "$rc_file"
-        printf "    ${BOLD}echo '%s' >> %s${RESET}\n" "$lib_export" "$rc_file"
+        printf "    ${BOLD}echo '%s' >> %s${RESET}\n" "$PATH_EXPORT" "$SHELL_RC"
+        printf "    ${BOLD}echo '%s' >> %s${RESET}\n" "$LIB_EXPORT" "$SHELL_RC"
         echo ""
         info "Then restart your shell or run:"
         echo ""
-        printf "    ${BOLD}source %s${RESET}\n" "$rc_file"
+        printf "    ${BOLD}source %s${RESET}\n" "$SHELL_RC"
     else
         info "Add BHC to your PATH and LIBRARY_PATH:"
         echo ""
-        printf "    ${BOLD}%s${RESET}\n" "$path_export"
-        printf "    ${BOLD}%s${RESET}\n" "$lib_export"
+        printf "    ${BOLD}%s${RESET}\n" "$PATH_EXPORT"
+        printf "    ${BOLD}%s${RESET}\n" "$LIB_EXPORT"
     fi
     echo ""
 }
@@ -237,7 +320,7 @@ main() {
     if echo "$PATH" | tr ':' '\n' | grep -q "^$BIN_DIR$"; then
         success "BHC is ready! Run 'bhc --version' to verify."
     else
-        suggest_path
+        prompt_shell_config
         info "After updating your PATH, run 'bhc --version' to verify."
     fi
 
