@@ -15,6 +15,7 @@ set -e
 GITHUB_REPO="raskell-io/bhc"
 INSTALL_DIR="${BHC_INSTALL_DIR:-$HOME/.bhc}"
 BIN_DIR="$INSTALL_DIR/bin"
+LIB_DIR="$INSTALL_DIR/lib"
 
 # Colors (disabled if not a terminal)
 if [ -t 1 ]; then
@@ -131,6 +132,16 @@ install_bhc() {
 
     chmod +x "$BIN_DIR/bhc"
 
+    # Install RTS library if present
+    mkdir -p "$LIB_DIR"
+    if [ -d "$tmp_dir/lib" ]; then
+        cp -r "$tmp_dir/lib/"* "$LIB_DIR/"
+        info "RTS library installed to $LIB_DIR"
+    elif [ -f "$tmp_dir/libbhc_rts.a" ]; then
+        cp "$tmp_dir/libbhc_rts.a" "$LIB_DIR/"
+        info "RTS library installed to $LIB_DIR"
+    fi
+
     success "BHC ${version} installed to $BIN_DIR/bhc"
 }
 
@@ -140,6 +151,7 @@ suggest_path() {
     shell_name=$(basename "$SHELL")
 
     local path_export="export PATH=\"$BIN_DIR:\$PATH\""
+    local lib_export="export LIBRARY_PATH=\"$LIB_DIR:\$LIBRARY_PATH\""
     local rc_file=""
 
     case "$shell_name" in
@@ -155,23 +167,26 @@ suggest_path() {
             ;;
         fish)
             path_export="set -gx PATH $BIN_DIR \$PATH"
+            lib_export="set -gx LIBRARY_PATH $LIB_DIR \$LIBRARY_PATH"
             rc_file="$HOME/.config/fish/config.fish"
             ;;
     esac
 
     echo ""
     if [ -n "$rc_file" ]; then
-        info "Add BHC to your PATH by running:"
+        info "Add BHC to your PATH and LIBRARY_PATH by running:"
         echo ""
         printf "    ${BOLD}echo '%s' >> %s${RESET}\n" "$path_export" "$rc_file"
+        printf "    ${BOLD}echo '%s' >> %s${RESET}\n" "$lib_export" "$rc_file"
         echo ""
         info "Then restart your shell or run:"
         echo ""
         printf "    ${BOLD}source %s${RESET}\n" "$rc_file"
     else
-        info "Add BHC to your PATH:"
+        info "Add BHC to your PATH and LIBRARY_PATH:"
         echo ""
         printf "    ${BOLD}%s${RESET}\n" "$path_export"
+        printf "    ${BOLD}%s${RESET}\n" "$lib_export"
     fi
     echo ""
 }
