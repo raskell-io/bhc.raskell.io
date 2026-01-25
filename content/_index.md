@@ -3,22 +3,26 @@ title = "BHC - Basel Haskell Compiler"
 template = "landing.html"
 +++
 
-## Quick Start
+## Try It Now
 
-Install BHC and compile your existing Haskell project.
+Install BHC and compile your first program in 30 seconds.
 
 ```bash
-# Install BHC
+# 1. Install BHC
 curl -fsSL https://bhc.raskell.io/install.sh | sh
 
-# Compile in Haskell 2010 mode
-bhc --edition=Haskell2010 Main.hs
+# 2. Add to your PATH (or restart your terminal)
+export PATH="$HOME/.bhc/bin:$PATH"
+export LIBRARY_PATH="$HOME/.bhc/lib:$LIBRARY_PATH"
 
-# Or use GHC2024 compatibility
-bhc --edition=GHC2024 Main.hs
+# 3. Create a Haskell file
+echo 'main = putStrLn "Hello from BHC!"' > hello.hs
 
-# Use numeric profile for performance-critical code
-bhc --profile=numeric Main.hs
+# 4. Compile and run
+bhc hello.hs -o hello
+./hello
 ```
 
-BHC aims to compile existing Haskell code with minimal friction. Innovations are opt-in.
+Output: `Hello from BHC!`
+
+BHC produces native executables via LLVM. No runtime interpreter, just fast native code.
