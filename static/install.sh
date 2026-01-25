@@ -4,6 +4,11 @@
 #
 # Usage:
 #   curl -fsSL https://bhc.raskell.io/install.sh | sh
+#   curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- --uninstall
+#
+# Options:
+#   --uninstall      Remove BHC and optionally clean shell config
+#   --help           Show this help message
 #
 # Environment variables:
 #   BHC_INSTALL_DIR  - Installation directory (default: ~/.bhc)
@@ -286,8 +291,118 @@ check_existing_install() {
     fi
 }
 
-# Main
-main() {
+# Show help
+show_help() {
+    cat << 'EOF'
+BHC Installer - Basel Haskell Compiler
+https://bhc.raskell.io
+
+USAGE:
+    curl -fsSL https://bhc.raskell.io/install.sh | sh
+    curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- [OPTIONS]
+
+OPTIONS:
+    --uninstall     Remove BHC installation
+    --help          Show this help message
+
+ENVIRONMENT VARIABLES:
+    BHC_INSTALL_DIR     Installation directory (default: ~/.bhc)
+    BHC_VERSION         Specific version to install (default: latest)
+
+EXAMPLES:
+    # Install latest version
+    curl -fsSL https://bhc.raskell.io/install.sh | sh
+
+    # Install specific version
+    BHC_VERSION=v0.1.0 curl -fsSL https://bhc.raskell.io/install.sh | sh
+
+    # Uninstall
+    curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- --uninstall
+EOF
+}
+
+# Remove BHC config from shell rc file
+remove_shell_config() {
+    local rc_file="$1"
+    if [ -f "$rc_file" ]; then
+        # Create temp file without BHC lines
+        grep -v "# BHC - Basel Haskell Compiler" "$rc_file" | grep -v "\.bhc" > "$rc_file.tmp" 2>/dev/null || true
+        mv "$rc_file.tmp" "$rc_file"
+        return 0
+    fi
+    return 1
+}
+
+# Uninstall BHC
+uninstall_bhc() {
+    echo ""
+    printf "${BOLD}BHC Uninstaller${RESET}\n"
+    printf "Basel Haskell Compiler - https://bhc.raskell.io\n"
+    echo ""
+
+    if [ ! -d "$INSTALL_DIR" ]; then
+        warn "BHC is not installed at $INSTALL_DIR"
+        exit 0
+    fi
+
+    # Show what will be removed
+    info "This will remove:"
+    echo "    - $INSTALL_DIR"
+    echo ""
+
+    # Prompt for confirmation if interactive
+    if [ -t 0 ]; then
+        printf "${BOLD}Are you sure you want to uninstall BHC?${RESET} [y/N] "
+        read -r response
+        case "$response" in
+            [yY][eE][sS]|[yY])
+                ;;
+            *)
+                info "Uninstall cancelled"
+                exit 0
+                ;;
+        esac
+    fi
+
+    # Remove installation directory
+    rm -rf "$INSTALL_DIR"
+    success "Removed $INSTALL_DIR"
+
+    # Offer to clean shell config if interactive
+    if [ -t 0 ]; then
+        echo ""
+        printf "${BOLD}Would you like to remove BHC from your shell config?${RESET} [y/N] "
+        read -r response
+        case "$response" in
+            [yY][eE][sS]|[yY])
+                local cleaned=0
+                for rc in "$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.zshrc" "$HOME/.config/fish/config.fish"; do
+                    if remove_shell_config "$rc"; then
+                        info "Cleaned $rc"
+                        cleaned=1
+                    fi
+                done
+                if [ "$cleaned" -eq 0 ]; then
+                    info "No shell config files needed cleaning"
+                fi
+                ;;
+            *)
+                info "Shell config left unchanged"
+                warn "You may want to manually remove BHC entries from your shell config"
+                ;;
+        esac
+    else
+        echo ""
+        warn "You may want to manually remove BHC entries from your shell config"
+    fi
+
+    echo ""
+    success "BHC has been uninstalled"
+    echo ""
+}
+
+# Main install function
+do_install() {
     echo ""
     printf "${BOLD}BHC Installer${RESET}\n"
     printf "Basel Haskell Compiler - https://bhc.raskell.io\n"
@@ -325,6 +440,30 @@ main() {
     fi
 
     echo ""
+}
+
+# Main entry point
+main() {
+    # Parse arguments
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            --uninstall)
+                uninstall_bhc
+                exit 0
+                ;;
+            --help|-h)
+                show_help
+                exit 0
+                ;;
+            *)
+                error "Unknown option: $1. Use --help for usage."
+                ;;
+        esac
+        shift
+    done
+
+    # Default action: install
+    do_install
 }
 
 main "$@"
