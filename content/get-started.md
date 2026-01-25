@@ -50,25 +50,8 @@ Create a file `Main.hs`:
 ```haskell
 module Main where
 
--- | A simple greeting program demonstrating BHC basics.
--- This compiles identically with BHC and GHC, showcasing
--- BHC's commitment to Haskell compatibility.
-
-import System.Environment (getArgs)
-import Data.List (intercalate)
-
 main :: IO ()
-main = do
-    args <- getArgs
-    case args of
-        []    -> putStrLn "Hello from BHC!"
-        names -> putStrLn $ "Hello, " ++ intercalate " and " names ++ "!"
-
--- | A pure function that transforms greetings.
--- BHC compiles this the same way GHC would in default profile.
-formatGreeting :: String -> String -> String
-formatGreeting timeOfDay name =
-    "Good " ++ timeOfDay ++ ", " ++ name ++ "!"
+main = putStrLn "Hello from BHC!"
 ```
 
 Compile and run:
@@ -76,7 +59,32 @@ Compile and run:
 ```bash
 bhc Main.hs -o hello
 ./hello
-./hello Alice Bob
+```
+
+Output:
+```
+Hello from BHC!
+```
+
+## More Examples
+
+BHC supports arithmetic and let bindings:
+
+```haskell
+module Main where
+
+main :: IO ()
+main = print (1 + 2 * 3)
+```
+
+```bash
+bhc Main.hs -o calc
+./calc
+```
+
+Output:
+```
+7
 ```
 
 ## Compile with Compatibility Mode
