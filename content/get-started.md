@@ -266,6 +266,74 @@ hx check    # Type-check without full compilation
 
 BHC also works standalone with traditional cabal workflows if you prefer not to use hx.
 
+## Troubleshooting
+
+### `bhc: command not found`
+
+The BHC binary is not in your PATH. Add it:
+
+```bash
+# For bash
+echo 'export PATH="$HOME/.bhc/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# For zsh
+echo 'export PATH="$HOME/.bhc/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### `library 'bhc_rts' not found` or linking errors
+
+The RTS library path is not set. Add LIBRARY_PATH:
+
+```bash
+# For bash
+echo 'export LIBRARY_PATH="$HOME/.bhc/lib:$LIBRARY_PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# For zsh
+echo 'export LIBRARY_PATH="$HOME/.bhc/lib:$LIBRARY_PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Unsupported platform
+
+BHC v0.1.0-alpha supports:
+- Linux x86_64
+- macOS aarch64 (Apple Silicon)
+
+Windows, Linux aarch64, and macOS x86_64 (Intel) support coming soon.
+
+### Feature not working
+
+BHC v0.1.0-alpha supports a subset of Haskell. Currently working:
+- `putStrLn`, `print`
+- Integer literals and arithmetic (`+`, `-`, `*`)
+- Let bindings
+- Simple function definitions
+
+Not yet supported:
+- `do` notation / monadic operations
+- Pattern matching in function definitions
+- Type classes
+- Imports (except Prelude)
+
+See the [Compatibility Charter](/compatibility/) for full details.
+
+### Uninstalling BHC
+
+To completely remove BHC:
+
+```bash
+curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- --uninstall
+```
+
+Then remove these lines from your shell config (`~/.bashrc` or `~/.zshrc`):
+```bash
+export PATH="$HOME/.bhc/bin:$PATH"
+export LIBRARY_PATH="$HOME/.bhc/lib:$LIBRARY_PATH"
+```
+
 ## Next Steps
 
 - Read the [Compatibility Charter](/compatibility/) to understand what's supported
