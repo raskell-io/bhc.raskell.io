@@ -174,14 +174,14 @@ These may be considered for future versions based on community needs.
 
 We welcome contributions. See:
 
-- [Contributing Guide](https://github.com/raskell-io/bhc/blob/main/CONTRIBUTING.md)
-- [Good First Issues](https://github.com/raskell-io/bhc/labels/good%20first%20issue)
-- [Discussions](https://github.com/raskell-io/bhc/discussions)
+- [Contributing Guide](https://github.com/arcanist-sh/bhc/blob/main/CONTRIBUTING.md)
+- [Good First Issues](https://github.com/arcanist-sh/bhc/labels/good%20first%20issue)
+- [Discussions](https://github.com/arcanist-sh/bhc/discussions)
 
 ## Updates
 
 Follow development:
 
-- [GitHub Releases](https://github.com/raskell-io/bhc/releases)
-- [Changelog](https://github.com/raskell-io/bhc/blob/main/CHANGELOG.md)
+- [GitHub Releases](https://github.com/arcanist-sh/bhc/releases)
+- [Changelog](https://github.com/arcanist-sh/bhc/blob/main/CHANGELOG.md)
 - [Twitter / X](https://x.com/raskelll)

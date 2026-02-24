@@ -1,8 +1,8 @@
-# bhc.raskell.io
+# bhc.arcanist.sh
 
-Website for [BHC](https://github.com/raskell-io/bhc) — the Basel Haskell Compiler.
+Website for [BHC](https://github.com/arcanist-sh/bhc) — the Basel Haskell Compiler.
 
-**Live site:** https://bhc.raskell.io
+**Live site:** https://bhc.arcanist.sh
 
 ## Overview
 

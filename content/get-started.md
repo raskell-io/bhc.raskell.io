@@ -13,13 +13,13 @@ Install BHC and compile your first Haskell project.
 ### Script (recommended)
 
 ```bash
-curl -fsSL https://bhc.raskell.io/install.sh | sh
+curl -fsSL https://bhc.arcanist.sh/install.sh | sh
 ```
 
 ### Homebrew (macOS/Linux)
 
 ```bash
-brew install raskell-io/tap/bhc
+brew install arcanist-sh/tap/bhc
 ```
 
 After installation, add the library path to your shell:
@@ -30,7 +30,7 @@ export LIBRARY_PATH="$(brew --prefix)/lib:$LIBRARY_PATH"
 
 ### hx (Haskell toolchain)
 
-If you use [hx](https://hx.raskell.io), add BHC as a compiler backend:
+If you use [hx](https://hx.arcanist.sh), add BHC as a compiler backend:
 
 ```bash
 hx toolchain add bhc
@@ -216,7 +216,7 @@ bhc run
 
 ## Using hx with BHC
 
-[hx](https://hx.raskell.io) is a unified Haskell toolchain that handles packages, dependencies, and builds. hx and BHC are designed to work together seamlessly.
+[hx](https://hx.arcanist.sh) is a unified Haskell toolchain that handles packages, dependencies, and builds. hx and BHC are designed to work together seamlessly.
 
 ### Basic Configuration
 
@@ -331,7 +331,7 @@ See the [Compatibility Charter](/compatibility/) for full details.
 To completely remove BHC:
 
 ```bash
-curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- --uninstall
+curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- --uninstall
 ```
 
 Then remove these lines from your shell config (`~/.bashrc` or `~/.zshrc`):

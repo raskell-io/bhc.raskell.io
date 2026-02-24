@@ -8,8 +8,8 @@ template = "landing.html"
 Install BHC and compile your first program in 30 seconds.
 
 ```bash
-# 1. Install BHC (or: brew install raskell-io/tap/bhc)
-curl -fsSL https://bhc.raskell.io/install.sh | sh
+# 1. Install BHC (or: brew install arcanist-sh/tap/bhc)
+curl -fsSL https://bhc.arcanist.sh/install.sh | sh
 
 # 2. Add to your PATH (or restart your terminal)
 export PATH="$HOME/.bhc/bin:$PATH"

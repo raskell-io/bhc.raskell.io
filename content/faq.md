@@ -34,7 +34,7 @@ BHC is **not** a GHC replacement. It's an alternative compiler for specific use 
 
 ### Who is building BHC?
 
-BHC is developed by [Raskell](https://raskell.io), with the goal of expanding the Haskell ecosystem with specialized tooling.
+BHC is developed by [Raskell](https://arcanist.sh), with the goal of expanding the Haskell ecosystem with specialized tooling.
 
 ## Features
 
@@ -85,7 +85,7 @@ Coming soon:
 ### How do I install BHC?
 
 ```bash
-curl -fsSL https://bhc.raskell.io/install.sh | sh
+curl -fsSL https://bhc.arcanist.sh/install.sh | sh
 ```
 
 See [Get Started](/get-started/) for detailed instructions.
@@ -93,7 +93,7 @@ See [Get Started](/get-started/) for detailed instructions.
 ### How do I uninstall BHC?
 
 ```bash
-curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- --uninstall
+curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- --uninstall
 ```
 
 ### I get "command not found" after installing
@@ -138,19 +138,19 @@ BHC supports a subset of GHC extensions for compatibility. See the [Compatibilit
 ### How can I contribute?
 
 BHC is open source. You can:
-- Report bugs on [GitHub](https://github.com/raskell-io/bhc/issues)
+- Report bugs on [GitHub](https://github.com/arcanist-sh/bhc/issues)
 - Submit pull requests
 - Improve documentation
 - Share feedback and use cases
 
 ### Where can I get help?
 
-- [GitHub Issues](https://github.com/raskell-io/bhc/issues) for bugs
-- [GitHub Discussions](https://github.com/raskell-io/bhc/discussions) for questions
+- [GitHub Issues](https://github.com/arcanist-sh/bhc/issues) for bugs
+- [GitHub Discussions](https://github.com/arcanist-sh/bhc/discussions) for questions
 - This documentation site
 
 ## License
 
 ### What license is BHC under?
 
-BHC is open source. Check the [GitHub repository](https://github.com/raskell-io/bhc) for license details.
+BHC is open source. Check the [GitHub repository](https://github.com/arcanist-sh/bhc) for license details.

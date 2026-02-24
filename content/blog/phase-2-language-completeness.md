@@ -124,7 +124,7 @@ The goal: `sum (map (*2) [1..1000000])` fuses to a single loop with no intermedi
 Build from source:
 
 ```bash
-git clone https://github.com/raskell-io/bhc
+git clone https://github.com/arcanist-sh/bhc
 cd bhc
 cargo build --release
 ```

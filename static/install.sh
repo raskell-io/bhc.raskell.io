@@ -1,10 +1,10 @@
 #!/bin/sh
 # BHC Installer Script
-# https://bhc.raskell.io
+# https://bhc.arcanist.sh
 #
 # Usage:
-#   curl -fsSL https://bhc.raskell.io/install.sh | sh
-#   curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- --uninstall
+#   curl -fsSL https://bhc.arcanist.sh/install.sh | sh
+#   curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- --uninstall
 #
 # Options:
 #   --uninstall      Remove BHC and optionally clean shell config
@@ -17,7 +17,7 @@
 set -e
 
 # Configuration
-GITHUB_REPO="raskell-io/bhc"
+GITHUB_REPO="arcanist-sh/bhc"
 INSTALL_DIR="${BHC_INSTALL_DIR:-$HOME/.bhc}"
 BIN_DIR="$INSTALL_DIR/bin"
 LIB_DIR="$INSTALL_DIR/lib"
@@ -303,11 +303,11 @@ check_existing_install() {
 show_help() {
     cat << 'EOF'
 BHC Installer - Basel Haskell Compiler
-https://bhc.raskell.io
+https://bhc.arcanist.sh
 
 USAGE:
-    curl -fsSL https://bhc.raskell.io/install.sh | sh
-    curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- [OPTIONS]
+    curl -fsSL https://bhc.arcanist.sh/install.sh | sh
+    curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- [OPTIONS]
 
 OPTIONS:
     --uninstall     Remove BHC installation
@@ -319,13 +319,13 @@ ENVIRONMENT VARIABLES:
 
 EXAMPLES:
     # Install latest version
-    curl -fsSL https://bhc.raskell.io/install.sh | sh
+    curl -fsSL https://bhc.arcanist.sh/install.sh | sh
 
     # Install specific version
-    BHC_VERSION=v0.1.0 curl -fsSL https://bhc.raskell.io/install.sh | sh
+    BHC_VERSION=v0.1.0 curl -fsSL https://bhc.arcanist.sh/install.sh | sh
 
     # Uninstall
-    curl -fsSL https://bhc.raskell.io/install.sh | sh -s -- --uninstall
+    curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- --uninstall
 EOF
 }
 
@@ -345,7 +345,7 @@ remove_shell_config() {
 uninstall_bhc() {
     echo ""
     printf "${BOLD}BHC Uninstaller${RESET}\n"
-    printf "Basel Haskell Compiler - https://bhc.raskell.io\n"
+    printf "Basel Haskell Compiler - https://bhc.arcanist.sh\n"
     echo ""
 
     if [ ! -d "$INSTALL_DIR" ]; then
@@ -413,7 +413,7 @@ uninstall_bhc() {
 do_install() {
     echo ""
     printf "${BOLD}BHC Installer${RESET}\n"
-    printf "Basel Haskell Compiler - https://bhc.raskell.io\n"
+    printf "Basel Haskell Compiler - https://bhc.arcanist.sh\n"
     echo ""
 
     check_dependencies

@@ -184,4 +184,4 @@ The tools are here. The question is what we build with them.
 
 ---
 
-*BHC is open source at [github.com/raskell-io/bhc](https://github.com/raskell-io/bhc). If you're interested in compilers, Haskell, or AI-assisted development, come take a look.*
+*BHC is open source at [github.com/arcanist-sh/bhc](https://github.com/arcanist-sh/bhc). If you're interested in compilers, Haskell, or AI-assisted development, come take a look.*

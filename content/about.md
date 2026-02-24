@@ -22,7 +22,7 @@ So: a Haskell compiler from Basel, named after Basel. It's personal, not a marke
 
 ## How We Got Here
 
-BHC wasn't the first project. [hx](https://hx.raskell.io) came before it — a package manager and build tool for Haskell, also written in Rust. The idea was simple: Haskell's tooling situation is fragmented (cabal, stack, ghcup), and a unified tool could help.
+BHC wasn't the first project. [hx](https://hx.arcanist.sh) came before it — a package manager and build tool for Haskell, also written in Rust. The idea was simple: Haskell's tooling situation is fragmented (cabal, stack, ghcup), and a unified tool could help.
 
 Building hx meant understanding how Haskell projects are structured, how dependencies resolve, how builds should work. At some point the question became: if we're rethinking the tooling, why not rethink the compiler too?
 
@@ -109,16 +109,16 @@ In compatibility modes, BHC aims to preserve Haskell semantics. Where runtime be
 
 BHC is open source under the MIT license.
 
-- [GitHub Repository](https://github.com/raskell-io/bhc)
-- [Issue Tracker](https://github.com/raskell-io/bhc/issues)
-- [Discussions](https://github.com/raskell-io/bhc/discussions)
+- [GitHub Repository](https://github.com/arcanist-sh/bhc)
+- [Issue Tracker](https://github.com/arcanist-sh/bhc/issues)
+- [Discussions](https://github.com/arcanist-sh/bhc/discussions)
 
 ## Community
 
 Join the conversation:
 
 - [Twitter / X](https://x.com/raskelll)
-- [GitHub Discussions](https://github.com/raskell-io/bhc/discussions)
+- [GitHub Discussions](https://github.com/arcanist-sh/bhc/discussions)
 
 ## Acknowledgments
 

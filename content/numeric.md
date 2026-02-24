@@ -293,7 +293,7 @@ Numeric profile is optimized for numeric workloads. General-purpose code may per
 
 ## Benchmarks
 
-BHC publishes reproducible benchmarks for numeric workloads. See the [benchmarks repository](https://github.com/raskell-io/bhc/tree/main/benchmarks) for methodology and results.
+BHC publishes reproducible benchmarks for numeric workloads. See the [benchmarks repository](https://github.com/arcanist-sh/bhc/tree/main/benchmarks) for methodology and results.
 
 We benchmark against:
 - GHC with equivalent optimizations enabled

@@ -4,13 +4,13 @@
 name = "brutalist-blueprint"
 description = "A brutalist tech blueprint theme with monospace fonts and grid aesthetics"
 license = "MIT"
-homepage = "https://github.com/raskell-io/bhc.raskell.io"
+homepage = "https://github.com/arcanist-sh/bhc.arcanist.sh"
 min_version = "0.19.0"
-demo = "https://bhc.raskell.io"
+demo = "https://bhc.arcanist.sh"
 
 [author]
-name = "raskell.io"
-homepage = "https://raskell.io"
+name = "arcanist.sh"
+homepage = "https://arcanist.sh"
 
 [extra]
 # Theme supports both light and dark modes

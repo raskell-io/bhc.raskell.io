@@ -1,7 +1,7 @@
 # Zola configuration for bhc website
 # https://www.getzola.org/documentation/getting-started/configuration/
 
-base_url = "https://bhc.raskell.io"
+base_url = "https://bhc.arcanist.sh"
 title = "BHC - Basel Haskell Compiler"
 description = "An alternative compiler for Haskell: compatibility-first, with a modern runtime, multiple targets, and opt-in extensions."
 default_language = "en"
@@ -40,9 +40,9 @@ mode = "product"
 brand_short = "BHC"
 
 # Site metadata
-author = "raskell.io"
+author = "arcanist.sh"
 author_type = "Organization"
-github_repo = "https://github.com/raskell-io/bhc"
+github_repo = "https://github.com/arcanist-sh/bhc"
 docs_url = "/get-started/"
 
 # SEO metadata
@@ -61,7 +61,7 @@ apple_touch_icon = "apple-touch-icon.png"
 webmanifest = "site.webmanifest"
 
 # Social links
-github = "https://github.com/raskell-io/bhc"
+github = "https://github.com/arcanist-sh/bhc"
 
 # Product configuration
 [extra.product]
@@ -70,17 +70,17 @@ tagline_sub = "Compatibility-first. Profiles for performance."
 subtitle = "An alternative compiler for Haskell with a modern runtime, multiple targets, and opt-in extensions."
 gradient_title = true
 badge = "alpha"
-badge_url = "https://github.com/raskell-io/bhc"
+badge_url = "https://github.com/arcanist-sh/bhc"
 features_title = "Capabilities"
 features_subtitle = "BHC extends standard Haskell with runtime profiles, a tensor-native numeric pipeline, and compilation targets beyond native binaries. Same language, more options."
 footer_tagline = "Functional. Portable. Fast. Haskell that ships."
-footer_note = "© 2025 raskell.io. Released under the MIT License."
+footer_note = "© 2025 arcanist.sh. Released under the MIT License."
 
 # Install methods for dropdown
 [[extra.product.install_methods]]
 id = "script"
 label = "Script"
-command = "curl -fsSL https://bhc.raskell.io/install.sh | sh"
+command = "curl -fsSL https://bhc.arcanist.sh/install.sh | sh"
 icon = """<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m10 8 4 4-4 4"/></svg>"""
 default = true
 
@@ -93,7 +93,7 @@ icon = """<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox
 [[extra.product.install_methods]]
 id = "homebrew"
 label = "Homebrew"
-command = "brew install raskell-io/tap/bhc"
+command = "brew install arcanist-sh/tap/bhc"
 icon = """<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>"""
 
 [[extra.product.install_methods]]
@@ -432,7 +432,7 @@ answer = "BHC has completed milestones M0–M10 (core compiler, profiles, GPU, W
 
 [[extra.product.faq]]
 question = "How do I report bugs or contribute?"
-answer = "Open an issue or discussion on <a href=\"https://github.com/raskell-io/bhc\" target=\"_blank\" rel=\"noopener\">GitHub</a>. We follow conventional commits and welcome contributions. See CLAUDE.md for development guidelines."
+answer = "Open an issue or discussion on <a href=\"https://github.com/arcanist-sh/bhc\" target=\"_blank\" rel=\"noopener\">GitHub</a>. We follow conventional commits and welcome contributions. See CLAUDE.md for development guidelines."
 
 [[extra.product.faq]]
 question = "Does BHC work with Cabal and Stack?"
@@ -468,7 +468,7 @@ answer = "Yes. BHC supports multiple targets from a single installation: native 
 
 # Social links
 [extra.social]
-github = "https://github.com/raskell-io/bhc"
+github = "https://github.com/arcanist-sh/bhc"
 twitter = "https://x.com/raskelll"
 
 # Footer link groups
@@ -497,18 +497,18 @@ text = "Blog"
 url = "/blog/"
 [[extra.product.footer_links.links]]
 text = "GitHub"
-url = "https://github.com/raskell-io/bhc"
+url = "https://github.com/arcanist-sh/bhc"
 external = true
 [[extra.product.footer_links.links]]
 text = "Roadmap"
 url = "/roadmap/"
 [[extra.product.footer_links.links]]
 text = "Changelog"
-url = "https://github.com/raskell-io/bhc/blob/main/CHANGELOG.md"
+url = "https://github.com/arcanist-sh/bhc/blob/main/CHANGELOG.md"
 external = true
 [[extra.product.footer_links.links]]
 text = "hx (toolchain)"
-url = "https://hx.raskell.io"
+url = "https://hx.arcanist.sh"
 external = true
 
 [[extra.product.footer_links]]
@@ -519,14 +519,14 @@ url = "https://x.com/raskelll"
 external = true
 [[extra.product.footer_links.links]]
 text = "Discussions"
-url = "https://github.com/raskell-io/bhc/discussions"
+url = "https://github.com/arcanist-sh/bhc/discussions"
 external = true
 
 [[extra.product.footer_links]]
 title = "Legal"
 [[extra.product.footer_links.links]]
 text = "License (MIT)"
-url = "https://github.com/raskell-io/bhc/blob/main/LICENSE"
+url = "https://github.com/arcanist-sh/bhc/blob/main/LICENSE"
 external = true
 
 # Navigation

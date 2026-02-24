@@ -67,13 +67,13 @@ We're also expanding the test suite with packages from Hackage. The goal: compil
 BHC is open source and available now:
 
 ```bash
-curl -fsSL https://bhc.raskell.io/install.sh | sh
+curl -fsSL https://bhc.arcanist.sh/install.sh | sh
 ```
 
 Or build from source:
 
 ```bash
-git clone https://github.com/raskell-io/bhc
+git clone https://github.com/arcanist-sh/bhc
 cd bhc
 cargo build --release
 ```
@@ -95,7 +95,7 @@ bhc hello.hs -o hello
 
 This milestone wouldn't be possible without the Haskell community's decades of research and implementation work. BHC builds on that foundation while exploring new directions.
 
-We're just getting started. Follow development on [GitHub](https://github.com/raskell-io/bhc), and let us know what you'd like to see next.
+We're just getting started. Follow development on [GitHub](https://github.com/arcanist-sh/bhc), and let us know what you'd like to see next.
 
 ---
 

@@ -128,4 +128,4 @@ Open source works like this more often than people realize.
 
 ---
 
-*The HCT source is available at [gitlab.haskell.org](https://gitlab.haskell.org/-/project/1/uploads/2cc126c8b6a5b51fb18dd56fec129f2f/hct-2018-05-02-PRE-ALPHA.src.tar.gz) under the BSD license. BHC is open source at [github.com/raskell-io/bhc](https://github.com/raskell-io/bhc).*
+*The HCT source is available at [gitlab.haskell.org](https://gitlab.haskell.org/-/project/1/uploads/2cc126c8b6a5b51fb18dd56fec129f2f/hct-2018-05-02-PRE-ALPHA.src.tar.gz) under the BSD license. BHC is open source at [github.com/arcanist-sh/bhc](https://github.com/arcanist-sh/bhc).*
