@@ -22,7 +22,7 @@ So: a Haskell compiler from Basel, named after Basel. It's personal, not a marke
 
 ## How We Got Here
 
-BHC wasn't the first project. [hx](https://hx.arcanist.sh) came before it — a package manager and build tool for Haskell, also written in Rust. The idea was simple: Haskell's tooling situation is fragmented (cabal, stack, ghcup), and a unified tool could help.
+BHC wasn't the first project. [hx](https://arcanist.sh/hx) came before it — a package manager and build tool for Haskell, also written in Rust. The idea was simple: Haskell's tooling situation is fragmented (cabal, stack, ghcup), and a unified tool could help.
 
 Building hx meant understanding how Haskell projects are structured, how dependencies resolve, how builds should work. At some point the question became: if we're rethinking the tooling, why not rethink the compiler too?
 

@@ -60,7 +60,7 @@ Not yet implemented:
 
 ### When will X be supported?
 
-See the [Roadmap](/roadmap/) for planned features. We're focusing on:
+See the [Roadmap](@/roadmap.md) for planned features. We're focusing on:
 1. Core language features (pattern matching, type classes)
 2. Standard library basics
 3. Package ecosystem integration
@@ -85,15 +85,15 @@ Coming soon:
 ### How do I install BHC?
 
 ```bash
-curl -fsSL https://bhc.arcanist.sh/install.sh | sh
+curl -fsSL https://arcanist.sh/bhc/install.sh | sh
 ```
 
-See [Get Started](/get-started/) for detailed instructions.
+See [Get Started](@/get-started.md) for detailed instructions.
 
 ### How do I uninstall BHC?
 
 ```bash
-curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- --uninstall
+curl -fsSL https://arcanist.sh/bhc/install.sh | sh -s -- --uninstall
 ```
 
 ### I get "command not found" after installing
@@ -131,7 +131,7 @@ Not currently. A project must use one compiler. However, you can maintain compat
 
 ### Does BHC support GHC extensions?
 
-BHC supports a subset of GHC extensions for compatibility. See the [Compatibility Charter](/compatibility/) for details.
+BHC supports a subset of GHC extensions for compatibility. See the [Compatibility Charter](@/compatibility.md) for details.
 
 ## Contributing
 

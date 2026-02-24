@@ -1063,8 +1063,8 @@ The example shows a type mismatch error. The message explains the expected vs. f
 
 ## Further Reading
 
-- [Get Started](/get-started/) - Install BHC and write your first program
-- [Compatibility](/compatibility/) - Supported Haskell features
-- [Profiles](/profiles/) - Runtime profile details
-- [Numeric](/numeric/) - Tensor IR and fusion guarantees
-- [Targets](/targets/) - Backend targets (native, WASM, GPU)
+- [Get Started](@/get-started.md) - Install BHC and write your first program
+- [Compatibility](@/compatibility.md) - Supported Haskell features
+- [Profiles](@/profiles.md) - Runtime profile details
+- [Numeric](@/numeric.md) - Tensor IR and fusion guarantees
+- [Targets](@/targets.md) - Backend targets (native, WASM, GPU)

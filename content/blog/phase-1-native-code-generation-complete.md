@@ -67,7 +67,7 @@ We're also expanding the test suite with packages from Hackage. The goal: compil
 BHC is open source and available now:
 
 ```bash
-curl -fsSL https://bhc.arcanist.sh/install.sh | sh
+curl -fsSL https://arcanist.sh/bhc/install.sh | sh
 ```
 
 Or build from source:

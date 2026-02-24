@@ -71,4 +71,4 @@ This is an interpreter, not a full compiler. Some features are not yet supported
 - IO operations (except `main` result display)
 - Multi-module projects
 
-For full BHC capabilities, [install the compiler](/get-started/).
+For full BHC capabilities, [install the compiler](@/get-started.md).

@@ -1,7 +1,7 @@
 # Zola configuration for bhc website
 # https://www.getzola.org/documentation/getting-started/configuration/
 
-base_url = "https://bhc.arcanist.sh"
+base_url = "https://arcanist.sh/bhc"
 title = "BHC - Basel Haskell Compiler"
 description = "An alternative compiler for Haskell: compatibility-first, with a modern runtime, multiple targets, and opt-in extensions."
 default_language = "en"
@@ -80,7 +80,7 @@ footer_note = "© 2025 arcanist.sh. Released under the MIT License."
 [[extra.product.install_methods]]
 id = "script"
 label = "Script"
-command = "curl -fsSL https://bhc.arcanist.sh/install.sh | sh"
+command = "curl -fsSL https://arcanist.sh/bhc/install.sh | sh"
 icon = """<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m10 8 4 4-4 4"/></svg>"""
 default = true
 
@@ -508,7 +508,7 @@ url = "https://github.com/arcanist-sh/bhc/blob/main/CHANGELOG.md"
 external = true
 [[extra.product.footer_links.links]]
 text = "hx (toolchain)"
-url = "https://hx.arcanist.sh"
+url = "https://arcanist.sh/hx"
 external = true
 
 [[extra.product.footer_links]]

@@ -1,10 +1,10 @@
 #!/bin/sh
 # BHC Installer Script
-# https://bhc.arcanist.sh
+# https://arcanist.sh/bhc
 #
 # Usage:
-#   curl -fsSL https://bhc.arcanist.sh/install.sh | sh
-#   curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- --uninstall
+#   curl -fsSL https://arcanist.sh/bhc/install.sh | sh
+#   curl -fsSL https://arcanist.sh/bhc/install.sh | sh -s -- --uninstall
 #
 # Options:
 #   --uninstall      Remove BHC and optionally clean shell config
@@ -303,11 +303,11 @@ check_existing_install() {
 show_help() {
     cat << 'EOF'
 BHC Installer - Basel Haskell Compiler
-https://bhc.arcanist.sh
+https://arcanist.sh/bhc
 
 USAGE:
-    curl -fsSL https://bhc.arcanist.sh/install.sh | sh
-    curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- [OPTIONS]
+    curl -fsSL https://arcanist.sh/bhc/install.sh | sh
+    curl -fsSL https://arcanist.sh/bhc/install.sh | sh -s -- [OPTIONS]
 
 OPTIONS:
     --uninstall     Remove BHC installation
@@ -319,13 +319,13 @@ ENVIRONMENT VARIABLES:
 
 EXAMPLES:
     # Install latest version
-    curl -fsSL https://bhc.arcanist.sh/install.sh | sh
+    curl -fsSL https://arcanist.sh/bhc/install.sh | sh
 
     # Install specific version
-    BHC_VERSION=v0.1.0 curl -fsSL https://bhc.arcanist.sh/install.sh | sh
+    BHC_VERSION=v0.1.0 curl -fsSL https://arcanist.sh/bhc/install.sh | sh
 
     # Uninstall
-    curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- --uninstall
+    curl -fsSL https://arcanist.sh/bhc/install.sh | sh -s -- --uninstall
 EOF
 }
 
@@ -345,7 +345,7 @@ remove_shell_config() {
 uninstall_bhc() {
     echo ""
     printf "${BOLD}BHC Uninstaller${RESET}\n"
-    printf "Basel Haskell Compiler - https://bhc.arcanist.sh\n"
+    printf "Basel Haskell Compiler - https://arcanist.sh/bhc\n"
     echo ""
 
     if [ ! -d "$INSTALL_DIR" ]; then
@@ -413,7 +413,7 @@ uninstall_bhc() {
 do_install() {
     echo ""
     printf "${BOLD}BHC Installer${RESET}\n"
-    printf "Basel Haskell Compiler - https://bhc.arcanist.sh\n"
+    printf "Basel Haskell Compiler - https://arcanist.sh/bhc\n"
     echo ""
 
     check_dependencies

@@ -1,69 +1,15 @@
-name: Deploy to GitHub Pages
+name: Trigger Cloudflare Pages Rebuild
 
 on:
   push:
     branches:
       - main
-  repository_dispatch:
-    types: [docs-updated]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
+  trigger:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup mise
-        uses: jdx/mise-action@v2
-        with:
-          experimental: true
-
-      - name: Install tools via mise
-        run: mise install
-
-      - name: Build the site
-        run: mise run build
-
-      - name: Clone docs repo
-        run: git clone --depth 1 --recurse-submodules https://github.com/arcanist-sh/bhc.arcanist.sh-docs.git /tmp/docs
-
-      - name: Build docs
-        run: |
-          cd /tmp/docs
-          mise install
-          mise run build
-
-      - name: Copy docs to public
-        run: |
-          mkdir -p ./public/docs
-          cp -r /tmp/docs/public/* ./public/docs/
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Trigger CF Pages rebuild (www.arcanist.sh)
+        if: github.ref == 'refs/heads/main'
+        run: curl -X POST "${{ secrets.CF_DEPLOY_HOOK_URL }}"

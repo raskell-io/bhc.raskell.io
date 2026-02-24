@@ -74,7 +74,7 @@ Best for:
 - Machine learning workloads
 - Performance-critical numeric code
 
-See [Numeric Performance](/numeric/) for details.
+See [Numeric Performance](@/numeric.md) for details.
 
 ### edge
 

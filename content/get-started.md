@@ -13,7 +13,7 @@ Install BHC and compile your first Haskell project.
 ### Script (recommended)
 
 ```bash
-curl -fsSL https://bhc.arcanist.sh/install.sh | sh
+curl -fsSL https://arcanist.sh/bhc/install.sh | sh
 ```
 
 ### Homebrew (macOS/Linux)
@@ -30,7 +30,7 @@ export LIBRARY_PATH="$(brew --prefix)/lib:$LIBRARY_PATH"
 
 ### hx (Haskell toolchain)
 
-If you use [hx](https://hx.arcanist.sh), add BHC as a compiler backend:
+If you use [hx](https://arcanist.sh/hx), add BHC as a compiler backend:
 
 ```bash
 hx toolchain add bhc
@@ -216,7 +216,7 @@ bhc run
 
 ## Using hx with BHC
 
-[hx](https://hx.arcanist.sh) is a unified Haskell toolchain that handles packages, dependencies, and builds. hx and BHC are designed to work together seamlessly.
+[hx](https://arcanist.sh/hx) is a unified Haskell toolchain that handles packages, dependencies, and builds. hx and BHC are designed to work together seamlessly.
 
 ### Basic Configuration
 
@@ -324,14 +324,14 @@ Not yet supported:
 - Type classes
 - Imports (except Prelude)
 
-See the [Compatibility Charter](/compatibility/) for full details.
+See the [Compatibility Charter](@/compatibility.md) for full details.
 
 ### Uninstalling BHC
 
 To completely remove BHC:
 
 ```bash
-curl -fsSL https://bhc.arcanist.sh/install.sh | sh -s -- --uninstall
+curl -fsSL https://arcanist.sh/bhc/install.sh | sh -s -- --uninstall
 ```
 
 Then remove these lines from your shell config (`~/.bashrc` or `~/.zshrc`):
@@ -342,8 +342,8 @@ export LIBRARY_PATH="$HOME/.bhc/lib:$LIBRARY_PATH"
 
 ## Next Steps
 
-- Read the [Compatibility Charter](/compatibility/) to understand what's supported
-- Learn about [Runtime Profiles](/profiles/)
-- Explore [Numeric Performance](/numeric/) for numeric workloads
-- See [Target Backends](/targets/) for WASM and other targets
-- Browse the [API Reference](/docs/api/) for Prelude and standard library documentation
+- Read the [Compatibility Charter](@/compatibility.md) to understand what's supported
+- Learn about [Runtime Profiles](@/profiles.md)
+- Explore [Numeric Performance](@/numeric.md) for numeric workloads
+- See [Target Backends](@/targets.md) for WASM and other targets
+- Browse the [API Reference](https://docs.arcanist.sh/bhc/docs/api/) for Prelude and standard library documentation

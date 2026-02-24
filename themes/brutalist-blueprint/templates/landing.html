@@ -36,7 +36,7 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                 <div class="hero__content">
                     <!-- Haskell Logo -->
                     <img
-                        src="/img/haskell-logo.svg"
+                        src="{{ get_url(path='img/haskell-logo.svg') | safe }}"
                         alt=""
                         class="hero__logo"
                         aria-hidden="true"
@@ -407,7 +407,7 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                 </div>
 
                 <div class="haskell-foundation__cta">
-                    <a href="/get-started/" class="btn btn--primary">
+                    <a href="{{ get_url(path='get-started') | safe }}" class="btn btn--primary">
                         Get Started
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +424,7 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                             <polyline points="12 5 19 12 12 19" />
                         </svg>
                     </a>
-                    <a href="/numeric/" class="btn btn--secondary">
+                    <a href="{{ get_url(path='numeric') | safe }}" class="btn btn--secondary">
                         Numeric Performance
                     </a>
                 </div>
@@ -462,7 +462,7 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                     {% endfor %}
                 </div>
                 <div class="features__cta">
-                    <a href="/compatibility/" class="btn btn--secondary">
+                    <a href="{{ get_url(path='compatibility') | safe }}" class="btn btn--secondary">
                         Compatibility Charter
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -650,7 +650,7 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                 </div>
 
                 <div class="profiles__cta">
-                    <a href="/profiles/" class="btn btn--secondary">
+                    <a href="{{ get_url(path='profiles') | safe }}" class="btn btn--secondary">
                         Profile Documentation
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -683,7 +683,7 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                     {{ section.content | safe }}
                 </div>
                 <div class="content-section__cta">
-                    <a href="/docs/" class="btn btn--secondary">
+                    <a href="{{ get_url(path='docs') | safe }}" class="btn btn--secondary">
                         Full Documentation
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -783,7 +783,7 @@ config.extra.product.tagline }}{% endblock %} {% block content %}
                         <div class="footer__links">
                             {% for link in group.links %}
                             <a
-                                href="{{ link.url }}"
+                                href="{% if link.url is starting_with(pat='http') or link.external %}{{ link.url }}{% else %}{{ get_url(path=link.url | trim_start_matches(pat='/')) | safe }}{% endif %}"
                                 class="footer__link"
                                 {%
                                 if

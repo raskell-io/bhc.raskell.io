@@ -17,7 +17,7 @@
                     </button>
                     <div class="header__dropdown-menu">
                         {% for item in link.items %}
-                        <a href="{{ item.url | safe }}" class="header__dropdown-item">
+                        <a href="{% if item.url is starting_with(pat='http') %}{{ item.url | safe }}{% else %}{{ get_url(path=item.url | trim_start_matches(pat='/')) | safe }}{% endif %}" class="header__dropdown-item">
                             {% if item.icon %}<span class="header__dropdown-item-icon">{{ item.icon | safe }}</span>{% endif %}
                             <div class="header__dropdown-item-text">
                                 <span class="header__dropdown-item-name">{{ item.name }}</span>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 {% else %}
-                <a href="{{ link.url | safe }}" class="header__link">
+                <a href="{% if link.url is starting_with(pat='http') %}{{ link.url | safe }}{% else %}{{ get_url(path=link.url | trim_start_matches(pat='/')) | safe }}{% endif %}" class="header__link">
                     {% if link.icon %}<span class="header__link-icon">{{ link.icon | safe }}</span>{% endif %}
                     <span>{{ link.name }}</span>
                 </a>
@@ -91,13 +91,13 @@
                     {{ link.name }}
                 </span>
                 {% for item in link.items %}
-                <a href="{{ item.url | safe }}" class="mobile-nav__link mobile-nav__link--nested">
+                <a href="{% if item.url is starting_with(pat='http') %}{{ item.url | safe }}{% else %}{{ get_url(path=item.url | trim_start_matches(pat='/')) | safe }}{% endif %}" class="mobile-nav__link mobile-nav__link--nested">
                     <span>{{ item.name }}</span>
                 </a>
                 {% endfor %}
             </div>
             {% else %}
-            <a href="{{ link.url | safe }}" class="mobile-nav__link">
+            <a href="{% if link.url is starting_with(pat='http') %}{{ link.url | safe }}{% else %}{{ get_url(path=link.url | trim_start_matches(pat='/')) | safe }}{% endif %}" class="mobile-nav__link">
                 {% if link.icon %}<span class="mobile-nav__icon">{{ link.icon | safe }}</span>{% endif %}
                 <span>{{ link.name }}</span>
             </a>

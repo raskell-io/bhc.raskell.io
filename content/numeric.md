@@ -55,7 +55,7 @@ For large-scale parallelism:
 - Automatic host/device memory management
 - Kernel fusion across operations
 
-See [Target Backends](/targets/) for GPU target details.
+See [Target Backends](@/targets.md) for GPU target details.
 
 ### Pinned buffers
 Large arrays and FFI buffers use pinned, non-moving memory:

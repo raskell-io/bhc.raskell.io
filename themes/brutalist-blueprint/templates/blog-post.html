@@ -50,7 +50,7 @@
                         </div>
 
                         <footer class="blog-post__footer">
-                            <a href="/blog/" class="blog-post__back">
+                            <a href="{{ get_url(path='blog') | safe }}" class="blog-post__back">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M19 12H5"/>
                                     <path d="m12 19-7-7 7-7"/>
@@ -70,7 +70,7 @@
             <div class="footer__container">
                 <div class="footer__grid">
                     <div class="footer__brand">
-                        <a href="/" class="footer__brand-name">{{ config.title }}</a>
+                        <a href="{{ config.base_url | safe }}" class="footer__brand-name">{{ config.title }}</a>
                         {% if config.extra.product.footer_tagline %}
                         <span class="footer__brand-tagline">{{ config.extra.product.footer_tagline }}</span>
                         {% endif %}
@@ -81,7 +81,7 @@
                         <h4 class="footer__column-title">{{ group.title }}</h4>
                         <div class="footer__links">
                             {% for link in group.links %}
-                            <a href="{{ link.url }}" class="footer__link" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                            <a href="{% if link.url is starting_with(pat='http') or link.external %}{{ link.url }}{% else %}{{ get_url(path=link.url | trim_start_matches(pat='/')) | safe }}{% endif %}" class="footer__link" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
                                 {{ link.text }}
                             </a>
                             {% endfor %}

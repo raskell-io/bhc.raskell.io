@@ -124,7 +124,7 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
             <div class="footer__container">
                 <div class="footer__grid">
                     <div class="footer__brand">
-                        <a href="/" class="footer__brand-name">{{ config.title }}</a>
+                        <a href="{{ config.base_url | safe }}" class="footer__brand-name">{{ config.title }}</a>
                         {% if config.extra.product.footer_tagline %}
                         <span class="footer__brand-tagline">{{ config.extra.product.footer_tagline }}</span>
                         {% endif %}
@@ -135,7 +135,7 @@ main = let fib n = if n <= 1 then n else fib (n - 1) + fib (n - 2) in fib 10</te
                         <h4 class="footer__column-title">{{ group.title }}</h4>
                         <div class="footer__links">
                             {% for link in group.links %}
-                            <a href="{{ link.url }}" class="footer__link" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                            <a href="{% if link.url is starting_with(pat='http') or link.external %}{{ link.url }}{% else %}{{ get_url(path=link.url | trim_start_matches(pat='/')) | safe }}{% endif %}" class="footer__link" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
                                 {{ link.text }}
                             </a>
                             {% endfor %}
@@ -671,7 +671,7 @@ function clearOutput() {
 async function initPlayground() {
     try {
         // Dynamic import of the WASM module
-        const module = await import('/playground/bhc_playground.js');
+        const module = await import('{{ get_url(path="playground/bhc_playground.js") | safe }}');
         await module.default();
         bhc = module;
         isReady = true;
