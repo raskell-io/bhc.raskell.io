@@ -81,7 +81,7 @@
                         <h4 class="footer__column-title">{{ group.title }}</h4>
                         <div class="footer__links">
                             {% for link in group.links %}
-                            <a href="{% if link.url is starting_with(pat='http') or link.external %}{{ link.url }}{% else %}{{ get_url(path=link.url | trim_start_matches(pat='/')) | safe }}{% endif %}" class="footer__link" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                            <a href="{% if link.external %}{{ link.url }}{% else %}{{ get_url(path=link.url | trim_start_matches(pat='/')) | safe }}{% endif %}" class="footer__link" {% if link.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
                                 {{ link.text }}
                             </a>
                             {% endfor %}
